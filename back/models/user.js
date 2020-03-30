@@ -32,8 +32,8 @@ const userSchema = new Schema(
     },
     city: String,
     avatar: { type: String, default: "/images/default-profile.jpg" },
-    points: Number,
-    participant: [{ type: Schema.Types.ObjectId, ref: "Meetings" }]
+    points: { type: Number, default: 0 },
+    meetings: [{ type: Schema.Types.ObjectId, ref: "Meetings" }]
   },
   {
     timestamps: true,

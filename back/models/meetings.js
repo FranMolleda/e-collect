@@ -16,7 +16,7 @@ const meetingsSchema = new Schema(
     },
     hour: String,
     description: String,
-    participants: { type: Schema.Types.ObjectId, ref: "User" }
+    participants: [{ type: Schema.Types.ObjectId, ref: "User" }]
   },
   {
     timestamps: true

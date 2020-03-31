@@ -1,24 +1,22 @@
 const passport = require("passport");
 const LocalStrategy = require("passport-local").Strategy;
 const User = require("../../models/User");
-const bcrypt = require("bcrypt");
+const { checkHashed } = require("../../lib/hashing");
 
 passport.use(
-  new LocalStrategy(
-    { passReqToCallback: true },
-    (req, username, password, next) => {
-      User.findOne({ username }, (err, user) => {
-        if (err) return next(err);
-        if (!user)
-          return next(null, false, {
-            message: "¡Username or password incorrect!"
-          });
-        if (!bcrypt.compareSync(password, user.password))
-          return next(null, false, {
-            message: "¡Username or password incorrect!"
-          });
-        return next(null, user, { message: `Welcome ${username}` });
-      });
+  new LocalStrategy(async (username, password, done) => {
+    try {
+      const foundUser = await User.findOne({ username });
+      if (foundUser) {
+        checkHashed(password, foundUser.password)
+          ? done(null, foundUser)
+          : done(null, false);
+      } else {
+        done(null, false);
+      }
+    } catch (error) {
+      done(error);
     }
-  )
+  })
 );
+console.log("Installed Passport Local Strategy");

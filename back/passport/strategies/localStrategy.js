@@ -10,12 +10,14 @@ passport.use(
       User.findOne({ username }, (err, user) => {
         if (err) return next(err);
         if (!user)
-          return next(null, false, { message: "¡Ese usuario no existe!" });
+          return next(null, false, {
+            message: "¡Username or password incorrect!"
+          });
         if (!bcrypt.compareSync(password, user.password))
           return next(null, false, {
-            message: "¡La contraseña no es correcta!"
+            message: "¡Username or password incorrect!"
           });
-        return next(null, user, { message: `Hola holita, ${username}` });
+        return next(null, user, { message: `Welcome ${username}` });
       });
     }
   )

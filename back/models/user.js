@@ -21,6 +21,7 @@ const userSchema = new Schema(
     email: {
       type: String,
       trim: true,
+      required: [true, "email is required"],
       match: [EMAIL_PATTERN, "Please fill a valid email address"],
       sparse: true,
       unique: false,
@@ -63,7 +64,7 @@ userSchema.pre("save", function(next) {
     .then(salt => {
       bcrypt.hash(user.password, salt).then(hash => {
         user.password = hash;
-        user.email = user.email.toLowerCase();
+        //user.email = user.email.toLowerCase();
         next();
       });
     })

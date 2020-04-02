@@ -9,7 +9,6 @@ const path = require("path");
 const session = require("express-session");
 const MongoStore = require("connect-mongo")(session);
 const passport = require("passport");
-const flash = require("connect-flash");
 const cors = require("cors");
 
 mongoose
@@ -34,6 +33,20 @@ const debug = require("debug")(
 
 const app = express();
 
+//Cross Domain CORS
+const whitelist = ["http://localhost:3000", "http://localhost:1234"];
+const corsOptions = {
+  origin: function(origin, callback) {
+    if (whitelist.indexOf(origin) !== -1 || !origin) {
+      callback(null, true);
+    } else {
+      callback(new Error("Not allowed by CORS"));
+    }
+  },
+  credentials: true
+};
+
+app.use(cors(corsOptions));
 app.use(cors());
 app.use(logger("dev"));
 app.use(bodyParser.json());
@@ -66,20 +79,7 @@ app.use((req, res, next) => {
   next();
 });
 
-app.set("views", path.join(__dirname, "views"));
-app.set("view engine", "hbs");
 app.use(express.static(path.join(__dirname, "public")));
-
-// default value for title local
-app.locals.title = "e-collect";
-
-// Flash
-app.use(flash());
-app.use((req, res, next) => {
-  res.locals.errors = req.flash("error");
-  res.locals.success = req.flash("success");
-  next();
-});
 
 // Routes middleware goes here
 const index = require("./routes/index");

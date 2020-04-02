@@ -70,14 +70,10 @@ router.get("/logout", (req, res, next) => {
       .json({ status: "You have to be logged in to logout" });
   }
 });
-router.get("/profile/:username", async (req, res, next) => {
-  const userProfile = req.params;
-  console.log(userProfile);
 
-  res.json(userProfile);
-  /*return res
-      .status(401)
-      .json({ status: "You have to be logged in to logout" });*/
+router.get("/profile", (req, res, next) => {
+  if (req.user) return res.json(req.user);
+  else return res.status(401).json({ status: "No user session present" });
 });
 
 module.exports = router;

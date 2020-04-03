@@ -28,7 +28,8 @@ const userSchema = new Schema(
       lowercase: true
     },
     social: {
-      slack: String
+      slackID: String,
+      googleID: String
     },
     city: String,
     avatar: { type: String, default: "/images/default-profile.jpg" },

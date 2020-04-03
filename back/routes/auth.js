@@ -4,8 +4,6 @@ const passport = require("passport");
 const router = express.Router();
 const _ = require("lodash");
 
-const isLoggedIn = require("../lib/isLoggedMiddleware");
-
 router.get("/signup", (req, res) => {
   res.json({ status: "Signup" });
 });
@@ -75,5 +73,33 @@ router.get("/profile", (req, res, next) => {
   if (req.user) return res.json(req.user);
   else return res.status(401).json({ status: "No user session present" });
 });
+
+//Loggin Social Slack
+router.get("/slack", passport.authenticate("slack"));
+router.get(
+  "/slack/callback",
+  passport.authenticate("slack", {
+    successRedirect: "/signup",
+    failureRedirect: "/" // here you would navigate to the classic login page
+  })
+);
+
+//Loggin Social Google
+router.get(
+  "/google",
+  passport.authenticate("google", {
+    scope: [
+      "https://www.googleapis.com/auth/userinfo.profile",
+      "https://www.googleapis.com/auth/userinfo.email"
+    ]
+  })
+);
+router.get(
+  "/google/callback",
+  passport.authenticate("google", {
+    successRedirect: "/signup",
+    failureRedirect: "/" // here you would redirect to the login page using traditional login approach
+  })
+);
 
 module.exports = router;

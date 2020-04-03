@@ -46,8 +46,8 @@ const corsOptions = {
   credentials: true
 };
 
-app.use(cors(corsOptions));
 app.use(cors());
+app.use(cors(corsOptions));
 app.use(logger("dev"));
 app.use(bodyParser.json());
 app.use(

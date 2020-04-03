@@ -87,4 +87,11 @@ app.use("/", index);
 const auth = require("./routes/auth");
 app.use("/auth", auth);
 
+const UserModel = require("./models/users");
+const Meet = require("./models/meetings");
+const { crudGenerator } = require("./routes/crudModels");
+//Entre corchetes, después del nombre de la colección son los campos protejidos como hemos indicado en crudModel
+app.use("/meet", crudGenerator(Meet, ["participants", "organizer"]));
+app.use("/user", crudGenerator(UserModel, ["meetings"]));
+
 module.exports = app;

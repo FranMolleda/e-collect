@@ -8,8 +8,15 @@ router.get("/signup", (req, res) => {
   res.json({ status: "Signup" });
 });
 
+//Recibimos todos los Users
+router.get("/", async (req, res) => {
+  const allUser = await User.find();
+  res.json({ allUser });
+});
+
+//Creamos los User
 router.post("/signup", async (req, res, next) => {
-  const { username, password, email } = req.body;
+  const { username, password, email, city } = req.body;
   console.log(username, password, email);
   //Validamos que no haya campos vacíos
   try {
@@ -22,7 +29,7 @@ router.post("/signup", async (req, res, next) => {
     const existingUser = await User.findOne({ username });
 
     if (!existingUser) {
-      const newUser = await User.create({ username, password, email });
+      const newUser = await User.create({ username, password, email, city });
       req.login(newUser, err => {
         res.json(newUser);
       });
@@ -33,6 +40,13 @@ router.post("/signup", async (req, res, next) => {
   } catch (err) {
     next(err);
   }
+});
+
+//Borramos los User
+router.get("/delete/:id", async (req, res, next) => {
+  const { id } = req.params;
+  await User.findByIdAndRemove(id);
+  return res.json({ status: "User deleted", id });
 });
 
 router.post("/login", (req, res, next) => {

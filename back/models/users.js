@@ -7,7 +7,7 @@ const PASSWORD_PATTERN = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{4,8}$/;
 
 const Schema = mongoose.Schema;
 
-const userSchema = new Schema(
+const usersSchema = new Schema(
   {
     username: {
       type: String,
@@ -53,7 +53,7 @@ const userSchema = new Schema(
   }
 );
 
-userSchema.pre("save", function(next) {
+usersSchema.pre("save", function(next) {
   const user = this;
 
   if (!user.isModified("password")) {
@@ -71,5 +71,5 @@ userSchema.pre("save", function(next) {
     .catch(error => next(error));
 });
 
-const User = mongoose.model("User", userSchema);
-module.exports = User;
+const Users = mongoose.model("Users", usersSchema);
+module.exports = Users;

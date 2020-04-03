@@ -3,7 +3,6 @@ const User = require("../models/User");
 const passport = require("passport");
 const router = express.Router();
 const _ = require("lodash");
-const { isLoggedIn, isLoggedOut } = require("../lib/isLoggedMiddleware");
 
 router.get("/signup", (req, res) => {
   res.json({ status: "Signup" });
@@ -80,7 +79,7 @@ router.get("/slack", passport.authenticate("slack"));
 router.get(
   "/slack/callback",
   passport.authenticate("slack", {
-    successRedirect: "/login",
+    successRedirect: "/signup",
     failureRedirect: "/" // here you would navigate to the classic login page
   })
 );

@@ -5,31 +5,28 @@ const meetingsSchema = new Schema(
   {
     organizer: { type: Schema.Types.ObjectId, ref: "User" },
 
-    streetAddress: String,
+    streetAdress: String,
     city: String,
     country: String,
     postalCode: String,
 
     location: {
       latitude: Number,
-      longitude: Number
+      longitude: Number,
     },
     title: String,
     hour: String,
     description: String,
-    participants: [{ type: Schema.Types.ObjectId, ref: "User" }]
+    participants: [{ type: Schema.Types.ObjectId, ref: "User" }],
   },
   {
-    timestamps: true
+    timestamps: true,
   }
 );
 
-meetingsSchema.virtual("date").get(function() {
+meetingsSchema.virtual("date").get(function () {
   const date = new Date(this.createdAt);
-  return date
-    .toUTCString()
-    .replace(" GMT", "")
-    .toJSON();
+  return date.toUTCString().replace(" GMT", "").toJSON();
 });
 
 const Meetings = mongoose.model("Meetings", meetingsSchema);

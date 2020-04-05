@@ -15,14 +15,14 @@ mongoose
   .connect(process.env.DBURL, {
     useNewUrlParser: true,
     useCreateIndex: true,
-    useUnifiedTopology: true
+    useUnifiedTopology: true,
   })
-  .then(x => {
+  .then((x) => {
     console.log(
       `Connected to Mongo! Database name: "${x.connections[0].name}"`
     );
   })
-  .catch(err => {
+  .catch((err) => {
     console.error("Error connecting to mongo", err);
   });
 
@@ -36,14 +36,14 @@ const app = express();
 //Cross Domain CORS
 const whitelist = ["http://localhost:3000", "http://localhost:1234"];
 const corsOptions = {
-  origin: function(origin, callback) {
+  origin: function (origin, callback) {
     if (whitelist.indexOf(origin) !== -1 || !origin) {
       callback(null, true);
     } else {
       callback(new Error("Not allowed by CORS"));
     }
   },
-  credentials: true
+  credentials: true,
 };
 
 app.use(cors());
@@ -52,7 +52,7 @@ app.use(logger("dev"));
 app.use(bodyParser.json());
 app.use(
   bodyParser.urlencoded({
-    extended: false
+    extended: false,
   })
 );
 app.use(cookieParser());
@@ -64,8 +64,8 @@ app.use(
     resave: true,
     saveUninitialized: true,
     store: new MongoStore({
-      mongooseConnection: mongoose.connection
-    })
+      mongooseConnection: mongoose.connection,
+    }),
   })
 );
 
@@ -84,14 +84,5 @@ app.use(express.static(path.join(__dirname, "public")));
 // Routes middleware goes here
 const index = require("./routes/index");
 app.use("/", index);
-const auth = require("./routes/auth");
-app.use("/auth", auth);
-
-const UserModel = require("./models/users");
-const Meet = require("./models/meetings");
-const { crudGenerator } = require("./routes/crudModels");
-//Entre corchetes, después del nombre de la colección son los campos protejidos como hemos indicado en crudModel
-app.use("/meet", crudGenerator(Meet, ["participants", "organizer"]));
-app.use("/user", crudGenerator(UserModel, ["meetings"]));
 
 module.exports = app;

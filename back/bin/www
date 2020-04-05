@@ -20,7 +20,7 @@ app.use((err, req, res, next) => {
   if (!res.headersSent) {
     res.status(500);
     res.json({
-      status: 'ServerError'
+      status: err.message
     });
   }
 });

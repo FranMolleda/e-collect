@@ -11,31 +11,31 @@ const userSchema = new Schema(
   {
     username: {
       type: String,
-      required: "Name is required"
+      required: "Name is required",
     },
     password: {
       type: String,
       required: [true, "Password is required"],
-      match: [PASSWORD_PATTERN, "Invalid password pattern"]
+      match: [PASSWORD_PATTERN, "Invalid password pattern"],
     },
     email: {
       type: String,
       trim: true,
-      match: [EMAIL_PATTERN, "Please fill a valid email address"],
+      match: [EMAIL_PATTERN, "Please fill a valid email adress"],
       sparse: true,
       unique: false,
       default: null,
-      lowercase: true
+      lowercase: true,
     },
     social: {
       slackID: { type: String },
-      googleID: { type: String }
+      googleID: { type: String },
     },
 
     city: { type: String },
     avatar: { type: String, default: "/images/default-profile.jpg" },
     points: { type: Number, default: 0 },
-    meetings: [{ type: Schema.Types.ObjectId, ref: "Meetings" }]
+    meetings: [{ type: Schema.Types.ObjectId, ref: "Meetings" }],
   },
   {
     timestamps: true,
@@ -48,12 +48,12 @@ const userSchema = new Schema(
         delete ret.updatedAt;
         delete ret.__v;
         return ret;
-      }
-    }
+      },
+    },
   }
 );
 
-userSchema.pre("save", function(next) {
+userSchema.pre("save", function (next) {
   const user = this;
 
   if (!user.isModified("password")) {
@@ -62,13 +62,13 @@ userSchema.pre("save", function(next) {
 
   bcrypt
     .genSalt(SALT_WORK_FACTOR)
-    .then(salt => {
-      bcrypt.hash(user.password, salt).then(hash => {
+    .then((salt) => {
+      bcrypt.hash(user.password, salt).then((hash) => {
         user.password = hash;
         next();
       });
     })
-    .catch(error => next(error));
+    .catch((error) => next(error));
 });
 
 const User = mongoose.model("User", userSchema);

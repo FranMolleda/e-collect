@@ -4,12 +4,11 @@ const User = require("../models/User");
 const Meet = require("../models/Meetings");
 const { crudGenerator } = require("./crudModels");
 
-/* GET home page */
 router.get("/", (req, res, next) => {
   res.json({ status: "Welcome" });
 });
-router.use("/auth", require("./auth"));
-//Entre corchetes, después del nombre de la colección son los campos protejidos como hemos indicado en crudModel
+router.use("/auth", require("./userAuth"));
+router.use("/private", require("./privatePages"));
 router.use(
   "/meet",
   crudGenerator(Meet, {

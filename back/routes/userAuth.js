@@ -3,7 +3,7 @@ const User = require("../models/User");
 const passport = require("passport");
 const router = express.Router();
 const _ = require("lodash");
-const { isLoggedIn, isLoggedOut } = require("../lib/isLoggedMiddleware");
+const { isLoggedIn } = require("../lib/isLoggedMiddleware");
 
 router.get("/signup", (req, res) => {
   res.json({ status: "Signup" });

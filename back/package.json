@@ -11,8 +11,6 @@
     "axios": "^0.19.2",
     "bcrypt": "^3.0.8",
     "body-parser": "^1.18.3",
-    "connect-ensure-login": "^0.1.1",
-    "connect-flash": "^0.1.1",
     "connect-mongo": "^3.2.0",
     "cookie-parser": "^1.4.3",
     "cors": "^2.8.5",
@@ -25,8 +23,7 @@
     "passport-github": "^1.1.0",
     "passport-google-oauth20": "^2.0.0",
     "passport-local": "^1.0.0",
-    "passport-slack": "0.0.7",
-    "strength": "^0.1.4"
+    "passport-slack": "0.0.7"
   },
   "devDependencies": {
     "nodemon": "^1.12.1"

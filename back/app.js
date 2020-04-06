@@ -33,7 +33,6 @@ const debug = require("debug")(
 
 const app = express();
 
-//Cross Domain CORS
 const whitelist = ["http://localhost:3000", "http://localhost:1234"];
 const corsOptions = {
   origin: function (origin, callback) {
@@ -57,7 +56,6 @@ app.use(
 );
 app.use(cookieParser());
 
-// Session
 app.use(
   session({
     secret: "e-collect secret",
@@ -69,7 +67,6 @@ app.use(
   })
 );
 
-// Passport
 require("./passport");
 app.use(passport.initialize());
 app.use(passport.session());
@@ -81,7 +78,6 @@ app.use((req, res, next) => {
 
 app.use(express.static(path.join(__dirname, "public")));
 
-// Routes middleware goes here
 const index = require("./routes/index");
 app.use("/", index);
 

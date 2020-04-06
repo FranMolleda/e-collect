@@ -37,14 +37,7 @@ const crudGenerator = (
     })
   );
 
-  router.get(
-    "/fields",
-    asyncController(async (req, res, next) => {
-      return res.json({ fields: createFields });
-    })
-  );
-
-  //OBTEBER UN0
+  //Obtener Uno
   router.get(
     "/:id",
     asyncController(async (req, res, next) => {

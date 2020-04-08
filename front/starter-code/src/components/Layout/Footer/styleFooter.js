@@ -11,11 +11,17 @@ const FooterContainer = styled.div`
     width: 100vw;
     background: linear-gradient(to right, #b1e2eb 0%, #1a5059 100%);
     padding: 10px 30px;
-    color: rgba(255, 255, 255, 1);
+    color: #737980;
     position: absolute;
     bottom: 0;
     width: 100%;
     height: 120px;
+    .arbol-azul {
+      height: 37px;
+      float: right;
+      margin-right: 20px;
+      margin-top: -42px;
+    }
   }
 
   .size-footer {
@@ -45,7 +51,7 @@ const FooterContainer = styled.div`
 
   .footer-bs .footer-brand p {
     font-size: 12px;
-    color: rgba(255, 255, 255, 0.7);
+    color: #737980;
   }
 
   .footer-bs .footer-nav ul.pages {
@@ -58,13 +64,13 @@ const FooterContainer = styled.div`
   }
 
   .footer-bs .footer-nav ul.pages a {
-    color: rgba(255, 255, 255, 1);
+    color: #737980;
     font-weight: bold;
     text-transform: uppercase;
   }
 
   .footer-bs .footer-nav ul.pages a:hover {
-    color: rgba(255, 255, 255, 0.8);
+    color: #737980;
     text-decoration: none;
   }
 
@@ -85,11 +91,11 @@ const FooterContainer = styled.div`
   }
 
   .footer-bs .footer-nav ul.list a {
-    color: rgba(255, 255, 255, 0.8);
+    color: #737980;
   }
 
   .footer-bs .footer-nav ul.list a:hover {
-    color: rgba(255, 255, 255, 0.6);
+    color: #737980;
     text-decoration: none;
   }
 
@@ -109,11 +115,11 @@ const FooterContainer = styled.div`
   }
 
   .footer-bs .footer-social a {
-    color: rgba(255, 255, 255, 1);
+    color: #737980;
   }
 
   .footer-bs .footer-social a:hover {
-    color: rgba(255, 255, 255, 0.8);
+    color: #737980;
     text-decoration: none;
   }
 
@@ -126,7 +132,7 @@ const FooterContainer = styled.div`
 
   .footer-bs .footer-ns p {
     font-size: 12px;
-    color: rgba(255, 255, 255, 0.7);
+    color: #737980;
   }
 
   @media (min-width: 768px) {

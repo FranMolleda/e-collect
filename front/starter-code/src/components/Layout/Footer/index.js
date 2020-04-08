@@ -1,11 +1,13 @@
 import React from "react";
 import FooterContainer from "./styleFooter.js";
 import logo from "../../../../public/images/logo500Verde.png";
+import arbol from "../../../../public/images/arbolfooterazul.png";
 
 const Footer = () => (
   <>
     <FooterContainer>
       <footer className="footer-bs">
+        <img className="arbol-azul" src={arbol} alt="Arbol azul Image" />
         <div className="row">
           <div className="col-md-3 footer-brand animated fadeInLeft size-footer">
             <img

@@ -25145,7 +25145,87 @@ if ("development" === 'production') {
 } else {
   module.exports = require('./cjs/react-dom.development.js');
 }
-},{"./cjs/react-dom.development.js":"node_modules/react-dom/cjs/react-dom.development.js"}],"node_modules/@babel/runtime/helpers/esm/inheritsLoose.js":[function(require,module,exports) {
+},{"./cjs/react-dom.development.js":"node_modules/react-dom/cjs/react-dom.development.js"}],"node_modules/@babel/runtime/helpers/arrayWithHoles.js":[function(require,module,exports) {
+function _arrayWithHoles(arr) {
+  if (Array.isArray(arr)) return arr;
+}
+
+module.exports = _arrayWithHoles;
+},{}],"node_modules/@babel/runtime/helpers/iterableToArrayLimit.js":[function(require,module,exports) {
+function _iterableToArrayLimit(arr, i) {
+  if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return;
+  var _arr = [];
+  var _n = true;
+  var _d = false;
+  var _e = undefined;
+
+  try {
+    for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) {
+      _arr.push(_s.value);
+
+      if (i && _arr.length === i) break;
+    }
+  } catch (err) {
+    _d = true;
+    _e = err;
+  } finally {
+    try {
+      if (!_n && _i["return"] != null) _i["return"]();
+    } finally {
+      if (_d) throw _e;
+    }
+  }
+
+  return _arr;
+}
+
+module.exports = _iterableToArrayLimit;
+},{}],"node_modules/@babel/runtime/helpers/arrayLikeToArray.js":[function(require,module,exports) {
+function _arrayLikeToArray(arr, len) {
+  if (len == null || len > arr.length) len = arr.length;
+
+  for (var i = 0, arr2 = new Array(len); i < len; i++) {
+    arr2[i] = arr[i];
+  }
+
+  return arr2;
+}
+
+module.exports = _arrayLikeToArray;
+},{}],"node_modules/@babel/runtime/helpers/unsupportedIterableToArray.js":[function(require,module,exports) {
+var arrayLikeToArray = require("./arrayLikeToArray");
+
+function _unsupportedIterableToArray(o, minLen) {
+  if (!o) return;
+  if (typeof o === "string") return arrayLikeToArray(o, minLen);
+  var n = Object.prototype.toString.call(o).slice(8, -1);
+  if (n === "Object" && o.constructor) n = o.constructor.name;
+  if (n === "Map" || n === "Set") return Array.from(n);
+  if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return arrayLikeToArray(o, minLen);
+}
+
+module.exports = _unsupportedIterableToArray;
+},{"./arrayLikeToArray":"node_modules/@babel/runtime/helpers/arrayLikeToArray.js"}],"node_modules/@babel/runtime/helpers/nonIterableRest.js":[function(require,module,exports) {
+function _nonIterableRest() {
+  throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
+}
+
+module.exports = _nonIterableRest;
+},{}],"node_modules/@babel/runtime/helpers/slicedToArray.js":[function(require,module,exports) {
+var arrayWithHoles = require("./arrayWithHoles");
+
+var iterableToArrayLimit = require("./iterableToArrayLimit");
+
+var unsupportedIterableToArray = require("./unsupportedIterableToArray");
+
+var nonIterableRest = require("./nonIterableRest");
+
+function _slicedToArray(arr, i) {
+  return arrayWithHoles(arr) || iterableToArrayLimit(arr, i) || unsupportedIterableToArray(arr, i) || nonIterableRest();
+}
+
+module.exports = _slicedToArray;
+},{"./arrayWithHoles":"node_modules/@babel/runtime/helpers/arrayWithHoles.js","./iterableToArrayLimit":"node_modules/@babel/runtime/helpers/iterableToArrayLimit.js","./unsupportedIterableToArray":"node_modules/@babel/runtime/helpers/unsupportedIterableToArray.js","./nonIterableRest":"node_modules/@babel/runtime/helpers/nonIterableRest.js"}],"node_modules/@babel/runtime/helpers/esm/inheritsLoose.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -46521,176 +46601,6 @@ var NavbarContainer = _styledComponents.default.div(_templateObject());
 
 var _default = NavbarContainer;
 exports.default = _default;
-},{"@babel/runtime/helpers/taggedTemplateLiteral":"node_modules/@babel/runtime/helpers/taggedTemplateLiteral.js","styled-components":"node_modules/styled-components/dist/styled-components.browser.esm.js"}],"src/components/Layout/Navbar/index.js":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = void 0;
-
-var _react = _interopRequireDefault(require("react"));
-
-var _reactBootstrap = require("react-bootstrap");
-
-var _logo500Verde = _interopRequireDefault(require("../../../../public/images/logo500Verde.png"));
-
-var _styleNavbar = _interopRequireDefault(require("./styleNavbar"));
-
-var _reactRouterDom = require("react-router-dom");
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var LayoutNavbar = function LayoutNavbar() {
-  return _react.default.createElement(_react.default.Fragment, null, _react.default.createElement(_styleNavbar.default, null, _react.default.createElement(_reactBootstrap.Navbar, {
-    className: "container-navbar",
-    collapseOnSelect: true,
-    expand: "lg",
-    variant: "dark"
-  }, _react.default.createElement(_reactBootstrap.Navbar.Brand, {
-    as: "div"
-  }, _react.default.createElement(_reactRouterDom.Link, {
-    to: "/"
-  }, _react.default.createElement("img", {
-    src: _logo500Verde.default,
-    alt: "Logo Image",
-    style: {
-      width: "100px",
-      height: "23px"
-    }
-  })), " "), _react.default.createElement(_reactBootstrap.Navbar.Toggle, {
-    "aria-controls": "responsive-navbar-nav"
-  }), _react.default.createElement(_reactBootstrap.Navbar.Collapse, {
-    id: "responsive-navbar-nav"
-  }, _react.default.createElement(_reactBootstrap.Nav, {
-    className: "mr-auto mr-nav-left"
-  }, _react.default.createElement(_reactBootstrap.Nav.Link, {
-    as: "div"
-  }, _react.default.createElement(_reactRouterDom.Link, {
-    to: "/about"
-  }, "Con\xF3cenos")), _react.default.createElement(_reactBootstrap.NavDropdown, {
-    className: "mr-nav-left",
-    title: "\xDAnete",
-    id: "collasible-nav-dropdown"
-  }, _react.default.createElement(_reactBootstrap.NavDropdown.Item, {
-    as: "div"
-  }, _react.default.createElement(_reactRouterDom.Link, {
-    to: "/joinin"
-  }, "Participa")), _react.default.createElement(_reactBootstrap.NavDropdown.Item, {
-    as: "div"
-  }, _react.default.createElement(_reactRouterDom.Link, {
-    to: "/organize"
-  }, "Organiza")), _react.default.createElement(_reactBootstrap.NavDropdown.Item, {
-    as: "div"
-  }, _react.default.createElement(_reactRouterDom.Link, {
-    to: "/colaborate"
-  }, "Colabora")), _react.default.createElement(_reactBootstrap.NavDropdown.Divider, null))), _react.default.createElement(_reactBootstrap.Nav, null, _react.default.createElement(_reactBootstrap.Nav.Link, {
-    as: "div"
-  }, _react.default.createElement(_reactRouterDom.Link, {
-    to: "/contact"
-  }, "Contacta")), _react.default.createElement(_reactBootstrap.NavDropdown, {
-    title: "Sesion",
-    id: "collasible-nav-dropdown"
-  }, _react.default.createElement(_reactBootstrap.NavDropdown.Item, {
-    as: "div"
-  }, _react.default.createElement(_reactRouterDom.Link, {
-    to: "/auth/signup"
-  }, "Signup")), _react.default.createElement(_reactBootstrap.NavDropdown.Item, {
-    as: "div"
-  }, _react.default.createElement(_reactRouterDom.Link, {
-    to: "/auth/login"
-  }, "Login")), _react.default.createElement(_reactBootstrap.NavDropdown.Item, {
-    as: "div"
-  }, _react.default.createElement(_reactRouterDom.Link, {
-    to: "/auth/Logout"
-  }, "Logout")), _react.default.createElement(_reactBootstrap.NavDropdown.Divider, null), _react.default.createElement(_reactBootstrap.NavDropdown.Item, {
-    as: "div"
-  }, _react.default.createElement(_reactRouterDom.Link, {
-    to: "/auth/profile"
-  }, "Profile"))))))));
-};
-
-var _default = LayoutNavbar;
-exports.default = _default;
-},{"react":"node_modules/react/index.js","react-bootstrap":"node_modules/react-bootstrap/esm/index.js","../../../../public/images/logo500Verde.png":"public/images/logo500Verde.png","./styleNavbar":"src/components/Layout/Navbar/styleNavbar.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js"}],"public/images/latapequeña.jpg":[function(require,module,exports) {
-module.exports = "/latapequeña.3d93ae11.jpg";
-},{}],"public/styles/Images/lata.js":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = void 0;
-
-var _taggedTemplateLiteral2 = _interopRequireDefault(require("@babel/runtime/helpers/taggedTemplateLiteral"));
-
-var _styledComponents = _interopRequireDefault(require("styled-components"));
-
-var _latapequeA = _interopRequireDefault(require("../../../public/images/latapeque\xF1a.jpg"));
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _templateObject() {
-  var data = (0, _taggedTemplateLiteral2.default)(["\n  ", "\n"]);
-
-  _templateObject = function _templateObject() {
-    return data;
-  };
-
-  return data;
-}
-
-var LataImg = _styledComponents.default.div(_templateObject(), ""
-/* background-image: url(${Lata});
-width: 100%;
-position: absolute;
-top: 7%;
-bottom: 40%; */
-);
-
-var _default = LataImg;
-exports.default = _default;
-},{"@babel/runtime/helpers/taggedTemplateLiteral":"node_modules/@babel/runtime/helpers/taggedTemplateLiteral.js","styled-components":"node_modules/styled-components/dist/styled-components.browser.esm.js","../../../public/images/latapequeña.jpg":"public/images/latapequeña.jpg"}],"src/components/ui/buttons/ButtonsHome.js":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.ButtonOrganiza = exports.ButtonParticipa = void 0;
-
-var _taggedTemplateLiteral2 = _interopRequireDefault(require("@babel/runtime/helpers/taggedTemplateLiteral"));
-
-var _styledComponents = _interopRequireDefault(require("styled-components"));
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _templateObject2() {
-  var data = (0, _taggedTemplateLiteral2.default)(["\n   {\n    position: absolute;\n    top: 50%;\n    left: 60%;\n    transform: translate(-50%, -50%);\n    -ms-transform: translate(-50%, -50%);\n    background-color: #555;\n    color: white;\n    font-size: 16px;\n    padding: 12px 24px;\n    border: none;\n    cursor: pointer;\n    border-radius: 5px;\n    opacity: 0.5;\n}\n  }\n"]);
-
-  _templateObject2 = function _templateObject2() {
-    return data;
-  };
-
-  return data;
-}
-
-function _templateObject() {
-  var data = (0, _taggedTemplateLiteral2.default)(["\n   {\n    position: absolute;\n    top: 50%;\n    left: 40%;\n    transform: translate(-50%, -50%);\n    -ms-transform: translate(-50%, -50%);\n    background-color: #555;\n    color: white;\n    font-size: 16px;\n    padding: 12px 24px;\n    border: none;\n    cursor: pointer;\n    border-radius: 5px;\n    opacity: 0.5;\n    transition: all 0.2s ease-in-out;\n  }\n"]);
-
-  _templateObject = function _templateObject() {
-    return data;
-  };
-
-  return data;
-}
-
-var ButtonParticipa = _styledComponents.default.button(_templateObject());
-
-exports.ButtonParticipa = ButtonParticipa;
-
-var ButtonOrganiza = _styledComponents.default.button(_templateObject2());
-
-exports.ButtonOrganiza = ButtonOrganiza;
 },{"@babel/runtime/helpers/taggedTemplateLiteral":"node_modules/@babel/runtime/helpers/taggedTemplateLiteral.js","styled-components":"node_modules/styled-components/dist/styled-components.browser.esm.js"}],"node_modules/regenerator-runtime/runtime.js":[function(require,module,exports) {
 /**
  * Copyright (c) 2014-present, Facebook, Inc.
@@ -49023,7 +48933,7 @@ module.exports = require('./lib/axios');
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.doLogin = exports.doSignup = exports.UserContext = void 0;
+exports.doLogin = exports.doSignup = exports.useUserLogout = exports.useUserSetter = exports.useUser = exports.UserContext = void 0;
 
 var _regenerator = _interopRequireDefault(require("@babel/runtime/regenerator"));
 
@@ -49031,15 +48941,46 @@ var _asyncToGenerator2 = _interopRequireDefault(require("@babel/runtime/helpers/
 
 var _axios = _interopRequireDefault(require("axios"));
 
-var _react = _interopRequireDefault(require("react"));
+var _react = _interopRequireWildcard(require("react"));
+
+function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function () { return cache; }; return cache; }
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 //Vamos a crear contexto para tener el usuario disponible en toda la app, importamos React
 //Inicializamos UserContext y en App.js lo requerimos
-var UserContext = _react.default.createContext();
+var UserContext = _react.default.createContext(); //Vamos a crear un contexto personalizado, de esta manera lo importaremos de una forma más sencilla en cualquier sitio.
+
 
 exports.UserContext = UserContext;
+
+var useUser = function useUser() {
+  var userState = (0, _react.useContext)(UserContext);
+  return userState.user;
+}; //Creamos otro, el cual tambien pasamos en App para recoger el cambio de estado y lo pasamos en login
+
+
+exports.useUser = useUser;
+
+var useUserSetter = function useUserSetter() {
+  var userState = (0, _react.useContext)(UserContext);
+  return userState.setUser;
+}; //Logout
+
+
+exports.useUserSetter = useUserSetter;
+
+var useUserLogout = function useUserLogout() {
+  var userState = (0, _react.useContext)(UserContext);
+  return function () {
+    console.log("Log out!");
+    userState.setUser(null);
+  };
+};
+
+exports.useUserLogout = useUserLogout;
 
 var api = _axios.default.create({
   baseURL: "http://localhost:3000"
@@ -49116,7 +49057,7 @@ var doLogin = /*#__PURE__*/function () {
 }();
 
 exports.doLogin = doLogin;
-},{"@babel/runtime/regenerator":"node_modules/@babel/runtime/regenerator/index.js","@babel/runtime/helpers/asyncToGenerator":"node_modules/@babel/runtime/helpers/asyncToGenerator.js","axios":"node_modules/axios/index.js","react":"node_modules/react/index.js"}],"src/pages/home/index.js":[function(require,module,exports) {
+},{"@babel/runtime/regenerator":"node_modules/@babel/runtime/regenerator/index.js","@babel/runtime/helpers/asyncToGenerator":"node_modules/@babel/runtime/helpers/asyncToGenerator.js","axios":"node_modules/axios/index.js","react":"node_modules/react/index.js"}],"src/components/Layout/Navbar/index.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -49124,7 +49065,185 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 
-var _react = _interopRequireWildcard(require("react"));
+var _react = _interopRequireDefault(require("react"));
+
+var _reactBootstrap = require("react-bootstrap");
+
+var _logo500Verde = _interopRequireDefault(require("../../../../public/images/logo500Verde.png"));
+
+var _styleNavbar = _interopRequireDefault(require("./styleNavbar"));
+
+var _reactRouterDom = require("react-router-dom");
+
+var _auth = require("../../../lib/auth.api");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var LayoutNavbar = function LayoutNavbar() {
+  var user = (0, _auth.useUser)();
+  var handleLogout = (0, _auth.useUserLogout)();
+  return _react.default.createElement(_react.default.Fragment, null, _react.default.createElement(_styleNavbar.default, null, _react.default.createElement(_reactBootstrap.Navbar, {
+    className: "container-navbar",
+    collapseOnSelect: true,
+    expand: "lg",
+    variant: "dark"
+  }, _react.default.createElement(_reactBootstrap.Navbar.Brand, {
+    as: "div"
+  }, _react.default.createElement(_reactRouterDom.Link, {
+    to: "/"
+  }, _react.default.createElement("img", {
+    src: _logo500Verde.default,
+    alt: "Logo Image",
+    style: {
+      width: "100px",
+      height: "23px"
+    }
+  })), " "), _react.default.createElement(_reactBootstrap.Navbar.Toggle, {
+    "aria-controls": "responsive-navbar-nav"
+  }), _react.default.createElement(_reactBootstrap.Navbar.Collapse, {
+    id: "responsive-navbar-nav"
+  }, _react.default.createElement(_reactBootstrap.Nav, {
+    className: "mr-auto mr-nav-left"
+  }, _react.default.createElement(_reactBootstrap.Nav.Link, {
+    as: "div"
+  }, _react.default.createElement(_reactRouterDom.Link, {
+    to: "/about"
+  }, "Con\xF3cenos")), _react.default.createElement(_reactBootstrap.NavDropdown, {
+    className: "mr-nav-left",
+    title: "\xDAnete",
+    id: "collasible-nav-dropdown"
+  }, _react.default.createElement(_reactBootstrap.NavDropdown.Item, {
+    as: "div"
+  }, _react.default.createElement(_reactRouterDom.Link, {
+    to: "/joinin"
+  }, "Participa")), _react.default.createElement(_reactBootstrap.NavDropdown.Item, {
+    as: "div"
+  }, _react.default.createElement(_reactRouterDom.Link, {
+    to: "/organize"
+  }, "Organiza")), _react.default.createElement(_reactBootstrap.NavDropdown.Item, {
+    as: "div"
+  }, _react.default.createElement(_reactRouterDom.Link, {
+    to: "/colaborate"
+  }, "Colabora")), _react.default.createElement(_reactBootstrap.NavDropdown.Divider, null))), _react.default.createElement(_reactBootstrap.Nav, null, _react.default.createElement(_reactBootstrap.Nav.Link, {
+    as: "div"
+  }, _react.default.createElement(_reactRouterDom.Link, {
+    to: "/contact"
+  }, "Contacta")), !user && _react.default.createElement(_reactBootstrap.NavDropdown, {
+    title: "Inscr\xEDbete",
+    id: "collasible-nav-dropdown"
+  }, _react.default.createElement(_reactBootstrap.NavDropdown.Item, {
+    as: "div"
+  }, _react.default.createElement(_reactRouterDom.Link, {
+    to: "/auth/signup"
+  }, "Signup")), _react.default.createElement(_reactBootstrap.NavDropdown.Item, {
+    as: "div"
+  }, _react.default.createElement(_reactRouterDom.Link, {
+    to: "/auth/login"
+  }, "Login"))), user && _react.default.createElement(_reactBootstrap.NavDropdown, {
+    title: user.username,
+    id: "collasible-nav-dropdown"
+  }, _react.default.createElement(_reactBootstrap.NavDropdown.Item, {
+    as: "div"
+  }, _react.default.createElement(_reactRouterDom.Link, {
+    to: "/auth/profile"
+  }, "Profile")), _react.default.createElement(_reactBootstrap.NavDropdown.Item, {
+    as: "div"
+  }, _react.default.createElement(_reactRouterDom.Link, {
+    to: "/",
+    onClick: handleLogout
+  }, "Logout"))))))));
+};
+
+var _default = LayoutNavbar;
+exports.default = _default;
+},{"react":"node_modules/react/index.js","react-bootstrap":"node_modules/react-bootstrap/esm/index.js","../../../../public/images/logo500Verde.png":"public/images/logo500Verde.png","./styleNavbar":"src/components/Layout/Navbar/styleNavbar.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js","../../../lib/auth.api":"src/lib/auth.api.js"}],"public/images/latapequeña.jpg":[function(require,module,exports) {
+module.exports = "/latapequeña.3d93ae11.jpg";
+},{}],"public/styles/Images/lata.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _taggedTemplateLiteral2 = _interopRequireDefault(require("@babel/runtime/helpers/taggedTemplateLiteral"));
+
+var _styledComponents = _interopRequireDefault(require("styled-components"));
+
+var _latapequeA = _interopRequireDefault(require("../../../public/images/latapeque\xF1a.jpg"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _templateObject() {
+  var data = (0, _taggedTemplateLiteral2.default)(["\n  ", "\n"]);
+
+  _templateObject = function _templateObject() {
+    return data;
+  };
+
+  return data;
+}
+
+var LataImg = _styledComponents.default.div(_templateObject(), ""
+/* background-image: url(${Lata});
+width: 100%;
+position: absolute;
+top: 7%;
+bottom: 40%; */
+);
+
+var _default = LataImg;
+exports.default = _default;
+},{"@babel/runtime/helpers/taggedTemplateLiteral":"node_modules/@babel/runtime/helpers/taggedTemplateLiteral.js","styled-components":"node_modules/styled-components/dist/styled-components.browser.esm.js","../../../public/images/latapequeña.jpg":"public/images/latapequeña.jpg"}],"src/components/ui/buttons/ButtonsHome.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.ButtonOrganiza = exports.ButtonParticipa = void 0;
+
+var _taggedTemplateLiteral2 = _interopRequireDefault(require("@babel/runtime/helpers/taggedTemplateLiteral"));
+
+var _styledComponents = _interopRequireDefault(require("styled-components"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _templateObject2() {
+  var data = (0, _taggedTemplateLiteral2.default)(["\n   {\n    position: absolute;\n    top: 50%;\n    left: 60%;\n    transform: translate(-50%, -50%);\n    -ms-transform: translate(-50%, -50%);\n    background-color: #555;\n    color: white;\n    font-size: 16px;\n    padding: 12px 24px;\n    border: none;\n    cursor: pointer;\n    border-radius: 5px;\n    opacity: 0.5;\n}\n  }\n"]);
+
+  _templateObject2 = function _templateObject2() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject() {
+  var data = (0, _taggedTemplateLiteral2.default)(["\n   {\n    position: absolute;\n    top: 50%;\n    left: 40%;\n    transform: translate(-50%, -50%);\n    -ms-transform: translate(-50%, -50%);\n    background-color: #555;\n    color: white;\n    font-size: 16px;\n    padding: 12px 24px;\n    border: none;\n    cursor: pointer;\n    border-radius: 5px;\n    opacity: 0.5;\n    transition: all 0.2s ease-in-out;\n  }\n"]);
+
+  _templateObject = function _templateObject() {
+    return data;
+  };
+
+  return data;
+}
+
+var ButtonParticipa = _styledComponents.default.button(_templateObject());
+
+exports.ButtonParticipa = ButtonParticipa;
+
+var ButtonOrganiza = _styledComponents.default.button(_templateObject2());
+
+exports.ButtonOrganiza = ButtonOrganiza;
+},{"@babel/runtime/helpers/taggedTemplateLiteral":"node_modules/@babel/runtime/helpers/taggedTemplateLiteral.js","styled-components":"node_modules/styled-components/dist/styled-components.browser.esm.js"}],"src/pages/home/index.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireDefault(require("react"));
 
 require("../../../public/styles/App.css");
 
@@ -49140,13 +49259,11 @@ var _auth = require("../../lib/auth.api");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function () { return cache; }; return cache; }
-
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
-
+//Metemos el hook UseContext
+//Importamos UserContext
 var Home = function Home() {
-  var user = (0, _react.useContext)(_auth.UserContext);
-  return _react.default.createElement(_react.default.Fragment, null, _react.default.createElement("div", null, _react.default.createElement("h1", null, "Welcome ", user.username), _react.default.createElement(_reactBootstrap.Container, {
+  var user = (0, _auth.useUser)();
+  return _react.default.createElement(_react.default.Fragment, null, user && _react.default.createElement("div", null, _react.default.createElement("p", null, user.username)), _react.default.createElement("div", null, _react.default.createElement(_reactBootstrap.Container, {
     fluid: true
   }, _react.default.createElement(_lata.default, null, _react.default.createElement(_ButtonsHome.ButtonParticipa, {
     variant: "outline-secondary"
@@ -49193,87 +49310,7 @@ var About = function About() {
 
 var _default = About;
 exports.default = _default;
-},{"react":"node_modules/react/index.js"}],"node_modules/@babel/runtime/helpers/arrayWithHoles.js":[function(require,module,exports) {
-function _arrayWithHoles(arr) {
-  if (Array.isArray(arr)) return arr;
-}
-
-module.exports = _arrayWithHoles;
-},{}],"node_modules/@babel/runtime/helpers/iterableToArrayLimit.js":[function(require,module,exports) {
-function _iterableToArrayLimit(arr, i) {
-  if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return;
-  var _arr = [];
-  var _n = true;
-  var _d = false;
-  var _e = undefined;
-
-  try {
-    for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) {
-      _arr.push(_s.value);
-
-      if (i && _arr.length === i) break;
-    }
-  } catch (err) {
-    _d = true;
-    _e = err;
-  } finally {
-    try {
-      if (!_n && _i["return"] != null) _i["return"]();
-    } finally {
-      if (_d) throw _e;
-    }
-  }
-
-  return _arr;
-}
-
-module.exports = _iterableToArrayLimit;
-},{}],"node_modules/@babel/runtime/helpers/arrayLikeToArray.js":[function(require,module,exports) {
-function _arrayLikeToArray(arr, len) {
-  if (len == null || len > arr.length) len = arr.length;
-
-  for (var i = 0, arr2 = new Array(len); i < len; i++) {
-    arr2[i] = arr[i];
-  }
-
-  return arr2;
-}
-
-module.exports = _arrayLikeToArray;
-},{}],"node_modules/@babel/runtime/helpers/unsupportedIterableToArray.js":[function(require,module,exports) {
-var arrayLikeToArray = require("./arrayLikeToArray");
-
-function _unsupportedIterableToArray(o, minLen) {
-  if (!o) return;
-  if (typeof o === "string") return arrayLikeToArray(o, minLen);
-  var n = Object.prototype.toString.call(o).slice(8, -1);
-  if (n === "Object" && o.constructor) n = o.constructor.name;
-  if (n === "Map" || n === "Set") return Array.from(n);
-  if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return arrayLikeToArray(o, minLen);
-}
-
-module.exports = _unsupportedIterableToArray;
-},{"./arrayLikeToArray":"node_modules/@babel/runtime/helpers/arrayLikeToArray.js"}],"node_modules/@babel/runtime/helpers/nonIterableRest.js":[function(require,module,exports) {
-function _nonIterableRest() {
-  throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
-}
-
-module.exports = _nonIterableRest;
-},{}],"node_modules/@babel/runtime/helpers/slicedToArray.js":[function(require,module,exports) {
-var arrayWithHoles = require("./arrayWithHoles");
-
-var iterableToArrayLimit = require("./iterableToArrayLimit");
-
-var unsupportedIterableToArray = require("./unsupportedIterableToArray");
-
-var nonIterableRest = require("./nonIterableRest");
-
-function _slicedToArray(arr, i) {
-  return arrayWithHoles(arr) || iterableToArrayLimit(arr, i) || unsupportedIterableToArray(arr, i) || nonIterableRest();
-}
-
-module.exports = _slicedToArray;
-},{"./arrayWithHoles":"node_modules/@babel/runtime/helpers/arrayWithHoles.js","./iterableToArrayLimit":"node_modules/@babel/runtime/helpers/iterableToArrayLimit.js","./unsupportedIterableToArray":"node_modules/@babel/runtime/helpers/unsupportedIterableToArray.js","./nonIterableRest":"node_modules/@babel/runtime/helpers/nonIterableRest.js"}],"src/pages/auth/authForm/index.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js"}],"src/pages/auth/authForm/index.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -49363,15 +49400,19 @@ var _regenerator = _interopRequireDefault(require("@babel/runtime/regenerator"))
 
 var _asyncToGenerator2 = _interopRequireDefault(require("@babel/runtime/helpers/asyncToGenerator"));
 
-var _react = _interopRequireDefault(require("react"));
+var _react = _interopRequireWildcard(require("react"));
 
 var _authForm = require("../authForm");
 
 var _auth = require("../../../lib/auth.api");
 
+var _reactBootstrap = require("react-bootstrap");
+
 var _reactRouterDom = require("react-router-dom");
 
-var _reactBootstrap = require("react-bootstrap");
+function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function () { return cache; }; return cache; }
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -49380,9 +49421,11 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 //WithRouter es un HOC (Hight Order Component)
 var Signup = (0, _reactRouterDom.withRouter)(function (_ref) {
   var history = _ref.history;
+  var setUser = (0, _auth.useUserSetter)();
 
   var handleSubmit = /*#__PURE__*/function () {
-    var _ref2 = (0, _asyncToGenerator2.default)( /*#__PURE__*/_regenerator.default.mark(function _callee(username, password, email) {
+    var _ref2 = (0, _asyncToGenerator2.default)( /*#__PURE__*/_regenerator.default.mark(function _callee(username, password) {
+      var user;
       return _regenerator.default.wrap(function _callee$(_context) {
         while (1) {
           switch (_context.prev = _context.next) {
@@ -49391,10 +49434,12 @@ var Signup = (0, _reactRouterDom.withRouter)(function (_ref) {
               return (0, _auth.doSignup)(username, password, email);
 
             case 2:
-              //aquí le decimos donde queremos que nos redirija con el history
+              user = _context.sent;
+              setUser(user); // Redirige el router a la HOME
+
               history.push("/");
 
-            case 3:
+            case 5:
             case "end":
               return _context.stop();
           }
@@ -49402,17 +49447,17 @@ var Signup = (0, _reactRouterDom.withRouter)(function (_ref) {
       }, _callee);
     }));
 
-    return function handleSubmit(_x, _x2, _x3) {
+    return function handleSubmit(_x, _x2) {
       return _ref2.apply(this, arguments);
     };
   }();
 
-  return _react.default.createElement(_react.default.Fragment, null, _react.default.createElement(_reactBootstrap.Container, null, _react.default.createElement("div", null, _react.default.createElement("h1", null, "Reg\xEDstrate")), _react.default.createElement(_authForm.LoginSignupForm, {
+  return _react.default.createElement(_reactBootstrap.Container, null, _react.default.createElement("div", null, _react.default.createElement("h2", null, "SignUp"), _react.default.createElement(_authForm.LoginSignupForm, {
     handleSubmit: handleSubmit
   })));
 });
 exports.Signup = Signup;
-},{"@babel/runtime/regenerator":"node_modules/@babel/runtime/regenerator/index.js","@babel/runtime/helpers/asyncToGenerator":"node_modules/@babel/runtime/helpers/asyncToGenerator.js","react":"node_modules/react/index.js","../authForm":"src/pages/auth/authForm/index.js","../../../lib/auth.api":"src/lib/auth.api.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js","react-bootstrap":"node_modules/react-bootstrap/esm/index.js"}],"src/pages/auth/login/index.js":[function(require,module,exports) {
+},{"@babel/runtime/regenerator":"node_modules/@babel/runtime/regenerator/index.js","@babel/runtime/helpers/asyncToGenerator":"node_modules/@babel/runtime/helpers/asyncToGenerator.js","react":"node_modules/react/index.js","../authForm":"src/pages/auth/authForm/index.js","../../../lib/auth.api":"src/lib/auth.api.js","react-bootstrap":"node_modules/react-bootstrap/esm/index.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js"}],"src/pages/auth/login/index.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -49450,8 +49495,11 @@ var Login = (0, _reactRouterDom.withRouter)(function (_ref) {
       error = _useState2[0],
       setError = _useState2[1];
 
+  var setUser = (0, _auth.useUserSetter)();
+
   var handleSubmit = /*#__PURE__*/function () {
     var _ref2 = (0, _asyncToGenerator2.default)( /*#__PURE__*/_regenerator.default.mark(function _callee(username, password, email) {
+      var user;
       return _regenerator.default.wrap(function _callee$(_context) {
         while (1) {
           switch (_context.prev = _context.next) {
@@ -49461,21 +49509,23 @@ var Login = (0, _reactRouterDom.withRouter)(function (_ref) {
               return (0, _auth.doLogin)(username, password, email);
 
             case 3:
+              user = _context.sent;
               history.push("/");
-              _context.next = 9;
+              setUser(user);
+              _context.next = 11;
               break;
 
-            case 6:
-              _context.prev = 6;
+            case 8:
+              _context.prev = 8;
               _context.t0 = _context["catch"](0);
               setError(_context.t0.message);
 
-            case 9:
+            case 11:
             case "end":
               return _context.stop();
           }
         }
-      }, _callee, null, [[0, 6]]);
+      }, _callee, null, [[0, 8]]);
     }));
 
     return function handleSubmit(_x, _x2, _x3) {
@@ -49486,9 +49536,9 @@ var Login = (0, _reactRouterDom.withRouter)(function (_ref) {
   return _react.default.createElement(_reactBootstrap.Container, null, _react.default.createElement("div", null, _react.default.createElement("h1", null, "Login"), error && _react.default.createElement("div", {
     className: "alert alert-danger",
     role: "alert"
-  }, error, " "), _react.default.createElement(_authForm.LoginSignupForm, {
+  }, "Introduzca los datos correctamente")), _react.default.createElement(_authForm.LoginSignupForm, {
     handleSubmit: handleSubmit
-  })));
+  }));
 });
 exports.Login = Login;
 },{"@babel/runtime/regenerator":"node_modules/@babel/runtime/regenerator/index.js","@babel/runtime/helpers/asyncToGenerator":"node_modules/@babel/runtime/helpers/asyncToGenerator.js","@babel/runtime/helpers/slicedToArray":"node_modules/@babel/runtime/helpers/slicedToArray.js","react":"node_modules/react/index.js","../authForm":"src/pages/auth/authForm/index.js","../../../lib/auth.api":"src/lib/auth.api.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js","react-bootstrap":"node_modules/react-bootstrap/esm/index.js"}],"src/App.js":[function(require,module,exports) {
@@ -49499,7 +49549,9 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.App = void 0;
 
-var _react = _interopRequireDefault(require("react"));
+var _slicedToArray2 = _interopRequireDefault(require("@babel/runtime/helpers/slicedToArray"));
+
+var _react = _interopRequireWildcard(require("react"));
 
 var _reactRouterDom = require("react-router-dom");
 
@@ -49523,35 +49575,50 @@ var _login = require("./pages/auth/login");
 
 var _auth = require("./lib/auth.api");
 
+function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function () { return cache; }; return cache; }
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 //Importamos Usercontext para decirle debajo que todo lo que esté dentro de UserContext.Provider, pueda utilizar el user
 var App = function App() {
-  return _react.default.createElement(_auth.UserContext.Provider, {
-    value: {
-      username: "Fran"
-    }
-  }, _react.default.createElement(_reactRouterDom.BrowserRouter, null, _react.default.createElement(_Navbar.default, null), _react.default.createElement(_reactRouterDom.Switch, null, _react.default.createElement(_reactRouterDom.Route, {
-    path: "/",
-    exact: true,
-    component: _home.default
-  }), _react.default.createElement(_reactRouterDom.Route, {
-    path: "/contact",
-    component: _contact.default
-  }), _react.default.createElement(_reactRouterDom.Route, {
-    path: "/about",
-    component: _about.default
-  }), _react.default.createElement(_reactRouterDom.Route, {
-    path: "/auth/signup",
-    component: _singup.Signup
-  }), _react.default.createElement(_reactRouterDom.Route, {
-    path: "/auth/login",
-    component: _login.Login
-  })), _react.default.createElement(_Footer.default, null)));
+  //Creamos estado del usuario
+  var _useState = (0, _react.useState)(),
+      _useState2 = (0, _slicedToArray2.default)(_useState, 2),
+      user = _useState2[0],
+      setUser = _useState2[1];
+
+  return (//Todo lo que pongamos en value, es lo que podemos recibir desde cualquier sito con useContext
+    //Pasamos el userState en login para que si cambia este estado, se recoja en user y se propaga para toda la app
+    //Hemos creado setUser en auth.api
+    _react.default.createElement(_auth.UserContext.Provider, {
+      value: {
+        user: user,
+        setUser: setUser
+      }
+    }, _react.default.createElement(_reactRouterDom.BrowserRouter, null, _react.default.createElement(_Navbar.default, null), _react.default.createElement(_reactRouterDom.Switch, null, _react.default.createElement(_reactRouterDom.Route, {
+      path: "/",
+      exact: true,
+      component: _home.default
+    }), _react.default.createElement(_reactRouterDom.Route, {
+      path: "/contact",
+      component: _contact.default
+    }), _react.default.createElement(_reactRouterDom.Route, {
+      path: "/about",
+      component: _about.default
+    }), _react.default.createElement(_reactRouterDom.Route, {
+      path: "/auth/signup",
+      component: _singup.Signup
+    }), _react.default.createElement(_reactRouterDom.Route, {
+      path: "/auth/login",
+      component: _login.Login
+    })), _react.default.createElement(_Footer.default, null)))
+  );
 };
 
 exports.App = App;
-},{"react":"node_modules/react/index.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js","../public/styles/App.css":"public/styles/App.css","bootstrap/dist/css/bootstrap.min.css":"node_modules/bootstrap/dist/css/bootstrap.min.css","./components/Layout/Footer":"src/components/Layout/Footer/index.js","./components/Layout/Navbar":"src/components/Layout/Navbar/index.js","./pages/home":"src/pages/home/index.js","./pages/contact":"src/pages/contact/index.js","./pages/about":"src/pages/about/index.js","./pages/auth/singup":"src/pages/auth/singup/index.js","./pages/auth/login":"src/pages/auth/login/index.js","./lib/auth.api":"src/lib/auth.api.js"}],"src/index.js":[function(require,module,exports) {
+},{"@babel/runtime/helpers/slicedToArray":"node_modules/@babel/runtime/helpers/slicedToArray.js","react":"node_modules/react/index.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js","../public/styles/App.css":"public/styles/App.css","bootstrap/dist/css/bootstrap.min.css":"node_modules/bootstrap/dist/css/bootstrap.min.css","./components/Layout/Footer":"src/components/Layout/Footer/index.js","./components/Layout/Navbar":"src/components/Layout/Navbar/index.js","./pages/home":"src/pages/home/index.js","./pages/contact":"src/pages/contact/index.js","./pages/about":"src/pages/about/index.js","./pages/auth/singup":"src/pages/auth/singup/index.js","./pages/auth/login":"src/pages/auth/login/index.js","./lib/auth.api":"src/lib/auth.api.js"}],"src/index.js":[function(require,module,exports) {
 "use strict";
 
 var _react = _interopRequireWildcard(require("react"));
@@ -49599,7 +49666,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50696" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "62910" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

@@ -1,9 +1,11 @@
 import axios from "axios";
+//Vamos a crear contexto para tener el usuario disponible en toda la app, importamos React
+import React from "react";
+//Inicializamos UserContext y en App.js lo requerimos
+export const UserContext = React.createContext();
 
-//Para no escribir toda la url en cada llamada a axios:
 const api = axios.create({ baseURL: "http://localhost:3000" });
 export const doSignup = async (username, password, email) => {
-  // Axios post ruta /auth/signup en servidor para crear un usuario en mongodb
   console.log("Registrando Usuario...");
   console.log(username, password, email);
   const res = await api.post("/auth/signup", {
@@ -12,7 +14,6 @@ export const doSignup = async (username, password, email) => {
     email,
   });
   console.log("created User");
-  //Data es el body de la respuesta, que viene a ser el newUser del res.json del back
   console.log(res.data);
   return res.data;
 };

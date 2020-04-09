@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import "../../../public/styles/App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import LataImg from "../../../public/styles/Images/lata";
@@ -7,11 +7,14 @@ import {
   ButtonOrganiza,
 } from "../../components/ui/buttons/ButtonsHome";
 import { Container } from "react-bootstrap";
+import { UserContext } from "../../lib/auth.api";
 
 const Home = () => {
+  const user = useContext(UserContext);
   return (
     <>
       <div>
+        <h1>Welcome {user.username}</h1>
         <Container fluid>
           <LataImg>
             <ButtonParticipa variant="outline-secondary">

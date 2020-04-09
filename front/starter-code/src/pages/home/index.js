@@ -1,4 +1,5 @@
-import React, { useContext } from "react";
+//Metemos el hook UseContext
+import React from "react";
 import "../../../public/styles/App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import LataImg from "../../../public/styles/Images/lata";
@@ -7,14 +8,20 @@ import {
   ButtonOrganiza,
 } from "../../components/ui/buttons/ButtonsHome";
 import { Container } from "react-bootstrap";
-import { UserContext } from "../../lib/auth.api";
+//Importamos UserContext
+import { useUser } from "../../lib/auth.api";
 
 const Home = () => {
-  const user = useContext(UserContext);
+  const user = useUser();
   return (
     <>
+      {/* Al no existir inicialmente el usuario, le decimos que lo pinte cuando exista */}
+      {user && (
+        <div>
+          <p>{user.username}</p>
+        </div>
+      )}
       <div>
-        <h1>Welcome {user.username}</h1>
         <Container fluid>
           <LataImg>
             <ButtonParticipa variant="outline-secondary">

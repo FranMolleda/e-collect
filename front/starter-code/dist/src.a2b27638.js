@@ -49400,6 +49400,8 @@ var _regenerator = _interopRequireDefault(require("@babel/runtime/regenerator"))
 
 var _asyncToGenerator2 = _interopRequireDefault(require("@babel/runtime/helpers/asyncToGenerator"));
 
+var _slicedToArray2 = _interopRequireDefault(require("@babel/runtime/helpers/slicedToArray"));
+
 var _react = _interopRequireWildcard(require("react"));
 
 var _authForm = require("../authForm");
@@ -49421,43 +49423,73 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 //WithRouter es un HOC (Hight Order Component)
 var Signup = (0, _reactRouterDom.withRouter)(function (_ref) {
   var history = _ref.history;
+
+  var _useState = (0, _react.useState)(),
+      _useState2 = (0, _slicedToArray2.default)(_useState, 2),
+      error = _useState2[0],
+      setError = _useState2[1];
+
   var setUser = (0, _auth.useUserSetter)();
+  var EMAIL_PATTERN = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+  var PASSWORD_PATTERN = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{4,8}$/;
 
   var handleSubmit = /*#__PURE__*/function () {
-    var _ref2 = (0, _asyncToGenerator2.default)( /*#__PURE__*/_regenerator.default.mark(function _callee(username, password) {
+    var _ref2 = (0, _asyncToGenerator2.default)( /*#__PURE__*/_regenerator.default.mark(function _callee(username, password, email) {
       var user;
       return _regenerator.default.wrap(function _callee$(_context) {
         while (1) {
           switch (_context.prev = _context.next) {
             case 0:
-              _context.next = 2;
+              _context.prev = 0;
+              _context.next = 3;
               return (0, _auth.doSignup)(username, password, email);
 
-            case 2:
+            case 3:
               user = _context.sent;
-              setUser(user); // Redirige el router a la HOME
+
+              if (!(username == "" || password == "")) {
+                _context.next = 6;
+                break;
+              }
+
+              throw new Error("Complete los campos correctamente");
+
+            case 6:
+              password == PASSWORD_PATTERN && username != ""; // Redirige el router a la HOME
 
               history.push("/");
+              setUser(user);
+              _context.next = 15;
+              break;
 
-            case 5:
+            case 11:
+              _context.prev = 11;
+              _context.t0 = _context["catch"](0);
+              console.log(_context.t0);
+              setError(_context.t0.message);
+
+            case 15:
             case "end":
               return _context.stop();
           }
         }
-      }, _callee);
+      }, _callee, null, [[0, 11]]);
     }));
 
-    return function handleSubmit(_x, _x2) {
+    return function handleSubmit(_x, _x2, _x3) {
       return _ref2.apply(this, arguments);
     };
   }();
 
-  return _react.default.createElement(_reactBootstrap.Container, null, _react.default.createElement("div", null, _react.default.createElement("h2", null, "SignUp"), _react.default.createElement(_authForm.LoginSignupForm, {
+  return _react.default.createElement(_reactBootstrap.Container, null, _react.default.createElement("div", null, _react.default.createElement("h2", null, "SignUp"), error && _react.default.createElement("div", {
+    className: "alert alert-danger",
+    role: "alert"
+  }, error), _react.default.createElement(_authForm.LoginSignupForm, {
     handleSubmit: handleSubmit
   })));
 });
 exports.Signup = Signup;
-},{"@babel/runtime/regenerator":"node_modules/@babel/runtime/regenerator/index.js","@babel/runtime/helpers/asyncToGenerator":"node_modules/@babel/runtime/helpers/asyncToGenerator.js","react":"node_modules/react/index.js","../authForm":"src/pages/auth/authForm/index.js","../../../lib/auth.api":"src/lib/auth.api.js","react-bootstrap":"node_modules/react-bootstrap/esm/index.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js"}],"src/pages/auth/login/index.js":[function(require,module,exports) {
+},{"@babel/runtime/regenerator":"node_modules/@babel/runtime/regenerator/index.js","@babel/runtime/helpers/asyncToGenerator":"node_modules/@babel/runtime/helpers/asyncToGenerator.js","@babel/runtime/helpers/slicedToArray":"node_modules/@babel/runtime/helpers/slicedToArray.js","react":"node_modules/react/index.js","../authForm":"src/pages/auth/authForm/index.js","../../../lib/auth.api":"src/lib/auth.api.js","react-bootstrap":"node_modules/react-bootstrap/esm/index.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js"}],"src/pages/auth/login/index.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -49666,7 +49698,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "62910" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49648" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

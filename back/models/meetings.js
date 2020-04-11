@@ -5,18 +5,18 @@ const meetingsSchema = new Schema(
   {
     organizer: { type: Schema.Types.ObjectId, ref: "User" },
 
-    streetAdress: String,
-    city: String,
-    country: String,
-    postalCode: String,
+    streetAdress: { type: String },
+    city: { type: String },
+    country: { type: String },
+    postalCode: { type: String },
 
     location: {
       latitude: Number,
       longitude: Number,
     },
-    title: String,
-    hour: String,
-    description: String,
+    title: { type: String },
+    hour: { type: String },
+    description: { type: String },
     participants: [{ type: Schema.Types.ObjectId, ref: "User" }],
   },
   {
@@ -26,7 +26,11 @@ const meetingsSchema = new Schema(
 
 meetingsSchema.virtual("date").get(function () {
   const date = new Date(this.createdAt);
-  return date.toUTCString().replace(" GMT", "").toJSON();
+  return (
+    date.toJSON(),
+    new Date(date.getTime() - date.getTimezoneOffset() * 60000).toJSON()
+  );
+  //date.toUTCString().replace(" GMT", "").toJSON(); en IMass
 });
 
 const Meetings = mongoose.model("Meetings", meetingsSchema);

@@ -13,9 +13,11 @@ const placeActionSchema = new Schema(
     countryPlace: { type: String },
 
     locationPlace: {
-      latitude: Number,
-      longitude: Number,
+      latitude: { type: Number },
+      longitude: { type: Number },
     },
+    type: { type: String }, //Playas, rios, submarina, montes, montañas, rural, urbana
+    difficulty: { type: String }, //baja, media, alta
   },
   {
     timestamps: true,

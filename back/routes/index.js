@@ -1,7 +1,9 @@
 const express = require("express");
 const router = express.Router();
-const User = require("../models/User");
-const Meet = require("../models/Meetings");
+const User = require("../models/user");
+const Meet = require("../models/meetings");
+const PlaceAction = require("../models/placeAction");
+const Collaborator = require("../models/collaborator");
 const { crudGenerator } = require("./crudModels");
 const _ = require("lodash");
 
@@ -32,10 +34,13 @@ router.use(
     populateFields: ["meetings"],
   })
 );
+router.use(
+  "/place",
+  crudGenerator(PlaceAction, {
+    populateFields: ["meetings"],
+  })
+);
 
-// Movie.find().populate([
-//   { path: "creator", select: "username" },
-//   { path: "comments", populate: { path: "author", select: "username" } },
-// ]);
+router.use("/collaborator", crudGenerator(Collaborator));
 
 module.exports = router;

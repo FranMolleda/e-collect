@@ -60,7 +60,7 @@ const crudGenerator = (
   );
 
   //Borrar
-  router.get(
+  router.delete(
     "/delete/:id",
     asyncController(async (req, res, next) => {
       const { id } = req.params;

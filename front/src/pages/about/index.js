@@ -22,7 +22,7 @@ const About = () => {
           SOCIAL. Un voluntariado activo contribuye a la transformaciÛn social
           no sÛlo desde la tarea realizada sino desde las actitudes demostradas.
           °SÈ parte del cambio y ˙nete a otras personas que tambiÈn quieren
-          formar parte del mismo!
+          formar parte del
         </p>
       </div>
     </>

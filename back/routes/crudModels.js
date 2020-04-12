@@ -25,11 +25,19 @@ const crudGenerator = (
   router.post(
     "/create",
     asyncController(async (req, res, next) => {
-      const { username, title } = req.body;
+      const { username, title, company, zone } = req.body;
       const newModel = new Model(req.body);
       const existingName = await Model.findOne({ username });
       const existingTitle = await Model.findOne({ title });
-      if (!existingName || !existingTitle) {
+      const existingCompany = await Model.findOne({ company });
+      const existingZone = await Model.findOne({ zone });
+
+      if (
+        !existingName ||
+        !existingTitle ||
+        !existingCompany ||
+        !existingZone
+      ) {
         const obj = await newModel.save();
         res.json(obj);
       }

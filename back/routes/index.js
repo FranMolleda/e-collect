@@ -37,7 +37,7 @@ router.use(
 router.use(
   "/place",
   crudGenerator(PlaceAction, {
-    populateFields: ["meetings"],
+    populateFields: [{ path: "organizer", select: "username" }],
   })
 );
 

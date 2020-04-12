@@ -18,20 +18,34 @@ const meetingsSchema = new Schema(
     hour: { type: String },
     description: { type: String },
     participants: [{ type: Schema.Types.ObjectId, ref: "User" }],
+    date: {
+      type: Date,
+      default: new Date(),
+    },
   },
   {
     timestamps: true,
+    toJSON: {
+      transform(doc, ret) {
+        ret.id = ret._id;
+        delete ret._id;
+        delete ret.createdAt;
+        delete ret.updatedAt;
+        delete ret.__v;
+        return ret;
+      },
+    },
   }
 );
 
-meetingsSchema.virtual("date").get(function () {
-  const date = new Date(this.createdAt);
-  return (
-    date.toJSON(),
-    new Date(date.getTime() - date.getTimezoneOffset() * 60000).toJSON()
-  );
-  //date.toUTCString().replace(" GMT", "").toJSON(); en IMass
-});
+// meetingsSchema.virtual("date").get(function () {
+//   const date = new Date(this.createdAt);
+//   return (
+//     date.toJSON(),
+//     new Date(date.getTime() - date.getTimezoneOffset() * 60000).toJSON()
+//   );
+//   //date.toUTCString().replace(" GMT", "").toJSON(); en IMass
+// });
 
 const Meetings = mongoose.model("Meetings", meetingsSchema);
 module.exports = Meetings;

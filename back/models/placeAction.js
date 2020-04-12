@@ -18,9 +18,20 @@ const placeActionSchema = new Schema(
     },
     type: { type: String }, //Playas, rios, submarina, montes, montañas, rural, urbana
     difficulty: { type: String }, //baja, media, alta
+    date: { type: Date, default: new Date() },
   },
   {
     timestamps: true,
+    toJSON: {
+      transform(doc, ret) {
+        ret.id = ret._id;
+        delete ret._id;
+        delete ret.createdAt;
+        delete ret.updatedAt;
+        delete ret.__v;
+        return ret;
+      },
+    },
   }
 );
 

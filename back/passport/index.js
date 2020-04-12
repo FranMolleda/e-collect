@@ -1,5 +1,5 @@
 const passport = require("passport");
-const User = require("../models/User");
+const User = require("../models/user");
 
 // Strategies
 require("./strategies/localStrategy");

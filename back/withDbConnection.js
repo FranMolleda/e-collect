@@ -4,7 +4,7 @@ const { MongoError } = require("mongodb");
 
 const dbUrl = process.env.DBURL;
 
-const dropIfExists = async Model => {
+const dropIfExists = async (Model) => {
   try {
     await Model.collection.drop();
   } catch (e) {
@@ -22,7 +22,8 @@ const withDbConnection = async (fn, disconnectEnd = true) => {
   try {
     await mongoose.connect(dbUrl, {
       useNewUrlParser: true,
-      useUnifiedTopology: true
+      useCreateIndex: true,
+      useUnifiedTopology: true,
     });
     console.log(`Connection Ready on ${dbUrl}`);
     await fn();
@@ -40,5 +41,5 @@ const withDbConnection = async (fn, disconnectEnd = true) => {
 
 module.exports = {
   withDbConnection,
-  dropIfExists
+  dropIfExists,
 };

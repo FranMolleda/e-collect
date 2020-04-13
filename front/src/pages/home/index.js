@@ -1,5 +1,6 @@
 //Metemos el hook UseContext
 import React from "react";
+import { Link } from "react-router-dom";
 import "../../../public/styles/App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import LataImg from "../../../public/styles/Images/lata";
@@ -24,11 +25,11 @@ const Home = () => {
       <div>
         <Container fluid>
           <LataImg>
-            <ButtonParticipa variant="outline-secondary">
-              Participa
+            <ButtonParticipa as="div" variant="outline-secondary">
+              <Link to="joinin">Participa</Link>
             </ButtonParticipa>
-            <ButtonOrganiza variant="outline-secondary">
-              Organiza
+            <ButtonOrganiza as="div" variant="outline-secondary">
+              <Link to="organize">Organiza</Link>
             </ButtonOrganiza>
           </LataImg>
         </Container>

@@ -5,7 +5,7 @@ const meetingsSchema = new Schema(
   {
     organizer: { type: Schema.Types.ObjectId, ref: "User" },
 
-    streetAdress: { type: String },
+    streetAddress: { type: String },
     city: { type: String },
     country: { type: String },
     postalCode: { type: String },

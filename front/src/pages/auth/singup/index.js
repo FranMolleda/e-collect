@@ -20,7 +20,7 @@ export const Signup = withRouter(({ history }) => {
       if (username == "" || password == "") {
         throw new Error("Complete los campos correctamente");
       }
-      password == PASSWORD_PATTERN && username != "";
+      password == PASSWORD_PATTERN && username != "" && email == EMAIL_PATTERN;
       // Redirige el router a la HOME
       history.push("/");
       setUser(user);

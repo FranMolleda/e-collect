@@ -11,6 +11,8 @@ import { Signup } from "./pages/auth/singup";
 import { Login } from "./pages/auth/login";
 //Importamos Usercontext para decirle debajo que todo lo que esté dentro de UserContext.Provider, pueda utilizar el user
 import { UserContext } from "./lib/auth.api";
+import Joinin from "./pages/joinIn";
+import Organize from "./pages/organize";
 
 export const App = () => {
   //Creamos estado del usuario
@@ -28,6 +30,8 @@ export const App = () => {
           <Route path="/about" component={About} />
           <Route path="/auth/signup" component={Signup} />
           <Route path="/auth/login" component={Login} />
+          <Route path="/joinin" component={Joinin} />
+          <Route path="/organize" component={Organize} />
         </Switch>
         <Footer />
       </Router>

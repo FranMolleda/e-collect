@@ -41,6 +41,9 @@ router.use(
   })
 );
 
+const apiGoogleRoute = require("./apiGoogleRoute");
+router.use("/api", apiGoogleRoute);
+
 router.use("/collaborator", crudGenerator(Collaborator));
 
 module.exports = router;

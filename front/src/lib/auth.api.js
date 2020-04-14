@@ -17,13 +17,21 @@ export const useUserSetter = () => {
 //Logout
 export const useUserLogout = () => {
   const userState = useContext(UserContext);
-  return () => {
+  //Devuelve la función "handleLogout"
+  return async () => {
     console.log("Log out!");
+    //Quita el usuario de React User State context
     userState.setUser(null);
+    //Quitar la cookie del back y front
+    return doLogout();
   };
 };
 
-const api = axios.create({ baseURL: "http://localhost:3000" });
+const api = axios.create({
+  baseURL: "http://localhost:3000",
+  withCredentials: true,
+});
+
 export const doSignup = async (username, password, email, _id) => {
   console.log("Registrando Usuario...");
   console.log(username, password, email, _id);
@@ -45,6 +53,17 @@ export const doLogin = async (username, password, email, _id) => {
     email,
     _id,
   });
+  console.log(res.data);
+  return res.data;
+};
+
+export const doLogout = async () => {
+  const res = await api.get("/auth/logout");
+  console.log(res.data);
+  return res.data;
+};
+export const whoami = async () => {
+  const res = await api.get("/auth/whoami");
   console.log(res.data);
   return res.data;
 };

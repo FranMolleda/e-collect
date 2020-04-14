@@ -33,7 +33,7 @@ const userSchema = new Schema(
     },
 
     city: { type: String },
-    avatar: { type: String, default: "/images/default-profile.jpg" },
+    avatar: { type: String, default: "../public/images/default-profile.jpg" },
     points: { type: Number, default: 0 },
     meetings: [{ type: Schema.Types.ObjectId, ref: "Meetings" }],
   },

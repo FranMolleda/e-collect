@@ -20,7 +20,7 @@ router.post("/signup", async (req, res, next) => {
     const existingUser = await User.findOne({ username });
 
     if (!existingUser) {
-      const newUser = await User.create({ username, password, email, city });
+      const newUser = await User.create({ username, password, email });
       req.login(newUser, (err) => {
         res.json(newUser);
       });
@@ -79,6 +79,11 @@ router.get(
     failureRedirect: "/", // here you would navigate to the classic login page
   })
 );
+
+router.get("/whoami", (req, res, next) => {
+  if (req.user) return res.json(req.user);
+  else return res.status(401).json({ status: "No user session present" });
+});
 
 //Loggin Social Google
 router.get(

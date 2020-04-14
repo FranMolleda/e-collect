@@ -48933,7 +48933,7 @@ module.exports = require('./lib/axios');
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.doLogin = exports.doSignup = exports.useUserLogout = exports.useUserSetter = exports.useUser = exports.UserContext = void 0;
+exports.whoami = exports.doLogout = exports.doLogin = exports.doSignup = exports.useUserLogout = exports.useUserSetter = exports.useUser = exports.UserContext = void 0;
 
 var _regenerator = _interopRequireDefault(require("@babel/runtime/regenerator"));
 
@@ -48973,29 +48973,46 @@ var useUserSetter = function useUserSetter() {
 exports.useUserSetter = useUserSetter;
 
 var useUserLogout = function useUserLogout() {
-  var userState = (0, _react.useContext)(UserContext);
-  return function () {
-    console.log("Log out!");
-    userState.setUser(null);
-  };
+  var userState = (0, _react.useContext)(UserContext); //Devuelve la función "handleLogout"
+
+  return (/*#__PURE__*/(0, _asyncToGenerator2.default)( /*#__PURE__*/_regenerator.default.mark(function _callee() {
+      return _regenerator.default.wrap(function _callee$(_context) {
+        while (1) {
+          switch (_context.prev = _context.next) {
+            case 0:
+              console.log("Log out!"); //Quita el usuario de React User State context
+
+              userState.setUser(null); //Quitar la cookie del back y front
+
+              return _context.abrupt("return", doLogout());
+
+            case 3:
+            case "end":
+              return _context.stop();
+          }
+        }
+      }, _callee);
+    }))
+  );
 };
 
 exports.useUserLogout = useUserLogout;
 
 var api = _axios.default.create({
-  baseURL: "http://localhost:3000"
+  baseURL: "http://localhost:3000",
+  withCredentials: true
 });
 
 var doSignup = /*#__PURE__*/function () {
-  var _ref = (0, _asyncToGenerator2.default)( /*#__PURE__*/_regenerator.default.mark(function _callee(username, password, email, _id) {
+  var _ref2 = (0, _asyncToGenerator2.default)( /*#__PURE__*/_regenerator.default.mark(function _callee2(username, password, email, _id) {
     var res;
-    return _regenerator.default.wrap(function _callee$(_context) {
+    return _regenerator.default.wrap(function _callee2$(_context2) {
       while (1) {
-        switch (_context.prev = _context.next) {
+        switch (_context2.prev = _context2.next) {
           case 0:
             console.log("Registrando Usuario...");
             console.log(username, password, email, _id);
-            _context.next = 4;
+            _context2.next = 4;
             return api.post("/auth/signup", {
               username: username,
               password: password,
@@ -49003,35 +49020,35 @@ var doSignup = /*#__PURE__*/function () {
             });
 
           case 4:
-            res = _context.sent;
+            res = _context2.sent;
             console.log("created User");
             console.log(res.data);
-            return _context.abrupt("return", res.data);
+            return _context2.abrupt("return", res.data);
 
           case 8:
           case "end":
-            return _context.stop();
+            return _context2.stop();
         }
       }
-    }, _callee);
+    }, _callee2);
   }));
 
   return function doSignup(_x, _x2, _x3, _x4) {
-    return _ref.apply(this, arguments);
+    return _ref2.apply(this, arguments);
   };
 }();
 
 exports.doSignup = doSignup;
 
 var doLogin = /*#__PURE__*/function () {
-  var _ref2 = (0, _asyncToGenerator2.default)( /*#__PURE__*/_regenerator.default.mark(function _callee2(username, password, email, _id) {
+  var _ref3 = (0, _asyncToGenerator2.default)( /*#__PURE__*/_regenerator.default.mark(function _callee3(username, password, email, _id) {
     var res;
-    return _regenerator.default.wrap(function _callee2$(_context2) {
+    return _regenerator.default.wrap(function _callee3$(_context3) {
       while (1) {
-        switch (_context2.prev = _context2.next) {
+        switch (_context3.prev = _context3.next) {
           case 0:
             console.log("Do Login");
-            _context2.next = 3;
+            _context3.next = 3;
             return api.post("/auth/login", {
               username: username,
               password: password,
@@ -49040,24 +49057,84 @@ var doLogin = /*#__PURE__*/function () {
             });
 
           case 3:
-            res = _context2.sent;
+            res = _context3.sent;
             console.log(res.data);
-            return _context2.abrupt("return", res.data);
+            return _context3.abrupt("return", res.data);
 
           case 6:
           case "end":
-            return _context2.stop();
+            return _context3.stop();
         }
       }
-    }, _callee2);
+    }, _callee3);
   }));
 
   return function doLogin(_x5, _x6, _x7, _x8) {
-    return _ref2.apply(this, arguments);
+    return _ref3.apply(this, arguments);
   };
 }();
 
 exports.doLogin = doLogin;
+
+var doLogout = /*#__PURE__*/function () {
+  var _ref4 = (0, _asyncToGenerator2.default)( /*#__PURE__*/_regenerator.default.mark(function _callee4() {
+    var res;
+    return _regenerator.default.wrap(function _callee4$(_context4) {
+      while (1) {
+        switch (_context4.prev = _context4.next) {
+          case 0:
+            _context4.next = 2;
+            return api.get("/auth/logout");
+
+          case 2:
+            res = _context4.sent;
+            console.log(res.data);
+            return _context4.abrupt("return", res.data);
+
+          case 5:
+          case "end":
+            return _context4.stop();
+        }
+      }
+    }, _callee4);
+  }));
+
+  return function doLogout() {
+    return _ref4.apply(this, arguments);
+  };
+}();
+
+exports.doLogout = doLogout;
+
+var whoami = /*#__PURE__*/function () {
+  var _ref5 = (0, _asyncToGenerator2.default)( /*#__PURE__*/_regenerator.default.mark(function _callee5() {
+    var res;
+    return _regenerator.default.wrap(function _callee5$(_context5) {
+      while (1) {
+        switch (_context5.prev = _context5.next) {
+          case 0:
+            _context5.next = 2;
+            return api.get("/auth/whoami");
+
+          case 2:
+            res = _context5.sent;
+            console.log(res.data);
+            return _context5.abrupt("return", res.data);
+
+          case 5:
+          case "end":
+            return _context5.stop();
+        }
+      }
+    }, _callee5);
+  }));
+
+  return function whoami() {
+    return _ref5.apply(this, arguments);
+  };
+}();
+
+exports.whoami = whoami;
 },{"@babel/runtime/regenerator":"node_modules/@babel/runtime/regenerator/index.js","@babel/runtime/helpers/asyncToGenerator":"node_modules/@babel/runtime/helpers/asyncToGenerator.js","axios":"node_modules/axios/index.js","react":"node_modules/react/index.js"}],"src/components/Layout/Navbar/index.js":[function(require,module,exports) {
 "use strict";
 
@@ -49266,7 +49343,9 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 //Importamos UserContext
 var Home = function Home() {
   var user = (0, _auth.useUser)();
-  return _react.default.createElement(_react.default.Fragment, null, user && _react.default.createElement("div", null, _react.default.createElement("p", null, user.username)), _react.default.createElement("div", null, _react.default.createElement(_reactBootstrap.Container, {
+  return _react.default.createElement(_react.default.Fragment, null, user && _react.default.createElement("div", null, _react.default.createElement("p", null, user.username), _react.default.createElement("img", {
+    src: "user.avatar"
+  })), _react.default.createElement("div", null, _react.default.createElement(_reactBootstrap.Container, {
     fluid: true
   }, _react.default.createElement(_lata.default, null, _react.default.createElement(_ButtonsHome.ButtonParticipa, {
     as: "div",
@@ -52221,7 +52300,42 @@ var Organize = (0, _reactRouterDom.withRouter)(function (_ref) {
 });
 var _default = Organize;
 exports.default = _default;
-},{"@babel/runtime/regenerator":"node_modules/@babel/runtime/regenerator/index.js","@babel/runtime/helpers/asyncToGenerator":"node_modules/@babel/runtime/helpers/asyncToGenerator.js","@babel/runtime/helpers/slicedToArray":"node_modules/@babel/runtime/helpers/slicedToArray.js","react":"node_modules/react/index.js","react-hook-form":"node_modules/react-hook-form/dist/react-hook-form.es.js","react-bootstrap":"node_modules/react-bootstrap/esm/index.js","../../forms/input":"src/forms/input/index.js","axios":"node_modules/axios/index.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js","../../lib/auth.api":"src/lib/auth.api.js"}],"src/App.js":[function(require,module,exports) {
+},{"@babel/runtime/regenerator":"node_modules/@babel/runtime/regenerator/index.js","@babel/runtime/helpers/asyncToGenerator":"node_modules/@babel/runtime/helpers/asyncToGenerator.js","@babel/runtime/helpers/slicedToArray":"node_modules/@babel/runtime/helpers/slicedToArray.js","react":"node_modules/react/index.js","react-hook-form":"node_modules/react-hook-form/dist/react-hook-form.es.js","react-bootstrap":"node_modules/react-bootstrap/esm/index.js","../../forms/input":"src/forms/input/index.js","axios":"node_modules/axios/index.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js","../../lib/auth.api":"src/lib/auth.api.js"}],"src/components/ui/loading/styleLoading.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.Loading = void 0;
+
+var _taggedTemplateLiteral2 = _interopRequireDefault(require("@babel/runtime/helpers/taggedTemplateLiteral"));
+
+var _react = _interopRequireDefault(require("react"));
+
+var _styledComponents = _interopRequireDefault(require("styled-components"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _templateObject() {
+  var data = (0, _taggedTemplateLiteral2.default)(["\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  width: 100vw;\n  height: 100vh;\n  position: absolute;\n  z-index: 10000;\n  background: rgba(0, 0, 0, 0.5);\n  img {\n    width: 100px;\n  }\n"]);
+
+  _templateObject = function _templateObject() {
+    return data;
+  };
+
+  return data;
+}
+
+var LoadingWrapper = _styledComponents.default.div(_templateObject());
+
+var Loading = function Loading() {
+  return _react.default.createElement(LoadingWrapper, null, _react.default.createElement("img", {
+    src: "https://media.giphy.com/media/dYfbdQUuQjYDgdbvy3/giphy.gif"
+  }));
+};
+
+exports.Loading = Loading;
+},{"@babel/runtime/helpers/taggedTemplateLiteral":"node_modules/@babel/runtime/helpers/taggedTemplateLiteral.js","react":"node_modules/react/index.js","styled-components":"node_modules/styled-components/dist/styled-components.browser.esm.js"}],"src/App.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -52259,6 +52373,8 @@ var _joinIn = _interopRequireDefault(require("./pages/joinIn"));
 
 var _organize = _interopRequireDefault(require("./pages/organize"));
 
+var _styleLoading = require("./components/ui/loading/styleLoading");
+
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function () { return cache; }; return cache; }
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
@@ -52273,6 +52389,24 @@ var App = function App() {
       user = _useState2[0],
       setUser = _useState2[1];
 
+  var _useState3 = (0, _react.useState)(true),
+      _useState4 = (0, _slicedToArray2.default)(_useState3, 2),
+      loading = _useState4[0],
+      setLoading = _useState4[1];
+
+  (0, _react.useEffect)(function () {
+    console.log("Welcome to app!"); //Intenta obtener el usuario logueado de nuestro backend
+
+    (0, _auth.whoami)().then(function (user) {
+      console.error("Welcome again user ".concat(user.username));
+      setUser(user);
+    }).catch(function (e) {
+      console.error("No user Logged in");
+    }) //Cuando acabe (haya error o no, pon Loading a false), esto es para evitar el pequeño parpadeo mientras chequea si tiene usuario o no
+    .finally(function () {
+      return setLoading(false);
+    });
+  }, []);
   return (//Todo lo que pongamos en value, es lo que podemos recibir desde cualquier sito con useContext
     //Pasamos el userState en login para que si cambia este estado, se recoja en user y se propaga para toda la app
     //Hemos creado setUser en auth.api
@@ -52281,7 +52415,7 @@ var App = function App() {
         user: user,
         setUser: setUser
       }
-    }, _react.default.createElement(_reactRouterDom.BrowserRouter, null, _react.default.createElement(_Navbar.default, null), _react.default.createElement(_reactRouterDom.Switch, null, _react.default.createElement(_reactRouterDom.Route, {
+    }, loading && _react.default.createElement(_styleLoading.Loading, null), _react.default.createElement(_reactRouterDom.BrowserRouter, null, _react.default.createElement(_Navbar.default, null), _react.default.createElement(_reactRouterDom.Switch, null, _react.default.createElement(_reactRouterDom.Route, {
       path: "/",
       exact: true,
       component: _home.default
@@ -52308,7 +52442,7 @@ var App = function App() {
 };
 
 exports.App = App;
-},{"@babel/runtime/helpers/slicedToArray":"node_modules/@babel/runtime/helpers/slicedToArray.js","react":"node_modules/react/index.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js","../public/styles/App.css":"public/styles/App.css","bootstrap/dist/css/bootstrap.min.css":"node_modules/bootstrap/dist/css/bootstrap.min.css","./components/Layout/Footer":"src/components/Layout/Footer/index.js","./components/Layout/Navbar":"src/components/Layout/Navbar/index.js","./pages/home":"src/pages/home/index.js","./pages/contact":"src/pages/contact/index.js","./pages/about":"src/pages/about/index.js","./pages/auth/singup":"src/pages/auth/singup/index.js","./pages/auth/login":"src/pages/auth/login/index.js","./lib/auth.api":"src/lib/auth.api.js","./pages/joinIn":"src/pages/joinIn/index.js","./pages/organize":"src/pages/organize/index.js"}],"src/index.js":[function(require,module,exports) {
+},{"@babel/runtime/helpers/slicedToArray":"node_modules/@babel/runtime/helpers/slicedToArray.js","react":"node_modules/react/index.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js","../public/styles/App.css":"public/styles/App.css","bootstrap/dist/css/bootstrap.min.css":"node_modules/bootstrap/dist/css/bootstrap.min.css","./components/Layout/Footer":"src/components/Layout/Footer/index.js","./components/Layout/Navbar":"src/components/Layout/Navbar/index.js","./pages/home":"src/pages/home/index.js","./pages/contact":"src/pages/contact/index.js","./pages/about":"src/pages/about/index.js","./pages/auth/singup":"src/pages/auth/singup/index.js","./pages/auth/login":"src/pages/auth/login/index.js","./lib/auth.api":"src/lib/auth.api.js","./pages/joinIn":"src/pages/joinIn/index.js","./pages/organize":"src/pages/organize/index.js","./components/ui/loading/styleLoading":"src/components/ui/loading/styleLoading.js"}],"src/index.js":[function(require,module,exports) {
 "use strict";
 
 var _react = _interopRequireWildcard(require("react"));
@@ -52356,7 +52490,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56750" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "63316" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

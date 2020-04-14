@@ -12,7 +12,7 @@ const FooterContainer = styled.div`
     background: linear-gradient(to right, #b1e2eb 0%, #1a5059 100%);
     padding: 10px 30px;
     color: #737980;
-    position: absolute;
+    position: fixed;
     bottom: 0;
     width: 100%;
     height: 120px;

@@ -24,9 +24,9 @@ export const useUserLogout = () => {
 };
 
 const api = axios.create({ baseURL: "http://localhost:3000" });
-export const doSignup = async (username, password, email) => {
+export const doSignup = async (username, password, email, _id) => {
   console.log("Registrando Usuario...");
-  console.log(username, password, email);
+  console.log(username, password, email, _id);
   const res = await api.post("/auth/signup", {
     username,
     password,
@@ -37,12 +37,13 @@ export const doSignup = async (username, password, email) => {
   return res.data;
 };
 
-export const doLogin = async (username, password, email) => {
+export const doLogin = async (username, password, email, _id) => {
   console.log("Do Login");
   const res = await api.post("/auth/login", {
     username,
     password,
     email,
+    _id,
   });
   console.log(res.data);
   return res.data;

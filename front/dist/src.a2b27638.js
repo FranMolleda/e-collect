@@ -32163,7 +32163,7 @@ var _styledComponents = _interopRequireDefault(require("styled-components"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _templateObject() {
-  var data = (0, _taggedTemplateLiteral2.default)(["\n  .container {\n    width: 100%;\n    padding-right: 15px;\n    padding-left: 15px;\n  }\n\n  .footer-bs {\n    width: 100vw;\n    background: linear-gradient(to right, #b1e2eb 0%, #1a5059 100%);\n    padding: 10px 30px;\n    color: #737980;\n    position: absolute;\n    bottom: 0;\n    width: 100%;\n    height: 120px;\n    .arbol-azul {\n      height: 37px;\n      float: right;\n      margin-right: 20px;\n      margin-top: -42px;\n    }\n  }\n\n  .size-footer {\n    height: 80px;\n  }\n\n  .row {\n    justify-content: space-between;\n  }\n\n  .footer-bs .footer-brand,\n  .footer-bs .footer-nav,\n  .footer-bs .footer-social,\n  .footer-bs .footer-ns {\n    padding: 10px 25px;\n  }\n\n  .footer-bs .footer-nav,\n  .footer-bs .footer-social,\n  .footer-bs .footer-ns {\n    border-color: transparent;\n  }\n\n  .footer-bs .footer-brand h2 {\n    margin: 0px 0px 10px;\n  }\n\n  .footer-bs .footer-brand p {\n    font-size: 12px;\n    color: #737980;\n  }\n\n  .footer-bs .footer-nav ul.pages {\n    list-style: none;\n    padding: 0px;\n  }\n\n  .footer-bs .footer-nav ul.pages li {\n    padding: 5px 0px;\n  }\n\n  .footer-bs .footer-nav ul.pages a {\n    color: #737980;\n    font-weight: bold;\n    text-transform: uppercase;\n  }\n\n  .footer-bs .footer-nav ul.pages a:hover {\n    color: #737980;\n    text-decoration: none;\n  }\n\n  .footer-bs .footer-nav h4 {\n    font-size: 11px;\n    text-transform: uppercase;\n    letter-spacing: 3px;\n    margin-bottom: 10px;\n  }\n\n  .footer-bs .footer-nav ul.list {\n    list-style: none;\n    padding: 0px;\n  }\n\n  .footer-bs .footer-nav ul.list li {\n    padding: 5px 0px;\n  }\n\n  .footer-bs .footer-nav ul.list a {\n    color: #737980;\n  }\n\n  .footer-bs .footer-nav ul.list a:hover {\n    color: #737980;\n    text-decoration: none;\n  }\n\n  .footer-bs .footer-social ul {\n    list-style: none;\n    padding: 0px;\n  }\n\n  .footer-bs .footer-social h4 {\n    font-size: 11px;\n    text-transform: uppercase;\n    letter-spacing: 3px;\n  }\n\n  .footer-bs .footer-social li {\n    padding: 5px 4px;\n  }\n\n  .footer-bs .footer-social a {\n    color: #737980;\n  }\n\n  .footer-bs .footer-social a:hover {\n    color: #737980;\n    text-decoration: none;\n  }\n\n  .footer-bs .footer-ns h4 {\n    font-size: 11px;\n    text-transform: uppercase;\n    letter-spacing: 3px;\n    margin-bottom: 10px;\n  }\n\n  .footer-bs .footer-ns p {\n    font-size: 12px;\n    color: #737980;\n  }\n\n  @media (min-width: 768px) {\n    .footer-bs .footer-nav,\n    .footer-bs .footer-social,\n    .footer-bs .footer-ns {\n      border-left: solid 1px rgba(255, 255, 255, 0.1);\n    }\n  }\n"]);
+  var data = (0, _taggedTemplateLiteral2.default)(["\n  .container {\n    width: 100%;\n    padding-right: 15px;\n    padding-left: 15px;\n  }\n\n  .footer-bs {\n    width: 100vw;\n    background: linear-gradient(to right, #b1e2eb 0%, #1a5059 100%);\n    padding: 10px 30px;\n    color: #737980;\n    position: fixed;\n    bottom: 0;\n    width: 100%;\n    height: 120px;\n    .arbol-azul {\n      height: 37px;\n      float: right;\n      margin-right: 20px;\n      margin-top: -42px;\n    }\n  }\n\n  .size-footer {\n    height: 80px;\n  }\n\n  .row {\n    justify-content: space-between;\n  }\n\n  .footer-bs .footer-brand,\n  .footer-bs .footer-nav,\n  .footer-bs .footer-social,\n  .footer-bs .footer-ns {\n    padding: 10px 25px;\n  }\n\n  .footer-bs .footer-nav,\n  .footer-bs .footer-social,\n  .footer-bs .footer-ns {\n    border-color: transparent;\n  }\n\n  .footer-bs .footer-brand h2 {\n    margin: 0px 0px 10px;\n  }\n\n  .footer-bs .footer-brand p {\n    font-size: 12px;\n    color: #737980;\n  }\n\n  .footer-bs .footer-nav ul.pages {\n    list-style: none;\n    padding: 0px;\n  }\n\n  .footer-bs .footer-nav ul.pages li {\n    padding: 5px 0px;\n  }\n\n  .footer-bs .footer-nav ul.pages a {\n    color: #737980;\n    font-weight: bold;\n    text-transform: uppercase;\n  }\n\n  .footer-bs .footer-nav ul.pages a:hover {\n    color: #737980;\n    text-decoration: none;\n  }\n\n  .footer-bs .footer-nav h4 {\n    font-size: 11px;\n    text-transform: uppercase;\n    letter-spacing: 3px;\n    margin-bottom: 10px;\n  }\n\n  .footer-bs .footer-nav ul.list {\n    list-style: none;\n    padding: 0px;\n  }\n\n  .footer-bs .footer-nav ul.list li {\n    padding: 5px 0px;\n  }\n\n  .footer-bs .footer-nav ul.list a {\n    color: #737980;\n  }\n\n  .footer-bs .footer-nav ul.list a:hover {\n    color: #737980;\n    text-decoration: none;\n  }\n\n  .footer-bs .footer-social ul {\n    list-style: none;\n    padding: 0px;\n  }\n\n  .footer-bs .footer-social h4 {\n    font-size: 11px;\n    text-transform: uppercase;\n    letter-spacing: 3px;\n  }\n\n  .footer-bs .footer-social li {\n    padding: 5px 4px;\n  }\n\n  .footer-bs .footer-social a {\n    color: #737980;\n  }\n\n  .footer-bs .footer-social a:hover {\n    color: #737980;\n    text-decoration: none;\n  }\n\n  .footer-bs .footer-ns h4 {\n    font-size: 11px;\n    text-transform: uppercase;\n    letter-spacing: 3px;\n    margin-bottom: 10px;\n  }\n\n  .footer-bs .footer-ns p {\n    font-size: 12px;\n    color: #737980;\n  }\n\n  @media (min-width: 768px) {\n    .footer-bs .footer-nav,\n    .footer-bs .footer-social,\n    .footer-bs .footer-ns {\n      border-left: solid 1px rgba(255, 255, 255, 0.1);\n    }\n  }\n"]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -48987,14 +48987,14 @@ var api = _axios.default.create({
 });
 
 var doSignup = /*#__PURE__*/function () {
-  var _ref = (0, _asyncToGenerator2.default)( /*#__PURE__*/_regenerator.default.mark(function _callee(username, password, email) {
+  var _ref = (0, _asyncToGenerator2.default)( /*#__PURE__*/_regenerator.default.mark(function _callee(username, password, email, _id) {
     var res;
     return _regenerator.default.wrap(function _callee$(_context) {
       while (1) {
         switch (_context.prev = _context.next) {
           case 0:
             console.log("Registrando Usuario...");
-            console.log(username, password, email);
+            console.log(username, password, email, _id);
             _context.next = 4;
             return api.post("/auth/signup", {
               username: username,
@@ -49016,7 +49016,7 @@ var doSignup = /*#__PURE__*/function () {
     }, _callee);
   }));
 
-  return function doSignup(_x, _x2, _x3) {
+  return function doSignup(_x, _x2, _x3, _x4) {
     return _ref.apply(this, arguments);
   };
 }();
@@ -49024,7 +49024,7 @@ var doSignup = /*#__PURE__*/function () {
 exports.doSignup = doSignup;
 
 var doLogin = /*#__PURE__*/function () {
-  var _ref2 = (0, _asyncToGenerator2.default)( /*#__PURE__*/_regenerator.default.mark(function _callee2(username, password, email) {
+  var _ref2 = (0, _asyncToGenerator2.default)( /*#__PURE__*/_regenerator.default.mark(function _callee2(username, password, email, _id) {
     var res;
     return _regenerator.default.wrap(function _callee2$(_context2) {
       while (1) {
@@ -49035,7 +49035,8 @@ var doLogin = /*#__PURE__*/function () {
             return api.post("/auth/login", {
               username: username,
               password: password,
-              email: email
+              email: email,
+              _id: _id
             });
 
           case 3:
@@ -49051,7 +49052,7 @@ var doLogin = /*#__PURE__*/function () {
     }, _callee2);
   }));
 
-  return function doLogin(_x4, _x5, _x6) {
+  return function doLogin(_x5, _x6, _x7, _x8) {
     return _ref2.apply(this, arguments);
   };
 }();
@@ -49538,7 +49539,7 @@ var Login = (0, _reactRouterDom.withRouter)(function (_ref) {
   var setUser = (0, _auth.useUserSetter)();
 
   var handleSubmit = /*#__PURE__*/function () {
-    var _ref2 = (0, _asyncToGenerator2.default)( /*#__PURE__*/_regenerator.default.mark(function _callee(username, password, email) {
+    var _ref2 = (0, _asyncToGenerator2.default)( /*#__PURE__*/_regenerator.default.mark(function _callee(username, password, email, id) {
       var user;
       return _regenerator.default.wrap(function _callee$(_context) {
         while (1) {
@@ -49546,12 +49547,12 @@ var Login = (0, _reactRouterDom.withRouter)(function (_ref) {
             case 0:
               _context.prev = 0;
               _context.next = 3;
-              return (0, _auth.doLogin)(username, password, email);
+              return (0, _auth.doLogin)(username, password, email, id);
 
             case 3:
               user = _context.sent;
-              history.push("/");
               setUser(user);
+              history.push("/");
               _context.next = 11;
               break;
 
@@ -49568,7 +49569,7 @@ var Login = (0, _reactRouterDom.withRouter)(function (_ref) {
       }, _callee, null, [[0, 8]]);
     }));
 
-    return function handleSubmit(_x, _x2, _x3) {
+    return function handleSubmit(_x, _x2, _x3, _x4) {
       return _ref2.apply(this, arguments);
     };
   }();
@@ -49581,7 +49582,97 @@ var Login = (0, _reactRouterDom.withRouter)(function (_ref) {
   }));
 });
 exports.Login = Login;
-},{"@babel/runtime/regenerator":"node_modules/@babel/runtime/regenerator/index.js","@babel/runtime/helpers/asyncToGenerator":"node_modules/@babel/runtime/helpers/asyncToGenerator.js","@babel/runtime/helpers/slicedToArray":"node_modules/@babel/runtime/helpers/slicedToArray.js","react":"node_modules/react/index.js","../authForm":"src/pages/auth/authForm/index.js","../../../lib/auth.api":"src/lib/auth.api.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js","react-bootstrap":"node_modules/react-bootstrap/esm/index.js"}],"src/pages/joinIn/index.js":[function(require,module,exports) {
+},{"@babel/runtime/regenerator":"node_modules/@babel/runtime/regenerator/index.js","@babel/runtime/helpers/asyncToGenerator":"node_modules/@babel/runtime/helpers/asyncToGenerator.js","@babel/runtime/helpers/slicedToArray":"node_modules/@babel/runtime/helpers/slicedToArray.js","react":"node_modules/react/index.js","../authForm":"src/pages/auth/authForm/index.js","../../../lib/auth.api":"src/lib/auth.api.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js","react-bootstrap":"node_modules/react-bootstrap/esm/index.js"}],"src/lib/meetings.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.getMeetings = void 0;
+
+var _regenerator = _interopRequireDefault(require("@babel/runtime/regenerator"));
+
+var _asyncToGenerator2 = _interopRequireDefault(require("@babel/runtime/helpers/asyncToGenerator"));
+
+var _axios = _interopRequireDefault(require("axios"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var api = _axios.default.create({
+  baseURL: "http://localhost:3000/meet",
+  withCredentials: true
+});
+
+var getMeetings = /*#__PURE__*/function () {
+  var _ref = (0, _asyncToGenerator2.default)( /*#__PURE__*/_regenerator.default.mark(function _callee() {
+    var res;
+    return _regenerator.default.wrap(function _callee$(_context) {
+      while (1) {
+        switch (_context.prev = _context.next) {
+          case 0:
+            _context.next = 2;
+            return api.get("/");
+
+          case 2:
+            res = _context.sent;
+            return _context.abrupt("return", res.data);
+
+          case 4:
+          case "end":
+            return _context.stop();
+        }
+      }
+    }, _callee);
+  }));
+
+  return function getMeetings() {
+    return _ref.apply(this, arguments);
+  };
+}();
+
+exports.getMeetings = getMeetings;
+},{"@babel/runtime/regenerator":"node_modules/@babel/runtime/regenerator/index.js","@babel/runtime/helpers/asyncToGenerator":"node_modules/@babel/runtime/helpers/asyncToGenerator.js","axios":"node_modules/axios/index.js"}],"src/pages/joinIn/style.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.CardContainer = exports.CardMeeting = void 0;
+
+var _taggedTemplateLiteral2 = _interopRequireDefault(require("@babel/runtime/helpers/taggedTemplateLiteral"));
+
+var _styledComponents = _interopRequireDefault(require("styled-components"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _templateObject2() {
+  var data = (0, _taggedTemplateLiteral2.default)(["\n  margin-bottom: 160px;\n"]);
+
+  _templateObject2 = function _templateObject2() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject() {
+  var data = (0, _taggedTemplateLiteral2.default)(["\n  margin: 10px;\n  .backround-title {\n    background: #b0e1ea;\n    color: #737980;\n  }\n  .backround-bottom-card {\n    background: #4d8089;\n    color: #cfdadc;\n  }\n  .button-card {\n    background: #699aa3;\n    color: #cfdadc;\n    outline: none;\n    border-color: #699aa3;\n    margin-bottom: 10px;\n  }\n"]);
+
+  _templateObject = function _templateObject() {
+    return data;
+  };
+
+  return data;
+}
+
+var CardMeeting = _styledComponents.default.div(_templateObject());
+
+exports.CardMeeting = CardMeeting;
+
+var CardContainer = _styledComponents.default.main(_templateObject2());
+
+exports.CardContainer = CardContainer;
+},{"@babel/runtime/helpers/taggedTemplateLiteral":"node_modules/@babel/runtime/helpers/taggedTemplateLiteral.js","styled-components":"node_modules/styled-components/dist/styled-components.browser.esm.js"}],"src/pages/joinIn/index.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -49589,17 +49680,58 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 
-var _react = _interopRequireDefault(require("react"));
+var _slicedToArray2 = _interopRequireDefault(require("@babel/runtime/helpers/slicedToArray"));
+
+var _react = _interopRequireWildcard(require("react"));
+
+var _meetings = require("../../lib/meetings");
+
+var _reactBootstrap = require("react-bootstrap");
+
+var _style = require("./style");
+
+var _auth = require("../../lib/auth.api");
+
+function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function () { return cache; }; return cache; }
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var Joinin = function Joinin() {
-  return _react.default.createElement(_react.default.Fragment, null, _react.default.createElement("div", null, _react.default.createElement("h1", null, "Soy Join In"), _react.default.createElement("p", null, "Aqui listamos las quedadas ya organizadas con bot\xF3n para inscribirnos en ellas")));
+var Joinin = function Joinin(props) {
+  var _useState = (0, _react.useState)([]),
+      _useState2 = (0, _slicedToArray2.default)(_useState, 2),
+      meetings = _useState2[0],
+      setMeeting = _useState2[1];
+
+  var user = (0, _auth.useUser)();
+  (0, _react.useEffect)(function () {
+    (0, _meetings.getMeetings)(props).then(function (meeting) {
+      return setMeeting(meeting);
+    });
+  }, []);
+  return _react.default.createElement(_style.CardContainer, {
+    className: "cards-container"
+  }, _react.default.createElement("h1", null, "Listado de Regogidas organizadas"), meetings.map(function (meeting, i) {
+    return _react.default.createElement(_style.CardMeeting, {
+      key: i
+    }, _react.default.createElement(_reactBootstrap.Container, null, _react.default.createElement(_reactBootstrap.Card, {
+      className: "text-center"
+    }, _react.default.createElement(_reactBootstrap.Card.Header, {
+      className: "backround-title"
+    }, meeting.title), _react.default.createElement(_reactBootstrap.Card.Body, null, _react.default.createElement(_reactBootstrap.Card.Title, null, "Organizado por: "), _react.default.createElement(_reactBootstrap.Card.Subtitle, {
+      className: "mb-2 text-muted"
+    }, meeting.city), _react.default.createElement(_reactBootstrap.Card.Text, null, meeting.streetAddress), _react.default.createElement(_reactBootstrap.Button, {
+      className: "button-card"
+    }, "Me apunto!"), _react.default.createElement(_reactBootstrap.Card.Text, null, meeting.description)), _react.default.createElement(_reactBootstrap.Card.Footer, {
+      className: "backround-bottom-card"
+    }, meeting.hour))));
+  }));
 };
 
 var _default = Joinin;
 exports.default = _default;
-},{"react":"node_modules/react/index.js"}],"node_modules/react-hook-form/dist/react-hook-form.es.js":[function(require,module,exports) {
+},{"@babel/runtime/helpers/slicedToArray":"node_modules/@babel/runtime/helpers/slicedToArray.js","react":"node_modules/react/index.js","../../lib/meetings":"src/lib/meetings.js","react-bootstrap":"node_modules/react-bootstrap/esm/index.js","./style":"src/pages/joinIn/style.js","../../lib/auth.api":"src/lib/auth.api.js"}],"node_modules/react-hook-form/dist/react-hook-form.es.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -51961,9 +52093,9 @@ var _input = require("../../forms/input");
 
 var _axios = _interopRequireDefault(require("axios"));
 
-var _auth = require("../../lib/auth.api");
-
 var _reactRouterDom = require("react-router-dom");
+
+var _auth = require("../../lib/auth.api");
 
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function () { return cache; }; return cache; }
 
@@ -52006,8 +52138,8 @@ var Organize = (0, _reactRouterDom.withRouter)(function (_ref) {
             case 7:
               _context.prev = 7;
               _context.t0 = _context["catch"](0);
-              history.push("/auth/login");
               setError(_context.t0.message);
+              history.push("/auth/login");
 
             case 11:
             case "end":
@@ -52022,12 +52154,17 @@ var Organize = (0, _reactRouterDom.withRouter)(function (_ref) {
     };
   }();
 
-  return _react.default.createElement(_react.default.Fragment, null, _react.default.createElement("h1", null, "Soy Organiza"), _react.default.createElement(_reactHookForm.FormContext, methods, _react.default.createElement(_reactBootstrap.Container, null, _react.default.createElement("form", {
-    onSubmit: handleSubmit(onSubmit)
-  }, _react.default.createElement(_input.Input //placeholder={user.username}
-  , {
+  console.log(user);
+  return _react.default.createElement(_react.default.Fragment, null, _react.default.createElement("h1", null, "Soy Organiza"), user && _react.default.createElement(_reactHookForm.FormContext, methods, _react.default.createElement(_reactBootstrap.Container, null, _react.default.createElement("input", {
+    type: "hidden",
+    placeholder: user.id,
     name: "organizer",
-    label: "Organzdor",
+    label: "Organizador"
+  }), _react.default.createElement("form", {
+    onSubmit: handleSubmit(onSubmit)
+  }, _react.default.createElement(_input.Input, {
+    name: "username",
+    label: "Nombre",
     ref: register({
       required: messageError
     })
@@ -52080,11 +52217,11 @@ var Organize = (0, _reactRouterDom.withRouter)(function (_ref) {
     })
   }), _react.default.createElement("div", null, _react.default.createElement("button", {
     type: "submit"
-  }, "Enviar"))))));
+  }, "Enviar"))))), !user && _react.default.createElement("div", null, "DEBE REGISTRARSE"));
 });
 var _default = Organize;
 exports.default = _default;
-},{"@babel/runtime/regenerator":"node_modules/@babel/runtime/regenerator/index.js","@babel/runtime/helpers/asyncToGenerator":"node_modules/@babel/runtime/helpers/asyncToGenerator.js","@babel/runtime/helpers/slicedToArray":"node_modules/@babel/runtime/helpers/slicedToArray.js","react":"node_modules/react/index.js","react-hook-form":"node_modules/react-hook-form/dist/react-hook-form.es.js","react-bootstrap":"node_modules/react-bootstrap/esm/index.js","../../forms/input":"src/forms/input/index.js","axios":"node_modules/axios/index.js","../../lib/auth.api":"src/lib/auth.api.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js"}],"src/App.js":[function(require,module,exports) {
+},{"@babel/runtime/regenerator":"node_modules/@babel/runtime/regenerator/index.js","@babel/runtime/helpers/asyncToGenerator":"node_modules/@babel/runtime/helpers/asyncToGenerator.js","@babel/runtime/helpers/slicedToArray":"node_modules/@babel/runtime/helpers/slicedToArray.js","react":"node_modules/react/index.js","react-hook-form":"node_modules/react-hook-form/dist/react-hook-form.es.js","react-bootstrap":"node_modules/react-bootstrap/esm/index.js","../../forms/input":"src/forms/input/index.js","axios":"node_modules/axios/index.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js","../../lib/auth.api":"src/lib/auth.api.js"}],"src/App.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -52219,7 +52356,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56061" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56750" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

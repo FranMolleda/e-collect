@@ -10,7 +10,7 @@ router.get("/signup", (req, res) => {
 });
 
 router.post("/signup", async (req, res, next) => {
-  const { username, password, email, city } = req.body;
+  const { username, password, email } = req.body;
   console.log(username, password, email);
   try {
     if (!username || !password || !email) {
@@ -47,7 +47,9 @@ router.post("/login", (req, res, next) => {
         console.log(err);
         return res.json({ status: 500, message: "authentication error" });
       }
-      return res.json(_.pick(req.user, ["username", "password", "email"]));
+      return res.json(
+        _.pick(req.user, ["username", "password", "email", "id"])
+      );
     });
   })(req, res, next);
 });

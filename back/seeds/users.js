@@ -14,7 +14,7 @@ const createUsers = async (users) => {
       if (!existUser) {
         const newUser = {
           username: user.name,
-          password: "1234aA",
+          password: "cm1bq10G",
           image: user.image,
           email: user.email,
           city: user.city,

@@ -9,11 +9,11 @@ export const Login = withRouter(({ history }) => {
   const [error, setError] = useState();
   const setUser = useUserSetter();
 
-  const handleSubmit = async (username, password, email) => {
+  const handleSubmit = async (username, password, email, id) => {
     try {
-      const user = await doLogin(username, password, email);
-      history.push("/");
+      const user = await doLogin(username, password, email, id);
       setUser(user);
+      history.push("/");
     } catch (e) {
       setError(e.message);
     }

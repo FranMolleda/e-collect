@@ -14,6 +14,11 @@ export const useUserSetter = () => {
   const userState = useContext(UserContext);
   return userState.setUser;
 };
+
+export const useUserIsLoading = () => {
+  const userState = useContext(UserContext);
+  return userState.loading;
+};
 //Logout
 export const useUserLogout = () => {
   const userState = useContext(UserContext);
@@ -32,9 +37,9 @@ const api = axios.create({
   withCredentials: true,
 });
 
-export const doSignup = async (username, password, email, _id) => {
+export const doSignup = async (username, password, email, _id, avatar) => {
   console.log("Registrando Usuario...");
-  console.log(username, password, email, _id);
+  console.log(username, password, email, _id, avatar);
   const res = await api.post("/auth/signup", {
     username,
     password,
@@ -45,13 +50,14 @@ export const doSignup = async (username, password, email, _id) => {
   return res.data;
 };
 
-export const doLogin = async (username, password, email, _id) => {
+export const doLogin = async (username, password, email, _id, avatar) => {
   console.log("Do Login");
   const res = await api.post("/auth/login", {
     username,
     password,
     email,
     _id,
+    avatar,
   });
   console.log(res.data);
   return res.data;

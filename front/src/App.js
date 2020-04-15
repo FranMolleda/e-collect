@@ -12,8 +12,8 @@ import { Login } from "./pages/auth/login";
 //Importamos Usercontext para decirle debajo que todo lo que esté dentro de UserContext.Provider, pueda utilizar el user
 import { UserContext, whoami } from "./lib/auth.api";
 import Joinin from "./pages/joinIn";
-import Organize from "./pages/organize";
-import { Loading } from "./components/ui/loading/styleLoading";
+import { PrivateOrganize } from "./pages/organize";
+import { Loading } from "./lib/loading/styleLoading";
 
 export const App = () => {
   //Creamos estado del usuario
@@ -26,7 +26,7 @@ export const App = () => {
     //Intenta obtener el usuario logueado de nuestro backend
     whoami()
       .then((user) => {
-        console.error(`Welcome again user ${user.username}`);
+        console.log(`Welcome again user ${user.username}`);
         setUser(user);
       })
       .catch((e) => {
@@ -39,8 +39,9 @@ export const App = () => {
   return (
     //Todo lo que pongamos en value, es lo que podemos recibir desde cualquier sito con useContext
     //Pasamos el userState en login para que si cambia este estado, se recoja en user y se propaga para toda la app
+    //Ponemos también loading para proteger las rutas
     //Hemos creado setUser en auth.api
-    <UserContext.Provider value={{ user, setUser }}>
+    <UserContext.Provider value={{ user, setUser, loading }}>
       {loading && <Loading />}
       <Router>
         <LayoutNavbar />
@@ -51,7 +52,7 @@ export const App = () => {
           <Route path="/auth/signup" component={Signup} />
           <Route path="/auth/login" component={Login} />
           <Route path="/joinin" component={Joinin} />
-          <Route path="/organize" component={Organize} />
+          <Route path="/organize" component={PrivateOrganize} />
         </Switch>
         <Footer />
       </Router>

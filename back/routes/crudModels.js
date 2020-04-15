@@ -45,29 +45,6 @@ const crudGenerator = (
     })
   );
 
-  //   router.post(
-  //     "/create",
-  //     asyncController(async (req, res, next) => {
-  //       const { username, title, company, zone } = req.body;
-  //       const newModel = new Model(req.body);
-  //       const existingName = await Model.findOne({ username });
-  //       const existingTitle = await Model.findOne({ title });
-  //       const existingCompany = await Model.findOne({ company });
-  //       const existingZone = await Model.findOne({ zone });
-  // ​
-  //       if (
-  //         !existingName ||
-  //         !existingTitle ||
-  //         !existingCompany ||
-  //         !existingZone
-  //       ) {
-  //         const obj = await newModel.save();
-  //         return res.json(obj);
-  //       }
-  //       return res.json({ status: "Data exists" });
-  //     })
-  //   );
-
   //Obtener Uno
   router.get(
     "/:id",

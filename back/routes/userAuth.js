@@ -10,8 +10,8 @@ router.get("/signup", (req, res) => {
 });
 
 router.post("/signup", async (req, res, next) => {
-  const { username, password, email } = req.body;
-  console.log(username, password, email);
+  const { username, password, email, avatar } = req.body;
+  console.log(username, password, email, avatar);
   try {
     if (!username || !password || !email) {
       res.json("Please, complete Username, Password or Email");
@@ -20,7 +20,7 @@ router.post("/signup", async (req, res, next) => {
     const existingUser = await User.findOne({ username });
 
     if (!existingUser) {
-      const newUser = await User.create({ username, password, email });
+      const newUser = await User.create({ username, password, email, avatar });
       req.login(newUser, (err) => {
         res.json(newUser);
       });

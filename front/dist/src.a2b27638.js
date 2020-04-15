@@ -48933,7 +48933,7 @@ module.exports = require('./lib/axios');
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.whoami = exports.doLogout = exports.doLogin = exports.doSignup = exports.useUserLogout = exports.useUserSetter = exports.useUser = exports.UserContext = void 0;
+exports.whoami = exports.doLogout = exports.doLogin = exports.doSignup = exports.useUserLogout = exports.useUserIsLoading = exports.useUserSetter = exports.useUser = exports.UserContext = void 0;
 
 var _regenerator = _interopRequireDefault(require("@babel/runtime/regenerator"));
 
@@ -48967,10 +48967,17 @@ exports.useUser = useUser;
 var useUserSetter = function useUserSetter() {
   var userState = (0, _react.useContext)(UserContext);
   return userState.setUser;
+};
+
+exports.useUserSetter = useUserSetter;
+
+var useUserIsLoading = function useUserIsLoading() {
+  var userState = (0, _react.useContext)(UserContext);
+  return userState.loading;
 }; //Logout
 
 
-exports.useUserSetter = useUserSetter;
+exports.useUserIsLoading = useUserIsLoading;
 
 var useUserLogout = function useUserLogout() {
   var userState = (0, _react.useContext)(UserContext); //Devuelve la función "handleLogout"
@@ -49004,14 +49011,14 @@ var api = _axios.default.create({
 });
 
 var doSignup = /*#__PURE__*/function () {
-  var _ref2 = (0, _asyncToGenerator2.default)( /*#__PURE__*/_regenerator.default.mark(function _callee2(username, password, email, _id) {
+  var _ref2 = (0, _asyncToGenerator2.default)( /*#__PURE__*/_regenerator.default.mark(function _callee2(username, password, email, _id, avatar) {
     var res;
     return _regenerator.default.wrap(function _callee2$(_context2) {
       while (1) {
         switch (_context2.prev = _context2.next) {
           case 0:
             console.log("Registrando Usuario...");
-            console.log(username, password, email, _id);
+            console.log(username, password, email, _id, avatar);
             _context2.next = 4;
             return api.post("/auth/signup", {
               username: username,
@@ -49033,7 +49040,7 @@ var doSignup = /*#__PURE__*/function () {
     }, _callee2);
   }));
 
-  return function doSignup(_x, _x2, _x3, _x4) {
+  return function doSignup(_x, _x2, _x3, _x4, _x5) {
     return _ref2.apply(this, arguments);
   };
 }();
@@ -49041,7 +49048,7 @@ var doSignup = /*#__PURE__*/function () {
 exports.doSignup = doSignup;
 
 var doLogin = /*#__PURE__*/function () {
-  var _ref3 = (0, _asyncToGenerator2.default)( /*#__PURE__*/_regenerator.default.mark(function _callee3(username, password, email, _id) {
+  var _ref3 = (0, _asyncToGenerator2.default)( /*#__PURE__*/_regenerator.default.mark(function _callee3(username, password, email, _id, avatar) {
     var res;
     return _regenerator.default.wrap(function _callee3$(_context3) {
       while (1) {
@@ -49053,7 +49060,8 @@ var doLogin = /*#__PURE__*/function () {
               username: username,
               password: password,
               email: email,
-              _id: _id
+              _id: _id,
+              avatar: avatar
             });
 
           case 3:
@@ -49069,7 +49077,7 @@ var doLogin = /*#__PURE__*/function () {
     }, _callee3);
   }));
 
-  return function doLogin(_x5, _x6, _x7, _x8) {
+  return function doLogin(_x6, _x7, _x8, _x9, _x10) {
     return _ref3.apply(this, arguments);
   };
 }();
@@ -49344,7 +49352,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var Home = function Home() {
   var user = (0, _auth.useUser)();
   return _react.default.createElement(_react.default.Fragment, null, user && _react.default.createElement("div", null, _react.default.createElement("p", null, user.username), _react.default.createElement("img", {
-    src: "user.avatar"
+    src: user.avatar
   })), _react.default.createElement("div", null, _react.default.createElement(_reactBootstrap.Container, {
     fluid: true
   }, _react.default.createElement(_lata.default, null, _react.default.createElement(_ButtonsHome.ButtonParticipa, {
@@ -52148,13 +52156,69 @@ var InputTextarea = _react.default.forwardRef(function (_ref2, ref) {
 });
 
 exports.InputTextarea = InputTextarea;
-},{"react":"node_modules/react/index.js","react-hook-form":"node_modules/react-hook-form/dist/react-hook-form.es.js","./style":"src/forms/input/style.js"}],"src/pages/organize/index.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","react-hook-form":"node_modules/react-hook-form/dist/react-hook-form.es.js","./style":"src/forms/input/style.js"}],"src/lib/protectRoute.hoc.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = void 0;
+exports.withProtected = void 0;
+
+var _react = _interopRequireDefault(require("react"));
+
+var _auth = require("./auth.api");
+
+var _reactRouterDom = require("react-router-dom");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+//https://reacttraining.com/react-router/web/guides/quick-start
+var ProtectedPagePlaceholder = function ProtectedPagePlaceholder() {
+  return _react.default.createElement("div", null, "PROTECTED PAGE");
+}; // This is a HOC -> High Order Component
+
+
+var withProtected = function withProtected( //Con Component, le pasamos el componente para pintar que ponemos entre parentesis de withProtected(Organizer). Organizer es component en este caso
+Component) {
+  var _ref = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {},
+      _ref$redirect = _ref.redirect,
+      redirect = _ref$redirect === void 0 ? true : _ref$redirect,
+      _ref$redirectTo = _ref.redirectTo,
+      redirectTo = _ref$redirectTo === void 0 ? "/auth/login" : _ref$redirectTo;
+
+  return (// options are always present
+    function (props) {
+      var user = (0, _auth.useUser)();
+      var isUserLoading = (0, _auth.useUserIsLoading)();
+
+      if (user) {
+        // Si hay usuario logueado pinta el componente
+        return _react.default.createElement(Component, null);
+      } else {
+        // Si el usuarion está cargando en el back renderiza el placeholder
+        if (isUserLoading) return _react.default.createElement(ProtectedPagePlaceholder, null);else {
+          // Si ha sido completada la autenticacion eligo si quiero hacer reditrect o no
+          if (redirect) {
+            return _react.default.createElement(_reactRouterDom.Redirect, {
+              to: redirectTo
+            });
+          } else {
+            return _react.default.createElement(ProtectedPagePlaceholder, null);
+          }
+        }
+      }
+    }
+  );
+};
+
+exports.withProtected = withProtected;
+},{"react":"node_modules/react/index.js","./auth.api":"src/lib/auth.api.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js"}],"src/pages/organize/index.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.PrivateOrganize = void 0;
 
 var _regenerator = _interopRequireDefault(require("@babel/runtime/regenerator"));
 
@@ -52175,6 +52239,8 @@ var _axios = _interopRequireDefault(require("axios"));
 var _reactRouterDom = require("react-router-dom");
 
 var _auth = require("../../lib/auth.api");
+
+var _protectRoute = require("../../lib/protectRoute.hoc");
 
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function () { return cache; }; return cache; }
 
@@ -52210,7 +52276,7 @@ var Organize = (0, _reactRouterDom.withRouter)(function (_ref) {
               return _axios.default.post("http://localhost:3000/meet/create", data).then();
 
             case 4:
-              history.push("/");
+              history.push("/joinin");
               _context.next = 11;
               break;
 
@@ -52218,7 +52284,7 @@ var Organize = (0, _reactRouterDom.withRouter)(function (_ref) {
               _context.prev = 7;
               _context.t0 = _context["catch"](0);
               setError(_context.t0.message);
-              history.push("/auth/login");
+              history.push("/");
 
             case 11:
             case "end":
@@ -52234,7 +52300,7 @@ var Organize = (0, _reactRouterDom.withRouter)(function (_ref) {
   }();
 
   console.log(user);
-  return _react.default.createElement(_react.default.Fragment, null, _react.default.createElement("h1", null, "Soy Organiza"), user && _react.default.createElement(_reactHookForm.FormContext, methods, _react.default.createElement(_reactBootstrap.Container, null, _react.default.createElement("input", {
+  return _react.default.createElement(_react.default.Fragment, null, _react.default.createElement("h1", null, "Soy Organiza"), _react.default.createElement(_reactHookForm.FormContext, methods, _react.default.createElement(_reactBootstrap.Container, null, _react.default.createElement("input", {
     type: "hidden",
     placeholder: user.id,
     name: "organizer",
@@ -52296,11 +52362,11 @@ var Organize = (0, _reactRouterDom.withRouter)(function (_ref) {
     })
   }), _react.default.createElement("div", null, _react.default.createElement("button", {
     type: "submit"
-  }, "Enviar"))))), !user && _react.default.createElement("div", null, "DEBE REGISTRARSE"));
+  }, "Enviar"))))));
 });
-var _default = Organize;
-exports.default = _default;
-},{"@babel/runtime/regenerator":"node_modules/@babel/runtime/regenerator/index.js","@babel/runtime/helpers/asyncToGenerator":"node_modules/@babel/runtime/helpers/asyncToGenerator.js","@babel/runtime/helpers/slicedToArray":"node_modules/@babel/runtime/helpers/slicedToArray.js","react":"node_modules/react/index.js","react-hook-form":"node_modules/react-hook-form/dist/react-hook-form.es.js","react-bootstrap":"node_modules/react-bootstrap/esm/index.js","../../forms/input":"src/forms/input/index.js","axios":"node_modules/axios/index.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js","../../lib/auth.api":"src/lib/auth.api.js"}],"src/components/ui/loading/styleLoading.js":[function(require,module,exports) {
+var PrivateOrganize = (0, _protectRoute.withProtected)(Organize);
+exports.PrivateOrganize = PrivateOrganize;
+},{"@babel/runtime/regenerator":"node_modules/@babel/runtime/regenerator/index.js","@babel/runtime/helpers/asyncToGenerator":"node_modules/@babel/runtime/helpers/asyncToGenerator.js","@babel/runtime/helpers/slicedToArray":"node_modules/@babel/runtime/helpers/slicedToArray.js","react":"node_modules/react/index.js","react-hook-form":"node_modules/react-hook-form/dist/react-hook-form.es.js","react-bootstrap":"node_modules/react-bootstrap/esm/index.js","../../forms/input":"src/forms/input/index.js","axios":"node_modules/axios/index.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js","../../lib/auth.api":"src/lib/auth.api.js","../../lib/protectRoute.hoc":"src/lib/protectRoute.hoc.js"}],"src/lib/loading/styleLoading.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -52371,9 +52437,9 @@ var _auth = require("./lib/auth.api");
 
 var _joinIn = _interopRequireDefault(require("./pages/joinIn"));
 
-var _organize = _interopRequireDefault(require("./pages/organize"));
+var _organize = require("./pages/organize");
 
-var _styleLoading = require("./components/ui/loading/styleLoading");
+var _styleLoading = require("./lib/loading/styleLoading");
 
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function () { return cache; }; return cache; }
 
@@ -52398,7 +52464,7 @@ var App = function App() {
     console.log("Welcome to app!"); //Intenta obtener el usuario logueado de nuestro backend
 
     (0, _auth.whoami)().then(function (user) {
-      console.error("Welcome again user ".concat(user.username));
+      console.log("Welcome again user ".concat(user.username));
       setUser(user);
     }).catch(function (e) {
       console.error("No user Logged in");
@@ -52409,11 +52475,13 @@ var App = function App() {
   }, []);
   return (//Todo lo que pongamos en value, es lo que podemos recibir desde cualquier sito con useContext
     //Pasamos el userState en login para que si cambia este estado, se recoja en user y se propaga para toda la app
+    //Ponemos también loading para proteger las rutas
     //Hemos creado setUser en auth.api
     _react.default.createElement(_auth.UserContext.Provider, {
       value: {
         user: user,
-        setUser: setUser
+        setUser: setUser,
+        loading: loading
       }
     }, loading && _react.default.createElement(_styleLoading.Loading, null), _react.default.createElement(_reactRouterDom.BrowserRouter, null, _react.default.createElement(_Navbar.default, null), _react.default.createElement(_reactRouterDom.Switch, null, _react.default.createElement(_reactRouterDom.Route, {
       path: "/",
@@ -52436,13 +52504,13 @@ var App = function App() {
       component: _joinIn.default
     }), _react.default.createElement(_reactRouterDom.Route, {
       path: "/organize",
-      component: _organize.default
+      component: _organize.PrivateOrganize
     })), _react.default.createElement(_Footer.default, null)))
   );
 };
 
 exports.App = App;
-},{"@babel/runtime/helpers/slicedToArray":"node_modules/@babel/runtime/helpers/slicedToArray.js","react":"node_modules/react/index.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js","../public/styles/App.css":"public/styles/App.css","bootstrap/dist/css/bootstrap.min.css":"node_modules/bootstrap/dist/css/bootstrap.min.css","./components/Layout/Footer":"src/components/Layout/Footer/index.js","./components/Layout/Navbar":"src/components/Layout/Navbar/index.js","./pages/home":"src/pages/home/index.js","./pages/contact":"src/pages/contact/index.js","./pages/about":"src/pages/about/index.js","./pages/auth/singup":"src/pages/auth/singup/index.js","./pages/auth/login":"src/pages/auth/login/index.js","./lib/auth.api":"src/lib/auth.api.js","./pages/joinIn":"src/pages/joinIn/index.js","./pages/organize":"src/pages/organize/index.js","./components/ui/loading/styleLoading":"src/components/ui/loading/styleLoading.js"}],"src/index.js":[function(require,module,exports) {
+},{"@babel/runtime/helpers/slicedToArray":"node_modules/@babel/runtime/helpers/slicedToArray.js","react":"node_modules/react/index.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js","../public/styles/App.css":"public/styles/App.css","bootstrap/dist/css/bootstrap.min.css":"node_modules/bootstrap/dist/css/bootstrap.min.css","./components/Layout/Footer":"src/components/Layout/Footer/index.js","./components/Layout/Navbar":"src/components/Layout/Navbar/index.js","./pages/home":"src/pages/home/index.js","./pages/contact":"src/pages/contact/index.js","./pages/about":"src/pages/about/index.js","./pages/auth/singup":"src/pages/auth/singup/index.js","./pages/auth/login":"src/pages/auth/login/index.js","./lib/auth.api":"src/lib/auth.api.js","./pages/joinIn":"src/pages/joinIn/index.js","./pages/organize":"src/pages/organize/index.js","./lib/loading/styleLoading":"src/lib/loading/styleLoading.js"}],"src/index.js":[function(require,module,exports) {
 "use strict";
 
 var _react = _interopRequireWildcard(require("react"));
@@ -52490,7 +52558,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "63316" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51646" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

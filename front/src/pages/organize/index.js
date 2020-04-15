@@ -5,6 +5,7 @@ import { Input, InputTextarea } from "../../forms/input";
 import axios from "axios";
 import { withRouter } from "react-router-dom";
 import { useUser } from "../../lib/auth.api";
+import { withProtected } from "../../lib/protectRoute.hoc";
 
 const Organize = withRouter(({ history }) => {
   const [error, setError] = useState();
@@ -18,10 +19,10 @@ const Organize = withRouter(({ history }) => {
     try {
       console.log(data);
       await axios.post("http://localhost:3000/meet/create", data).then();
-      history.push("/");
+      history.push("/joinin");
     } catch (e) {
       setError(e.message);
-      history.push("/auth/login");
+      history.push("/");
     }
   };
 
@@ -31,87 +32,85 @@ const Organize = withRouter(({ history }) => {
     <>
       <h1>Soy Organiza</h1>
       {/* FormContext methods lo traemos de forms/input para no tener que poner los errores en cada input */}
-      {user && (
-        <FormContext {...methods}>
-          <Container>
-            <input
-              type="hidden"
-              placeholder={user.id}
-              name="organizer"
-              label="Organizador"
+
+      <FormContext {...methods}>
+        <Container>
+          <input
+            type="hidden"
+            placeholder={user.id}
+            name="organizer"
+            label="Organizador"
+          />
+          <form onSubmit={handleSubmit(onSubmit)}>
+            <Input
+              name="username"
+              label="Nombre"
+              ref={register({
+                required: messageError,
+              })}
             />
-            <form onSubmit={handleSubmit(onSubmit)}>
-              <Input
-                name="username"
-                label="Nombre"
-                ref={register({
-                  required: messageError,
-                })}
-              />
-              <Input
-                name="city"
-                label="Ciudad"
-                ref={register({
-                  required: messageError,
-                })}
-              />
-              <Input
-                name="streetAddress"
-                label="Calle"
-                ref={register({
-                  required: messageError,
-                })}
-              />
-              <Input
-                name="postalCode"
-                label="Código Postal"
-                ref={register({
-                  required: messageError,
-                })}
-              />
-              <Input
-                name="country"
-                label="País"
-                ref={register({
-                  required: messageError,
-                })}
-              />
-              <Input
-                name="title"
-                label="Title"
-                ref={register({
-                  required: messageError,
-                })}
-              />
-              <Input
-                name="hour"
-                label="Hora"
-                type="time"
-                min="00:00"
-                max="23:59"
-                step="600"
-                ref={register({
-                  required: messageError,
-                })}
-              />
-              <InputTextarea
-                name="description"
-                label="Descripción"
-                type="textarea"
-                ref={register({
-                  required: messageError,
-                })}
-              />
-              <div>
-                <button type="submit">Enviar</button>
-              </div>
-            </form>
-          </Container>
-        </FormContext>
-      )}
-      {!user && <div>DEBE REGISTRARSE</div>}
+            <Input
+              name="city"
+              label="Ciudad"
+              ref={register({
+                required: messageError,
+              })}
+            />
+            <Input
+              name="streetAddress"
+              label="Calle"
+              ref={register({
+                required: messageError,
+              })}
+            />
+            <Input
+              name="postalCode"
+              label="Código Postal"
+              ref={register({
+                required: messageError,
+              })}
+            />
+            <Input
+              name="country"
+              label="País"
+              ref={register({
+                required: messageError,
+              })}
+            />
+            <Input
+              name="title"
+              label="Title"
+              ref={register({
+                required: messageError,
+              })}
+            />
+            <Input
+              name="hour"
+              label="Hora"
+              type="time"
+              min="00:00"
+              max="23:59"
+              step="600"
+              ref={register({
+                required: messageError,
+              })}
+            />
+            <InputTextarea
+              name="description"
+              label="Descripción"
+              type="textarea"
+              ref={register({
+                required: messageError,
+              })}
+            />
+            <div>
+              <button type="submit">Enviar</button>
+            </div>
+          </form>
+        </Container>
+      </FormContext>
     </>
   );
 });
 
-export default Organize;
+export const PrivateOrganize = withProtected(Organize);

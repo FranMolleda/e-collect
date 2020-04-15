@@ -1,6 +1,5 @@
 import React from "react";
 import { useUser, useUserIsLoading } from "./auth.api";
-//https://reacttraining.com/react-router/web/guides/quick-start
 import { Redirect } from "react-router-dom";
 
 const ProtectedPagePlaceholder = () => <div>PROTECTED PAGE</div>;

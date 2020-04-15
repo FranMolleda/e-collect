@@ -17,11 +17,11 @@ const meetingsSchema = new Schema(
     title: { type: String },
     hour: { type: String },
     description: { type: String },
+    type: { type: String }, //Playas, rios, submarina, montes, montañas, rural, urbana
+    difficulty: { type: String }, //baja, media, alta
+    zone: { type: String },
     participants: [{ type: Schema.Types.ObjectId, ref: "User" }],
-    date: {
-      type: Date,
-      default: new Date(),
-    },
+    date: { type: String },
   },
   {
     timestamps: true,
@@ -37,15 +37,6 @@ const meetingsSchema = new Schema(
     },
   }
 );
-
-// meetingsSchema.virtual("date").get(function () {
-//   const date = new Date(this.createdAt);
-//   return (
-//     date.toJSON(),
-//     new Date(date.getTime() - date.getTimezoneOffset() * 60000).toJSON()
-//   );
-//   //date.toUTCString().replace(" GMT", "").toJSON(); en IMass
-// });
 
 const Meetings = mongoose.model("Meetings", meetingsSchema);
 module.exports = Meetings;

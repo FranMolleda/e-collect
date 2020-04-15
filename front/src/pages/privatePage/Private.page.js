@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import arbolAzul from "../../../public/images/arbolfooterazul.png";
 import lata from "../../../public/images/Lata1000.jpg";
-import { withProtected } from "../../lib/protectRoute.hoc";
+import { withProtected } from "../../lib/auth/protectRoute.hoc";
 
 let images = [arbolAzul, lata];
 

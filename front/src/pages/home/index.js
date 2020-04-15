@@ -10,7 +10,7 @@ import {
 } from "../../components/ui/buttons/ButtonsHome";
 import { Container } from "react-bootstrap";
 //Importamos UserContext
-import { useUser } from "../../lib/auth.api";
+import { useUser } from "../../lib/auth/auth.api";
 
 const Home = () => {
   const user = useUser();

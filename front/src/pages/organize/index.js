@@ -4,8 +4,8 @@ import { Container } from "react-bootstrap";
 import { Input, InputTextarea } from "../../forms/input";
 import axios from "axios";
 import { withRouter } from "react-router-dom";
-import { useUser } from "../../lib/auth.api";
-import { withProtected } from "../../lib/protectRoute.hoc";
+import { useUser } from "../../lib/auth/auth.api";
+import { withProtected } from "../../lib/auth/protectRoute.hoc";
 
 const Organize = withRouter(({ history }) => {
   const [error, setError] = useState();

@@ -15,7 +15,6 @@ export const CardMeeting = styled.div`
     color: #cfdadc;
     outline: none;
     border-color: #699aa3;
-    margin-bottom: 10px;
   }
 `;
 export const CardContainer = styled.main`

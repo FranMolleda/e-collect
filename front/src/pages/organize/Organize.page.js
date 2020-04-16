@@ -15,10 +15,15 @@ const Organize = withRouter(({ history }) => {
   const { register, handleSubmit, errors } = methods;
   const messageError = "Campo vacío";
 
+  const api = axios.create({
+    baseURL: process.env.BACKEND_URL,
+    withCredentials: true,
+  });
+
   const onSubmit = async (data) => {
     try {
       console.log(data);
-      await axios.post("http://localhost:3000/meet/create", data).then();
+      await api.post("/meet/create", data).then();
       history.push("/joinin");
     } catch (e) {
       setError(e.message);

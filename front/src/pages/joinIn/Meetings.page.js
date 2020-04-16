@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
-import { getMeetings, deleteMeet } from "../../lib/meetings.api";
+import { getMeetings, deleteMeet } from "../../lib/frontRoutes/meetings.api";
 import { Card, Button, Container } from "react-bootstrap";
-import { CardMeeting, CardContainer } from "./style";
+import { CardMeeting, CardContainer } from "./StyleMeetings";
 import { useUser } from "../../lib/auth/auth.api";
 import { Link } from "react-router-dom";
 

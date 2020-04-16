@@ -2,18 +2,17 @@ import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "../public/styles/App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import Footer from "./components/Layout/Footer";
-import LayoutNavbar from "./components/Layout/Navbar";
-import Home from "./pages/home";
-import Contact from "./pages/contact";
-import About from "./pages/about";
-import { Signup } from "./pages/auth/singup";
-import { Login } from "./pages/auth/login";
-import { PrivateOrganize } from "./pages/organize";
+import Footer from "./components/Layout/Footer/Footer";
+import LayoutNavbar from "./components/Layout/Navbar/Navbar";
+import Home from "./pages/home/Home.page";
+import Contact from "./pages/contact/Contact.page";
+import About from "./pages/about/Abauot.page";
+import { Signup } from "./pages/auth/singup/Singup.page";
+import { Login } from "./pages/auth/login/Login.page";
+import { PrivateOrganize } from "./pages/organize/Organize.page";
 import { withAuthentication } from "./lib/auth/withAuthentication";
-import JoininPlace from "./pages/joinIn/indexPlace";
-import Joinin from "./pages/joinIn";
-import JoininOne from "./pages/joinIn/meetOne";
+import Joinin from "./pages/joinIn/Meetings.page";
+import JoininOne from "./pages/joinIn/MeetDetail.page";
 
 export const App = withAuthentication(() => (
   <Router>
@@ -24,10 +23,12 @@ export const App = withAuthentication(() => (
       <Route path="/about" component={About} />
       <Route path="/auth/signup" component={Signup} />
       <Route path="/auth/login" component={Login} />
-      <Route path="/joinin" component={JoininPlace} />
       <Route path="/organize" component={PrivateOrganize} />
-      <Route path="/meet/:id" component={JoininOne} />
-      <Route path="/meet/" component={Joinin} />
+      <Route
+        path="/meet/:id"
+        component={(props) => <JoininOne meetId={props.match.params.id} />}
+      />
+      <Route path="/meet" component={Joinin} />
     </Switch>
     <Footer />
   </Router>

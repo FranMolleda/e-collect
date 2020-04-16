@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { LoginSignupForm } from "../authForm";
+import { LoginSignupForm } from "../authForm/AuthForm";
 import { doSignup, useUserSetter } from "../../../lib/auth/auth.api";
 import { Container } from "react-bootstrap";
 //Importamos withRouter para que una vez hecho el signup vaya a una página

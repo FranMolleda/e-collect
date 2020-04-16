@@ -15,7 +15,7 @@ const FooterContainer = styled.div`
     position: fixed;
     bottom: 0;
     width: 100%;
-    height: 120px;
+    height: 60px;
     .arbol-azul {
       height: 37px;
       float: right;

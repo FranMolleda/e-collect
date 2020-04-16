@@ -34,7 +34,7 @@ const debug = require("debug")(
 
 const app = express();
 
-const whitelist = ["BACKEND_URL", "http://localhost:1234"];
+const whitelist = ["http://localhost:3000", "http://localhost:1234"];
 const corsOptions = {
   origin: function (origin, callback) {
     if (whitelist.indexOf(origin) !== -1 || !origin) {

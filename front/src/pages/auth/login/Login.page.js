@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { LoginSignupForm } from "../authForm";
+import { LoginSignupForm } from "../authForm/AuthForm";
 import { doLogin, useUserSetter } from "../../../lib/auth/auth.api";
 import { withRouter } from "react-router-dom";
 

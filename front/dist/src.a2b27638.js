@@ -32068,7 +32068,7 @@ if ("development" !== 'production' && "development" !== 'test' && typeof window 
 
 var _default = styled;
 exports.default = _default;
-},{"react-is":"node_modules/react-is/index.js","react":"node_modules/react/index.js","shallowequal":"node_modules/shallowequal/index.js","@emotion/stylis":"node_modules/@emotion/stylis/dist/stylis.browser.esm.js","@emotion/unitless":"node_modules/@emotion/unitless/dist/unitless.browser.esm.js","@emotion/is-prop-valid":"node_modules/@emotion/is-prop-valid/dist/is-prop-valid.browser.esm.js","hoist-non-react-statics":"node_modules/hoist-non-react-statics/dist/hoist-non-react-statics.cjs.js","process":"../../../../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/process/browser.js"}],"src/components/Layout/Footer/styleFooter.js":[function(require,module,exports) {
+},{"react-is":"node_modules/react-is/index.js","react":"node_modules/react/index.js","shallowequal":"node_modules/shallowequal/index.js","@emotion/stylis":"node_modules/@emotion/stylis/dist/stylis.browser.esm.js","@emotion/unitless":"node_modules/@emotion/unitless/dist/unitless.browser.esm.js","@emotion/is-prop-valid":"node_modules/@emotion/is-prop-valid/dist/is-prop-valid.browser.esm.js","hoist-non-react-statics":"node_modules/hoist-non-react-statics/dist/hoist-non-react-statics.cjs.js","process":"../../../../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/process/browser.js"}],"src/components/Layout/Footer/StyleFooter.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -32083,7 +32083,7 @@ var _styledComponents = _interopRequireDefault(require("styled-components"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _templateObject() {
-  var data = (0, _taggedTemplateLiteral2.default)(["\n  .container {\n    width: 100%;\n    padding-right: 15px;\n    padding-left: 15px;\n  }\n\n  .footer-bs {\n    width: 100vw;\n    background: linear-gradient(to right, #b1e2eb 0%, #1a5059 100%);\n    padding: 10px 30px;\n    color: #737980;\n    position: fixed;\n    bottom: 0;\n    width: 100%;\n    height: 120px;\n    .arbol-azul {\n      height: 37px;\n      float: right;\n      margin-right: 20px;\n      margin-top: -42px;\n    }\n  }\n\n  .size-footer {\n    height: 80px;\n  }\n\n  .row {\n    justify-content: space-between;\n  }\n\n  .footer-bs .footer-brand,\n  .footer-bs .footer-nav,\n  .footer-bs .footer-social,\n  .footer-bs .footer-ns {\n    padding: 10px 25px;\n  }\n\n  .footer-bs .footer-nav,\n  .footer-bs .footer-social,\n  .footer-bs .footer-ns {\n    border-color: transparent;\n  }\n\n  .footer-bs .footer-brand h2 {\n    margin: 0px 0px 10px;\n  }\n\n  .footer-bs .footer-brand p {\n    font-size: 12px;\n    color: #737980;\n  }\n\n  .footer-bs .footer-nav ul.pages {\n    list-style: none;\n    padding: 0px;\n  }\n\n  .footer-bs .footer-nav ul.pages li {\n    padding: 5px 0px;\n  }\n\n  .footer-bs .footer-nav ul.pages a {\n    color: #737980;\n    font-weight: bold;\n    text-transform: uppercase;\n  }\n\n  .footer-bs .footer-nav ul.pages a:hover {\n    color: #737980;\n    text-decoration: none;\n  }\n\n  .footer-bs .footer-nav h4 {\n    font-size: 11px;\n    text-transform: uppercase;\n    letter-spacing: 3px;\n    margin-bottom: 10px;\n  }\n\n  .footer-bs .footer-nav ul.list {\n    list-style: none;\n    padding: 0px;\n  }\n\n  .footer-bs .footer-nav ul.list li {\n    padding: 5px 0px;\n  }\n\n  .footer-bs .footer-nav ul.list a {\n    color: #737980;\n  }\n\n  .footer-bs .footer-nav ul.list a:hover {\n    color: #737980;\n    text-decoration: none;\n  }\n\n  .footer-bs .footer-social ul {\n    list-style: none;\n    padding: 0px;\n  }\n\n  .footer-bs .footer-social h4 {\n    font-size: 11px;\n    text-transform: uppercase;\n    letter-spacing: 3px;\n  }\n\n  .footer-bs .footer-social li {\n    padding: 5px 4px;\n  }\n\n  .footer-bs .footer-social a {\n    color: #737980;\n  }\n\n  .footer-bs .footer-social a:hover {\n    color: #737980;\n    text-decoration: none;\n  }\n\n  .footer-bs .footer-ns h4 {\n    font-size: 11px;\n    text-transform: uppercase;\n    letter-spacing: 3px;\n    margin-bottom: 10px;\n  }\n\n  .footer-bs .footer-ns p {\n    font-size: 12px;\n    color: #737980;\n  }\n\n  @media (min-width: 768px) {\n    .footer-bs .footer-nav,\n    .footer-bs .footer-social,\n    .footer-bs .footer-ns {\n      border-left: solid 1px rgba(255, 255, 255, 0.1);\n    }\n  }\n"]);
+  var data = (0, _taggedTemplateLiteral2.default)(["\n  .container {\n    width: 100%;\n    padding-right: 15px;\n    padding-left: 15px;\n  }\n\n  .footer-bs {\n    width: 100vw;\n    background: linear-gradient(to right, #b1e2eb 0%, #1a5059 100%);\n    padding: 10px 30px;\n    color: #737980;\n    position: fixed;\n    bottom: 0;\n    width: 100%;\n    height: 60px;\n    .arbol-azul {\n      height: 37px;\n      float: right;\n      margin-right: 20px;\n      margin-top: -42px;\n    }\n  }\n\n  .size-footer {\n    height: 80px;\n  }\n\n  .row {\n    justify-content: space-between;\n  }\n\n  .footer-bs .footer-brand,\n  .footer-bs .footer-nav,\n  .footer-bs .footer-social,\n  .footer-bs .footer-ns {\n    padding: 10px 25px;\n  }\n\n  .footer-bs .footer-nav,\n  .footer-bs .footer-social,\n  .footer-bs .footer-ns {\n    border-color: transparent;\n  }\n\n  .footer-bs .footer-brand h2 {\n    margin: 0px 0px 10px;\n  }\n\n  .footer-bs .footer-brand p {\n    font-size: 12px;\n    color: #737980;\n  }\n\n  .footer-bs .footer-nav ul.pages {\n    list-style: none;\n    padding: 0px;\n  }\n\n  .footer-bs .footer-nav ul.pages li {\n    padding: 5px 0px;\n  }\n\n  .footer-bs .footer-nav ul.pages a {\n    color: #737980;\n    font-weight: bold;\n    text-transform: uppercase;\n  }\n\n  .footer-bs .footer-nav ul.pages a:hover {\n    color: #737980;\n    text-decoration: none;\n  }\n\n  .footer-bs .footer-nav h4 {\n    font-size: 11px;\n    text-transform: uppercase;\n    letter-spacing: 3px;\n    margin-bottom: 10px;\n  }\n\n  .footer-bs .footer-nav ul.list {\n    list-style: none;\n    padding: 0px;\n  }\n\n  .footer-bs .footer-nav ul.list li {\n    padding: 5px 0px;\n  }\n\n  .footer-bs .footer-nav ul.list a {\n    color: #737980;\n  }\n\n  .footer-bs .footer-nav ul.list a:hover {\n    color: #737980;\n    text-decoration: none;\n  }\n\n  .footer-bs .footer-social ul {\n    list-style: none;\n    padding: 0px;\n  }\n\n  .footer-bs .footer-social h4 {\n    font-size: 11px;\n    text-transform: uppercase;\n    letter-spacing: 3px;\n  }\n\n  .footer-bs .footer-social li {\n    padding: 5px 4px;\n  }\n\n  .footer-bs .footer-social a {\n    color: #737980;\n  }\n\n  .footer-bs .footer-social a:hover {\n    color: #737980;\n    text-decoration: none;\n  }\n\n  .footer-bs .footer-ns h4 {\n    font-size: 11px;\n    text-transform: uppercase;\n    letter-spacing: 3px;\n    margin-bottom: 10px;\n  }\n\n  .footer-bs .footer-ns p {\n    font-size: 12px;\n    color: #737980;\n  }\n\n  @media (min-width: 768px) {\n    .footer-bs .footer-nav,\n    .footer-bs .footer-social,\n    .footer-bs .footer-ns {\n      border-left: solid 1px rgba(255, 255, 255, 0.1);\n    }\n  }\n"]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -32100,7 +32100,7 @@ exports.default = _default;
 module.exports = "/logo500Verde.f087877d.png";
 },{}],"public/images/arbolfooterazul.png":[function(require,module,exports) {
 module.exports = "/arbolfooterazul.0073740f.png";
-},{}],"src/components/Layout/Footer/index.js":[function(require,module,exports) {
+},{}],"src/components/Layout/Footer/Footer.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -32110,7 +32110,7 @@ exports.default = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
-var _styleFooter = _interopRequireDefault(require("./styleFooter.js"));
+var _StyleFooter = _interopRequireDefault(require("./StyleFooter.js"));
 
 var _logo500Verde = _interopRequireDefault(require("../../../../public/images/logo500Verde.png"));
 
@@ -32119,7 +32119,7 @@ var _arbolfooterazul = _interopRequireDefault(require("../../../../public/images
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var Footer = function Footer() {
-  return _react.default.createElement(_react.default.Fragment, null, _react.default.createElement(_styleFooter.default, null, _react.default.createElement("footer", {
+  return _react.default.createElement(_react.default.Fragment, null, _react.default.createElement(_StyleFooter.default, null, _react.default.createElement("footer", {
     className: "footer-bs"
   }, _react.default.createElement("img", {
     className: "arbol-azul",
@@ -32171,7 +32171,7 @@ var Footer = function Footer() {
 
 var _default = Footer;
 exports.default = _default;
-},{"react":"node_modules/react/index.js","./styleFooter.js":"src/components/Layout/Footer/styleFooter.js","../../../../public/images/logo500Verde.png":"public/images/logo500Verde.png","../../../../public/images/arbolfooterazul.png":"public/images/arbolfooterazul.png"}],"node_modules/classnames/index.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","./StyleFooter.js":"src/components/Layout/Footer/StyleFooter.js","../../../../public/images/logo500Verde.png":"public/images/logo500Verde.png","../../../../public/images/arbolfooterazul.png":"public/images/arbolfooterazul.png"}],"node_modules/classnames/index.js":[function(require,module,exports) {
 var define;
 /*!
   Copyright (c) 2017 Jed Watson.
@@ -46493,7 +46493,7 @@ function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-},{"./Accordion":"node_modules/react-bootstrap/esm/Accordion.js","./AccordionToggle":"node_modules/react-bootstrap/esm/AccordionToggle.js","./AccordionCollapse":"node_modules/react-bootstrap/esm/AccordionCollapse.js","./Alert":"node_modules/react-bootstrap/esm/Alert.js","./Badge":"node_modules/react-bootstrap/esm/Badge.js","./Breadcrumb":"node_modules/react-bootstrap/esm/Breadcrumb.js","./BreadcrumbItem":"node_modules/react-bootstrap/esm/BreadcrumbItem.js","./Button":"node_modules/react-bootstrap/esm/Button.js","./ButtonGroup":"node_modules/react-bootstrap/esm/ButtonGroup.js","./ButtonToolbar":"node_modules/react-bootstrap/esm/ButtonToolbar.js","./Card":"node_modules/react-bootstrap/esm/Card.js","./CardColumns":"node_modules/react-bootstrap/esm/CardColumns.js","./CardDeck":"node_modules/react-bootstrap/esm/CardDeck.js","./CardImg":"node_modules/react-bootstrap/esm/CardImg.js","./CardGroup":"node_modules/react-bootstrap/esm/CardGroup.js","./Carousel":"node_modules/react-bootstrap/esm/Carousel.js","./CarouselItem":"node_modules/react-bootstrap/esm/CarouselItem.js","./CloseButton":"node_modules/react-bootstrap/esm/CloseButton.js","./Col":"node_modules/react-bootstrap/esm/Col.js","./Collapse":"node_modules/react-bootstrap/esm/Collapse.js","./Dropdown":"node_modules/react-bootstrap/esm/Dropdown.js","./DropdownButton":"node_modules/react-bootstrap/esm/DropdownButton.js","./DropdownItem":"node_modules/react-bootstrap/esm/DropdownItem.js","./Fade":"node_modules/react-bootstrap/esm/Fade.js","./Form":"node_modules/react-bootstrap/esm/Form.js","./FormControl":"node_modules/react-bootstrap/esm/FormControl.js","./FormCheck":"node_modules/react-bootstrap/esm/FormCheck.js","./FormFile":"node_modules/react-bootstrap/esm/FormFile.js","./Switch":"node_modules/react-bootstrap/esm/Switch.js","./FormGroup":"node_modules/react-bootstrap/esm/FormGroup.js","./FormLabel":"node_modules/react-bootstrap/esm/FormLabel.js","./FormText":"node_modules/react-bootstrap/esm/FormText.js","./Container":"node_modules/react-bootstrap/esm/Container.js","./Image":"node_modules/react-bootstrap/esm/Image.js","./Figure":"node_modules/react-bootstrap/esm/Figure.js","./InputGroup":"node_modules/react-bootstrap/esm/InputGroup.js","./Jumbotron":"node_modules/react-bootstrap/esm/Jumbotron.js","./ListGroup":"node_modules/react-bootstrap/esm/ListGroup.js","./ListGroupItem":"node_modules/react-bootstrap/esm/ListGroupItem.js","./Media":"node_modules/react-bootstrap/esm/Media.js","./Modal":"node_modules/react-bootstrap/esm/Modal.js","./ModalBody":"node_modules/react-bootstrap/esm/ModalBody.js","./ModalDialog":"node_modules/react-bootstrap/esm/ModalDialog.js","./ModalFooter":"node_modules/react-bootstrap/esm/ModalFooter.js","./ModalTitle":"node_modules/react-bootstrap/esm/ModalTitle.js","./Nav":"node_modules/react-bootstrap/esm/Nav.js","./Navbar":"node_modules/react-bootstrap/esm/Navbar.js","./NavbarBrand":"node_modules/react-bootstrap/esm/NavbarBrand.js","./NavDropdown":"node_modules/react-bootstrap/esm/NavDropdown.js","./NavItem":"node_modules/react-bootstrap/esm/NavItem.js","./NavLink":"node_modules/react-bootstrap/esm/NavLink.js","./Overlay":"node_modules/react-bootstrap/esm/Overlay.js","./OverlayTrigger":"node_modules/react-bootstrap/esm/OverlayTrigger.js","./PageItem":"node_modules/react-bootstrap/esm/PageItem.js","./Pagination":"node_modules/react-bootstrap/esm/Pagination.js","./Popover":"node_modules/react-bootstrap/esm/Popover.js","./PopoverContent":"node_modules/react-bootstrap/esm/PopoverContent.js","./PopoverTitle":"node_modules/react-bootstrap/esm/PopoverTitle.js","./ProgressBar":"node_modules/react-bootstrap/esm/ProgressBar.js","./ResponsiveEmbed":"node_modules/react-bootstrap/esm/ResponsiveEmbed.js","./Row":"node_modules/react-bootstrap/esm/Row.js","./SafeAnchor":"node_modules/react-bootstrap/esm/SafeAnchor.js","./Spinner":"node_modules/react-bootstrap/esm/Spinner.js","./SplitButton":"node_modules/react-bootstrap/esm/SplitButton.js","./Tab":"node_modules/react-bootstrap/esm/Tab.js","./TabContainer":"node_modules/react-bootstrap/esm/TabContainer.js","./TabContent":"node_modules/react-bootstrap/esm/TabContent.js","./Table":"node_modules/react-bootstrap/esm/Table.js","./TabPane":"node_modules/react-bootstrap/esm/TabPane.js","./Tabs":"node_modules/react-bootstrap/esm/Tabs.js","./ThemeProvider":"node_modules/react-bootstrap/esm/ThemeProvider.js","./ToggleButton":"node_modules/react-bootstrap/esm/ToggleButton.js","./ToggleButtonGroup":"node_modules/react-bootstrap/esm/ToggleButtonGroup.js","./Tooltip":"node_modules/react-bootstrap/esm/Tooltip.js","./Toast":"node_modules/react-bootstrap/esm/Toast.js","./ToastBody":"node_modules/react-bootstrap/esm/ToastBody.js","./ToastHeader":"node_modules/react-bootstrap/esm/ToastHeader.js"}],"src/components/Layout/Navbar/styleNavbar.js":[function(require,module,exports) {
+},{"./Accordion":"node_modules/react-bootstrap/esm/Accordion.js","./AccordionToggle":"node_modules/react-bootstrap/esm/AccordionToggle.js","./AccordionCollapse":"node_modules/react-bootstrap/esm/AccordionCollapse.js","./Alert":"node_modules/react-bootstrap/esm/Alert.js","./Badge":"node_modules/react-bootstrap/esm/Badge.js","./Breadcrumb":"node_modules/react-bootstrap/esm/Breadcrumb.js","./BreadcrumbItem":"node_modules/react-bootstrap/esm/BreadcrumbItem.js","./Button":"node_modules/react-bootstrap/esm/Button.js","./ButtonGroup":"node_modules/react-bootstrap/esm/ButtonGroup.js","./ButtonToolbar":"node_modules/react-bootstrap/esm/ButtonToolbar.js","./Card":"node_modules/react-bootstrap/esm/Card.js","./CardColumns":"node_modules/react-bootstrap/esm/CardColumns.js","./CardDeck":"node_modules/react-bootstrap/esm/CardDeck.js","./CardImg":"node_modules/react-bootstrap/esm/CardImg.js","./CardGroup":"node_modules/react-bootstrap/esm/CardGroup.js","./Carousel":"node_modules/react-bootstrap/esm/Carousel.js","./CarouselItem":"node_modules/react-bootstrap/esm/CarouselItem.js","./CloseButton":"node_modules/react-bootstrap/esm/CloseButton.js","./Col":"node_modules/react-bootstrap/esm/Col.js","./Collapse":"node_modules/react-bootstrap/esm/Collapse.js","./Dropdown":"node_modules/react-bootstrap/esm/Dropdown.js","./DropdownButton":"node_modules/react-bootstrap/esm/DropdownButton.js","./DropdownItem":"node_modules/react-bootstrap/esm/DropdownItem.js","./Fade":"node_modules/react-bootstrap/esm/Fade.js","./Form":"node_modules/react-bootstrap/esm/Form.js","./FormControl":"node_modules/react-bootstrap/esm/FormControl.js","./FormCheck":"node_modules/react-bootstrap/esm/FormCheck.js","./FormFile":"node_modules/react-bootstrap/esm/FormFile.js","./Switch":"node_modules/react-bootstrap/esm/Switch.js","./FormGroup":"node_modules/react-bootstrap/esm/FormGroup.js","./FormLabel":"node_modules/react-bootstrap/esm/FormLabel.js","./FormText":"node_modules/react-bootstrap/esm/FormText.js","./Container":"node_modules/react-bootstrap/esm/Container.js","./Image":"node_modules/react-bootstrap/esm/Image.js","./Figure":"node_modules/react-bootstrap/esm/Figure.js","./InputGroup":"node_modules/react-bootstrap/esm/InputGroup.js","./Jumbotron":"node_modules/react-bootstrap/esm/Jumbotron.js","./ListGroup":"node_modules/react-bootstrap/esm/ListGroup.js","./ListGroupItem":"node_modules/react-bootstrap/esm/ListGroupItem.js","./Media":"node_modules/react-bootstrap/esm/Media.js","./Modal":"node_modules/react-bootstrap/esm/Modal.js","./ModalBody":"node_modules/react-bootstrap/esm/ModalBody.js","./ModalDialog":"node_modules/react-bootstrap/esm/ModalDialog.js","./ModalFooter":"node_modules/react-bootstrap/esm/ModalFooter.js","./ModalTitle":"node_modules/react-bootstrap/esm/ModalTitle.js","./Nav":"node_modules/react-bootstrap/esm/Nav.js","./Navbar":"node_modules/react-bootstrap/esm/Navbar.js","./NavbarBrand":"node_modules/react-bootstrap/esm/NavbarBrand.js","./NavDropdown":"node_modules/react-bootstrap/esm/NavDropdown.js","./NavItem":"node_modules/react-bootstrap/esm/NavItem.js","./NavLink":"node_modules/react-bootstrap/esm/NavLink.js","./Overlay":"node_modules/react-bootstrap/esm/Overlay.js","./OverlayTrigger":"node_modules/react-bootstrap/esm/OverlayTrigger.js","./PageItem":"node_modules/react-bootstrap/esm/PageItem.js","./Pagination":"node_modules/react-bootstrap/esm/Pagination.js","./Popover":"node_modules/react-bootstrap/esm/Popover.js","./PopoverContent":"node_modules/react-bootstrap/esm/PopoverContent.js","./PopoverTitle":"node_modules/react-bootstrap/esm/PopoverTitle.js","./ProgressBar":"node_modules/react-bootstrap/esm/ProgressBar.js","./ResponsiveEmbed":"node_modules/react-bootstrap/esm/ResponsiveEmbed.js","./Row":"node_modules/react-bootstrap/esm/Row.js","./SafeAnchor":"node_modules/react-bootstrap/esm/SafeAnchor.js","./Spinner":"node_modules/react-bootstrap/esm/Spinner.js","./SplitButton":"node_modules/react-bootstrap/esm/SplitButton.js","./Tab":"node_modules/react-bootstrap/esm/Tab.js","./TabContainer":"node_modules/react-bootstrap/esm/TabContainer.js","./TabContent":"node_modules/react-bootstrap/esm/TabContent.js","./Table":"node_modules/react-bootstrap/esm/Table.js","./TabPane":"node_modules/react-bootstrap/esm/TabPane.js","./Tabs":"node_modules/react-bootstrap/esm/Tabs.js","./ThemeProvider":"node_modules/react-bootstrap/esm/ThemeProvider.js","./ToggleButton":"node_modules/react-bootstrap/esm/ToggleButton.js","./ToggleButtonGroup":"node_modules/react-bootstrap/esm/ToggleButtonGroup.js","./Tooltip":"node_modules/react-bootstrap/esm/Tooltip.js","./Toast":"node_modules/react-bootstrap/esm/Toast.js","./ToastBody":"node_modules/react-bootstrap/esm/ToastBody.js","./ToastHeader":"node_modules/react-bootstrap/esm/ToastHeader.js"}],"src/components/Layout/Navbar/StyleNavbar.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -49063,7 +49063,7 @@ var whoami = /*#__PURE__*/function () {
 }();
 
 exports.whoami = whoami;
-},{"@babel/runtime/regenerator":"node_modules/@babel/runtime/regenerator/index.js","@babel/runtime/helpers/asyncToGenerator":"node_modules/@babel/runtime/helpers/asyncToGenerator.js","axios":"node_modules/axios/index.js","react":"node_modules/react/index.js"}],"src/components/Layout/Navbar/index.js":[function(require,module,exports) {
+},{"@babel/runtime/regenerator":"node_modules/@babel/runtime/regenerator/index.js","@babel/runtime/helpers/asyncToGenerator":"node_modules/@babel/runtime/helpers/asyncToGenerator.js","axios":"node_modules/axios/index.js","react":"node_modules/react/index.js"}],"src/components/Layout/Navbar/Navbar.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -49077,7 +49077,7 @@ var _reactBootstrap = require("react-bootstrap");
 
 var _logo500Verde = _interopRequireDefault(require("../../../../public/images/logo500Verde.png"));
 
-var _styleNavbar = _interopRequireDefault(require("./styleNavbar"));
+var _StyleNavbar = _interopRequireDefault(require("./StyleNavbar"));
 
 var _reactRouterDom = require("react-router-dom");
 
@@ -49088,7 +49088,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var LayoutNavbar = function LayoutNavbar() {
   var user = (0, _auth.useUser)();
   var handleLogout = (0, _auth.useUserLogout)();
-  return _react.default.createElement(_react.default.Fragment, null, _react.default.createElement(_styleNavbar.default, null, _react.default.createElement(_reactBootstrap.Navbar, {
+  return _react.default.createElement(_react.default.Fragment, null, _react.default.createElement(_StyleNavbar.default, null, _react.default.createElement(_reactBootstrap.Navbar, {
     className: "container-navbar",
     collapseOnSelect: true,
     expand: "lg",
@@ -49121,7 +49121,7 @@ var LayoutNavbar = function LayoutNavbar() {
   }, _react.default.createElement(_reactBootstrap.NavDropdown.Item, {
     as: "div"
   }, _react.default.createElement(_reactRouterDom.Link, {
-    to: "/joinin"
+    to: "/meet"
   }, "Participa")), _react.default.createElement(_reactBootstrap.NavDropdown.Item, {
     as: "div"
   }, _react.default.createElement(_reactRouterDom.Link, {
@@ -49162,7 +49162,7 @@ var LayoutNavbar = function LayoutNavbar() {
 
 var _default = LayoutNavbar;
 exports.default = _default;
-},{"react":"node_modules/react/index.js","react-bootstrap":"node_modules/react-bootstrap/esm/index.js","../../../../public/images/logo500Verde.png":"public/images/logo500Verde.png","./styleNavbar":"src/components/Layout/Navbar/styleNavbar.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js","../../../lib/auth/auth.api":"src/lib/auth/auth.api.js"}],"public/images/latapequeña.jpg":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","react-bootstrap":"node_modules/react-bootstrap/esm/index.js","../../../../public/images/logo500Verde.png":"public/images/logo500Verde.png","./StyleNavbar":"src/components/Layout/Navbar/StyleNavbar.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js","../../../lib/auth/auth.api":"src/lib/auth/auth.api.js"}],"public/images/latapequeña.jpg":[function(require,module,exports) {
 module.exports = "/latapequeña.3d93ae11.jpg";
 },{}],"public/styles/Images/lata.js":[function(require,module,exports) {
 "use strict";
@@ -49241,7 +49241,7 @@ exports.ButtonParticipa = ButtonParticipa;
 var ButtonOrganiza = _styledComponents.default.button(_templateObject2());
 
 exports.ButtonOrganiza = ButtonOrganiza;
-},{"@babel/runtime/helpers/taggedTemplateLiteral":"node_modules/@babel/runtime/helpers/taggedTemplateLiteral.js","styled-components":"node_modules/styled-components/dist/styled-components.browser.esm.js"}],"src/pages/home/index.js":[function(require,module,exports) {
+},{"@babel/runtime/helpers/taggedTemplateLiteral":"node_modules/@babel/runtime/helpers/taggedTemplateLiteral.js","styled-components":"node_modules/styled-components/dist/styled-components.browser.esm.js"}],"src/pages/home/Home.page.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -49279,7 +49279,7 @@ var Home = function Home() {
     as: "div",
     variant: "outline-secondary"
   }, _react.default.createElement(_reactRouterDom.Link, {
-    to: "joinin"
+    to: "meet"
   }, "Participa")), _react.default.createElement(_ButtonsHome.ButtonOrganiza, {
     as: "div",
     variant: "outline-secondary"
@@ -49290,7 +49290,7 @@ var Home = function Home() {
 
 var _default = Home;
 exports.default = _default;
-},{"react":"node_modules/react/index.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js","../../../public/styles/App.css":"public/styles/App.css","bootstrap/dist/css/bootstrap.min.css":"node_modules/bootstrap/dist/css/bootstrap.min.css","../../../public/styles/Images/lata":"public/styles/Images/lata.js","../../components/ui/buttons/ButtonsHome":"src/components/ui/buttons/ButtonsHome.js","react-bootstrap":"node_modules/react-bootstrap/esm/index.js","../../lib/auth/auth.api":"src/lib/auth/auth.api.js"}],"src/pages/contact/index.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js","../../../public/styles/App.css":"public/styles/App.css","bootstrap/dist/css/bootstrap.min.css":"node_modules/bootstrap/dist/css/bootstrap.min.css","../../../public/styles/Images/lata":"public/styles/Images/lata.js","../../components/ui/buttons/ButtonsHome":"src/components/ui/buttons/ButtonsHome.js","react-bootstrap":"node_modules/react-bootstrap/esm/index.js","../../lib/auth/auth.api":"src/lib/auth/auth.api.js"}],"src/pages/contact/Contact.page.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -49308,7 +49308,7 @@ var Contact = function Contact() {
 
 var _default = Contact;
 exports.default = _default;
-},{"react":"node_modules/react/index.js"}],"src/pages/about/index.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js"}],"src/pages/about/Abauot.page.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -49406,7 +49406,7 @@ function _slicedToArray(arr, i) {
 }
 
 module.exports = _slicedToArray;
-},{"./arrayWithHoles":"node_modules/@babel/runtime/helpers/arrayWithHoles.js","./iterableToArrayLimit":"node_modules/@babel/runtime/helpers/iterableToArrayLimit.js","./unsupportedIterableToArray":"node_modules/@babel/runtime/helpers/unsupportedIterableToArray.js","./nonIterableRest":"node_modules/@babel/runtime/helpers/nonIterableRest.js"}],"src/pages/auth/authForm/index.js":[function(require,module,exports) {
+},{"./arrayWithHoles":"node_modules/@babel/runtime/helpers/arrayWithHoles.js","./iterableToArrayLimit":"node_modules/@babel/runtime/helpers/iterableToArrayLimit.js","./unsupportedIterableToArray":"node_modules/@babel/runtime/helpers/unsupportedIterableToArray.js","./nonIterableRest":"node_modules/@babel/runtime/helpers/nonIterableRest.js"}],"src/pages/auth/authForm/AuthForm.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -49484,7 +49484,7 @@ var LoginSignupForm = function LoginSignupForm(_ref) {
 };
 
 exports.LoginSignupForm = LoginSignupForm;
-},{"@babel/runtime/helpers/slicedToArray":"node_modules/@babel/runtime/helpers/slicedToArray.js","react":"node_modules/react/index.js","react-bootstrap":"node_modules/react-bootstrap/esm/index.js"}],"src/pages/auth/singup/index.js":[function(require,module,exports) {
+},{"@babel/runtime/helpers/slicedToArray":"node_modules/@babel/runtime/helpers/slicedToArray.js","react":"node_modules/react/index.js","react-bootstrap":"node_modules/react-bootstrap/esm/index.js"}],"src/pages/auth/singup/Singup.page.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -49500,7 +49500,7 @@ var _slicedToArray2 = _interopRequireDefault(require("@babel/runtime/helpers/sli
 
 var _react = _interopRequireWildcard(require("react"));
 
-var _authForm = require("../authForm");
+var _AuthForm = require("../authForm/AuthForm");
 
 var _auth = require("../../../lib/auth/auth.api");
 
@@ -49580,12 +49580,12 @@ var Signup = (0, _reactRouterDom.withRouter)(function (_ref) {
   return _react.default.createElement(_reactBootstrap.Container, null, _react.default.createElement("div", null, _react.default.createElement("h2", null, "SignUp"), error && _react.default.createElement("div", {
     className: "alert alert-danger",
     role: "alert"
-  }, error), _react.default.createElement(_authForm.LoginSignupForm, {
+  }, error), _react.default.createElement(_AuthForm.LoginSignupForm, {
     handleSubmit: handleSubmit
   })));
 });
 exports.Signup = Signup;
-},{"@babel/runtime/regenerator":"node_modules/@babel/runtime/regenerator/index.js","@babel/runtime/helpers/asyncToGenerator":"node_modules/@babel/runtime/helpers/asyncToGenerator.js","@babel/runtime/helpers/slicedToArray":"node_modules/@babel/runtime/helpers/slicedToArray.js","react":"node_modules/react/index.js","../authForm":"src/pages/auth/authForm/index.js","../../../lib/auth/auth.api":"src/lib/auth/auth.api.js","react-bootstrap":"node_modules/react-bootstrap/esm/index.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js"}],"src/pages/auth/login/index.js":[function(require,module,exports) {
+},{"@babel/runtime/regenerator":"node_modules/@babel/runtime/regenerator/index.js","@babel/runtime/helpers/asyncToGenerator":"node_modules/@babel/runtime/helpers/asyncToGenerator.js","@babel/runtime/helpers/slicedToArray":"node_modules/@babel/runtime/helpers/slicedToArray.js","react":"node_modules/react/index.js","../authForm/AuthForm":"src/pages/auth/authForm/AuthForm.js","../../../lib/auth/auth.api":"src/lib/auth/auth.api.js","react-bootstrap":"node_modules/react-bootstrap/esm/index.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js"}],"src/pages/auth/login/Login.page.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -49601,7 +49601,7 @@ var _slicedToArray2 = _interopRequireDefault(require("@babel/runtime/helpers/sli
 
 var _react = _interopRequireWildcard(require("react"));
 
-var _authForm = require("../authForm");
+var _AuthForm = require("../authForm/AuthForm");
 
 var _auth = require("../../../lib/auth/auth.api");
 
@@ -49664,12 +49664,12 @@ var Login = (0, _reactRouterDom.withRouter)(function (_ref) {
   return _react.default.createElement(_reactBootstrap.Container, null, _react.default.createElement("div", null, _react.default.createElement("h1", null, "Login"), error && _react.default.createElement("div", {
     className: "alert alert-danger",
     role: "alert"
-  }, "Introduzca los datos correctamente")), _react.default.createElement(_authForm.LoginSignupForm, {
+  }, "Introduzca los datos correctamente")), _react.default.createElement(_AuthForm.LoginSignupForm, {
     handleSubmit: handleSubmit
   }));
 });
 exports.Login = Login;
-},{"@babel/runtime/regenerator":"node_modules/@babel/runtime/regenerator/index.js","@babel/runtime/helpers/asyncToGenerator":"node_modules/@babel/runtime/helpers/asyncToGenerator.js","@babel/runtime/helpers/slicedToArray":"node_modules/@babel/runtime/helpers/slicedToArray.js","react":"node_modules/react/index.js","../authForm":"src/pages/auth/authForm/index.js","../../../lib/auth/auth.api":"src/lib/auth/auth.api.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js","react-bootstrap":"node_modules/react-bootstrap/esm/index.js"}],"node_modules/react-hook-form/dist/react-hook-form.es.js":[function(require,module,exports) {
+},{"@babel/runtime/regenerator":"node_modules/@babel/runtime/regenerator/index.js","@babel/runtime/helpers/asyncToGenerator":"node_modules/@babel/runtime/helpers/asyncToGenerator.js","@babel/runtime/helpers/slicedToArray":"node_modules/@babel/runtime/helpers/slicedToArray.js","react":"node_modules/react/index.js","../authForm/AuthForm":"src/pages/auth/authForm/AuthForm.js","../../../lib/auth/auth.api":"src/lib/auth/auth.api.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js","react-bootstrap":"node_modules/react-bootstrap/esm/index.js"}],"node_modules/react-hook-form/dist/react-hook-form.es.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -52062,7 +52062,7 @@ Component) {
 };
 
 exports.withProtected = withProtected;
-},{"react":"node_modules/react/index.js","./auth.api":"src/lib/auth/auth.api.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js"}],"src/pages/organize/index.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","./auth.api":"src/lib/auth/auth.api.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js"}],"src/pages/organize/Organize.page.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -71472,7 +71472,7 @@ var define;
   }
 }.call(this));
 
-},{"buffer":"../../../../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/buffer/index.js"}],"src/lib/meetings.api.js":[function(require,module,exports) {
+},{"buffer":"../../../../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/buffer/index.js"}],"src/lib/frontRoutes/meetings.api.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -71594,13 +71594,9 @@ var getMeet = /*#__PURE__*/function () {
 
           case 2:
             res = _context4.sent;
-            //Filtramos por un meeting especifico:
-            console.log(res.data);
-            return _context4.abrupt("return", _lodash.default.filter(res.data, {
-              _id: idMeet
-            }));
+            return _context4.abrupt("return", res.data);
 
-          case 5:
+          case 4:
           case "end":
             return _context4.stop();
         }
@@ -71611,10 +71607,11 @@ var getMeet = /*#__PURE__*/function () {
   return function getMeet(_x2) {
     return _ref4.apply(this, arguments);
   };
-}();
+}(); //Si lo que quiero es recibir un array el return sería así: return _.filter(res.data);
+
 
 exports.getMeet = getMeet;
-},{"@babel/runtime/regenerator":"node_modules/@babel/runtime/regenerator/index.js","@babel/runtime/helpers/asyncToGenerator":"node_modules/@babel/runtime/helpers/asyncToGenerator.js","axios":"node_modules/axios/index.js","lodash":"node_modules/lodash/lodash.js"}],"src/pages/joinIn/style.js":[function(require,module,exports) {
+},{"@babel/runtime/regenerator":"node_modules/@babel/runtime/regenerator/index.js","@babel/runtime/helpers/asyncToGenerator":"node_modules/@babel/runtime/helpers/asyncToGenerator.js","axios":"node_modules/axios/index.js","lodash":"node_modules/lodash/lodash.js"}],"src/pages/joinIn/StyleMeetings.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -71655,71 +71652,7 @@ exports.CardMeeting = CardMeeting;
 var CardContainer = _styledComponents.default.main(_templateObject2());
 
 exports.CardContainer = CardContainer;
-},{"@babel/runtime/helpers/taggedTemplateLiteral":"node_modules/@babel/runtime/helpers/taggedTemplateLiteral.js","styled-components":"node_modules/styled-components/dist/styled-components.browser.esm.js"}],"src/pages/joinIn/indexPlace.js":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = void 0;
-
-var _slicedToArray2 = _interopRequireDefault(require("@babel/runtime/helpers/slicedToArray"));
-
-var _react = _interopRequireWildcard(require("react"));
-
-var _meetings = require("../../lib/meetings.api");
-
-var _reactBootstrap = require("react-bootstrap");
-
-var _style = require("./style");
-
-var _auth = require("../../lib/auth/auth.api");
-
-var _reactRouterDom = require("react-router-dom");
-
-function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function () { return cache; }; return cache; }
-
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var JoininPlace = function JoininPlace(props) {
-  var _useState = (0, _react.useState)([]),
-      _useState2 = (0, _slicedToArray2.default)(_useState, 2),
-      places = _useState2[0],
-      setPlace = _useState2[1];
-
-  var user = (0, _auth.useUser)();
-  (0, _react.useEffect)(function () {
-    (0, _meetings.getPlaces)(props).then(function (place) {
-      return setPlace(place);
-    });
-  }, []);
-  return _react.default.createElement(_style.CardContainer, {
-    className: "cards-container"
-  }, _react.default.createElement("h1", null, "Listado de Regogidas organizadas"), places.map(function (place, i) {
-    return _react.default.createElement(_style.CardMeeting, {
-      key: i
-    }, _react.default.createElement(_reactBootstrap.Container, null, _react.default.createElement(_reactBootstrap.Card, {
-      className: "text-center"
-    }, _react.default.createElement(_reactBootstrap.Card.Header, {
-      className: "backround-title"
-    }, "Organizado por: ", user.username), _react.default.createElement(_reactBootstrap.Card.Body, null, _react.default.createElement(_reactBootstrap.Card.Title, null, "Zona de actuaci\xF3n: ", place.zone, " "), _react.default.createElement(_reactBootstrap.Card.Subtitle, {
-      className: "mb-2 text-muted"
-    }, "Ciudad: ", place.cityPlace), _react.default.createElement(_reactBootstrap.Card.Text, null, "Tipo:", place.type), _react.default.createElement(_reactBootstrap.Button, {
-      as: "div",
-      className: "button-card"
-    }, _react.default.createElement(_reactRouterDom.Link, {
-      to: "/meet"
-    }, "Punto de partida")), _react.default.createElement(_reactBootstrap.Card.Text, null, "Dificultad:", place.difficulty)), _react.default.createElement(_reactBootstrap.Card.Footer, {
-      className: "backround-bottom-card"
-    }, "Fecha de creaci\xF3n:", " ", place.date.toString().slice(0, 10).split("-").reverse().join("/")))));
-  }));
-};
-
-var _default = JoininPlace;
-exports.default = _default;
-},{"@babel/runtime/helpers/slicedToArray":"node_modules/@babel/runtime/helpers/slicedToArray.js","react":"node_modules/react/index.js","../../lib/meetings.api":"src/lib/meetings.api.js","react-bootstrap":"node_modules/react-bootstrap/esm/index.js","./style":"src/pages/joinIn/style.js","../../lib/auth/auth.api":"src/lib/auth/auth.api.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js"}],"src/pages/joinIn/index.js":[function(require,module,exports) {
+},{"@babel/runtime/helpers/taggedTemplateLiteral":"node_modules/@babel/runtime/helpers/taggedTemplateLiteral.js","styled-components":"node_modules/styled-components/dist/styled-components.browser.esm.js"}],"src/pages/joinIn/Meetings.page.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -71735,11 +71668,11 @@ var _asyncToGenerator2 = _interopRequireDefault(require("@babel/runtime/helpers/
 
 var _react = _interopRequireWildcard(require("react"));
 
-var _meetings = require("../../lib/meetings.api");
+var _meetings = require("../../lib/frontRoutes/meetings.api");
 
 var _reactBootstrap = require("react-bootstrap");
 
-var _style = require("./style");
+var _StyleMeetings = require("./StyleMeetings");
 
 var _auth = require("../../lib/auth/auth.api");
 
@@ -71797,10 +71730,10 @@ var Joinin = function Joinin() {
   (0, _react.useEffect)(function () {
     fetchMeets();
   }, []);
-  return _react.default.createElement(_style.CardContainer, {
+  return _react.default.createElement(_StyleMeetings.CardContainer, {
     className: "cards-container"
   }, _react.default.createElement("h1", null, "Listado de Regogidas organizadas"), meetings.map(function (meeting, i) {
-    return _react.default.createElement(_style.CardMeeting, {
+    return _react.default.createElement(_StyleMeetings.CardMeeting, {
       key: i
     }, _react.default.createElement(_reactBootstrap.Container, null, _react.default.createElement(_reactBootstrap.Card, {
       className: "text-center"
@@ -71829,7 +71762,7 @@ var Joinin = function Joinin() {
 
 var _default = Joinin;
 exports.default = _default;
-},{"@babel/runtime/helpers/slicedToArray":"node_modules/@babel/runtime/helpers/slicedToArray.js","@babel/runtime/regenerator":"node_modules/@babel/runtime/regenerator/index.js","@babel/runtime/helpers/asyncToGenerator":"node_modules/@babel/runtime/helpers/asyncToGenerator.js","react":"node_modules/react/index.js","../../lib/meetings.api":"src/lib/meetings.api.js","react-bootstrap":"node_modules/react-bootstrap/esm/index.js","./style":"src/pages/joinIn/style.js","../../lib/auth/auth.api":"src/lib/auth/auth.api.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js"}],"src/pages/joinIn/meetOne.js":[function(require,module,exports) {
+},{"@babel/runtime/helpers/slicedToArray":"node_modules/@babel/runtime/helpers/slicedToArray.js","@babel/runtime/regenerator":"node_modules/@babel/runtime/regenerator/index.js","@babel/runtime/helpers/asyncToGenerator":"node_modules/@babel/runtime/helpers/asyncToGenerator.js","react":"node_modules/react/index.js","../../lib/frontRoutes/meetings.api":"src/lib/frontRoutes/meetings.api.js","react-bootstrap":"node_modules/react-bootstrap/esm/index.js","./StyleMeetings":"src/pages/joinIn/StyleMeetings.js","../../lib/auth/auth.api":"src/lib/auth/auth.api.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js"}],"src/pages/joinIn/MeetDetail.page.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -71839,13 +71772,17 @@ exports.default = void 0;
 
 var _slicedToArray2 = _interopRequireDefault(require("@babel/runtime/helpers/slicedToArray"));
 
+var _regenerator = _interopRequireDefault(require("@babel/runtime/regenerator"));
+
+var _asyncToGenerator2 = _interopRequireDefault(require("@babel/runtime/helpers/asyncToGenerator"));
+
 var _react = _interopRequireWildcard(require("react"));
 
-var _meetings = require("../../lib/meetings.api");
+var _meetings = require("../../lib/frontRoutes/meetings.api");
 
 var _reactBootstrap = require("react-bootstrap");
 
-var _style = require("./style");
+var _StyleMeetings = require("./StyleMeetings");
 
 var _auth = require("../../lib/auth/auth.api");
 
@@ -71857,47 +71794,88 @@ function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj;
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var JoininOne = function JoininOne(props) {
-  var id = props.match.params.id;
+var DeleteMeet = function DeleteMeet(_ref) {
+  var idMeet = _ref.idMeet,
+      deleteReady = _ref.deleteReady;
+  return _react.default.createElement(_reactRouterDom.Link, {
+    to: "/meet",
+    onClick: /*#__PURE__*/(0, _asyncToGenerator2.default)( /*#__PURE__*/_regenerator.default.mark(function _callee() {
+      return _regenerator.default.wrap(function _callee$(_context) {
+        while (1) {
+          switch (_context.prev = _context.next) {
+            case 0:
+              _context.next = 2;
+              return (0, _meetings.deleteMeet)(idMeet);
 
-  var _useState = (0, _react.useState)([]),
+            case 2:
+              _context.next = 4;
+              return deleteReady();
+
+            case 4:
+            case "end":
+              return _context.stop();
+          }
+        }
+      }, _callee);
+    }))
+  }, "Delete");
+};
+
+var JoininOne = function JoininOne(props) {
+  // const { id } = props.match.params;
+  var _useState = (0, _react.useState)({}),
       _useState2 = (0, _slicedToArray2.default)(_useState, 2),
       meet = _useState2[0],
       setMeet = _useState2[1];
 
-  console.log(props);
-  (0, _react.useEffect)(function () {
-    (0, _meetings.getMeet)(id).then(function (meet) {
+  var fetchMeet = function fetchMeet() {
+    return (0, _meetings.getMeet)(props.meetId).then(function (meet) {
       return setMeet(meet);
     });
-  }, []); //   const [meet, setMeet] = useState([]);
-  //   const user = useUser();
-  //   useEffect(() => {
-  //     getMeet(props).then((meet) => setMeeting(meet));
-  //   }, []);
+  };
 
-  return _react.default.createElement(_style.CardContainer, {
+  (0, _react.useEffect)(function () {
+    var unmounted = false;
+    fetchMeet();
+    return function () {
+      unmounted = true;
+    };
+  }, []);
+  console.log(meet);
+  return _react.default.createElement(_StyleMeetings.CardContainer, {
     className: "cards-container"
-  }, _react.default.createElement("h1", null, "detalle de Regogida"), _react.default.createElement(_style.CardMeeting, null, _react.default.createElement(_reactBootstrap.Container, null, _react.default.createElement(_reactBootstrap.Card, {
+  }, _react.default.createElement("h1", null, "Detalle de Regogida: ", props.meetId), _react.default.createElement(_StyleMeetings.CardMeeting, null, _react.default.createElement(_reactBootstrap.Container, null, _react.default.createElement(_reactBootstrap.Card, {
     className: "text-center"
   }, _react.default.createElement(_reactBootstrap.Card.Header, {
     className: "backround-title"
-  }, "Organizado por:"), _react.default.createElement(_reactBootstrap.Card.Body, null, _react.default.createElement(_reactBootstrap.Card.Title, null, props.title), _react.default.createElement(_reactBootstrap.Card.Subtitle, {
+  }, "Organizado por:"), _react.default.createElement(_reactBootstrap.Card.Body, null, _react.default.createElement(_reactBootstrap.Card.Title, null, "T\xEDtulo: ", meet.title), _react.default.createElement(_reactBootstrap.Card.Subtitle, {
     className: "mb-2 text-muted"
-  }, props.city), _react.default.createElement(_reactBootstrap.Card.Text, null, meet.streetAddress), _react.default.createElement(_reactBootstrap.Button, {
+  }, "Ciudad: ", meet.city), _react.default.createElement(_reactBootstrap.Card.Text, null, "Zona: ", meet.zone), _react.default.createElement(_reactBootstrap.Card.Text, null, "Descripci\xF3n: ", meet.description), _react.default.createElement(_reactBootstrap.Card.Subtitle, {
+    className: "mb-2 text-muted"
+  }, "Tipo: ", meet.type), _react.default.createElement(_reactBootstrap.Card.Subtitle, {
+    className: "mb-2 text-muted"
+  }, "Dificultad: ", meet.difficulty), " ", _react.default.createElement(_reactBootstrap.Button, {
     as: "div",
     className: "button-card"
   }, _react.default.createElement(_reactRouterDom.Link, {
     to: "/meet/:id",
     className: "button-card"
-  }, "Informaci\xF3n")), " "), _react.default.createElement(_reactBootstrap.Card.Footer, {
+  }, "Informaci\xF3n")), " ", _react.default.createElement(_reactBootstrap.Button, {
+    as: "div",
+    className: "button-card"
+  }, _react.default.createElement(DeleteMeet, {
+    to: "/",
+    idMeet: meet.id,
+    deleteReady: fetchMeet,
+    className: "button-card"
+  })), " "), _react.default.createElement(_reactBootstrap.Card.Footer, {
     className: "backround-bottom-card"
-  }, "Fecha: ", props.date, " - Hora: ", meet.hour)))), ");");
+  }, "Fecha: ", meet.date, " - Hora: ", meet.hour)))));
 };
 
 var _default = JoininOne;
 exports.default = _default;
-},{"@babel/runtime/helpers/slicedToArray":"node_modules/@babel/runtime/helpers/slicedToArray.js","react":"node_modules/react/index.js","../../lib/meetings.api":"src/lib/meetings.api.js","react-bootstrap":"node_modules/react-bootstrap/esm/index.js","./style":"src/pages/joinIn/style.js","../../lib/auth/auth.api":"src/lib/auth/auth.api.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js"}],"src/App.js":[function(require,module,exports) {
+},{"@babel/runtime/helpers/slicedToArray":"node_modules/@babel/runtime/helpers/slicedToArray.js","@babel/runtime/regenerator":"node_modules/@babel/runtime/regenerator/index.js","@babel/runtime/helpers/asyncToGenerator":"node_modules/@babel/runtime/helpers/asyncToGenerator.js","react":"node_modules/react/index.js","../../lib/frontRoutes/meetings.api":"src/lib/frontRoutes/meetings.api.js","react-bootstrap":"node_modules/react-bootstrap/esm/index.js","./StyleMeetings":"src/pages/joinIn/StyleMeetings.js","../../lib/auth/auth.api":"src/lib/auth/auth.api.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js"}],"src/App.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -71913,29 +71891,27 @@ require("../public/styles/App.css");
 
 require("bootstrap/dist/css/bootstrap.min.css");
 
-var _Footer = _interopRequireDefault(require("./components/Layout/Footer"));
+var _Footer = _interopRequireDefault(require("./components/Layout/Footer/Footer"));
 
-var _Navbar = _interopRequireDefault(require("./components/Layout/Navbar"));
+var _Navbar = _interopRequireDefault(require("./components/Layout/Navbar/Navbar"));
 
-var _home = _interopRequireDefault(require("./pages/home"));
+var _Home = _interopRequireDefault(require("./pages/home/Home.page"));
 
-var _contact = _interopRequireDefault(require("./pages/contact"));
+var _Contact = _interopRequireDefault(require("./pages/contact/Contact.page"));
 
-var _about = _interopRequireDefault(require("./pages/about"));
+var _Abauot = _interopRequireDefault(require("./pages/about/Abauot.page"));
 
-var _singup = require("./pages/auth/singup");
+var _Singup = require("./pages/auth/singup/Singup.page");
 
-var _login = require("./pages/auth/login");
+var _Login = require("./pages/auth/login/Login.page");
 
-var _organize = require("./pages/organize");
+var _Organize = require("./pages/organize/Organize.page");
 
 var _withAuthentication = require("./lib/auth/withAuthentication");
 
-var _indexPlace = _interopRequireDefault(require("./pages/joinIn/indexPlace"));
+var _Meetings = _interopRequireDefault(require("./pages/joinIn/Meetings.page"));
 
-var _joinIn = _interopRequireDefault(require("./pages/joinIn"));
-
-var _meetOne = _interopRequireDefault(require("./pages/joinIn/meetOne"));
+var _MeetDetail = _interopRequireDefault(require("./pages/joinIn/MeetDetail.page"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -71943,35 +71919,36 @@ var App = (0, _withAuthentication.withAuthentication)(function () {
   return _react.default.createElement(_reactRouterDom.BrowserRouter, null, _react.default.createElement(_Navbar.default, null), _react.default.createElement(_reactRouterDom.Switch, null, _react.default.createElement(_reactRouterDom.Route, {
     path: "/",
     exact: true,
-    component: _home.default
+    component: _Home.default
   }), _react.default.createElement(_reactRouterDom.Route, {
     path: "/contact",
-    component: _contact.default
+    component: _Contact.default
   }), _react.default.createElement(_reactRouterDom.Route, {
     path: "/about",
-    component: _about.default
+    component: _Abauot.default
   }), _react.default.createElement(_reactRouterDom.Route, {
     path: "/auth/signup",
-    component: _singup.Signup
+    component: _Singup.Signup
   }), _react.default.createElement(_reactRouterDom.Route, {
     path: "/auth/login",
-    component: _login.Login
-  }), _react.default.createElement(_reactRouterDom.Route, {
-    path: "/joinin",
-    component: _indexPlace.default
+    component: _Login.Login
   }), _react.default.createElement(_reactRouterDom.Route, {
     path: "/organize",
-    component: _organize.PrivateOrganize
+    component: _Organize.PrivateOrganize
   }), _react.default.createElement(_reactRouterDom.Route, {
     path: "/meet/:id",
-    component: _meetOne.default
+    component: function component(props) {
+      return _react.default.createElement(_MeetDetail.default, {
+        meetId: props.match.params.id
+      });
+    }
   }), _react.default.createElement(_reactRouterDom.Route, {
-    path: "/meet/",
-    component: _joinIn.default
+    path: "/meet",
+    component: _Meetings.default
   })), _react.default.createElement(_Footer.default, null));
 });
 exports.App = App;
-},{"react":"node_modules/react/index.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js","../public/styles/App.css":"public/styles/App.css","bootstrap/dist/css/bootstrap.min.css":"node_modules/bootstrap/dist/css/bootstrap.min.css","./components/Layout/Footer":"src/components/Layout/Footer/index.js","./components/Layout/Navbar":"src/components/Layout/Navbar/index.js","./pages/home":"src/pages/home/index.js","./pages/contact":"src/pages/contact/index.js","./pages/about":"src/pages/about/index.js","./pages/auth/singup":"src/pages/auth/singup/index.js","./pages/auth/login":"src/pages/auth/login/index.js","./pages/organize":"src/pages/organize/index.js","./lib/auth/withAuthentication":"src/lib/auth/withAuthentication.js","./pages/joinIn/indexPlace":"src/pages/joinIn/indexPlace.js","./pages/joinIn":"src/pages/joinIn/index.js","./pages/joinIn/meetOne":"src/pages/joinIn/meetOne.js"}],"src/index.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js","../public/styles/App.css":"public/styles/App.css","bootstrap/dist/css/bootstrap.min.css":"node_modules/bootstrap/dist/css/bootstrap.min.css","./components/Layout/Footer/Footer":"src/components/Layout/Footer/Footer.js","./components/Layout/Navbar/Navbar":"src/components/Layout/Navbar/Navbar.js","./pages/home/Home.page":"src/pages/home/Home.page.js","./pages/contact/Contact.page":"src/pages/contact/Contact.page.js","./pages/about/Abauot.page":"src/pages/about/Abauot.page.js","./pages/auth/singup/Singup.page":"src/pages/auth/singup/Singup.page.js","./pages/auth/login/Login.page":"src/pages/auth/login/Login.page.js","./pages/organize/Organize.page":"src/pages/organize/Organize.page.js","./lib/auth/withAuthentication":"src/lib/auth/withAuthentication.js","./pages/joinIn/Meetings.page":"src/pages/joinIn/Meetings.page.js","./pages/joinIn/MeetDetail.page":"src/pages/joinIn/MeetDetail.page.js"}],"src/index.js":[function(require,module,exports) {
 "use strict";
 
 var _react = _interopRequireWildcard(require("react"));

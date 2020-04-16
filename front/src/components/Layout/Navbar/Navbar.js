@@ -1,7 +1,7 @@
 import React from "react";
 import { Navbar, NavDropdown, Nav } from "react-bootstrap";
 import logo from "../../../../public/images/logo500Verde.png";
-import NavbarContainer from "./styleNavbar";
+import NavbarContainer from "./StyleNavbar";
 import { Link } from "react-router-dom";
 import { useUser, useUserLogout } from "../../../lib/auth/auth.api";
 
@@ -39,7 +39,7 @@ const LayoutNavbar = () => {
                 id="collasible-nav-dropdown"
               >
                 <NavDropdown.Item as="div">
-                  <Link to="/joinin">Participa</Link>
+                  <Link to="/meet">Participa</Link>
                 </NavDropdown.Item>
                 <NavDropdown.Item as="div">
                   <Link to="/organize">Organiza</Link>

@@ -21,6 +21,7 @@ export const deleteMeet = async (idMeet) => {
 export const getMeet = async (idMeet) => {
   const res = await api.get(`/meet/${idMeet}`);
   //Filtramos por un meeting especifico:
-  console.log(res.data);
-  return _.filter(res.data, { _id: idMeet });
+  return res.data;
 };
+
+//Si lo que quiero es recibir un array el return sería así: return _.filter(res.data);

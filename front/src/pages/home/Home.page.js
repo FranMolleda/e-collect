@@ -27,7 +27,7 @@ const Home = () => {
         <Container fluid>
           <LataImg>
             <ButtonParticipa as="div" variant="outline-secondary">
-              <Link to="joinin">Participa</Link>
+              <Link to="meet">Participa</Link>
             </ButtonParticipa>
             <ButtonOrganiza as="div" variant="outline-secondary">
               <Link to="organize">Organiza</Link>

@@ -52114,6 +52114,11 @@ var Organize = (0, _reactRouterDom.withRouter)(function (_ref) {
       errors = methods.errors;
   var messageError = "Campo vacío";
 
+  var api = _axios.default.create({
+    baseURL: "http://localhost:3000",
+    withCredentials: true
+  });
+
   var onSubmit = /*#__PURE__*/function () {
     var _ref2 = (0, _asyncToGenerator2.default)( /*#__PURE__*/_regenerator.default.mark(function _callee(data) {
       return _regenerator.default.wrap(function _callee$(_context) {
@@ -52123,7 +52128,7 @@ var Organize = (0, _reactRouterDom.withRouter)(function (_ref) {
               _context.prev = 0;
               console.log(data);
               _context.next = 4;
-              return _axios.default.post("http://localhost:3000/meet/create", data).then();
+              return api.post("/meet/create", data).then();
 
             case 4:
               history.push("/joinin");
@@ -71662,10 +71667,6 @@ exports.default = void 0;
 
 var _slicedToArray2 = _interopRequireDefault(require("@babel/runtime/helpers/slicedToArray"));
 
-var _regenerator = _interopRequireDefault(require("@babel/runtime/regenerator"));
-
-var _asyncToGenerator2 = _interopRequireDefault(require("@babel/runtime/helpers/asyncToGenerator"));
-
 var _react = _interopRequireWildcard(require("react"));
 
 var _meetings = require("../../lib/frontRoutes/meetings.api");
@@ -71684,51 +71685,18 @@ function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj;
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-//Creamos función para borrar el elemento seleccionado, por un lado tenemos el recibimos la id como una prop (idMeet) y por otro pasamos una funcion que se llama deleteReady, que lo que hace es que una vez clicado el botón, le llega al componente de abajo DeleteMeet, y le pasamos dentro de deleteReady(fetchMeets), para que se modifique modifique y pasarlo por useEfect para que cambie el estado y se pinte sin el artículo modificado
-var DeleteMeet = function DeleteMeet(_ref) {
-  var idMeet = _ref.idMeet,
-      deleteReady = _ref.deleteReady;
-  return _react.default.createElement("a", {
-    href: "#",
-    onClick: /*#__PURE__*/(0, _asyncToGenerator2.default)( /*#__PURE__*/_regenerator.default.mark(function _callee() {
-      return _regenerator.default.wrap(function _callee$(_context) {
-        while (1) {
-          switch (_context.prev = _context.next) {
-            case 0:
-              _context.next = 2;
-              return (0, _meetings.deleteMeet)(idMeet);
-
-            case 2:
-              //En el componente DeleteMeet, deleteReady, vuelve a llamar a fetchMeet, al llamar a fetchMeet, se vuelven a llamar las Meetings y se vuelve a renderizar
-              deleteReady();
-
-            case 3:
-            case "end":
-              return _context.stop();
-          }
-        }
-      }, _callee);
-    }))
-  }, "Delete");
-};
-
 var Joinin = function Joinin() {
   var _useState = (0, _react.useState)([]),
       _useState2 = (0, _slicedToArray2.default)(_useState, 2),
       meetings = _useState2[0],
       setMeeting = _useState2[1];
 
-  var user = (0, _auth.useUser)(); //Para que al borrar el elemento, se recargue la página sin el eliminado, pasamos el estado por la función fetchMeets. y esta función al useEffect
-  //Esta finción coge todas las meetings y setea la variable
-
-  var fetchMeets = function fetchMeets() {
-    return (0, _meetings.getMeetings)().then(function (meeting) {
-      return setMeeting(meeting);
-    });
-  };
+  var user = (0, _auth.useUser)(); //Esta finción coge todas las meetings y setea la variable
 
   (0, _react.useEffect)(function () {
-    fetchMeets();
+    (0, _meetings.getMeetings)().then(function (meeting) {
+      return setMeeting(meeting);
+    });
   }, []);
   return _react.default.createElement(_StyleMeetings.CardContainer, {
     className: "cards-container"
@@ -71747,14 +71715,7 @@ var Joinin = function Joinin() {
     }, _react.default.createElement(_reactRouterDom.Link, {
       to: "/meet/".concat(meeting.id),
       className: "button-card"
-    }, "Informaci\xF3n")), " ", _react.default.createElement(_reactBootstrap.Button, {
-      as: "div",
-      className: "button-card"
-    }, _react.default.createElement(DeleteMeet, {
-      idMeet: meeting.id,
-      deleteReady: fetchMeets,
-      className: "button-card"
-    })), " "), _react.default.createElement(_reactBootstrap.Card.Footer, {
+    }, "Informaci\xF3n")), " "), _react.default.createElement(_reactBootstrap.Card.Footer, {
       className: "backround-bottom-card"
     }, "Fecha: ", meeting.date, " - Hora: ", meeting.hour))));
   }));
@@ -71762,7 +71723,7 @@ var Joinin = function Joinin() {
 
 var _default = Joinin;
 exports.default = _default;
-},{"@babel/runtime/helpers/slicedToArray":"node_modules/@babel/runtime/helpers/slicedToArray.js","@babel/runtime/regenerator":"node_modules/@babel/runtime/regenerator/index.js","@babel/runtime/helpers/asyncToGenerator":"node_modules/@babel/runtime/helpers/asyncToGenerator.js","react":"node_modules/react/index.js","../../lib/frontRoutes/meetings.api":"src/lib/frontRoutes/meetings.api.js","react-bootstrap":"node_modules/react-bootstrap/esm/index.js","./StyleMeetings":"src/pages/joinIn/StyleMeetings.js","../../lib/auth/auth.api":"src/lib/auth/auth.api.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js"}],"src/pages/joinIn/MeetDetail.page.js":[function(require,module,exports) {
+},{"@babel/runtime/helpers/slicedToArray":"node_modules/@babel/runtime/helpers/slicedToArray.js","react":"node_modules/react/index.js","../../lib/frontRoutes/meetings.api":"src/lib/frontRoutes/meetings.api.js","react-bootstrap":"node_modules/react-bootstrap/esm/index.js","./StyleMeetings":"src/pages/joinIn/StyleMeetings.js","../../lib/auth/auth.api":"src/lib/auth/auth.api.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js"}],"src/pages/joinIn/MeetDetail.page.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -71844,11 +71805,11 @@ var JoininOne = function JoininOne(props) {
   console.log(meet);
   return _react.default.createElement(_StyleMeetings.CardContainer, {
     className: "cards-container"
-  }, _react.default.createElement("h1", null, "Detalle de Regogida: ", props.meetId), _react.default.createElement(_StyleMeetings.CardMeeting, null, _react.default.createElement(_reactBootstrap.Container, null, _react.default.createElement(_reactBootstrap.Card, {
+  }, _react.default.createElement("h1", null, "Detalle de Regogida"), _react.default.createElement(_StyleMeetings.CardMeeting, null, _react.default.createElement(_reactBootstrap.Container, null, _react.default.createElement(_reactBootstrap.Card, {
     className: "text-center"
   }, _react.default.createElement(_reactBootstrap.Card.Header, {
     className: "backround-title"
-  }, "Organizado por:"), _react.default.createElement(_reactBootstrap.Card.Body, null, _react.default.createElement(_reactBootstrap.Card.Title, null, "T\xEDtulo: ", meet.title), _react.default.createElement(_reactBootstrap.Card.Subtitle, {
+  }), _react.default.createElement(_reactBootstrap.Card.Body, null, _react.default.createElement(_reactBootstrap.Card.Title, null, "T\xEDtulo: ", meet.title), _react.default.createElement(_reactBootstrap.Card.Subtitle, {
     className: "mb-2 text-muted"
   }, "Ciudad: ", meet.city), _react.default.createElement(_reactBootstrap.Card.Text, null, "Zona: ", meet.zone), _react.default.createElement(_reactBootstrap.Card.Text, null, "Descripci\xF3n: ", meet.description), _react.default.createElement(_reactBootstrap.Card.Subtitle, {
     className: "mb-2 text-muted"
@@ -71858,9 +71819,9 @@ var JoininOne = function JoininOne(props) {
     as: "div",
     className: "button-card"
   }, _react.default.createElement(_reactRouterDom.Link, {
-    to: "/meet/:id",
+    to: "/meet",
     className: "button-card"
-  }, "Informaci\xF3n")), " ", _react.default.createElement(_reactBootstrap.Button, {
+  }, "Me Apunto!")), " ", _react.default.createElement(_reactBootstrap.Button, {
     as: "div",
     className: "button-card"
   }, _react.default.createElement(DeleteMeet, {
@@ -71996,7 +71957,11 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
+<<<<<<< HEAD
   var ws = new WebSocket(protocol + '://' + hostname + ':' + "64102" + '/');
+=======
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "65225" + '/');
+>>>>>>> 95c6333020af13ac85155be078b58e3517dce9e0
 
   ws.onmessage = function (event) {
     checkedAssets = {};

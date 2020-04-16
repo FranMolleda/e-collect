@@ -32,13 +32,14 @@ const JoininOne = (props) => {
   console.log(meet);
   return (
     <CardContainer className="cards-container">
-      <h1>Detalle de Regogida: {props.meetId}</h1>
+      <h1>Detalle de Regogida</h1>
       <CardMeeting>
         <Container>
           <Card className="text-center">
             <Card.Header className="backround-title">
-              Organizado por:
+              {/* Organizado por: {meet.organize.username} */}
             </Card.Header>
+
             <Card.Body>
               <Card.Title>Título: {meet.title}</Card.Title>
               <Card.Subtitle className="mb-2 text-muted">
@@ -53,8 +54,8 @@ const JoininOne = (props) => {
                 Dificultad: {meet.difficulty}
               </Card.Subtitle>{" "}
               <Button as="div" className="button-card">
-                <Link to="/meet/:id" className="button-card">
-                  Información
+                <Link to="/meet" className="button-card">
+                  Me Apunto!
                 </Link>
               </Button>{" "}
               <Button as="div" className="button-card">

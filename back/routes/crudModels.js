@@ -50,9 +50,11 @@ const crudGenerator = (
     "/:id",
     asyncController(async (req, res, next) => {
       const { id } = req.params;
-      await Model.findOne({ _id: id }).then((obj) => {
-        res.json(obj);
-      });
+      await Model.findOne({ _id: id })
+        .populate(populateFields)
+        .then((obj) => {
+          res.json(obj);
+        });
     })
   );
 

@@ -28,6 +28,7 @@ withDbConnection(async () => {
 
   await Meetings.create([
     {
+      organizer: "5e96aaa995697a0a8d187720",
       zone: "Matadero (Arganzuela)",
       difficulty: "Baja",
       type: "Urbana",
@@ -41,6 +42,7 @@ withDbConnection(async () => {
       description: frasedeldia(),
     },
     {
+      organizer: "5e96aaa995697a0a8d187721",
       zone: "Pamplona",
       difficulty: "Alta",
       type: "Montaña",
@@ -54,6 +56,7 @@ withDbConnection(async () => {
       description: frasedeldia(),
     },
     {
+      organizer: "5e96aaa995697a0a8d187722",
       zone: "Barrio del Cristo",
       difficulty: "Baja",
       type: "Urbana",
@@ -67,6 +70,7 @@ withDbConnection(async () => {
       description: frasedeldia(),
     },
     {
+      organizer: "5e96aaa995697a0a8d187723",
       zone: "Playa Quemada",
       difficulty: "Baja",
       type: "Playa",
@@ -80,6 +84,7 @@ withDbConnection(async () => {
       description: frasedeldia(),
     },
     {
+      organizer: "5e96aaa995697a0a8d187724",
       zone: "San Juan del Monte",
       difficulty: "Media",
       type: "Monte",
@@ -93,6 +98,7 @@ withDbConnection(async () => {
       description: frasedeldia(),
     },
     {
+      organizer: "5e96aaa995697a0a8d187725",
       zone: "La Manga del Mar Menor",
       difficulty: "Baja",
       type: "Playa",

@@ -37,7 +37,7 @@ const JoininOne = (props) => {
         <Container>
           <Card className="text-center">
             <Card.Header className="backround-title">
-              {/* Organizado por: {meet.organize.username} */}
+              Organizado por: {meet.organizer && meet.organizer.username}{" "}
             </Card.Header>
 
             <Card.Body>

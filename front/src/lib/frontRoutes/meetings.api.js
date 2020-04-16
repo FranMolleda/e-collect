@@ -2,7 +2,7 @@ import axios from "axios";
 import _ from "lodash";
 
 const api = axios.create({
-  baseURL: "http://localhost:3000",
+  baseURL: process.env.BACKEND_URL,
   withCredentials: true,
 });
 
@@ -21,6 +21,7 @@ export const deleteMeet = async (idMeet) => {
 export const getMeet = async (idMeet) => {
   const res = await api.get(`/meet/${idMeet}`);
   //Filtramos por un meeting especifico:
+
   return res.data;
 };
 

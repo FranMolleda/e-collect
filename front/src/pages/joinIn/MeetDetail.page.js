@@ -2,24 +2,42 @@ import React, { useState, useEffect } from "react";
 import { getMeet, deleteMeet } from "../../lib/frontRoutes/meetings.api";
 import { Card, Button, Container } from "react-bootstrap";
 import { CardMeeting, CardContainer } from "./StyleMeetings";
-import { useUser } from "../../lib/auth/auth.api";
+import { useUser, useUserSetter } from "../../lib/auth/auth.api";
 import { Link } from "react-router-dom";
 
 const DeleteMeet = ({ idMeet, deleteReady }) => (
   <Link
     to="/meet"
+    className="button-card"
     onClick={async () => {
       await deleteMeet(idMeet);
       await deleteReady();
     }}
   >
-    Delete
+    Eliminar
   </Link>
 );
 
 const JoininOne = (props) => {
   // const { id } = props.match.params;
   const [meet, setMeet] = useState({});
+  const user = useUser();
+  {
+    user && console.log(user.meetings);
+  }
+
+  const AddMeetToUser = () => (
+    <Link
+      to="/meet"
+      className="button-card"
+      onClick={async () => {
+        const userMeeting = user.meetings.push(meet.id);
+        await useUserSetter(userMeeting);
+      }}
+    >
+      Me apunto
+    </Link>
+  );
 
   const fetchMeet = () => getMeet(props.meetId).then((meet) => setMeet(meet));
   useEffect(() => {
@@ -29,17 +47,17 @@ const JoininOne = (props) => {
       unmounted = true;
     };
   }, []);
-  console.log(meet);
   return (
     <CardContainer className="cards-container">
       <h1>Detalle de Regogida</h1>
       <CardMeeting>
         <Container>
           <Card className="text-center">
-            <Card.Header className="backround-title">
-              Organizado por: {meet.organizer && meet.organizer.username}{" "}
-            </Card.Header>
-
+            {meet.organizer && (
+              <Card.Header className="backround-title">
+                Organizado por: {meet.organizer.username}{" "}
+              </Card.Header>
+            )}
             <Card.Body>
               <Card.Title>Título: {meet.title}</Card.Title>
               <Card.Subtitle className="mb-2 text-muted">
@@ -55,8 +73,17 @@ const JoininOne = (props) => {
               </Card.Subtitle>{" "}
               <Button as="div" className="button-card">
                 <Link to="/meet" className="button-card">
-                  Me Apunto!
+                  Volver
                 </Link>
+              </Button>{" "}
+              <Button as="div" className="button-card">
+                <AddMeetToUser
+                  to="#"
+                  className="button-card"
+                  addMeet={fetchMeet}
+                >
+                  Me Apunto!
+                </AddMeetToUser>
               </Button>{" "}
               <Button as="div" className="button-card">
                 <DeleteMeet

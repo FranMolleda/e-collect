@@ -52296,7 +52296,6 @@ var withAuthentication = function withAuthentication(Component) {
       console.log("Welcome to app! 👨🏼‍💻"); // Try to get the current logged in user from our backend
 
       (0, _auth.whoami)().then(function (user) {
-        console.error("Welcome again user ".concat(user.username));
         setUser(user);
       }).catch(function (e) {
         console.error("No user logged in ");
@@ -71691,23 +71690,42 @@ var Joinin = function Joinin() {
       meetings = _useState2[0],
       setMeeting = _useState2[1];
 
-  var user = (0, _auth.useUser)(); //Esta finción coge todas las meetings y setea la variable
+  var _useState3 = (0, _react.useState)(""),
+      _useState4 = (0, _slicedToArray2.default)(_useState3, 2),
+      filterStart = _useState4[0],
+      setFilterStart = _useState4[1];
 
-  (0, _react.useEffect)(function () {
-    (0, _meetings.getMeetings)().then(function (meeting) {
+  var user = (0, _auth.useUser)();
+
+  var allMeetings = function allMeetings() {
+    return (0, _meetings.getMeetings)().then(function (meeting) {
       return setMeeting(meeting);
     });
-  }, []);
-  return _react.default.createElement(_StyleMeetings.CardContainer, {
+  }; //Esta finción coge todas las meetings y setea la variable
+
+
+  (0, _react.useEffect)(function () {
+    allMeetings();
+  }, []); //Filtro para buscar por ciudad o titulo
+
+  var filtered_meets = meetings.filter(function (meet) {
+    return meet.city.includes(filterStart) || meet.title.includes(filterStart);
+  });
+  return _react.default.createElement(_react.default.Fragment, null, _react.default.createElement(_reactBootstrap.Container, null, _react.default.createElement(_StyleMeetings.CardContainer, {
     className: "cards-container"
-  }, _react.default.createElement("h1", null, "Listado de Regogidas organizadas"), meetings.map(function (meeting, i) {
+  }, _react.default.createElement("h1", null, "Listado de Regogidas organizadas"), _react.default.createElement("div", null, _react.default.createElement("label", null, "Filter Meetings: "), _react.default.createElement("input", {
+    value: filterStart,
+    onChange: function onChange(e) {
+      return setFilterStart(e.target.value);
+    }
+  })), filtered_meets.map(function (meeting, i) {
     return _react.default.createElement(_StyleMeetings.CardMeeting, {
       key: i
-    }, _react.default.createElement(_reactBootstrap.Container, null, _react.default.createElement(_reactBootstrap.Card, {
+    }, _react.default.createElement(_reactBootstrap.Card, {
       className: "text-center"
-    }, _react.default.createElement(_reactBootstrap.Card.Header, {
+    }, meeting.organizer && _react.default.createElement(_reactBootstrap.Card.Header, {
       className: "backround-title"
-    }, "Organizado por:"), _react.default.createElement(_reactBootstrap.Card.Body, null, _react.default.createElement(_reactBootstrap.Card.Title, null, meeting.title), _react.default.createElement(_reactBootstrap.Card.Subtitle, {
+    }, "Organizado por: ", meeting.organizer.username, " "), _react.default.createElement(_reactBootstrap.Card.Body, null, _react.default.createElement(_reactBootstrap.Card.Title, null, meeting.title), _react.default.createElement(_reactBootstrap.Card.Subtitle, {
       className: "mb-2 text-muted"
     }, meeting.city), _react.default.createElement(_reactBootstrap.Card.Text, null, meeting.streetAddress), _react.default.createElement(_reactBootstrap.Button, {
       as: "div",
@@ -71715,10 +71733,16 @@ var Joinin = function Joinin() {
     }, _react.default.createElement(_reactRouterDom.Link, {
       to: "/meet/".concat(meeting.id),
       className: "button-card"
-    }, "Informaci\xF3n")), " "), _react.default.createElement(_reactBootstrap.Card.Footer, {
+    }, "Informaci\xF3n")), " ", _react.default.createElement(_reactBootstrap.Button, {
+      as: "div",
+      className: "button-card"
+    }, _react.default.createElement(_reactRouterDom.Link, {
+      to: "/",
+      className: "button-card"
+    }, "Volver")), " "), _react.default.createElement(_reactBootstrap.Card.Footer, {
       className: "backround-bottom-card"
-    }, "Fecha: ", meeting.date, " - Hora: ", meeting.hour))));
-  }));
+    }, "Fecha: ", meeting.date, " - Hora: ", meeting.hour)));
+  }))));
 };
 
 var _default = Joinin;
@@ -71760,6 +71784,7 @@ var DeleteMeet = function DeleteMeet(_ref) {
       deleteReady = _ref.deleteReady;
   return _react.default.createElement(_reactRouterDom.Link, {
     to: "/meet",
+    className: "button-card",
     onClick: /*#__PURE__*/(0, _asyncToGenerator2.default)( /*#__PURE__*/_regenerator.default.mark(function _callee() {
       return _regenerator.default.wrap(function _callee$(_context) {
         while (1) {
@@ -71779,7 +71804,7 @@ var DeleteMeet = function DeleteMeet(_ref) {
         }
       }, _callee);
     }))
-  }, "Delete");
+  }, "Eliminar");
 };
 
 var JoininOne = function JoininOne(props) {
@@ -71788,6 +71813,35 @@ var JoininOne = function JoininOne(props) {
       _useState2 = (0, _slicedToArray2.default)(_useState, 2),
       meet = _useState2[0],
       setMeet = _useState2[1];
+
+  var user = (0, _auth.useUser)();
+  {
+    user && console.log(user.meetings);
+  }
+
+  var AddMeetToUser = function AddMeetToUser() {
+    return _react.default.createElement(_reactRouterDom.Link, {
+      to: "/meet",
+      className: "button-card",
+      onClick: /*#__PURE__*/(0, _asyncToGenerator2.default)( /*#__PURE__*/_regenerator.default.mark(function _callee2() {
+        var userMeeting;
+        return _regenerator.default.wrap(function _callee2$(_context2) {
+          while (1) {
+            switch (_context2.prev = _context2.next) {
+              case 0:
+                userMeeting = user.meetings.push(meet.id);
+                _context2.next = 3;
+                return (0, _auth.useUserSetter)(userMeeting);
+
+              case 3:
+              case "end":
+                return _context2.stop();
+            }
+          }
+        }, _callee2);
+      }))
+    }, "Me apunto");
+  };
 
   var fetchMeet = function fetchMeet() {
     return (0, _meetings.getMeet)(props.meetId).then(function (meet) {
@@ -71802,14 +71856,13 @@ var JoininOne = function JoininOne(props) {
       unmounted = true;
     };
   }, []);
-  console.log(meet);
   return _react.default.createElement(_StyleMeetings.CardContainer, {
     className: "cards-container"
   }, _react.default.createElement("h1", null, "Detalle de Regogida"), _react.default.createElement(_StyleMeetings.CardMeeting, null, _react.default.createElement(_reactBootstrap.Container, null, _react.default.createElement(_reactBootstrap.Card, {
     className: "text-center"
-  }, _react.default.createElement(_reactBootstrap.Card.Header, {
+  }, meet.organizer && _react.default.createElement(_reactBootstrap.Card.Header, {
     className: "backround-title"
-  }), _react.default.createElement(_reactBootstrap.Card.Body, null, _react.default.createElement(_reactBootstrap.Card.Title, null, "T\xEDtulo: ", meet.title), _react.default.createElement(_reactBootstrap.Card.Subtitle, {
+  }, "Organizado por: ", meet.organizer.username, " "), _react.default.createElement(_reactBootstrap.Card.Body, null, _react.default.createElement(_reactBootstrap.Card.Title, null, "T\xEDtulo: ", meet.title), _react.default.createElement(_reactBootstrap.Card.Subtitle, {
     className: "mb-2 text-muted"
   }, "Ciudad: ", meet.city), _react.default.createElement(_reactBootstrap.Card.Text, null, "Zona: ", meet.zone), _react.default.createElement(_reactBootstrap.Card.Text, null, "Descripci\xF3n: ", meet.description), _react.default.createElement(_reactBootstrap.Card.Subtitle, {
     className: "mb-2 text-muted"
@@ -71821,6 +71874,13 @@ var JoininOne = function JoininOne(props) {
   }, _react.default.createElement(_reactRouterDom.Link, {
     to: "/meet",
     className: "button-card"
+  }, "Volver")), " ", _react.default.createElement(_reactBootstrap.Button, {
+    as: "div",
+    className: "button-card"
+  }, _react.default.createElement(AddMeetToUser, {
+    to: "#",
+    className: "button-card",
+    addMeet: fetchMeet
   }, "Me Apunto!")), " ", _react.default.createElement(_reactBootstrap.Button, {
     as: "div",
     className: "button-card"
@@ -71957,11 +72017,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-<<<<<<< HEAD
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "64102" + '/');
-=======
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "65225" + '/');
->>>>>>> 95c6333020af13ac85155be078b58e3517dce9e0
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "62581" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

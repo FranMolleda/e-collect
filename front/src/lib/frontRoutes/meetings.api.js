@@ -24,5 +24,10 @@ export const getMeet = async (idMeet) => {
 
   return res.data;
 };
+export const getAddMeet = async (idUser) => {
+  const res = await api.put(`/user/edit/${idUser}`);
+
+  return res.data;
+};
 
 //Si lo que quiero es recibir un array el return sería así: return _.filter(res.data);

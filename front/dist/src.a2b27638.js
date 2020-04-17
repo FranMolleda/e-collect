@@ -52106,7 +52106,7 @@ var Organize = (0, _reactRouterDom.withRouter)(function (_ref) {
       error = _useState2[0],
       setError = _useState2[1];
 
-  var user = (0, _auth.useUser)(); //Si quisiese que salga el aviso (error) de que hay que completar el campo anted de hacer submit sería useForm({mode: "onBlur"} )
+  var user = (0, _auth.useUser)(); //Si quisiese que salga el aviso (error) de que hay que completar el campo ante de hacer submit sería useForm({mode: "onBlur"} )
 
   var methods = (0, _reactHookForm.useForm)();
   var register = methods.register,
@@ -52131,7 +52131,7 @@ var Organize = (0, _reactRouterDom.withRouter)(function (_ref) {
               return api.post("/meet/create", data).then();
 
             case 4:
-              history.push("/joinin");
+              history.push("/meet");
               _context.next = 11;
               break;
 
@@ -52155,22 +52155,18 @@ var Organize = (0, _reactRouterDom.withRouter)(function (_ref) {
   }();
 
   console.log(user);
-  return _react.default.createElement(_react.default.Fragment, null, _react.default.createElement("h1", null, "Soy Organiza"), _react.default.createElement(_reactHookForm.FormContext, methods, _react.default.createElement(_reactBootstrap.Container, null, _react.default.createElement("input", {
+  return _react.default.createElement(_react.default.Fragment, null, _react.default.createElement("h1", null, "Soy Organiza"), _react.default.createElement("input", {
     type: "hidden",
-    placeholder: user.id,
     name: "organizer",
-    label: "Organizador"
-  }), _react.default.createElement("form", {
-    onSubmit: handleSubmit(onSubmit)
-  }, _react.default.createElement(_input.Input, {
-    name: "username",
-    label: "Nombre",
+    defaultValue: user.id,
     ref: register({
       required: messageError
     })
-  }), _react.default.createElement(_input.Input, {
-    name: "city",
-    label: "Ciudad",
+  }), _react.default.createElement(_reactHookForm.FormContext, methods, _react.default.createElement(_reactBootstrap.Container, null, _react.default.createElement("form", {
+    onSubmit: handleSubmit(onSubmit)
+  }, _react.default.createElement(_input.Input, {
+    name: "title",
+    label: "T\xEDtulo",
     ref: register({
       required: messageError
     })
@@ -52181,8 +52177,8 @@ var Organize = (0, _reactRouterDom.withRouter)(function (_ref) {
       required: messageError
     })
   }), _react.default.createElement(_input.Input, {
-    name: "postalCode",
-    label: "C\xF3digo Postal",
+    name: "city",
+    label: "Ciudad",
     ref: register({
       required: messageError
     })
@@ -52193,20 +52189,38 @@ var Organize = (0, _reactRouterDom.withRouter)(function (_ref) {
       required: messageError
     })
   }), _react.default.createElement(_input.Input, {
-    name: "title",
-    label: "Title",
+    name: "zone",
+    label: "Zona",
     ref: register({
       required: messageError
     })
   }), _react.default.createElement(_input.Input, {
-    name: "hour",
-    label: "Hora",
-    type: "time",
-    min: "00:00",
-    max: "23:59",
-    step: "600",
+    name: "type",
+    label: "Tipo",
     ref: register({
       required: messageError
+    })
+  }), _react.default.createElement(_input.Input, {
+    name: "difficulty",
+    label: "Dificultad",
+    ref: register({
+      required: messageError
+    })
+  }), _react.default.createElement(_input.Input, {
+    label: "Fecha",
+    type: "datetime",
+    name: "date",
+    ref: register({
+      required: messageError,
+      pattern: /^([0-2][0-9]|3[0-1])(\/|-)(0[1-9]|1[0-2])\2(\d{4})$/
+    })
+  }), _react.default.createElement(_input.Input, {
+    type: "time",
+    placeholder: "hour",
+    name: "hour",
+    ref: register({
+      required: messageError,
+      pattern: /^([0-1]?[0-9]|2[0-3]):[0-5][0-9]$/i
     })
   }), _react.default.createElement(_input.InputTextarea, {
     name: "description",
@@ -71482,7 +71496,7 @@ var define;
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.getMeet = exports.deleteMeet = exports.getMeetings = exports.getPlaces = void 0;
+exports.getAddMeet = exports.getMeet = exports.deleteMeet = exports.getMeetings = exports.getPlaces = void 0;
 
 var _regenerator = _interopRequireDefault(require("@babel/runtime/regenerator"));
 
@@ -71611,10 +71625,39 @@ var getMeet = /*#__PURE__*/function () {
   return function getMeet(_x2) {
     return _ref4.apply(this, arguments);
   };
+}();
+
+exports.getMeet = getMeet;
+
+var getAddMeet = /*#__PURE__*/function () {
+  var _ref5 = (0, _asyncToGenerator2.default)( /*#__PURE__*/_regenerator.default.mark(function _callee5(idUser) {
+    var res;
+    return _regenerator.default.wrap(function _callee5$(_context5) {
+      while (1) {
+        switch (_context5.prev = _context5.next) {
+          case 0:
+            _context5.next = 2;
+            return api.put("/user/edit/".concat(idUser));
+
+          case 2:
+            res = _context5.sent;
+            return _context5.abrupt("return", res.data);
+
+          case 4:
+          case "end":
+            return _context5.stop();
+        }
+      }
+    }, _callee5);
+  }));
+
+  return function getAddMeet(_x3) {
+    return _ref5.apply(this, arguments);
+  };
 }(); //Si lo que quiero es recibir un array el return sería así: return _.filter(res.data);
 
 
-exports.getMeet = getMeet;
+exports.getAddMeet = getAddMeet;
 },{"@babel/runtime/regenerator":"node_modules/@babel/runtime/regenerator/index.js","@babel/runtime/helpers/asyncToGenerator":"node_modules/@babel/runtime/helpers/asyncToGenerator.js","axios":"node_modules/axios/index.js","lodash":"node_modules/lodash/lodash.js"}],"src/pages/joinIn/StyleMeetings.js":[function(require,module,exports) {
 "use strict";
 
@@ -71773,6 +71816,8 @@ var _auth = require("../../lib/auth/auth.api");
 
 var _reactRouterDom = require("react-router-dom");
 
+var _axios = _interopRequireDefault(require("axios"));
+
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function () { return cache; }; return cache; }
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
@@ -71807,50 +71852,74 @@ var DeleteMeet = function DeleteMeet(_ref) {
   }, "Eliminar");
 };
 
+var api = _axios.default.create({
+  baseURL: "http://localhost:3000",
+  withCredentials: true
+});
+
 var JoininOne = function JoininOne(props) {
-  // const { id } = props.match.params;
   var _useState = (0, _react.useState)({}),
       _useState2 = (0, _slicedToArray2.default)(_useState, 2),
       meet = _useState2[0],
       setMeet = _useState2[1];
 
   var user = (0, _auth.useUser)();
-  {
-    user && console.log(user.meetings);
-  }
-
-  var AddMeetToUser = function AddMeetToUser() {
-    return _react.default.createElement(_reactRouterDom.Link, {
-      to: "/meet",
+  var setUser = (0, _auth.useUserSetter)({});
+  var AddMeetToUser = (0, _reactRouterDom.withRouter)(function (_ref3) {
+    var history = _ref3.history;
+    return _react.default.createElement("button", {
       className: "button-card",
       onClick: /*#__PURE__*/(0, _asyncToGenerator2.default)( /*#__PURE__*/_regenerator.default.mark(function _callee2() {
-        var userMeeting;
         return _regenerator.default.wrap(function _callee2$(_context2) {
           while (1) {
             switch (_context2.prev = _context2.next) {
               case 0:
-                userMeeting = user.meetings.push(meet.id);
-                _context2.next = 3;
-                return (0, _auth.useUserSetter)(userMeeting);
+                _context2.prev = 0;
+                user && user.meetings.push(meet.id);
+                _context2.next = 4;
+                return history.push("/meet");
 
-              case 3:
+              case 4:
+                _context2.next = 9;
+                break;
+
+              case 6:
+                _context2.prev = 6;
+                _context2.t0 = _context2["catch"](0);
+                console.log(_context2.t0.message);
+
+              case 9:
               case "end":
                 return _context2.stop();
             }
           }
-        }, _callee2);
+        }, _callee2, null, [[0, 6]]);
       }))
     }, "Me apunto");
+  });
+
+  var addUserMeet = function addUserMeet() {
+    try {
+      (0, _meetings.getAddMeet)(user && user.id).then(setUser(user));
+      console.log(user);
+    } catch (e) {
+      console.log(e);
+    }
   };
 
   var fetchMeet = function fetchMeet() {
-    return (0, _meetings.getMeet)(props.meetId).then(function (meet) {
-      return setMeet(meet);
-    });
+    try {
+      (0, _meetings.getMeet)(props.meetId).then(function (meet) {
+        return setMeet(meet);
+      });
+    } catch (e) {
+      console.log(e);
+    }
   };
 
   (0, _react.useEffect)(function () {
     var unmounted = false;
+    addUserMeet();
     fetchMeet();
     return function () {
       unmounted = true;
@@ -71880,7 +71949,8 @@ var JoininOne = function JoininOne(props) {
   }, _react.default.createElement(AddMeetToUser, {
     to: "#",
     className: "button-card",
-    addMeet: fetchMeet
+    idUser: user && user.id,
+    onClick: addUserMeet()
   }, "Me Apunto!")), " ", _react.default.createElement(_reactBootstrap.Button, {
     as: "div",
     className: "button-card"
@@ -71896,7 +71966,7 @@ var JoininOne = function JoininOne(props) {
 
 var _default = JoininOne;
 exports.default = _default;
-},{"@babel/runtime/helpers/slicedToArray":"node_modules/@babel/runtime/helpers/slicedToArray.js","@babel/runtime/regenerator":"node_modules/@babel/runtime/regenerator/index.js","@babel/runtime/helpers/asyncToGenerator":"node_modules/@babel/runtime/helpers/asyncToGenerator.js","react":"node_modules/react/index.js","../../lib/frontRoutes/meetings.api":"src/lib/frontRoutes/meetings.api.js","react-bootstrap":"node_modules/react-bootstrap/esm/index.js","./StyleMeetings":"src/pages/joinIn/StyleMeetings.js","../../lib/auth/auth.api":"src/lib/auth/auth.api.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js"}],"src/App.js":[function(require,module,exports) {
+},{"@babel/runtime/helpers/slicedToArray":"node_modules/@babel/runtime/helpers/slicedToArray.js","@babel/runtime/regenerator":"node_modules/@babel/runtime/regenerator/index.js","@babel/runtime/helpers/asyncToGenerator":"node_modules/@babel/runtime/helpers/asyncToGenerator.js","react":"node_modules/react/index.js","../../lib/frontRoutes/meetings.api":"src/lib/frontRoutes/meetings.api.js","react-bootstrap":"node_modules/react-bootstrap/esm/index.js","./StyleMeetings":"src/pages/joinIn/StyleMeetings.js","../../lib/auth/auth.api":"src/lib/auth/auth.api.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js","axios":"node_modules/axios/index.js"}],"src/App.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -72017,7 +72087,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "62581" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56633" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

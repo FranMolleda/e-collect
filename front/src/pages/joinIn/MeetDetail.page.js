@@ -4,6 +4,9 @@ import { Card, Button, Container } from "react-bootstrap";
 import { CardMeeting, CardContainer } from "./StyleMeetings";
 import { useUser, useUserSetter } from "../../lib/auth/auth.api";
 import { Link } from "react-router-dom";
+import axios from "axios";
+import { withRouter } from "react-router-dom";
+import { getAddMeet } from "../../lib/frontRoutes/meetings.api";
 
 const DeleteMeet = ({ idMeet, deleteReady }) => (
   <Link
@@ -17,36 +20,56 @@ const DeleteMeet = ({ idMeet, deleteReady }) => (
     Eliminar
   </Link>
 );
+const api = axios.create({
+  baseURL: process.env.BACKEND_URL,
+  withCredentials: true,
+});
 
 const JoininOne = (props) => {
-  // const { id } = props.match.params;
   const [meet, setMeet] = useState({});
   const user = useUser();
-  {
-    user && console.log(user.meetings);
-  }
+  const setUser = useUserSetter({});
 
-  const AddMeetToUser = () => (
-    <Link
-      to="/meet"
+  const AddMeetToUser = withRouter(({ history }) => (
+    <button
       className="button-card"
       onClick={async () => {
-        const userMeeting = user.meetings.push(meet.id);
-        await useUserSetter(userMeeting);
+        try {
+          user && user.meetings.push(meet.id);
+          await history.push("/meet");
+        } catch (e) {
+          console.log(e.message);
+        }
       }}
     >
       Me apunto
-    </Link>
-  );
+    </button>
+  ));
 
-  const fetchMeet = () => getMeet(props.meetId).then((meet) => setMeet(meet));
+  const addUserMeet = () => {
+    try {
+      getAddMeet(user && user.id).then(setUser(user));
+      console.log(user);
+    } catch (e) {
+      console.log(e);
+    }
+  };
+  const fetchMeet = () => {
+    try {
+      getMeet(props.meetId).then((meet) => setMeet(meet));
+    } catch (e) {
+      console.log(e);
+    }
+  };
   useEffect(() => {
     let unmounted = false;
+    addUserMeet();
     fetchMeet();
     return () => {
       unmounted = true;
     };
   }, []);
+
   return (
     <CardContainer className="cards-container">
       <h1>Detalle de Regogida</h1>
@@ -80,7 +103,8 @@ const JoininOne = (props) => {
                 <AddMeetToUser
                   to="#"
                   className="button-card"
-                  addMeet={fetchMeet}
+                  idUser={user && user.id}
+                  onClick={addUserMeet()}
                 >
                   Me Apunto!
                 </AddMeetToUser>

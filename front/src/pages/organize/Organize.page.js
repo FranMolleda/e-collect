@@ -10,7 +10,7 @@ import { withProtected } from "../../lib/auth/protectRoute.hoc";
 const Organize = withRouter(({ history }) => {
   const [error, setError] = useState();
   const user = useUser();
-  //Si quisiese que salga el aviso (error) de que hay que completar el campo anted de hacer submit sería useForm({mode: "onBlur"} )
+  //Si quisiese que salga el aviso (error) de que hay que completar el campo ante de hacer submit sería useForm({mode: "onBlur"} )
   const methods = useForm();
   const { register, handleSubmit, errors } = methods;
   const messageError = "Campo vacío";
@@ -24,7 +24,7 @@ const Organize = withRouter(({ history }) => {
     try {
       console.log(data);
       await api.post("/meet/create", data).then();
-      history.push("/joinin");
+      history.push("/meet");
     } catch (e) {
       setError(e.message);
       history.push("/");
@@ -38,25 +38,20 @@ const Organize = withRouter(({ history }) => {
       <h1>Soy Organiza</h1>
       {/* FormContext methods lo traemos de forms/input para no tener que poner los errores en cada input */}
 
+      <input
+        type="hidden"
+        name="organizer"
+        defaultValue={user.id}
+        ref={register({
+          required: messageError,
+        })}
+      />
       <FormContext {...methods}>
         <Container>
-          <input
-            type="hidden"
-            placeholder={user.id}
-            name="organizer"
-            label="Organizador"
-          />
           <form onSubmit={handleSubmit(onSubmit)}>
             <Input
-              name="username"
-              label="Nombre"
-              ref={register({
-                required: messageError,
-              })}
-            />
-            <Input
-              name="city"
-              label="Ciudad"
+              name="title"
+              label="Título"
               ref={register({
                 required: messageError,
               })}
@@ -69,8 +64,8 @@ const Organize = withRouter(({ history }) => {
               })}
             />
             <Input
-              name="postalCode"
-              label="Código Postal"
+              name="city"
+              label="Ciudad"
               ref={register({
                 required: messageError,
               })}
@@ -83,23 +78,45 @@ const Organize = withRouter(({ history }) => {
               })}
             />
             <Input
-              name="title"
-              label="Title"
+              name="zone"
+              label="Zona"
               ref={register({
                 required: messageError,
               })}
             />
             <Input
-              name="hour"
-              label="Hora"
-              type="time"
-              min="00:00"
-              max="23:59"
-              step="600"
+              name="type"
+              label="Tipo"
               ref={register({
                 required: messageError,
               })}
             />
+            <Input
+              name="difficulty"
+              label="Dificultad"
+              ref={register({
+                required: messageError,
+              })}
+            />
+            <Input
+              label="Fecha"
+              type="datetime"
+              name="date"
+              ref={register({
+                required: messageError,
+                pattern: /^([0-2][0-9]|3[0-1])(\/|-)(0[1-9]|1[0-2])\2(\d{4})$/,
+              })}
+            />
+            <Input
+              type="time"
+              placeholder="hour"
+              name="hour"
+              ref={register({
+                required: messageError,
+                pattern: /^([0-1]?[0-9]|2[0-3]):[0-5][0-9]$/i,
+              })}
+            />
+
             <InputTextarea
               name="description"
               label="Descripción"

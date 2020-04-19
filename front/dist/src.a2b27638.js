@@ -48931,19 +48931,20 @@ var api = _axios.default.create({
 });
 
 var doSignup = /*#__PURE__*/function () {
-  var _ref2 = (0, _asyncToGenerator2.default)( /*#__PURE__*/_regenerator.default.mark(function _callee2(username, password, email, _id, avatar) {
+  var _ref2 = (0, _asyncToGenerator2.default)( /*#__PURE__*/_regenerator.default.mark(function _callee2(username, password, email, _id, profilePic) {
     var res;
     return _regenerator.default.wrap(function _callee2$(_context2) {
       while (1) {
         switch (_context2.prev = _context2.next) {
           case 0:
             console.log("Registrando Usuario...");
-            console.log(username, password, email, _id, avatar);
+            console.log(username, password, email, _id, profilePic);
             _context2.next = 4;
             return api.post("/auth/signup", {
               username: username,
               password: password,
-              email: email
+              email: email,
+              profilePic: profilePic
             });
 
           case 4:
@@ -48968,7 +48969,7 @@ var doSignup = /*#__PURE__*/function () {
 exports.doSignup = doSignup;
 
 var doLogin = /*#__PURE__*/function () {
-  var _ref3 = (0, _asyncToGenerator2.default)( /*#__PURE__*/_regenerator.default.mark(function _callee3(username, password, email, _id, avatar) {
+  var _ref3 = (0, _asyncToGenerator2.default)( /*#__PURE__*/_regenerator.default.mark(function _callee3(username, password, email, _id, profilePic) {
     var res;
     return _regenerator.default.wrap(function _callee3$(_context3) {
       while (1) {
@@ -48981,7 +48982,7 @@ var doLogin = /*#__PURE__*/function () {
               password: password,
               email: email,
               _id: _id,
-              avatar: avatar
+              profilePic: profilePic
             });
 
           case 3:
@@ -49270,9 +49271,12 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 //Metemos el hook UseContext
 //Importamos UserContext
 var Home = function Home() {
+  var _user$profilePic;
+
   var user = (0, _auth.useUser)();
   return _react.default.createElement(_react.default.Fragment, null, user && _react.default.createElement("div", null, _react.default.createElement("p", null, user.username), _react.default.createElement("img", {
-    src: user.avatar
+    src: (_user$profilePic = user.profilePic) === null || _user$profilePic === void 0 ? void 0 : _user$profilePic.path,
+    width: "200"
   })), _react.default.createElement("div", null, _react.default.createElement(_reactBootstrap.Container, {
     fluid: true
   }, _react.default.createElement(_lata.default, null, _react.default.createElement(_ButtonsHome.ButtonParticipa, {
@@ -71630,14 +71634,16 @@ var getMeet = /*#__PURE__*/function () {
 exports.getMeet = getMeet;
 
 var getAddMeet = /*#__PURE__*/function () {
-  var _ref5 = (0, _asyncToGenerator2.default)( /*#__PURE__*/_regenerator.default.mark(function _callee5(idUser) {
+  var _ref5 = (0, _asyncToGenerator2.default)( /*#__PURE__*/_regenerator.default.mark(function _callee5(data) {
     var res;
     return _regenerator.default.wrap(function _callee5$(_context5) {
       while (1) {
         switch (_context5.prev = _context5.next) {
           case 0:
             _context5.next = 2;
-            return api.put("/user/edit/".concat(idUser));
+            return api.post("/user/addmeet", {
+              data: data
+            });
 
           case 2:
             res = _context5.sent;
@@ -71966,7 +71972,139 @@ var JoininOne = function JoininOne(props) {
 
 var _default = JoininOne;
 exports.default = _default;
-},{"@babel/runtime/helpers/slicedToArray":"node_modules/@babel/runtime/helpers/slicedToArray.js","@babel/runtime/regenerator":"node_modules/@babel/runtime/regenerator/index.js","@babel/runtime/helpers/asyncToGenerator":"node_modules/@babel/runtime/helpers/asyncToGenerator.js","react":"node_modules/react/index.js","../../lib/frontRoutes/meetings.api":"src/lib/frontRoutes/meetings.api.js","react-bootstrap":"node_modules/react-bootstrap/esm/index.js","./StyleMeetings":"src/pages/joinIn/StyleMeetings.js","../../lib/auth/auth.api":"src/lib/auth/auth.api.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js","axios":"node_modules/axios/index.js"}],"src/App.js":[function(require,module,exports) {
+},{"@babel/runtime/helpers/slicedToArray":"node_modules/@babel/runtime/helpers/slicedToArray.js","@babel/runtime/regenerator":"node_modules/@babel/runtime/regenerator/index.js","@babel/runtime/helpers/asyncToGenerator":"node_modules/@babel/runtime/helpers/asyncToGenerator.js","react":"node_modules/react/index.js","../../lib/frontRoutes/meetings.api":"src/lib/frontRoutes/meetings.api.js","react-bootstrap":"node_modules/react-bootstrap/esm/index.js","./StyleMeetings":"src/pages/joinIn/StyleMeetings.js","../../lib/auth/auth.api":"src/lib/auth/auth.api.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js","axios":"node_modules/axios/index.js"}],"src/lib/auth/user.api.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.changeAvatar = void 0;
+
+var _regenerator = _interopRequireDefault(require("@babel/runtime/regenerator"));
+
+var _asyncToGenerator2 = _interopRequireDefault(require("@babel/runtime/helpers/asyncToGenerator"));
+
+var _axios = _interopRequireDefault(require("axios"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var api = _axios.default.create({
+  baseURL: "http://localhost:3000",
+  withCredentials: true
+});
+
+var changeAvatar = /*#__PURE__*/function () {
+  var _ref = (0, _asyncToGenerator2.default)( /*#__PURE__*/_regenerator.default.mark(function _callee(avatarFile) {
+    var data;
+    return _regenerator.default.wrap(function _callee$(_context) {
+      while (1) {
+        switch (_context.prev = _context.next) {
+          case 0:
+            data = new FormData();
+            data.append("avatar", avatarFile);
+            return _context.abrupt("return", api.post("/profilepic", data));
+
+          case 3:
+          case "end":
+            return _context.stop();
+        }
+      }
+    }, _callee);
+  }));
+
+  return function changeAvatar(_x) {
+    return _ref.apply(this, arguments);
+  };
+}();
+
+exports.changeAvatar = changeAvatar;
+},{"@babel/runtime/regenerator":"node_modules/@babel/runtime/regenerator/index.js","@babel/runtime/helpers/asyncToGenerator":"node_modules/@babel/runtime/helpers/asyncToGenerator.js","axios":"node_modules/axios/index.js"}],"src/pages/profile/Profile.page.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.ProfilePage = void 0;
+
+var _react = _interopRequireWildcard(require("react"));
+
+var _protectRouteHoc = require("../../lib/auth/protectRoute.hoc.js");
+
+var _authApi = require("../../lib/auth/auth.api.js");
+
+var _reactHookForm = require("react-hook-form");
+
+var _input = require("../../forms/input");
+
+var _reactBootstrap = require("react-bootstrap");
+
+var _reactRouterDom = require("react-router-dom");
+
+var _user = require("../../lib/auth/user.api");
+
+var _lodash = _interopRequireDefault(require("lodash"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function () { return cache; }; return cache; }
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+
+var ProfilePage = (0, _protectRouteHoc.withProtected)(function () {
+  var user = (0, _authApi.useUser)();
+  var setUser = (0, _authApi.useUserSetter)();
+
+  var _useForm = (0, _reactHookForm.useForm)(),
+      handleSubmit = _useForm.handleSubmit,
+      register = _useForm.register;
+
+  var onSubmit = function onSubmit(values) {
+    var myAvatar = values.avatar[0];
+    console.log(myAvatar);
+    (0, _user.changeAvatar)(myAvatar).then(function (res) {
+      console.log("Changed File");
+      setUser(res.data.user);
+    }).catch(function (e) {
+      console.log("Error uploading file");
+      console.log(e);
+    });
+  };
+
+  var imgPath;
+
+  if (user.profilePic) {
+    var localPath = _lodash.default.get(user, "profilePic.path");
+
+    if (localPath) {
+      imgPath = "http://localhost:3000/".concat(localPath);
+    } else {
+      imgPath = _lodash.default.get(user, "profilePic.url");
+    }
+  }
+
+  return _react.default.createElement("div", null, _react.default.createElement("h2", null, "Perfil de ", user.username), _react.default.createElement("form", {
+    onSubmit: handleSubmit(onSubmit)
+  }, _react.default.createElement("div", {
+    style: {
+      padding: "10px 0"
+    }
+  }, imgPath && _react.default.createElement("div", null, _react.default.createElement("img", {
+    src: imgPath,
+    width: "150",
+    height: "150",
+    style: {
+      border: "1px solid grey"
+    }
+  })), _react.default.createElement("input", {
+    name: "avatar",
+    type: "file",
+    ref: register()
+  })), _react.default.createElement("button", {
+    type: "submit"
+  }, "Change Profile Pic")));
+});
+exports.ProfilePage = ProfilePage;
+},{"react":"node_modules/react/index.js","../../lib/auth/protectRoute.hoc.js":"src/lib/auth/protectRoute.hoc.js","../../lib/auth/auth.api.js":"src/lib/auth/auth.api.js","react-hook-form":"node_modules/react-hook-form/dist/react-hook-form.es.js","../../forms/input":"src/forms/input/index.js","react-bootstrap":"node_modules/react-bootstrap/esm/index.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js","../../lib/auth/user.api":"src/lib/auth/user.api.js","lodash":"node_modules/lodash/lodash.js"}],"src/App.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -72004,6 +72142,8 @@ var _Meetings = _interopRequireDefault(require("./pages/joinIn/Meetings.page"));
 
 var _MeetDetail = _interopRequireDefault(require("./pages/joinIn/MeetDetail.page"));
 
+var _Profile = require("./pages/profile/Profile.page");
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var App = (0, _withAuthentication.withAuthentication)(function () {
@@ -72024,6 +72164,9 @@ var App = (0, _withAuthentication.withAuthentication)(function () {
     path: "/auth/login",
     component: _Login.Login
   }), _react.default.createElement(_reactRouterDom.Route, {
+    path: "/auth/profile",
+    component: _Profile.ProfilePage
+  }), _react.default.createElement(_reactRouterDom.Route, {
     path: "/organize",
     component: _Organize.PrivateOrganize
   }), _react.default.createElement(_reactRouterDom.Route, {
@@ -72039,7 +72182,7 @@ var App = (0, _withAuthentication.withAuthentication)(function () {
   })), _react.default.createElement(_Footer.default, null));
 });
 exports.App = App;
-},{"react":"node_modules/react/index.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js","../public/styles/App.css":"public/styles/App.css","bootstrap/dist/css/bootstrap.min.css":"node_modules/bootstrap/dist/css/bootstrap.min.css","./components/Layout/Footer/Footer":"src/components/Layout/Footer/Footer.js","./components/Layout/Navbar/Navbar":"src/components/Layout/Navbar/Navbar.js","./pages/home/Home.page":"src/pages/home/Home.page.js","./pages/contact/Contact.page":"src/pages/contact/Contact.page.js","./pages/about/Abauot.page":"src/pages/about/Abauot.page.js","./pages/auth/singup/Singup.page":"src/pages/auth/singup/Singup.page.js","./pages/auth/login/Login.page":"src/pages/auth/login/Login.page.js","./pages/organize/Organize.page":"src/pages/organize/Organize.page.js","./lib/auth/withAuthentication":"src/lib/auth/withAuthentication.js","./pages/joinIn/Meetings.page":"src/pages/joinIn/Meetings.page.js","./pages/joinIn/MeetDetail.page":"src/pages/joinIn/MeetDetail.page.js"}],"src/index.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js","../public/styles/App.css":"public/styles/App.css","bootstrap/dist/css/bootstrap.min.css":"node_modules/bootstrap/dist/css/bootstrap.min.css","./components/Layout/Footer/Footer":"src/components/Layout/Footer/Footer.js","./components/Layout/Navbar/Navbar":"src/components/Layout/Navbar/Navbar.js","./pages/home/Home.page":"src/pages/home/Home.page.js","./pages/contact/Contact.page":"src/pages/contact/Contact.page.js","./pages/about/Abauot.page":"src/pages/about/Abauot.page.js","./pages/auth/singup/Singup.page":"src/pages/auth/singup/Singup.page.js","./pages/auth/login/Login.page":"src/pages/auth/login/Login.page.js","./pages/organize/Organize.page":"src/pages/organize/Organize.page.js","./lib/auth/withAuthentication":"src/lib/auth/withAuthentication.js","./pages/joinIn/Meetings.page":"src/pages/joinIn/Meetings.page.js","./pages/joinIn/MeetDetail.page":"src/pages/joinIn/MeetDetail.page.js","./pages/profile/Profile.page":"src/pages/profile/Profile.page.js"}],"src/index.js":[function(require,module,exports) {
 "use strict";
 
 var _react = _interopRequireWildcard(require("react"));
@@ -72087,7 +72230,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56633" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54194" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

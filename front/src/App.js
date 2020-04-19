@@ -13,7 +13,7 @@ import { PrivateOrganize } from "./pages/organize/Organize.page";
 import { withAuthentication } from "./lib/auth/withAuthentication";
 import Joinin from "./pages/joinIn/Meetings.page";
 import JoininOne from "./pages/joinIn/MeetDetail.page";
-
+import { ProfilePage } from "./pages/profile/Profile.page";
 export const App = withAuthentication(() => (
   <Router>
     <LayoutNavbar />
@@ -23,6 +23,7 @@ export const App = withAuthentication(() => (
       <Route path="/about" component={About} />
       <Route path="/auth/signup" component={Signup} />
       <Route path="/auth/login" component={Login} />
+      <Route path="/auth/profile" component={ProfilePage} />
       <Route path="/organize" component={PrivateOrganize} />
       <Route
         path="/meet/:id"

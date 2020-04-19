@@ -15,9 +15,9 @@ const createUsers = async (users) => {
         const newUser = {
           username: user.name,
           password: "cm1bq10G",
-          image: user.image,
           email: user.email,
           city: user.city,
+          profilePic: user.profilePic,
         };
         await User.create(newUser);
         console.log(`User ${user.name} created`);
@@ -58,6 +58,7 @@ createUsers([
     email: "alex@yahoo.com",
     city: "Valencia",
   },
+
   {
     name: "Lola",
     email: "dolores@gmail.com",

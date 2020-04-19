@@ -11,7 +11,7 @@ const MongoStore = require("connect-mongo")(session);
 const passport = require("passport");
 const cors = require("cors");
 
-const dbUrl = process.env.DBURL;
+const dbUrl = process.env.DBATLASURL;
 mongoose
   .connect(dbUrl, {
     useNewUrlParser: true,
@@ -45,10 +45,12 @@ const corsOptions = {
   },
   credentials: true,
 };
+app.use("/uploads", express.static(path.join(__dirname, "uploads")));
+app.use(express.static(path.join(__dirname, "public")));
 
 app.use(cors(corsOptions));
-app.use(cors(corsOptions));
 app.use(logger("dev"));
+
 app.use(bodyParser.json());
 app.use(
   bodyParser.urlencoded({
@@ -77,9 +79,9 @@ app.use((req, res, next) => {
   next();
 });
 
-app.use(express.static(path.join(__dirname, "public")));
-
 const index = require("./routes/index");
+
 app.use("/", index);
+app.use("/", express.static(path.join(__dirname, "../front/dist")));
 
 module.exports = app;

@@ -20,7 +20,7 @@ const Home = () => {
       {user && (
         <div>
           <p>{user.username}</p>
-          <img src={user.avatar} />
+          <img src={user.profilePic?.path} width="200" />
         </div>
       )}
       <div>

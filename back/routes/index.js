@@ -6,10 +6,11 @@ const PlaceAction = require("../models/placeAction");
 const Collaborator = require("../models/collaborator");
 const { crudGenerator } = require("./crudModels");
 const _ = require("lodash");
+import { upload, uploadCloudinaryAvatar } from "../middleware/uploader";
 
-router.get("/", (req, res, next) => {
-  res.json({ status: "Welcome" });
-});
+// router.get("/", (req, res, next) => {
+//   res.json({ status: "Welcome" });
+// });
 router.use("/auth", require("./userAuth"));
 router.use("/private", require("./privatePages"));
 router.use(
@@ -43,7 +44,25 @@ router.use(
 
 router.use("/collaborator", crudGenerator(Collaborator));
 
+router.post(
+  "/profilepic",
+  uploadCloudinaryAvatar.single("avatar"),
+  async (req, res) => {
+    console.log(req.file);
+    const user = req.user;
+
+    // if there was previous profile pic, delete it
+
+    // Set the new profile pic
+    user.profilePic = req.file;
+    const updatedUser = await user.save();
+
+    return res.json({ status: "Uploaded completed", user: updatedUser });
+  }
+);
+
 const apiGoogleRoute = require("./apiGoogleRoute");
+
 router.use("/api", apiGoogleRoute);
 
 module.exports = router;

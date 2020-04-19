@@ -37,27 +37,28 @@ const api = axios.create({
   withCredentials: true,
 });
 
-export const doSignup = async (username, password, email, _id, avatar) => {
+export const doSignup = async (username, password, email, _id, profilePic) => {
   console.log("Registrando Usuario...");
-  console.log(username, password, email, _id, avatar);
+  console.log(username, password, email, _id, profilePic);
   const res = await api.post("/auth/signup", {
     username,
     password,
     email,
+    profilePic,
   });
   console.log("created User");
   console.log(res.data);
   return res.data;
 };
 
-export const doLogin = async (username, password, email, _id, avatar) => {
+export const doLogin = async (username, password, email, _id, profilePic) => {
   console.log("Do Login");
   const res = await api.post("/auth/login", {
     username,
     password,
     email,
     _id,
-    avatar,
+    profilePic,
   });
   console.log(res.data);
   return res.data;

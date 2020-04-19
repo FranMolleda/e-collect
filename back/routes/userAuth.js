@@ -10,8 +10,8 @@ router.get("/signup", (req, res) => {
 });
 
 router.post("/signup", async (req, res, next) => {
-  const { username, password, email, avatar } = req.body;
-  console.log(username, password, email, avatar);
+  const { username, password, email, profilePic } = req.body;
+  console.log(username, password, email, profilePic);
   try {
     if (!username || !password || !email) {
       res.json("Please, complete Username, Password or Email");
@@ -20,12 +20,19 @@ router.post("/signup", async (req, res, next) => {
     const existingUser = await User.findOne({ username });
 
     if (!existingUser) {
-      const newUser = await User.create({ username, password, email, avatar });
+      const newUser = await User.create({
+        username,
+        password,
+        email,
+        profilePic,
+      });
       req.login(newUser, (err) => {
         res.json(newUser);
       });
     } else {
-      res.json({ status: "User Exists" });
+      req.login(req.user, (err) => {
+        res.json({ status: "User Exists" });
+      });
     }
   } catch (err) {
     next(err);
@@ -48,7 +55,7 @@ router.post("/login", (req, res, next) => {
         return res.json({ status: 500, message: "authentication error" });
       }
       return res.json(
-        _.pick(req.user, ["username", "password", "email", "id"])
+        _.pick(req.user, ["username", "password", "email", "id", "profilePic"])
       );
     });
   })(req, res, next);

@@ -24,9 +24,8 @@ export const getMeet = async (idMeet) => {
 
   return res.data;
 };
-export const getAddMeet = async (idUser) => {
-  const res = await api.put(`/user/edit/${idUser}`);
-
+export const getAddMeet = async (data) => {
+  const res = await api.post(`/user/addmeet`, { data });
   return res.data;
 };
 

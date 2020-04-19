@@ -16,7 +16,7 @@ const userSchema = new Schema(
     password: {
       type: String,
       required: [true, "Password is required"],
-      match: [PASSWORD_PATTERN, "Invalid password pattern"],
+      // match: [PASSWORD_PATTERN, "Invalid password pattern"],
     },
     email: {
       type: String,
@@ -31,9 +31,11 @@ const userSchema = new Schema(
       slackID: { type: String },
       googleID: { type: String },
     },
-
+    profilePic: {
+      type: Object,
+      default: "/images/default-profile.jpg",
+    },
     city: { type: String },
-    avatar: { type: String, default: "../public/images/default-profile.jpg" },
     points: { type: Number, default: 0 },
     meetings: [{ type: Schema.Types.ObjectId, ref: "Meetings" }],
   },

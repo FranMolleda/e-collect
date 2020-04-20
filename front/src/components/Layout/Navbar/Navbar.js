@@ -1,7 +1,7 @@
 import React from "react";
 import { Navbar, NavDropdown, Nav } from "react-bootstrap";
 import logo from "../../../../public/images/logo500Verde.png";
-import NavbarContainer from "./StyleNavbar";
+import NavbarContainer from "./styleNavbar";
 import { Link } from "react-router-dom";
 import { useUser, useUserLogout } from "../../../lib/auth/auth.api";
 

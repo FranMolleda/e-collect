@@ -8,9 +8,9 @@ const { crudGenerator } = require("./crudModels");
 const _ = require("lodash");
 import { upload, uploadCloudinaryAvatar } from "../middleware/uploader";
 
-// router.get("/", (req, res, next) => {
-//   res.json({ status: "Welcome" });
-// });
+router.get("/", (req, res, next) => {
+  res.json({ status: "Welcome" });
+});
 router.use("/auth", require("./userAuth"));
 router.use("/private", require("./privatePages"));
 router.use(

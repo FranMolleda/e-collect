@@ -79,9 +79,9 @@ app.use((req, res, next) => {
   next();
 });
 
+app.use(express.static(path.join(__dirname, "public")));
+// routes
 const index = require("./routes/index");
-
 app.use("/", index);
-app.use("/", express.static(path.join(__dirname, "../front/dist")));
 
 module.exports = app;

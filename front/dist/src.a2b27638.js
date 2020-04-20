@@ -46493,7 +46493,7 @@ function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-},{"./Accordion":"node_modules/react-bootstrap/esm/Accordion.js","./AccordionToggle":"node_modules/react-bootstrap/esm/AccordionToggle.js","./AccordionCollapse":"node_modules/react-bootstrap/esm/AccordionCollapse.js","./Alert":"node_modules/react-bootstrap/esm/Alert.js","./Badge":"node_modules/react-bootstrap/esm/Badge.js","./Breadcrumb":"node_modules/react-bootstrap/esm/Breadcrumb.js","./BreadcrumbItem":"node_modules/react-bootstrap/esm/BreadcrumbItem.js","./Button":"node_modules/react-bootstrap/esm/Button.js","./ButtonGroup":"node_modules/react-bootstrap/esm/ButtonGroup.js","./ButtonToolbar":"node_modules/react-bootstrap/esm/ButtonToolbar.js","./Card":"node_modules/react-bootstrap/esm/Card.js","./CardColumns":"node_modules/react-bootstrap/esm/CardColumns.js","./CardDeck":"node_modules/react-bootstrap/esm/CardDeck.js","./CardImg":"node_modules/react-bootstrap/esm/CardImg.js","./CardGroup":"node_modules/react-bootstrap/esm/CardGroup.js","./Carousel":"node_modules/react-bootstrap/esm/Carousel.js","./CarouselItem":"node_modules/react-bootstrap/esm/CarouselItem.js","./CloseButton":"node_modules/react-bootstrap/esm/CloseButton.js","./Col":"node_modules/react-bootstrap/esm/Col.js","./Collapse":"node_modules/react-bootstrap/esm/Collapse.js","./Dropdown":"node_modules/react-bootstrap/esm/Dropdown.js","./DropdownButton":"node_modules/react-bootstrap/esm/DropdownButton.js","./DropdownItem":"node_modules/react-bootstrap/esm/DropdownItem.js","./Fade":"node_modules/react-bootstrap/esm/Fade.js","./Form":"node_modules/react-bootstrap/esm/Form.js","./FormControl":"node_modules/react-bootstrap/esm/FormControl.js","./FormCheck":"node_modules/react-bootstrap/esm/FormCheck.js","./FormFile":"node_modules/react-bootstrap/esm/FormFile.js","./Switch":"node_modules/react-bootstrap/esm/Switch.js","./FormGroup":"node_modules/react-bootstrap/esm/FormGroup.js","./FormLabel":"node_modules/react-bootstrap/esm/FormLabel.js","./FormText":"node_modules/react-bootstrap/esm/FormText.js","./Container":"node_modules/react-bootstrap/esm/Container.js","./Image":"node_modules/react-bootstrap/esm/Image.js","./Figure":"node_modules/react-bootstrap/esm/Figure.js","./InputGroup":"node_modules/react-bootstrap/esm/InputGroup.js","./Jumbotron":"node_modules/react-bootstrap/esm/Jumbotron.js","./ListGroup":"node_modules/react-bootstrap/esm/ListGroup.js","./ListGroupItem":"node_modules/react-bootstrap/esm/ListGroupItem.js","./Media":"node_modules/react-bootstrap/esm/Media.js","./Modal":"node_modules/react-bootstrap/esm/Modal.js","./ModalBody":"node_modules/react-bootstrap/esm/ModalBody.js","./ModalDialog":"node_modules/react-bootstrap/esm/ModalDialog.js","./ModalFooter":"node_modules/react-bootstrap/esm/ModalFooter.js","./ModalTitle":"node_modules/react-bootstrap/esm/ModalTitle.js","./Nav":"node_modules/react-bootstrap/esm/Nav.js","./Navbar":"node_modules/react-bootstrap/esm/Navbar.js","./NavbarBrand":"node_modules/react-bootstrap/esm/NavbarBrand.js","./NavDropdown":"node_modules/react-bootstrap/esm/NavDropdown.js","./NavItem":"node_modules/react-bootstrap/esm/NavItem.js","./NavLink":"node_modules/react-bootstrap/esm/NavLink.js","./Overlay":"node_modules/react-bootstrap/esm/Overlay.js","./OverlayTrigger":"node_modules/react-bootstrap/esm/OverlayTrigger.js","./PageItem":"node_modules/react-bootstrap/esm/PageItem.js","./Pagination":"node_modules/react-bootstrap/esm/Pagination.js","./Popover":"node_modules/react-bootstrap/esm/Popover.js","./PopoverContent":"node_modules/react-bootstrap/esm/PopoverContent.js","./PopoverTitle":"node_modules/react-bootstrap/esm/PopoverTitle.js","./ProgressBar":"node_modules/react-bootstrap/esm/ProgressBar.js","./ResponsiveEmbed":"node_modules/react-bootstrap/esm/ResponsiveEmbed.js","./Row":"node_modules/react-bootstrap/esm/Row.js","./SafeAnchor":"node_modules/react-bootstrap/esm/SafeAnchor.js","./Spinner":"node_modules/react-bootstrap/esm/Spinner.js","./SplitButton":"node_modules/react-bootstrap/esm/SplitButton.js","./Tab":"node_modules/react-bootstrap/esm/Tab.js","./TabContainer":"node_modules/react-bootstrap/esm/TabContainer.js","./TabContent":"node_modules/react-bootstrap/esm/TabContent.js","./Table":"node_modules/react-bootstrap/esm/Table.js","./TabPane":"node_modules/react-bootstrap/esm/TabPane.js","./Tabs":"node_modules/react-bootstrap/esm/Tabs.js","./ThemeProvider":"node_modules/react-bootstrap/esm/ThemeProvider.js","./ToggleButton":"node_modules/react-bootstrap/esm/ToggleButton.js","./ToggleButtonGroup":"node_modules/react-bootstrap/esm/ToggleButtonGroup.js","./Tooltip":"node_modules/react-bootstrap/esm/Tooltip.js","./Toast":"node_modules/react-bootstrap/esm/Toast.js","./ToastBody":"node_modules/react-bootstrap/esm/ToastBody.js","./ToastHeader":"node_modules/react-bootstrap/esm/ToastHeader.js"}],"src/components/Layout/Navbar/StyleNavbar.js":[function(require,module,exports) {
+},{"./Accordion":"node_modules/react-bootstrap/esm/Accordion.js","./AccordionToggle":"node_modules/react-bootstrap/esm/AccordionToggle.js","./AccordionCollapse":"node_modules/react-bootstrap/esm/AccordionCollapse.js","./Alert":"node_modules/react-bootstrap/esm/Alert.js","./Badge":"node_modules/react-bootstrap/esm/Badge.js","./Breadcrumb":"node_modules/react-bootstrap/esm/Breadcrumb.js","./BreadcrumbItem":"node_modules/react-bootstrap/esm/BreadcrumbItem.js","./Button":"node_modules/react-bootstrap/esm/Button.js","./ButtonGroup":"node_modules/react-bootstrap/esm/ButtonGroup.js","./ButtonToolbar":"node_modules/react-bootstrap/esm/ButtonToolbar.js","./Card":"node_modules/react-bootstrap/esm/Card.js","./CardColumns":"node_modules/react-bootstrap/esm/CardColumns.js","./CardDeck":"node_modules/react-bootstrap/esm/CardDeck.js","./CardImg":"node_modules/react-bootstrap/esm/CardImg.js","./CardGroup":"node_modules/react-bootstrap/esm/CardGroup.js","./Carousel":"node_modules/react-bootstrap/esm/Carousel.js","./CarouselItem":"node_modules/react-bootstrap/esm/CarouselItem.js","./CloseButton":"node_modules/react-bootstrap/esm/CloseButton.js","./Col":"node_modules/react-bootstrap/esm/Col.js","./Collapse":"node_modules/react-bootstrap/esm/Collapse.js","./Dropdown":"node_modules/react-bootstrap/esm/Dropdown.js","./DropdownButton":"node_modules/react-bootstrap/esm/DropdownButton.js","./DropdownItem":"node_modules/react-bootstrap/esm/DropdownItem.js","./Fade":"node_modules/react-bootstrap/esm/Fade.js","./Form":"node_modules/react-bootstrap/esm/Form.js","./FormControl":"node_modules/react-bootstrap/esm/FormControl.js","./FormCheck":"node_modules/react-bootstrap/esm/FormCheck.js","./FormFile":"node_modules/react-bootstrap/esm/FormFile.js","./Switch":"node_modules/react-bootstrap/esm/Switch.js","./FormGroup":"node_modules/react-bootstrap/esm/FormGroup.js","./FormLabel":"node_modules/react-bootstrap/esm/FormLabel.js","./FormText":"node_modules/react-bootstrap/esm/FormText.js","./Container":"node_modules/react-bootstrap/esm/Container.js","./Image":"node_modules/react-bootstrap/esm/Image.js","./Figure":"node_modules/react-bootstrap/esm/Figure.js","./InputGroup":"node_modules/react-bootstrap/esm/InputGroup.js","./Jumbotron":"node_modules/react-bootstrap/esm/Jumbotron.js","./ListGroup":"node_modules/react-bootstrap/esm/ListGroup.js","./ListGroupItem":"node_modules/react-bootstrap/esm/ListGroupItem.js","./Media":"node_modules/react-bootstrap/esm/Media.js","./Modal":"node_modules/react-bootstrap/esm/Modal.js","./ModalBody":"node_modules/react-bootstrap/esm/ModalBody.js","./ModalDialog":"node_modules/react-bootstrap/esm/ModalDialog.js","./ModalFooter":"node_modules/react-bootstrap/esm/ModalFooter.js","./ModalTitle":"node_modules/react-bootstrap/esm/ModalTitle.js","./Nav":"node_modules/react-bootstrap/esm/Nav.js","./Navbar":"node_modules/react-bootstrap/esm/Navbar.js","./NavbarBrand":"node_modules/react-bootstrap/esm/NavbarBrand.js","./NavDropdown":"node_modules/react-bootstrap/esm/NavDropdown.js","./NavItem":"node_modules/react-bootstrap/esm/NavItem.js","./NavLink":"node_modules/react-bootstrap/esm/NavLink.js","./Overlay":"node_modules/react-bootstrap/esm/Overlay.js","./OverlayTrigger":"node_modules/react-bootstrap/esm/OverlayTrigger.js","./PageItem":"node_modules/react-bootstrap/esm/PageItem.js","./Pagination":"node_modules/react-bootstrap/esm/Pagination.js","./Popover":"node_modules/react-bootstrap/esm/Popover.js","./PopoverContent":"node_modules/react-bootstrap/esm/PopoverContent.js","./PopoverTitle":"node_modules/react-bootstrap/esm/PopoverTitle.js","./ProgressBar":"node_modules/react-bootstrap/esm/ProgressBar.js","./ResponsiveEmbed":"node_modules/react-bootstrap/esm/ResponsiveEmbed.js","./Row":"node_modules/react-bootstrap/esm/Row.js","./SafeAnchor":"node_modules/react-bootstrap/esm/SafeAnchor.js","./Spinner":"node_modules/react-bootstrap/esm/Spinner.js","./SplitButton":"node_modules/react-bootstrap/esm/SplitButton.js","./Tab":"node_modules/react-bootstrap/esm/Tab.js","./TabContainer":"node_modules/react-bootstrap/esm/TabContainer.js","./TabContent":"node_modules/react-bootstrap/esm/TabContent.js","./Table":"node_modules/react-bootstrap/esm/Table.js","./TabPane":"node_modules/react-bootstrap/esm/TabPane.js","./Tabs":"node_modules/react-bootstrap/esm/Tabs.js","./ThemeProvider":"node_modules/react-bootstrap/esm/ThemeProvider.js","./ToggleButton":"node_modules/react-bootstrap/esm/ToggleButton.js","./ToggleButtonGroup":"node_modules/react-bootstrap/esm/ToggleButtonGroup.js","./Tooltip":"node_modules/react-bootstrap/esm/Tooltip.js","./Toast":"node_modules/react-bootstrap/esm/Toast.js","./ToastBody":"node_modules/react-bootstrap/esm/ToastBody.js","./ToastHeader":"node_modules/react-bootstrap/esm/ToastHeader.js"}],"src/components/Layout/Navbar/styleNavbar.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -48926,7 +48926,7 @@ var useUserLogout = function useUserLogout() {
 exports.useUserLogout = useUserLogout;
 
 var api = _axios.default.create({
-  baseURL: "https://e-collect-back.herokuapp.com",
+  baseURL: "https://localhost:3000",
   withCredentials: true
 });
 
@@ -49078,7 +49078,7 @@ var _reactBootstrap = require("react-bootstrap");
 
 var _logo500Verde = _interopRequireDefault(require("../../../../public/images/logo500Verde.png"));
 
-var _StyleNavbar = _interopRequireDefault(require("./StyleNavbar"));
+var _styleNavbar = _interopRequireDefault(require("./styleNavbar"));
 
 var _reactRouterDom = require("react-router-dom");
 
@@ -49089,7 +49089,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var LayoutNavbar = function LayoutNavbar() {
   var user = (0, _auth.useUser)();
   var handleLogout = (0, _auth.useUserLogout)();
-  return _react.default.createElement(_react.default.Fragment, null, _react.default.createElement(_StyleNavbar.default, null, _react.default.createElement(_reactBootstrap.Navbar, {
+  return _react.default.createElement(_react.default.Fragment, null, _react.default.createElement(_styleNavbar.default, null, _react.default.createElement(_reactBootstrap.Navbar, {
     className: "container-navbar",
     collapseOnSelect: true,
     expand: "lg",
@@ -49163,7 +49163,7 @@ var LayoutNavbar = function LayoutNavbar() {
 
 var _default = LayoutNavbar;
 exports.default = _default;
-},{"react":"node_modules/react/index.js","react-bootstrap":"node_modules/react-bootstrap/esm/index.js","../../../../public/images/logo500Verde.png":"public/images/logo500Verde.png","./StyleNavbar":"src/components/Layout/Navbar/StyleNavbar.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js","../../../lib/auth/auth.api":"src/lib/auth/auth.api.js"}],"public/images/latapequeña.jpg":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","react-bootstrap":"node_modules/react-bootstrap/esm/index.js","../../../../public/images/logo500Verde.png":"public/images/logo500Verde.png","./styleNavbar":"src/components/Layout/Navbar/styleNavbar.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js","../../../lib/auth/auth.api":"src/lib/auth/auth.api.js"}],"public/images/latapequeña.jpg":[function(require,module,exports) {
 module.exports = "/latapequeña.3d93ae11.jpg";
 },{}],"public/styles/Images/lata.js":[function(require,module,exports) {
 "use strict";
@@ -52119,7 +52119,7 @@ var Organize = (0, _reactRouterDom.withRouter)(function (_ref) {
   var messageError = "Campo vacío";
 
   var api = _axios.default.create({
-    baseURL: "https://e-collect-back.herokuapp.com",
+    baseURL: "https://localhost:3000",
     withCredentials: true
   });
 
@@ -71513,7 +71513,7 @@ var _lodash = _interopRequireDefault(require("lodash"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var api = _axios.default.create({
-  baseURL: "https://e-collect-back.herokuapp.com",
+  baseURL: "https://localhost:3000",
   withCredentials: true
 });
 
@@ -71859,7 +71859,7 @@ var DeleteMeet = function DeleteMeet(_ref) {
 };
 
 var api = _axios.default.create({
-  baseURL: "https://e-collect-back.herokuapp.com",
+  baseURL: "https://localhost:3000",
   withCredentials: true
 });
 
@@ -71989,7 +71989,7 @@ var _axios = _interopRequireDefault(require("axios"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var api = _axios.default.create({
-  baseURL: "https://e-collect-back.herokuapp.com",
+  baseURL: "https://localhost:3000",
   withCredentials: true
 });
 
@@ -72230,7 +72230,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50218" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51901" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

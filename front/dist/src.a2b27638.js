@@ -32068,7 +32068,7 @@ if ("development" !== 'production' && "development" !== 'test' && typeof window 
 
 var _default = styled;
 exports.default = _default;
-},{"react-is":"node_modules/react-is/index.js","react":"node_modules/react/index.js","shallowequal":"node_modules/shallowequal/index.js","@emotion/stylis":"node_modules/@emotion/stylis/dist/stylis.browser.esm.js","@emotion/unitless":"node_modules/@emotion/unitless/dist/unitless.browser.esm.js","@emotion/is-prop-valid":"node_modules/@emotion/is-prop-valid/dist/is-prop-valid.browser.esm.js","hoist-non-react-statics":"node_modules/hoist-non-react-statics/dist/hoist-non-react-statics.cjs.js","process":"../../../../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/process/browser.js"}],"src/components/Layout/Footer/StyleFooter.js":[function(require,module,exports) {
+},{"react-is":"node_modules/react-is/index.js","react":"node_modules/react/index.js","shallowequal":"node_modules/shallowequal/index.js","@emotion/stylis":"node_modules/@emotion/stylis/dist/stylis.browser.esm.js","@emotion/unitless":"node_modules/@emotion/unitless/dist/unitless.browser.esm.js","@emotion/is-prop-valid":"node_modules/@emotion/is-prop-valid/dist/is-prop-valid.browser.esm.js","hoist-non-react-statics":"node_modules/hoist-non-react-statics/dist/hoist-non-react-statics.cjs.js","process":"../../../../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/process/browser.js"}],"src/components/Layout/Footer/styleFooter.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -32110,7 +32110,7 @@ exports.default = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
-var _StyleFooter = _interopRequireDefault(require("./StyleFooter.js"));
+var _styleFooter = _interopRequireDefault(require("./styleFooter"));
 
 var _logo500Verde = _interopRequireDefault(require("../../../../public/images/logo500Verde.png"));
 
@@ -32119,7 +32119,7 @@ var _arbolfooterazul = _interopRequireDefault(require("../../../../public/images
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var Footer = function Footer() {
-  return _react.default.createElement(_react.default.Fragment, null, _react.default.createElement(_StyleFooter.default, null, _react.default.createElement("footer", {
+  return _react.default.createElement(_react.default.Fragment, null, _react.default.createElement(_styleFooter.default, null, _react.default.createElement("footer", {
     className: "footer-bs"
   }, _react.default.createElement("img", {
     className: "arbol-azul",
@@ -32171,7 +32171,7 @@ var Footer = function Footer() {
 
 var _default = Footer;
 exports.default = _default;
-},{"react":"node_modules/react/index.js","./StyleFooter.js":"src/components/Layout/Footer/StyleFooter.js","../../../../public/images/logo500Verde.png":"public/images/logo500Verde.png","../../../../public/images/arbolfooterazul.png":"public/images/arbolfooterazul.png"}],"node_modules/classnames/index.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","./styleFooter":"src/components/Layout/Footer/styleFooter.js","../../../../public/images/logo500Verde.png":"public/images/logo500Verde.png","../../../../public/images/arbolfooterazul.png":"public/images/arbolfooterazul.png"}],"node_modules/classnames/index.js":[function(require,module,exports) {
 var define;
 /*!
   Copyright (c) 2017 Jed Watson.
@@ -48926,7 +48926,7 @@ var useUserLogout = function useUserLogout() {
 exports.useUserLogout = useUserLogout;
 
 var api = _axios.default.create({
-  baseURL: "https://e-collect-back.herokuapp.com/",
+  baseURL: "https://e-collect-back.herokuapp.com",
   withCredentials: true
 });
 
@@ -52119,7 +52119,7 @@ var Organize = (0, _reactRouterDom.withRouter)(function (_ref) {
   var messageError = "Campo vacío";
 
   var api = _axios.default.create({
-    baseURL: "https://e-collect-back.herokuapp.com/",
+    baseURL: "https://e-collect-back.herokuapp.com",
     withCredentials: true
   });
 
@@ -71513,7 +71513,7 @@ var _lodash = _interopRequireDefault(require("lodash"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var api = _axios.default.create({
-  baseURL: "https://e-collect-back.herokuapp.com/",
+  baseURL: "https://e-collect-back.herokuapp.com",
   withCredentials: true
 });
 
@@ -71859,7 +71859,7 @@ var DeleteMeet = function DeleteMeet(_ref) {
 };
 
 var api = _axios.default.create({
-  baseURL: "https://e-collect-back.herokuapp.com/",
+  baseURL: "https://e-collect-back.herokuapp.com",
   withCredentials: true
 });
 
@@ -71989,7 +71989,7 @@ var _axios = _interopRequireDefault(require("axios"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var api = _axios.default.create({
-  baseURL: "https://e-collect-back.herokuapp.com/",
+  baseURL: "https://e-collect-back.herokuapp.com",
   withCredentials: true
 });
 
@@ -72230,7 +72230,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51921" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50218" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

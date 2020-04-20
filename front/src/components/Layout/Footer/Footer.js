@@ -1,5 +1,5 @@
 import React from "react";
-import FooterContainer from "./StyleFooter.js";
+import FooterContainer from "./styleFooter";
 import logo from "../../../../public/images/logo500Verde.png";
 import arbol from "../../../../public/images/arbolfooterazul.png";
 

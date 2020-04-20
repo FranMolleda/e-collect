@@ -48926,7 +48926,7 @@ var useUserLogout = function useUserLogout() {
 exports.useUserLogout = useUserLogout;
 
 var api = _axios.default.create({
-  baseURL: "http://localhost:3000",
+  baseURL: "https://e-collect-back.herokuapp.com/",
   withCredentials: true
 });
 
@@ -52119,7 +52119,7 @@ var Organize = (0, _reactRouterDom.withRouter)(function (_ref) {
   var messageError = "Campo vacío";
 
   var api = _axios.default.create({
-    baseURL: "http://localhost:3000",
+    baseURL: "https://e-collect-back.herokuapp.com/",
     withCredentials: true
   });
 
@@ -71513,7 +71513,7 @@ var _lodash = _interopRequireDefault(require("lodash"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var api = _axios.default.create({
-  baseURL: "http://localhost:3000",
+  baseURL: "https://e-collect-back.herokuapp.com/",
   withCredentials: true
 });
 
@@ -71859,7 +71859,7 @@ var DeleteMeet = function DeleteMeet(_ref) {
 };
 
 var api = _axios.default.create({
-  baseURL: "http://localhost:3000",
+  baseURL: "https://e-collect-back.herokuapp.com/",
   withCredentials: true
 });
 
@@ -71989,7 +71989,7 @@ var _axios = _interopRequireDefault(require("axios"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var api = _axios.default.create({
-  baseURL: "http://localhost:3000",
+  baseURL: "https://e-collect-back.herokuapp.com/",
   withCredentials: true
 });
 
@@ -72230,7 +72230,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54194" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51921" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

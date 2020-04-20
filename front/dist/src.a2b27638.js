@@ -29042,7 +29042,7 @@ if ("development" !== "production") {
     style: _propTypes.default.object
   });
 }
-},{"react-router":"node_modules/react-router/esm/react-router.js","@babel/runtime/helpers/esm/inheritsLoose":"node_modules/@babel/runtime/helpers/esm/inheritsLoose.js","react":"node_modules/react/index.js","history":"node_modules/history/esm/history.js","prop-types":"node_modules/prop-types/index.js","tiny-warning":"node_modules/tiny-warning/dist/tiny-warning.esm.js","@babel/runtime/helpers/esm/extends":"node_modules/@babel/runtime/helpers/esm/extends.js","@babel/runtime/helpers/esm/objectWithoutPropertiesLoose":"node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js","tiny-invariant":"node_modules/tiny-invariant/dist/tiny-invariant.esm.js"}],"../../../../../../../../usr/local/lib/node_modules/parcel-bundler/src/builtins/bundle-url.js":[function(require,module,exports) {
+},{"react-router":"node_modules/react-router/esm/react-router.js","@babel/runtime/helpers/esm/inheritsLoose":"node_modules/@babel/runtime/helpers/esm/inheritsLoose.js","react":"node_modules/react/index.js","history":"node_modules/history/esm/history.js","prop-types":"node_modules/prop-types/index.js","tiny-warning":"node_modules/tiny-warning/dist/tiny-warning.esm.js","@babel/runtime/helpers/esm/extends":"node_modules/@babel/runtime/helpers/esm/extends.js","@babel/runtime/helpers/esm/objectWithoutPropertiesLoose":"node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js","tiny-invariant":"node_modules/tiny-invariant/dist/tiny-invariant.esm.js"}],"node_modules/parcel/src/builtins/bundle-url.js":[function(require,module,exports) {
 var bundleURL = null;
 
 function getBundleURLCached() {
@@ -29074,7 +29074,7 @@ function getBaseURL(url) {
 
 exports.getBundleURL = getBundleURLCached;
 exports.getBaseURL = getBaseURL;
-},{}],"../../../../../../../../usr/local/lib/node_modules/parcel-bundler/src/builtins/css-loader.js":[function(require,module,exports) {
+},{}],"node_modules/parcel/src/builtins/css-loader.js":[function(require,module,exports) {
 var bundle = require('./bundle-url');
 
 function updateLink(link) {
@@ -29109,17 +29109,17 @@ function reloadCSS() {
 }
 
 module.exports = reloadCSS;
-},{"./bundle-url":"../../../../../../../../usr/local/lib/node_modules/parcel-bundler/src/builtins/bundle-url.js"}],"public/styles/App.css":[function(require,module,exports) {
+},{"./bundle-url":"node_modules/parcel/src/builtins/bundle-url.js"}],"public/styles/App.css":[function(require,module,exports) {
 var reloadCSS = require('_css_loader');
 
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
-},{"_css_loader":"../../../../../../../../usr/local/lib/node_modules/parcel-bundler/src/builtins/css-loader.js"}],"node_modules/bootstrap/dist/css/bootstrap.min.css":[function(require,module,exports) {
+},{"_css_loader":"node_modules/parcel/src/builtins/css-loader.js"}],"node_modules/bootstrap/dist/css/bootstrap.min.css":[function(require,module,exports) {
 var reloadCSS = require('_css_loader');
 
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
-},{"_css_loader":"../../../../../../../../usr/local/lib/node_modules/parcel-bundler/src/builtins/css-loader.js"}],"node_modules/@babel/runtime/helpers/taggedTemplateLiteral.js":[function(require,module,exports) {
+},{"_css_loader":"node_modules/parcel/src/builtins/css-loader.js"}],"node_modules/@babel/runtime/helpers/taggedTemplateLiteral.js":[function(require,module,exports) {
 function _taggedTemplateLiteral(strings, raw) {
   if (!raw) {
     raw = strings.slice(0);
@@ -29904,7 +29904,7 @@ var index = (0, _memoize.default)(function (prop) {
 );
 var _default = index;
 exports.default = _default;
-},{"@emotion/memoize":"node_modules/@emotion/memoize/dist/memoize.browser.esm.js"}],"../../../../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/process/browser.js":[function(require,module,exports) {
+},{"@emotion/memoize":"node_modules/@emotion/memoize/dist/memoize.browser.esm.js"}],"node_modules/process/browser.js":[function(require,module,exports) {
 
 // shim for using process in browser
 var process = module.exports = {}; // cached from whatever global is present so that test runners that stub it
@@ -32068,7 +32068,7 @@ if ("development" !== 'production' && "development" !== 'test' && typeof window 
 
 var _default = styled;
 exports.default = _default;
-},{"react-is":"node_modules/react-is/index.js","react":"node_modules/react/index.js","shallowequal":"node_modules/shallowequal/index.js","@emotion/stylis":"node_modules/@emotion/stylis/dist/stylis.browser.esm.js","@emotion/unitless":"node_modules/@emotion/unitless/dist/unitless.browser.esm.js","@emotion/is-prop-valid":"node_modules/@emotion/is-prop-valid/dist/is-prop-valid.browser.esm.js","hoist-non-react-statics":"node_modules/hoist-non-react-statics/dist/hoist-non-react-statics.cjs.js","process":"../../../../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/process/browser.js"}],"src/components/Layout/Footer/styleFooter.js":[function(require,module,exports) {
+},{"react-is":"node_modules/react-is/index.js","react":"node_modules/react/index.js","shallowequal":"node_modules/shallowequal/index.js","@emotion/stylis":"node_modules/@emotion/stylis/dist/stylis.browser.esm.js","@emotion/unitless":"node_modules/@emotion/unitless/dist/unitless.browser.esm.js","@emotion/is-prop-valid":"node_modules/@emotion/is-prop-valid/dist/is-prop-valid.browser.esm.js","hoist-non-react-statics":"node_modules/hoist-non-react-statics/dist/hoist-non-react-statics.cjs.js","process":"node_modules/process/browser.js"}],"src/components/Layout/Footer/styleFooter.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -32119,54 +32119,55 @@ var _arbolfooterazul = _interopRequireDefault(require("../../../../public/images
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var Footer = function Footer() {
-  return _react.default.createElement(_react.default.Fragment, null, _react.default.createElement(_styleFooter.default, null, _react.default.createElement("footer", {
-    className: "footer-bs"
-  }, _react.default.createElement("img", {
-    className: "arbol-azul",
-    src: _arbolfooterazul.default,
-    alt: "Arbol azul Image"
-  }), _react.default.createElement("div", {
-    className: "row"
-  }, _react.default.createElement("div", {
-    className: "col-md-3 footer-brand animated fadeInLeft size-footer"
-  }, _react.default.createElement("img", {
-    src: _logo500Verde.default,
-    alt: "Logo Image",
-    style: {
-      width: "100px",
-      height: "23px"
-    }
-  }), _react.default.createElement("p", {
-    style: {
-      marginTop: "10px"
-    }
-  }, "Suspendisse hendrerit tellus laoreet luctus pharetra. Aliquam porttitor")), _react.default.createElement("div", {
-    className: "col-md-3 footer-nav animated fadeInUp size-footer"
-  }, _react.default.createElement("h4", null, "Menu "), _react.default.createElement("div", {
-    className: "col-md-6"
-  }, _react.default.createElement("ul", {
-    className: "list"
-  }, _react.default.createElement("li", null, _react.default.createElement("a", {
-    href: "#"
-  }, "Con\xF3cenos")), _react.default.createElement("li", null, _react.default.createElement("a", {
-    href: "#"
-  }, "Contacta"))))), _react.default.createElement("div", {
-    className: "col-md-3 footer-nav animated fadeInUp size-footer"
-  }, _react.default.createElement("h4", null, "\xDAnete"), _react.default.createElement("div", {
-    className: "col-md-6"
-  }, _react.default.createElement("ul", {
-    className: "list"
-  }, _react.default.createElement("li", null, _react.default.createElement("a", {
-    href: "#"
-  }, "Participa")), _react.default.createElement("li", null, _react.default.createElement("a", {
-    href: "#"
-  }, "Organiza"))))), _react.default.createElement("div", {
-    className: "col-md-2 footer-social animated fadeInDown size-footer"
-  }, _react.default.createElement("h4", null, "Follow Us"), _react.default.createElement("ul", null, _react.default.createElement("li", null, _react.default.createElement("a", {
-    href: "#"
-  }, "Facebook")), _react.default.createElement("li", null, _react.default.createElement("a", {
-    href: "#"
-  }, "Twitter"))))))));
+  return (/*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement(_styleFooter.default, null, /*#__PURE__*/_react.default.createElement("footer", {
+      className: "footer-bs"
+    }, /*#__PURE__*/_react.default.createElement("img", {
+      className: "arbol-azul",
+      src: _arbolfooterazul.default,
+      alt: "Arbol azul Image"
+    }), /*#__PURE__*/_react.default.createElement("div", {
+      className: "row"
+    }, /*#__PURE__*/_react.default.createElement("div", {
+      className: "col-md-3 footer-brand animated fadeInLeft size-footer"
+    }, /*#__PURE__*/_react.default.createElement("img", {
+      src: _logo500Verde.default,
+      alt: "Logo Image",
+      style: {
+        width: "100px",
+        height: "23px"
+      }
+    }), /*#__PURE__*/_react.default.createElement("p", {
+      style: {
+        marginTop: "10px"
+      }
+    }, "Suspendisse hendrerit tellus laoreet luctus pharetra. Aliquam porttitor")), /*#__PURE__*/_react.default.createElement("div", {
+      className: "col-md-3 footer-nav animated fadeInUp size-footer"
+    }, /*#__PURE__*/_react.default.createElement("h4", null, "Menu "), /*#__PURE__*/_react.default.createElement("div", {
+      className: "col-md-6"
+    }, /*#__PURE__*/_react.default.createElement("ul", {
+      className: "list"
+    }, /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement("a", {
+      href: "#"
+    }, "Con\xF3cenos")), /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement("a", {
+      href: "#"
+    }, "Contacta"))))), /*#__PURE__*/_react.default.createElement("div", {
+      className: "col-md-3 footer-nav animated fadeInUp size-footer"
+    }, /*#__PURE__*/_react.default.createElement("h4", null, "\xDAnete"), /*#__PURE__*/_react.default.createElement("div", {
+      className: "col-md-6"
+    }, /*#__PURE__*/_react.default.createElement("ul", {
+      className: "list"
+    }, /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement("a", {
+      href: "#"
+    }, "Participa")), /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement("a", {
+      href: "#"
+    }, "Organiza"))))), /*#__PURE__*/_react.default.createElement("div", {
+      className: "col-md-2 footer-social animated fadeInDown size-footer"
+    }, /*#__PURE__*/_react.default.createElement("h4", null, "Follow Us"), /*#__PURE__*/_react.default.createElement("ul", null, /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement("a", {
+      href: "#"
+    }, "Facebook")), /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement("a", {
+      href: "#"
+    }, "Twitter"))))))))
+  );
 };
 
 var _default = Footer;
@@ -48429,7 +48430,7 @@ utils.forEach(['post', 'put', 'patch'], function forEachMethodWithData(method) {
 
 module.exports = defaults;
 
-},{"./utils":"node_modules/axios/lib/utils.js","./helpers/normalizeHeaderName":"node_modules/axios/lib/helpers/normalizeHeaderName.js","./adapters/xhr":"node_modules/axios/lib/adapters/xhr.js","./adapters/http":"node_modules/axios/lib/adapters/xhr.js","process":"../../../../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/process/browser.js"}],"node_modules/axios/lib/core/dispatchRequest.js":[function(require,module,exports) {
+},{"./utils":"node_modules/axios/lib/utils.js","./helpers/normalizeHeaderName":"node_modules/axios/lib/helpers/normalizeHeaderName.js","./adapters/xhr":"node_modules/axios/lib/adapters/xhr.js","./adapters/http":"node_modules/axios/lib/adapters/xhr.js","process":"node_modules/process/browser.js"}],"node_modules/axios/lib/core/dispatchRequest.js":[function(require,module,exports) {
 'use strict';
 
 var utils = require('./../utils');
@@ -48926,7 +48927,7 @@ var useUserLogout = function useUserLogout() {
 exports.useUserLogout = useUserLogout;
 
 var api = _axios.default.create({
-  baseURL: "https://localhost:3000",
+  baseURL: "http://localhost:3000",
   withCredentials: true
 });
 
@@ -49089,76 +49090,77 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var LayoutNavbar = function LayoutNavbar() {
   var user = (0, _auth.useUser)();
   var handleLogout = (0, _auth.useUserLogout)();
-  return _react.default.createElement(_react.default.Fragment, null, _react.default.createElement(_styleNavbar.default, null, _react.default.createElement(_reactBootstrap.Navbar, {
-    className: "container-navbar",
-    collapseOnSelect: true,
-    expand: "lg",
-    variant: "dark"
-  }, _react.default.createElement(_reactBootstrap.Navbar.Brand, {
-    as: "div"
-  }, _react.default.createElement(_reactRouterDom.Link, {
-    to: "/"
-  }, _react.default.createElement("img", {
-    src: _logo500Verde.default,
-    alt: "Logo Image",
-    style: {
-      width: "100px",
-      height: "23px"
-    }
-  })), " "), _react.default.createElement(_reactBootstrap.Navbar.Toggle, {
-    "aria-controls": "responsive-navbar-nav"
-  }), _react.default.createElement(_reactBootstrap.Navbar.Collapse, {
-    id: "responsive-navbar-nav"
-  }, _react.default.createElement(_reactBootstrap.Nav, {
-    className: "mr-auto mr-nav-left"
-  }, _react.default.createElement(_reactBootstrap.Nav.Link, {
-    as: "div"
-  }, _react.default.createElement(_reactRouterDom.Link, {
-    to: "/about"
-  }, "Con\xF3cenos")), _react.default.createElement(_reactBootstrap.NavDropdown, {
-    className: "mr-nav-left",
-    title: "\xDAnete",
-    id: "collasible-nav-dropdown"
-  }, _react.default.createElement(_reactBootstrap.NavDropdown.Item, {
-    as: "div"
-  }, _react.default.createElement(_reactRouterDom.Link, {
-    to: "/meet"
-  }, "Participa")), _react.default.createElement(_reactBootstrap.NavDropdown.Item, {
-    as: "div"
-  }, _react.default.createElement(_reactRouterDom.Link, {
-    to: "/organize"
-  }, "Organiza")), _react.default.createElement(_reactBootstrap.NavDropdown.Item, {
-    as: "div"
-  }, _react.default.createElement(_reactRouterDom.Link, {
-    to: "/colaborate"
-  }, "Colabora")), _react.default.createElement(_reactBootstrap.NavDropdown.Divider, null))), _react.default.createElement(_reactBootstrap.Nav, null, _react.default.createElement(_reactBootstrap.Nav.Link, {
-    as: "div"
-  }, _react.default.createElement(_reactRouterDom.Link, {
-    to: "/contact"
-  }, "Contacta")), !user && _react.default.createElement(_reactBootstrap.NavDropdown, {
-    title: "Inscr\xEDbete",
-    id: "collasible-nav-dropdown"
-  }, _react.default.createElement(_reactBootstrap.NavDropdown.Item, {
-    as: "div"
-  }, _react.default.createElement(_reactRouterDom.Link, {
-    to: "/auth/signup"
-  }, "Signup")), _react.default.createElement(_reactBootstrap.NavDropdown.Item, {
-    as: "div"
-  }, _react.default.createElement(_reactRouterDom.Link, {
-    to: "/auth/login"
-  }, "Login"))), user && _react.default.createElement(_reactBootstrap.NavDropdown, {
-    title: user.username,
-    id: "collasible-nav-dropdown"
-  }, _react.default.createElement(_reactBootstrap.NavDropdown.Item, {
-    as: "div"
-  }, _react.default.createElement(_reactRouterDom.Link, {
-    to: "/auth/profile"
-  }, "Profile")), _react.default.createElement(_reactBootstrap.NavDropdown.Item, {
-    as: "div"
-  }, _react.default.createElement(_reactRouterDom.Link, {
-    to: "/",
-    onClick: handleLogout
-  }, "Logout"))))))));
+  return (/*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement(_styleNavbar.default, null, /*#__PURE__*/_react.default.createElement(_reactBootstrap.Navbar, {
+      className: "container-navbar",
+      collapseOnSelect: true,
+      expand: "lg",
+      variant: "dark"
+    }, /*#__PURE__*/_react.default.createElement(_reactBootstrap.Navbar.Brand, {
+      as: "div"
+    }, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
+      to: "/"
+    }, /*#__PURE__*/_react.default.createElement("img", {
+      src: _logo500Verde.default,
+      alt: "Logo Image",
+      style: {
+        width: "100px",
+        height: "23px"
+      }
+    })), " "), /*#__PURE__*/_react.default.createElement(_reactBootstrap.Navbar.Toggle, {
+      "aria-controls": "responsive-navbar-nav"
+    }), /*#__PURE__*/_react.default.createElement(_reactBootstrap.Navbar.Collapse, {
+      id: "responsive-navbar-nav"
+    }, /*#__PURE__*/_react.default.createElement(_reactBootstrap.Nav, {
+      className: "mr-auto mr-nav-left"
+    }, /*#__PURE__*/_react.default.createElement(_reactBootstrap.Nav.Link, {
+      as: "div"
+    }, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
+      to: "/about"
+    }, "Con\xF3cenos")), /*#__PURE__*/_react.default.createElement(_reactBootstrap.NavDropdown, {
+      className: "mr-nav-left",
+      title: "\xDAnete",
+      id: "collasible-nav-dropdown"
+    }, /*#__PURE__*/_react.default.createElement(_reactBootstrap.NavDropdown.Item, {
+      as: "div"
+    }, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
+      to: "/meet"
+    }, "Participa")), /*#__PURE__*/_react.default.createElement(_reactBootstrap.NavDropdown.Item, {
+      as: "div"
+    }, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
+      to: "/organize"
+    }, "Organiza")), /*#__PURE__*/_react.default.createElement(_reactBootstrap.NavDropdown.Item, {
+      as: "div"
+    }, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
+      to: "/colaborate"
+    }, "Colabora")), /*#__PURE__*/_react.default.createElement(_reactBootstrap.NavDropdown.Divider, null))), /*#__PURE__*/_react.default.createElement(_reactBootstrap.Nav, null, /*#__PURE__*/_react.default.createElement(_reactBootstrap.Nav.Link, {
+      as: "div"
+    }, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
+      to: "/contact"
+    }, "Contacta")), !user && /*#__PURE__*/_react.default.createElement(_reactBootstrap.NavDropdown, {
+      title: "Inscr\xEDbete",
+      id: "collasible-nav-dropdown"
+    }, /*#__PURE__*/_react.default.createElement(_reactBootstrap.NavDropdown.Item, {
+      as: "div"
+    }, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
+      to: "/auth/signup"
+    }, "Signup")), /*#__PURE__*/_react.default.createElement(_reactBootstrap.NavDropdown.Item, {
+      as: "div"
+    }, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
+      to: "/auth/login"
+    }, "Login"))), user && /*#__PURE__*/_react.default.createElement(_reactBootstrap.NavDropdown, {
+      title: user.username,
+      id: "collasible-nav-dropdown"
+    }, /*#__PURE__*/_react.default.createElement(_reactBootstrap.NavDropdown.Item, {
+      as: "div"
+    }, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
+      to: "/auth/profile"
+    }, "Profile")), /*#__PURE__*/_react.default.createElement(_reactBootstrap.NavDropdown.Item, {
+      as: "div"
+    }, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
+      to: "/",
+      onClick: handleLogout
+    }, "Logout"))))))))
+  );
 };
 
 var _default = LayoutNavbar;
@@ -49274,22 +49276,23 @@ var Home = function Home() {
   var _user$profilePic;
 
   var user = (0, _auth.useUser)();
-  return _react.default.createElement(_react.default.Fragment, null, user && _react.default.createElement("div", null, _react.default.createElement("p", null, user.username), _react.default.createElement("img", {
-    src: (_user$profilePic = user.profilePic) === null || _user$profilePic === void 0 ? void 0 : _user$profilePic.path,
-    width: "200"
-  })), _react.default.createElement("div", null, _react.default.createElement(_reactBootstrap.Container, {
-    fluid: true
-  }, _react.default.createElement(_lata.default, null, _react.default.createElement(_ButtonsHome.ButtonParticipa, {
-    as: "div",
-    variant: "outline-secondary"
-  }, _react.default.createElement(_reactRouterDom.Link, {
-    to: "meet"
-  }, "Participa")), _react.default.createElement(_ButtonsHome.ButtonOrganiza, {
-    as: "div",
-    variant: "outline-secondary"
-  }, _react.default.createElement(_reactRouterDom.Link, {
-    to: "organize"
-  }, "Organiza"))))));
+  return (/*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, user && /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("p", null, user.username), /*#__PURE__*/_react.default.createElement("img", {
+      src: (_user$profilePic = user.profilePic) === null || _user$profilePic === void 0 ? void 0 : _user$profilePic.path,
+      width: "200"
+    })), /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement(_reactBootstrap.Container, {
+      fluid: true
+    }, /*#__PURE__*/_react.default.createElement(_lata.default, null, /*#__PURE__*/_react.default.createElement(_ButtonsHome.ButtonParticipa, {
+      as: "div",
+      variant: "outline-secondary"
+    }, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
+      to: "meet"
+    }, "Participa")), /*#__PURE__*/_react.default.createElement(_ButtonsHome.ButtonOrganiza, {
+      as: "div",
+      variant: "outline-secondary"
+    }, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
+      to: "organize"
+    }, "Organiza"))))))
+  );
 };
 
 var _default = Home;
@@ -49307,7 +49310,8 @@ var _react = _interopRequireDefault(require("react"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var Contact = function Contact() {
-  return _react.default.createElement(_react.default.Fragment, null, _react.default.createElement("div", null, _react.default.createElement("h1", null, "Soy el contacto")));
+  return (/*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("h1", null, "Soy el contacto")))
+  );
 };
 
 var _default = Contact;
@@ -49325,7 +49329,8 @@ var _react = _interopRequireDefault(require("react"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var About = function About() {
-  return _react.default.createElement(_react.default.Fragment, null, _react.default.createElement("div", null, _react.default.createElement("h1", null, "Con\xF3cenos"), _react.default.createElement("p", null, "\xF8QU\u2026 ES? E-COLLECT ES UNA PLATAFORMA DIGITAL QUE PERMITE CONECTAR PERSONAS COMPROMETIDAS CON EL MEDIO AMBIENTE EN UNA LABOR DE AYUDA. \xB0\u2044NETE! \xF8C\u201DMO FUNCIONA? EL OBJETIVO CONSISTE EN ORGANIZAR Y/O PARTICIPAR EN ACCIONES DE RECOGIDA DE RESIDUOS EN ENTORNOS NATURALES. \xB0ACT\xD5VATE! ---------------------------------------------------------------- LOS PASOS EN OTRA PARTE. PASO 1. REG\xD5STRATE EN LA WEB. PASO 2. ORGANIZA UNA REUNI\u201DN Y/O PARTICIPA EN ALGUNA YA CREADA. PASO 3. CONSIGUE PUNTOS CON TU PARTICIPACI\u201DN Y CANJEALOS EN ESTABLECIMIENTOS DE ECOTURISMO COLABORADORES. \xF8POR QU\u2026 PARTICIPAR? 1. POR CONCIENCIA ECOL\u201DGICA Los seres humanos hemos llevado al planeta hasta la extenuaci\xDBn pero tambi\xC8n podemos contribuir a su cuidado y conservaci\xDBn. \xB0Informa, educa y fomenta el respeto al medio ambiente! 2. POR COMPROMISO SOCIAL. Un voluntariado activo contribuye a la transformaci\xDBn social no s\xDBlo desde la tarea realizada sino desde las actitudes demostradas. \xB0S\xC8 parte del cambio y \u02D9nete a otras personas que tambi\xC8n quieren formar parte del mismo!")));
+  return (/*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("h1", null, "Con\xF3cenos"), /*#__PURE__*/_react.default.createElement("p", null, "\xF8QU\u2026 ES? E-COLLECT ES UNA PLATAFORMA DIGITAL QUE PERMITE CONECTAR PERSONAS COMPROMETIDAS CON EL MEDIO AMBIENTE EN UNA LABOR DE AYUDA. \xB0\u2044NETE! \xF8C\u201DMO FUNCIONA? EL OBJETIVO CONSISTE EN ORGANIZAR Y/O PARTICIPAR EN ACCIONES DE RECOGIDA DE RESIDUOS EN ENTORNOS NATURALES. \xB0ACT\xD5VATE! ---------------------------------------------------------------- LOS PASOS EN OTRA PARTE. PASO 1. REG\xD5STRATE EN LA WEB. PASO 2. ORGANIZA UNA REUNI\u201DN Y/O PARTICIPA EN ALGUNA YA CREADA. PASO 3. CONSIGUE PUNTOS CON TU PARTICIPACI\u201DN Y CANJEALOS EN ESTABLECIMIENTOS DE ECOTURISMO COLABORADORES. \xF8POR QU\u2026 PARTICIPAR? 1. POR CONCIENCIA ECOL\u201DGICA Los seres humanos hemos llevado al planeta hasta la extenuaci\xDBn pero tambi\xC8n podemos contribuir a su cuidado y conservaci\xDBn. \xB0Informa, educa y fomenta el respeto al medio ambiente! 2. POR COMPROMISO SOCIAL. Un voluntariado activo contribuye a la transformaci\xDBn social no s\xDBlo desde la tarea realizada sino desde las actitudes demostradas. \xB0S\xC8 parte del cambio y \u02D9nete a otras personas que tambi\xC8n quieren formar parte del mismo!")))
+  );
 };
 
 var _default = About;
@@ -49448,43 +49453,44 @@ var LoginSignupForm = function LoginSignupForm(_ref) {
       email = _useState6[0],
       setEmail = _useState6[1];
 
-  return _react.default.createElement(_react.default.Fragment, null, _react.default.createElement(_reactBootstrap.Container, null, _react.default.createElement("div", null, _react.default.createElement(_reactBootstrap.Form, {
-    onSubmit: function onSubmit(e) {
-      e.preventDefault();
-      handleSubmit(username, password, email);
-    }
-  }, _react.default.createElement(_reactBootstrap.Form.Group, {
-    controlId: "formGroupUsername"
-  }, _react.default.createElement(_reactBootstrap.Form.Label, null, "Username"), _react.default.createElement(_reactBootstrap.Form.Control, {
-    type: "text",
-    placeholder: "Username" //Le damos un valor para que sea un componente controlado
-    ,
-    value: username //Le decimos que setee el estado con onChange para que capture los cambios
-    ,
-    onChange: function onChange(e) {
-      return setUsername(e.target.value);
-    }
-  })), _react.default.createElement(_reactBootstrap.Form.Group, {
-    controlId: "formGroupPassword"
-  }, _react.default.createElement(_reactBootstrap.Form.Label, null, "Password"), _react.default.createElement(_reactBootstrap.Form.Control, {
-    type: "password",
-    placeholder: "Password",
-    value: password,
-    onChange: function onChange(e) {
-      return setPassword(e.target.value);
-    }
-  })), _react.default.createElement(_reactBootstrap.Form.Group, {
-    controlId: "formGroupEmail"
-  }, _react.default.createElement(_reactBootstrap.Form.Label, null, "Email address"), _react.default.createElement(_reactBootstrap.Form.Control, {
-    type: "email",
-    placeholder: "Enter email",
-    value: email,
-    onChange: function onChange(e) {
-      return setEmail(e.target.value);
-    }
-  })), _react.default.createElement(_reactBootstrap.Button, {
-    type: "submit"
-  }, "Submit form")))));
+  return (/*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement(_reactBootstrap.Container, null, /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement(_reactBootstrap.Form, {
+      onSubmit: function onSubmit(e) {
+        e.preventDefault();
+        handleSubmit(username, password, email);
+      }
+    }, /*#__PURE__*/_react.default.createElement(_reactBootstrap.Form.Group, {
+      controlId: "formGroupUsername"
+    }, /*#__PURE__*/_react.default.createElement(_reactBootstrap.Form.Label, null, "Username"), /*#__PURE__*/_react.default.createElement(_reactBootstrap.Form.Control, {
+      type: "text",
+      placeholder: "Username" //Le damos un valor para que sea un componente controlado
+      ,
+      value: username //Le decimos que setee el estado con onChange para que capture los cambios
+      ,
+      onChange: function onChange(e) {
+        return setUsername(e.target.value);
+      }
+    })), /*#__PURE__*/_react.default.createElement(_reactBootstrap.Form.Group, {
+      controlId: "formGroupPassword"
+    }, /*#__PURE__*/_react.default.createElement(_reactBootstrap.Form.Label, null, "Password"), /*#__PURE__*/_react.default.createElement(_reactBootstrap.Form.Control, {
+      type: "password",
+      placeholder: "Password",
+      value: password,
+      onChange: function onChange(e) {
+        return setPassword(e.target.value);
+      }
+    })), /*#__PURE__*/_react.default.createElement(_reactBootstrap.Form.Group, {
+      controlId: "formGroupEmail"
+    }, /*#__PURE__*/_react.default.createElement(_reactBootstrap.Form.Label, null, "Email address"), /*#__PURE__*/_react.default.createElement(_reactBootstrap.Form.Control, {
+      type: "email",
+      placeholder: "Enter email",
+      value: email,
+      onChange: function onChange(e) {
+        return setEmail(e.target.value);
+      }
+    })), /*#__PURE__*/_react.default.createElement(_reactBootstrap.Button, {
+      type: "submit"
+    }, "Submit form")))))
+  );
 };
 
 exports.LoginSignupForm = LoginSignupForm;
@@ -49581,12 +49587,13 @@ var Signup = (0, _reactRouterDom.withRouter)(function (_ref) {
     };
   }();
 
-  return _react.default.createElement(_reactBootstrap.Container, null, _react.default.createElement("div", null, _react.default.createElement("h2", null, "SignUp"), error && _react.default.createElement("div", {
-    className: "alert alert-danger",
-    role: "alert"
-  }, error), _react.default.createElement(_AuthForm.LoginSignupForm, {
-    handleSubmit: handleSubmit
-  })));
+  return (/*#__PURE__*/_react.default.createElement(_reactBootstrap.Container, null, /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("h2", null, "SignUp"), error && /*#__PURE__*/_react.default.createElement("div", {
+      className: "alert alert-danger",
+      role: "alert"
+    }, error), /*#__PURE__*/_react.default.createElement(_AuthForm.LoginSignupForm, {
+      handleSubmit: handleSubmit
+    })))
+  );
 });
 exports.Signup = Signup;
 },{"@babel/runtime/regenerator":"node_modules/@babel/runtime/regenerator/index.js","@babel/runtime/helpers/asyncToGenerator":"node_modules/@babel/runtime/helpers/asyncToGenerator.js","@babel/runtime/helpers/slicedToArray":"node_modules/@babel/runtime/helpers/slicedToArray.js","react":"node_modules/react/index.js","../authForm/AuthForm":"src/pages/auth/authForm/AuthForm.js","../../../lib/auth/auth.api":"src/lib/auth/auth.api.js","react-bootstrap":"node_modules/react-bootstrap/esm/index.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js"}],"src/pages/auth/login/Login.page.js":[function(require,module,exports) {
@@ -49665,12 +49672,13 @@ var Login = (0, _reactRouterDom.withRouter)(function (_ref) {
     };
   }();
 
-  return _react.default.createElement(_reactBootstrap.Container, null, _react.default.createElement("div", null, _react.default.createElement("h1", null, "Login"), error && _react.default.createElement("div", {
-    className: "alert alert-danger",
-    role: "alert"
-  }, "Introduzca los datos correctamente")), _react.default.createElement(_AuthForm.LoginSignupForm, {
-    handleSubmit: handleSubmit
-  }));
+  return (/*#__PURE__*/_react.default.createElement(_reactBootstrap.Container, null, /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("h1", null, "Login"), error && /*#__PURE__*/_react.default.createElement("div", {
+      className: "alert alert-danger",
+      role: "alert"
+    }, "Introduzca los datos correctamente")), /*#__PURE__*/_react.default.createElement(_AuthForm.LoginSignupForm, {
+      handleSubmit: handleSubmit
+    }))
+  );
 });
 exports.Login = Login;
 },{"@babel/runtime/regenerator":"node_modules/@babel/runtime/regenerator/index.js","@babel/runtime/helpers/asyncToGenerator":"node_modules/@babel/runtime/helpers/asyncToGenerator.js","@babel/runtime/helpers/slicedToArray":"node_modules/@babel/runtime/helpers/slicedToArray.js","react":"node_modules/react/index.js","../authForm/AuthForm":"src/pages/auth/authForm/AuthForm.js","../../../lib/auth/auth.api":"src/lib/auth/auth.api.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js","react-bootstrap":"node_modules/react-bootstrap/esm/index.js"}],"node_modules/react-hook-form/dist/react-hook-form.es.js":[function(require,module,exports) {
@@ -51981,12 +51989,13 @@ var Input = _react.default.forwardRef(function (_ref, ref) {
   var _useFormContext = (0, _reactHookForm.useFormContext)(),
       errors = _useFormContext.errors;
 
-  return _react.default.createElement("div", null, _react.default.createElement("div", null, _react.default.createElement("label", null, label), ((_errors$name = errors[name]) === null || _errors$name === void 0 ? void 0 : _errors$name.message) && _react.default.createElement(_style.ErrorMessage, null, errors[name].message)), _react.default.createElement(_style.InputText, {
-    type: type,
-    className: hasError(errors, name),
-    name: name,
-    ref: ref
-  }));
+  return (/*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("label", null, label), ((_errors$name = errors[name]) === null || _errors$name === void 0 ? void 0 : _errors$name.message) && /*#__PURE__*/_react.default.createElement(_style.ErrorMessage, null, errors[name].message)), /*#__PURE__*/_react.default.createElement(_style.InputText, {
+      type: type,
+      className: hasError(errors, name),
+      name: name,
+      ref: ref
+    }))
+  );
 });
 
 exports.Input = Input;
@@ -52002,12 +52011,13 @@ var InputTextarea = _react.default.forwardRef(function (_ref2, ref) {
   var _useFormContext2 = (0, _reactHookForm.useFormContext)(),
       errors = _useFormContext2.errors;
 
-  return _react.default.createElement("div", null, _react.default.createElement("div", null, _react.default.createElement("label", null, label), ((_errors$name2 = errors[name]) === null || _errors$name2 === void 0 ? void 0 : _errors$name2.message) && _react.default.createElement(_style.ErrorMessage, null, errors[name].message)), _react.default.createElement(_style.InputTextareaStyle, {
-    type: type,
-    className: hasError(errors, name),
-    name: name,
-    ref: ref
-  }));
+  return (/*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("label", null, label), ((_errors$name2 = errors[name]) === null || _errors$name2 === void 0 ? void 0 : _errors$name2.message) && /*#__PURE__*/_react.default.createElement(_style.ErrorMessage, null, errors[name].message)), /*#__PURE__*/_react.default.createElement(_style.InputTextareaStyle, {
+      type: type,
+      className: hasError(errors, name),
+      name: name,
+      ref: ref
+    }))
+  );
 });
 
 exports.InputTextarea = InputTextarea;
@@ -52028,7 +52038,8 @@ var _reactRouterDom = require("react-router-dom");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var ProtectedPagePlaceholder = function ProtectedPagePlaceholder() {
-  return _react.default.createElement("div", null, "PROTECTED PAGE");
+  return (/*#__PURE__*/_react.default.createElement("div", null, "PROTECTED PAGE")
+  );
 }; // This is a HOC -> High Order Component
 
 
@@ -52047,17 +52058,21 @@ Component) {
 
       if (user) {
         // Si hay usuario logueado pinta el componente
-        return _react.default.createElement(Component, null);
+        return (/*#__PURE__*/_react.default.createElement(Component, null)
+        );
       } else {
         // Si el usuarion está cargando en el back renderiza el placeholder
-        if (isUserLoading) return _react.default.createElement(ProtectedPagePlaceholder, null);else {
+        if (isUserLoading) return (/*#__PURE__*/_react.default.createElement(ProtectedPagePlaceholder, null)
+        );else {
           // Si ha sido completada la autenticacion eligo si quiero hacer reditrect o no
           if (redirect) {
-            return _react.default.createElement(_reactRouterDom.Redirect, {
-              to: redirectTo
-            });
+            return (/*#__PURE__*/_react.default.createElement(_reactRouterDom.Redirect, {
+                to: redirectTo
+              })
+            );
           } else {
-            return _react.default.createElement(ProtectedPagePlaceholder, null);
+            return (/*#__PURE__*/_react.default.createElement(ProtectedPagePlaceholder, null)
+            );
           }
         }
       }
@@ -52119,7 +52134,7 @@ var Organize = (0, _reactRouterDom.withRouter)(function (_ref) {
   var messageError = "Campo vacío";
 
   var api = _axios.default.create({
-    baseURL: "https://localhost:3000",
+    baseURL: "http://localhost:3000",
     withCredentials: true
   });
 
@@ -52159,83 +52174,84 @@ var Organize = (0, _reactRouterDom.withRouter)(function (_ref) {
   }();
 
   console.log(user);
-  return _react.default.createElement(_react.default.Fragment, null, _react.default.createElement("h1", null, "Soy Organiza"), _react.default.createElement("input", {
-    type: "hidden",
-    name: "organizer",
-    defaultValue: user.id,
-    ref: register({
-      required: messageError
-    })
-  }), _react.default.createElement(_reactHookForm.FormContext, methods, _react.default.createElement(_reactBootstrap.Container, null, _react.default.createElement("form", {
-    onSubmit: handleSubmit(onSubmit)
-  }, _react.default.createElement(_input.Input, {
-    name: "title",
-    label: "T\xEDtulo",
-    ref: register({
-      required: messageError
-    })
-  }), _react.default.createElement(_input.Input, {
-    name: "streetAddress",
-    label: "Calle",
-    ref: register({
-      required: messageError
-    })
-  }), _react.default.createElement(_input.Input, {
-    name: "city",
-    label: "Ciudad",
-    ref: register({
-      required: messageError
-    })
-  }), _react.default.createElement(_input.Input, {
-    name: "country",
-    label: "Pa\xEDs",
-    ref: register({
-      required: messageError
-    })
-  }), _react.default.createElement(_input.Input, {
-    name: "zone",
-    label: "Zona",
-    ref: register({
-      required: messageError
-    })
-  }), _react.default.createElement(_input.Input, {
-    name: "type",
-    label: "Tipo",
-    ref: register({
-      required: messageError
-    })
-  }), _react.default.createElement(_input.Input, {
-    name: "difficulty",
-    label: "Dificultad",
-    ref: register({
-      required: messageError
-    })
-  }), _react.default.createElement(_input.Input, {
-    label: "Fecha",
-    type: "datetime",
-    name: "date",
-    ref: register({
-      required: messageError,
-      pattern: /^([0-2][0-9]|3[0-1])(\/|-)(0[1-9]|1[0-2])\2(\d{4})$/
-    })
-  }), _react.default.createElement(_input.Input, {
-    type: "time",
-    placeholder: "hour",
-    name: "hour",
-    ref: register({
-      required: messageError,
-      pattern: /^([0-1]?[0-9]|2[0-3]):[0-5][0-9]$/i
-    })
-  }), _react.default.createElement(_input.InputTextarea, {
-    name: "description",
-    label: "Descripci\xF3n",
-    type: "textarea",
-    ref: register({
-      required: messageError
-    })
-  }), _react.default.createElement("div", null, _react.default.createElement("button", {
-    type: "submit"
-  }, "Enviar"))))));
+  return (/*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement("h1", null, "Soy Organiza"), /*#__PURE__*/_react.default.createElement("input", {
+      type: "hidden",
+      name: "organizer",
+      defaultValue: user.id,
+      ref: register({
+        required: messageError
+      })
+    }), /*#__PURE__*/_react.default.createElement(_reactHookForm.FormContext, methods, /*#__PURE__*/_react.default.createElement(_reactBootstrap.Container, null, /*#__PURE__*/_react.default.createElement("form", {
+      onSubmit: handleSubmit(onSubmit)
+    }, /*#__PURE__*/_react.default.createElement(_input.Input, {
+      name: "title",
+      label: "T\xEDtulo",
+      ref: register({
+        required: messageError
+      })
+    }), /*#__PURE__*/_react.default.createElement(_input.Input, {
+      name: "streetAddress",
+      label: "Calle",
+      ref: register({
+        required: messageError
+      })
+    }), /*#__PURE__*/_react.default.createElement(_input.Input, {
+      name: "city",
+      label: "Ciudad",
+      ref: register({
+        required: messageError
+      })
+    }), /*#__PURE__*/_react.default.createElement(_input.Input, {
+      name: "country",
+      label: "Pa\xEDs",
+      ref: register({
+        required: messageError
+      })
+    }), /*#__PURE__*/_react.default.createElement(_input.Input, {
+      name: "zone",
+      label: "Zona",
+      ref: register({
+        required: messageError
+      })
+    }), /*#__PURE__*/_react.default.createElement(_input.Input, {
+      name: "type",
+      label: "Tipo",
+      ref: register({
+        required: messageError
+      })
+    }), /*#__PURE__*/_react.default.createElement(_input.Input, {
+      name: "difficulty",
+      label: "Dificultad",
+      ref: register({
+        required: messageError
+      })
+    }), /*#__PURE__*/_react.default.createElement(_input.Input, {
+      label: "Fecha",
+      type: "datetime",
+      name: "date",
+      ref: register({
+        required: messageError,
+        pattern: /^([0-2][0-9]|3[0-1])(\/|-)(0[1-9]|1[0-2])\2(\d{4})$/
+      })
+    }), /*#__PURE__*/_react.default.createElement(_input.Input, {
+      type: "time",
+      placeholder: "hour",
+      name: "hour",
+      ref: register({
+        required: messageError,
+        pattern: /^([0-1]?[0-9]|2[0-3]):[0-5][0-9]$/i
+      })
+    }), /*#__PURE__*/_react.default.createElement(_input.InputTextarea, {
+      name: "description",
+      label: "Descripci\xF3n",
+      type: "textarea",
+      ref: register({
+        required: messageError
+      })
+    }), /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("button", {
+      type: "submit"
+    }, "Enviar"))))))
+  );
 });
 var PrivateOrganize = (0, _protectRoute.withProtected)(Organize);
 exports.PrivateOrganize = PrivateOrganize;
@@ -52268,9 +52284,10 @@ function _templateObject() {
 var LoadingWrapper = _styledComponents.default.div(_templateObject());
 
 var Loading = function Loading() {
-  return _react.default.createElement(LoadingWrapper, null, _react.default.createElement("img", {
-    src: "https://media.giphy.com/media/dYfbdQUuQjYDgdbvy3/giphy.gif"
-  }));
+  return (/*#__PURE__*/_react.default.createElement(LoadingWrapper, null, /*#__PURE__*/_react.default.createElement("img", {
+      src: "https://media.giphy.com/media/dYfbdQUuQjYDgdbvy3/giphy.gif"
+    }))
+  );
 };
 
 exports.Loading = Loading;
@@ -52321,7 +52338,9 @@ var withAuthentication = function withAuthentication(Component) {
         return setLoading(false);
       });
     }, []);
-    return (//Todo lo que pongamos en value, es lo que podemos recibir desde cualquier sito con useContext
+    return (
+      /*#__PURE__*/
+      //Todo lo que pongamos en value, es lo que podemos recibir desde cualquier sito con useContext
       //Pasamos el userState en login para que si cambia este estado, se recoja en user y se propaga para toda la app
       //Ponemos también loading para proteger las rutas
       //Hemos creado setUser en auth.api
@@ -52331,13 +52350,13 @@ var withAuthentication = function withAuthentication(Component) {
           setUser: setUser,
           loading: loading
         }
-      }, loading && _react.default.createElement(_styleLoading.Loading, null), _react.default.createElement(Component, null))
+      }, loading && /*#__PURE__*/_react.default.createElement(_styleLoading.Loading, null), /*#__PURE__*/_react.default.createElement(Component, null))
     );
   };
 };
 
 exports.withAuthentication = withAuthentication;
-},{"@babel/runtime/helpers/slicedToArray":"node_modules/@babel/runtime/helpers/slicedToArray.js","react":"node_modules/react/index.js","./auth.api":"src/lib/auth/auth.api.js","./loading/styleLoading":"src/lib/auth/loading/styleLoading.js"}],"../../../../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/base64-js/index.js":[function(require,module,exports) {
+},{"@babel/runtime/helpers/slicedToArray":"node_modules/@babel/runtime/helpers/slicedToArray.js","react":"node_modules/react/index.js","./auth.api":"src/lib/auth/auth.api.js","./loading/styleLoading":"src/lib/auth/loading/styleLoading.js"}],"node_modules/base64-js/index.js":[function(require,module,exports) {
 'use strict'
 
 exports.byteLength = byteLength
@@ -52491,7 +52510,7 @@ function fromByteArray (uint8) {
   return parts.join('')
 }
 
-},{}],"../../../../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/ieee754/index.js":[function(require,module,exports) {
+},{}],"node_modules/ieee754/index.js":[function(require,module,exports) {
 exports.read = function (buffer, offset, isLE, mLen, nBytes) {
   var e, m
   var eLen = (nBytes * 8) - mLen - 1
@@ -52577,14 +52596,14 @@ exports.write = function (buffer, value, offset, isLE, mLen, nBytes) {
   buffer[offset + i - d] |= s * 128
 }
 
-},{}],"../../../../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/isarray/index.js":[function(require,module,exports) {
+},{}],"node_modules/buffer/node_modules/isarray/index.js":[function(require,module,exports) {
 var toString = {}.toString;
 
 module.exports = Array.isArray || function (arr) {
   return toString.call(arr) == '[object Array]';
 };
 
-},{}],"../../../../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/buffer/index.js":[function(require,module,exports) {
+},{}],"node_modules/buffer/index.js":[function(require,module,exports) {
 
 var global = arguments[3];
 /*!
@@ -54377,7 +54396,7 @@ function isnan (val) {
   return val !== val // eslint-disable-line no-self-compare
 }
 
-},{"base64-js":"../../../../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/base64-js/index.js","ieee754":"../../../../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/ieee754/index.js","isarray":"../../../../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/isarray/index.js","buffer":"../../../../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/buffer/index.js"}],"node_modules/lodash/lodash.js":[function(require,module,exports) {
+},{"base64-js":"node_modules/base64-js/index.js","ieee754":"node_modules/ieee754/index.js","isarray":"node_modules/buffer/node_modules/isarray/index.js","buffer":"node_modules/buffer/index.js"}],"node_modules/lodash/lodash.js":[function(require,module,exports) {
 var global = arguments[3];
 var Buffer = require("buffer").Buffer;
 var define;
@@ -71494,7 +71513,7 @@ var define;
   }
 }.call(this));
 
-},{"buffer":"../../../../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/buffer/index.js"}],"src/lib/frontRoutes/meetings.api.js":[function(require,module,exports) {
+},{"buffer":"node_modules/buffer/index.js"}],"src/lib/frontRoutes/meetings.api.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -71513,7 +71532,7 @@ var _lodash = _interopRequireDefault(require("lodash"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var api = _axios.default.create({
-  baseURL: "https://localhost:3000",
+  baseURL: "http://localhost:3000",
   withCredentials: true
 });
 
@@ -71760,38 +71779,40 @@ var Joinin = function Joinin() {
   var filtered_meets = meetings.filter(function (meet) {
     return meet.city.includes(filterStart) || meet.title.includes(filterStart);
   });
-  return _react.default.createElement(_react.default.Fragment, null, _react.default.createElement(_reactBootstrap.Container, null, _react.default.createElement(_StyleMeetings.CardContainer, {
-    className: "cards-container"
-  }, _react.default.createElement("h1", null, "Listado de Regogidas organizadas"), _react.default.createElement("div", null, _react.default.createElement("label", null, "Filter Meetings: "), _react.default.createElement("input", {
-    value: filterStart,
-    onChange: function onChange(e) {
-      return setFilterStart(e.target.value);
-    }
-  })), filtered_meets.map(function (meeting, i) {
-    return _react.default.createElement(_StyleMeetings.CardMeeting, {
-      key: i
-    }, _react.default.createElement(_reactBootstrap.Card, {
-      className: "text-center"
-    }, meeting.organizer && _react.default.createElement(_reactBootstrap.Card.Header, {
-      className: "backround-title"
-    }, "Organizado por: ", meeting.organizer.username, " "), _react.default.createElement(_reactBootstrap.Card.Body, null, _react.default.createElement(_reactBootstrap.Card.Title, null, meeting.title), _react.default.createElement(_reactBootstrap.Card.Subtitle, {
-      className: "mb-2 text-muted"
-    }, meeting.city), _react.default.createElement(_reactBootstrap.Card.Text, null, meeting.streetAddress), _react.default.createElement(_reactBootstrap.Button, {
-      as: "div",
-      className: "button-card"
-    }, _react.default.createElement(_reactRouterDom.Link, {
-      to: "/meet/".concat(meeting.id),
-      className: "button-card"
-    }, "Informaci\xF3n")), " ", _react.default.createElement(_reactBootstrap.Button, {
-      as: "div",
-      className: "button-card"
-    }, _react.default.createElement(_reactRouterDom.Link, {
-      to: "/",
-      className: "button-card"
-    }, "Volver")), " "), _react.default.createElement(_reactBootstrap.Card.Footer, {
-      className: "backround-bottom-card"
-    }, "Fecha: ", meeting.date, " - Hora: ", meeting.hour)));
-  }))));
+  return (/*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement(_reactBootstrap.Container, null, /*#__PURE__*/_react.default.createElement(_StyleMeetings.CardContainer, {
+      className: "cards-container"
+    }, /*#__PURE__*/_react.default.createElement("h1", null, "Listado de Regogidas organizadas"), /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("label", null, "Filter Meetings: "), /*#__PURE__*/_react.default.createElement("input", {
+      value: filterStart,
+      onChange: function onChange(e) {
+        return setFilterStart(e.target.value);
+      }
+    })), filtered_meets.map(function (meeting, i) {
+      return (/*#__PURE__*/_react.default.createElement(_StyleMeetings.CardMeeting, {
+          key: i
+        }, /*#__PURE__*/_react.default.createElement(_reactBootstrap.Card, {
+          className: "text-center"
+        }, meeting.organizer && /*#__PURE__*/_react.default.createElement(_reactBootstrap.Card.Header, {
+          className: "backround-title"
+        }, "Organizado por: ", meeting.organizer.username, " "), /*#__PURE__*/_react.default.createElement(_reactBootstrap.Card.Body, null, /*#__PURE__*/_react.default.createElement(_reactBootstrap.Card.Title, null, meeting.title), /*#__PURE__*/_react.default.createElement(_reactBootstrap.Card.Subtitle, {
+          className: "mb-2 text-muted"
+        }, meeting.city), /*#__PURE__*/_react.default.createElement(_reactBootstrap.Card.Text, null, meeting.streetAddress), /*#__PURE__*/_react.default.createElement(_reactBootstrap.Button, {
+          as: "div",
+          className: "button-card"
+        }, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
+          to: "/meet/".concat(meeting.id),
+          className: "button-card"
+        }, "Informaci\xF3n")), " ", /*#__PURE__*/_react.default.createElement(_reactBootstrap.Button, {
+          as: "div",
+          className: "button-card"
+        }, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
+          to: "/",
+          className: "button-card"
+        }, "Volver")), " "), /*#__PURE__*/_react.default.createElement(_reactBootstrap.Card.Footer, {
+          className: "backround-bottom-card"
+        }, "Fecha: ", meeting.date, " - Hora: ", meeting.hour)))
+      );
+    }))))
+  );
 };
 
 var _default = Joinin;
@@ -71833,33 +71854,34 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var DeleteMeet = function DeleteMeet(_ref) {
   var idMeet = _ref.idMeet,
       deleteReady = _ref.deleteReady;
-  return _react.default.createElement(_reactRouterDom.Link, {
-    to: "/meet",
-    className: "button-card",
-    onClick: /*#__PURE__*/(0, _asyncToGenerator2.default)( /*#__PURE__*/_regenerator.default.mark(function _callee() {
-      return _regenerator.default.wrap(function _callee$(_context) {
-        while (1) {
-          switch (_context.prev = _context.next) {
-            case 0:
-              _context.next = 2;
-              return (0, _meetings.deleteMeet)(idMeet);
+  return (/*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
+      to: "/meet",
+      className: "button-card",
+      onClick: /*#__PURE__*/(0, _asyncToGenerator2.default)( /*#__PURE__*/_regenerator.default.mark(function _callee() {
+        return _regenerator.default.wrap(function _callee$(_context) {
+          while (1) {
+            switch (_context.prev = _context.next) {
+              case 0:
+                _context.next = 2;
+                return (0, _meetings.deleteMeet)(idMeet);
 
-            case 2:
-              _context.next = 4;
-              return deleteReady();
+              case 2:
+                _context.next = 4;
+                return deleteReady();
 
-            case 4:
-            case "end":
-              return _context.stop();
+              case 4:
+              case "end":
+                return _context.stop();
+            }
           }
-        }
-      }, _callee);
-    }))
-  }, "Eliminar");
+        }, _callee);
+      }))
+    }, "Eliminar")
+  );
 };
 
 var api = _axios.default.create({
-  baseURL: "https://localhost:3000",
+  baseURL: "http://localhost:3000",
   withCredentials: true
 });
 
@@ -71873,35 +71895,36 @@ var JoininOne = function JoininOne(props) {
   var setUser = (0, _auth.useUserSetter)({});
   var AddMeetToUser = (0, _reactRouterDom.withRouter)(function (_ref3) {
     var history = _ref3.history;
-    return _react.default.createElement("button", {
-      className: "button-card",
-      onClick: /*#__PURE__*/(0, _asyncToGenerator2.default)( /*#__PURE__*/_regenerator.default.mark(function _callee2() {
-        return _regenerator.default.wrap(function _callee2$(_context2) {
-          while (1) {
-            switch (_context2.prev = _context2.next) {
-              case 0:
-                _context2.prev = 0;
-                user && user.meetings.push(meet.id);
-                _context2.next = 4;
-                return history.push("/meet");
+    return (/*#__PURE__*/_react.default.createElement("button", {
+        className: "button-card",
+        onClick: /*#__PURE__*/(0, _asyncToGenerator2.default)( /*#__PURE__*/_regenerator.default.mark(function _callee2() {
+          return _regenerator.default.wrap(function _callee2$(_context2) {
+            while (1) {
+              switch (_context2.prev = _context2.next) {
+                case 0:
+                  _context2.prev = 0;
+                  user && user.meetings.push(meet.id);
+                  _context2.next = 4;
+                  return history.push("/meet");
 
-              case 4:
-                _context2.next = 9;
-                break;
+                case 4:
+                  _context2.next = 9;
+                  break;
 
-              case 6:
-                _context2.prev = 6;
-                _context2.t0 = _context2["catch"](0);
-                console.log(_context2.t0.message);
+                case 6:
+                  _context2.prev = 6;
+                  _context2.t0 = _context2["catch"](0);
+                  console.log(_context2.t0.message);
 
-              case 9:
-              case "end":
-                return _context2.stop();
+                case 9:
+                case "end":
+                  return _context2.stop();
+              }
             }
-          }
-        }, _callee2, null, [[0, 6]]);
-      }))
-    }, "Me apunto");
+          }, _callee2, null, [[0, 6]]);
+        }))
+      }, "Me apunto")
+    );
   });
 
   var addUserMeet = function addUserMeet() {
@@ -71931,43 +71954,44 @@ var JoininOne = function JoininOne(props) {
       unmounted = true;
     };
   }, []);
-  return _react.default.createElement(_StyleMeetings.CardContainer, {
-    className: "cards-container"
-  }, _react.default.createElement("h1", null, "Detalle de Regogida"), _react.default.createElement(_StyleMeetings.CardMeeting, null, _react.default.createElement(_reactBootstrap.Container, null, _react.default.createElement(_reactBootstrap.Card, {
-    className: "text-center"
-  }, meet.organizer && _react.default.createElement(_reactBootstrap.Card.Header, {
-    className: "backround-title"
-  }, "Organizado por: ", meet.organizer.username, " "), _react.default.createElement(_reactBootstrap.Card.Body, null, _react.default.createElement(_reactBootstrap.Card.Title, null, "T\xEDtulo: ", meet.title), _react.default.createElement(_reactBootstrap.Card.Subtitle, {
-    className: "mb-2 text-muted"
-  }, "Ciudad: ", meet.city), _react.default.createElement(_reactBootstrap.Card.Text, null, "Zona: ", meet.zone), _react.default.createElement(_reactBootstrap.Card.Text, null, "Descripci\xF3n: ", meet.description), _react.default.createElement(_reactBootstrap.Card.Subtitle, {
-    className: "mb-2 text-muted"
-  }, "Tipo: ", meet.type), _react.default.createElement(_reactBootstrap.Card.Subtitle, {
-    className: "mb-2 text-muted"
-  }, "Dificultad: ", meet.difficulty), " ", _react.default.createElement(_reactBootstrap.Button, {
-    as: "div",
-    className: "button-card"
-  }, _react.default.createElement(_reactRouterDom.Link, {
-    to: "/meet",
-    className: "button-card"
-  }, "Volver")), " ", _react.default.createElement(_reactBootstrap.Button, {
-    as: "div",
-    className: "button-card"
-  }, _react.default.createElement(AddMeetToUser, {
-    to: "#",
-    className: "button-card",
-    idUser: user && user.id,
-    onClick: addUserMeet()
-  }, "Me Apunto!")), " ", _react.default.createElement(_reactBootstrap.Button, {
-    as: "div",
-    className: "button-card"
-  }, _react.default.createElement(DeleteMeet, {
-    to: "/",
-    idMeet: meet.id,
-    deleteReady: fetchMeet,
-    className: "button-card"
-  })), " "), _react.default.createElement(_reactBootstrap.Card.Footer, {
-    className: "backround-bottom-card"
-  }, "Fecha: ", meet.date, " - Hora: ", meet.hour)))));
+  return (/*#__PURE__*/_react.default.createElement(_StyleMeetings.CardContainer, {
+      className: "cards-container"
+    }, /*#__PURE__*/_react.default.createElement("h1", null, "Detalle de Regogida"), /*#__PURE__*/_react.default.createElement(_StyleMeetings.CardMeeting, null, /*#__PURE__*/_react.default.createElement(_reactBootstrap.Container, null, /*#__PURE__*/_react.default.createElement(_reactBootstrap.Card, {
+      className: "text-center"
+    }, meet.organizer && /*#__PURE__*/_react.default.createElement(_reactBootstrap.Card.Header, {
+      className: "backround-title"
+    }, "Organizado por: ", meet.organizer.username, " "), /*#__PURE__*/_react.default.createElement(_reactBootstrap.Card.Body, null, /*#__PURE__*/_react.default.createElement(_reactBootstrap.Card.Title, null, "T\xEDtulo: ", meet.title), /*#__PURE__*/_react.default.createElement(_reactBootstrap.Card.Subtitle, {
+      className: "mb-2 text-muted"
+    }, "Ciudad: ", meet.city), /*#__PURE__*/_react.default.createElement(_reactBootstrap.Card.Text, null, "Zona: ", meet.zone), /*#__PURE__*/_react.default.createElement(_reactBootstrap.Card.Text, null, "Descripci\xF3n: ", meet.description), /*#__PURE__*/_react.default.createElement(_reactBootstrap.Card.Subtitle, {
+      className: "mb-2 text-muted"
+    }, "Tipo: ", meet.type), /*#__PURE__*/_react.default.createElement(_reactBootstrap.Card.Subtitle, {
+      className: "mb-2 text-muted"
+    }, "Dificultad: ", meet.difficulty), " ", /*#__PURE__*/_react.default.createElement(_reactBootstrap.Button, {
+      as: "div",
+      className: "button-card"
+    }, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
+      to: "/meet",
+      className: "button-card"
+    }, "Volver")), " ", /*#__PURE__*/_react.default.createElement(_reactBootstrap.Button, {
+      as: "div",
+      className: "button-card"
+    }, /*#__PURE__*/_react.default.createElement(AddMeetToUser, {
+      to: "#",
+      className: "button-card",
+      idUser: user && user.id,
+      onClick: addUserMeet()
+    }, "Me Apunto!")), " ", /*#__PURE__*/_react.default.createElement(_reactBootstrap.Button, {
+      as: "div",
+      className: "button-card"
+    }, /*#__PURE__*/_react.default.createElement(DeleteMeet, {
+      to: "/",
+      idMeet: meet.id,
+      deleteReady: fetchMeet,
+      className: "button-card"
+    })), " "), /*#__PURE__*/_react.default.createElement(_reactBootstrap.Card.Footer, {
+      className: "backround-bottom-card"
+    }, "Fecha: ", meet.date, " - Hora: ", meet.hour)))))
+  );
 };
 
 var _default = JoininOne;
@@ -71989,7 +72013,7 @@ var _axios = _interopRequireDefault(require("axios"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var api = _axios.default.create({
-  baseURL: "https://localhost:3000",
+  baseURL: "http://localhost:3000",
   withCredentials: true
 });
 
@@ -72082,26 +72106,27 @@ var ProfilePage = (0, _protectRouteHoc.withProtected)(function () {
     }
   }
 
-  return _react.default.createElement("div", null, _react.default.createElement("h2", null, "Perfil de ", user.username), _react.default.createElement("form", {
-    onSubmit: handleSubmit(onSubmit)
-  }, _react.default.createElement("div", {
-    style: {
-      padding: "10px 0"
-    }
-  }, imgPath && _react.default.createElement("div", null, _react.default.createElement("img", {
-    src: imgPath,
-    width: "150",
-    height: "150",
-    style: {
-      border: "1px solid grey"
-    }
-  })), _react.default.createElement("input", {
-    name: "avatar",
-    type: "file",
-    ref: register()
-  })), _react.default.createElement("button", {
-    type: "submit"
-  }, "Change Profile Pic")));
+  return (/*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("h2", null, "Perfil de ", user.username), /*#__PURE__*/_react.default.createElement("form", {
+      onSubmit: handleSubmit(onSubmit)
+    }, /*#__PURE__*/_react.default.createElement("div", {
+      style: {
+        padding: "10px 0"
+      }
+    }, imgPath && /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("img", {
+      src: imgPath,
+      width: "150",
+      height: "150",
+      style: {
+        border: "1px solid grey"
+      }
+    })), /*#__PURE__*/_react.default.createElement("input", {
+      name: "avatar",
+      type: "file",
+      ref: register()
+    })), /*#__PURE__*/_react.default.createElement("button", {
+      type: "submit"
+    }, "Change Profile Pic")))
+  );
 });
 exports.ProfilePage = ProfilePage;
 },{"react":"node_modules/react/index.js","../../lib/auth/protectRoute.hoc.js":"src/lib/auth/protectRoute.hoc.js","../../lib/auth/auth.api.js":"src/lib/auth/auth.api.js","react-hook-form":"node_modules/react-hook-form/dist/react-hook-form.es.js","../../forms/input":"src/forms/input/index.js","react-bootstrap":"node_modules/react-bootstrap/esm/index.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js","../../lib/auth/user.api":"src/lib/auth/user.api.js","lodash":"node_modules/lodash/lodash.js"}],"src/App.js":[function(require,module,exports) {
@@ -72147,39 +72172,41 @@ var _Profile = require("./pages/profile/Profile.page");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var App = (0, _withAuthentication.withAuthentication)(function () {
-  return _react.default.createElement(_reactRouterDom.BrowserRouter, null, _react.default.createElement(_Navbar.default, null), _react.default.createElement(_reactRouterDom.Switch, null, _react.default.createElement(_reactRouterDom.Route, {
-    path: "/",
-    exact: true,
-    component: _Home.default
-  }), _react.default.createElement(_reactRouterDom.Route, {
-    path: "/contact",
-    component: _Contact.default
-  }), _react.default.createElement(_reactRouterDom.Route, {
-    path: "/about",
-    component: _Abauot.default
-  }), _react.default.createElement(_reactRouterDom.Route, {
-    path: "/auth/signup",
-    component: _Singup.Signup
-  }), _react.default.createElement(_reactRouterDom.Route, {
-    path: "/auth/login",
-    component: _Login.Login
-  }), _react.default.createElement(_reactRouterDom.Route, {
-    path: "/auth/profile",
-    component: _Profile.ProfilePage
-  }), _react.default.createElement(_reactRouterDom.Route, {
-    path: "/organize",
-    component: _Organize.PrivateOrganize
-  }), _react.default.createElement(_reactRouterDom.Route, {
-    path: "/meet/:id",
-    component: function component(props) {
-      return _react.default.createElement(_MeetDetail.default, {
-        meetId: props.match.params.id
-      });
-    }
-  }), _react.default.createElement(_reactRouterDom.Route, {
-    path: "/meet",
-    component: _Meetings.default
-  })), _react.default.createElement(_Footer.default, null));
+  return (/*#__PURE__*/_react.default.createElement(_reactRouterDom.BrowserRouter, null, /*#__PURE__*/_react.default.createElement(_Navbar.default, null), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Switch, null, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
+      path: "/",
+      exact: true,
+      component: _Home.default
+    }), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
+      path: "/contact",
+      component: _Contact.default
+    }), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
+      path: "/about",
+      component: _Abauot.default
+    }), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
+      path: "/auth/signup",
+      component: _Singup.Signup
+    }), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
+      path: "/auth/login",
+      component: _Login.Login
+    }), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
+      path: "/auth/profile",
+      component: _Profile.ProfilePage
+    }), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
+      path: "/organize",
+      component: _Organize.PrivateOrganize
+    }), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
+      path: "/meet/:id",
+      component: function component(props) {
+        return (/*#__PURE__*/_react.default.createElement(_MeetDetail.default, {
+            meetId: props.match.params.id
+          })
+        );
+      }
+    }), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
+      path: "/meet",
+      component: _Meetings.default
+    })), /*#__PURE__*/_react.default.createElement(_Footer.default, null))
+  );
 });
 exports.App = App;
 },{"react":"node_modules/react/index.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js","../public/styles/App.css":"public/styles/App.css","bootstrap/dist/css/bootstrap.min.css":"node_modules/bootstrap/dist/css/bootstrap.min.css","./components/Layout/Footer/Footer":"src/components/Layout/Footer/Footer.js","./components/Layout/Navbar/Navbar":"src/components/Layout/Navbar/Navbar.js","./pages/home/Home.page":"src/pages/home/Home.page.js","./pages/contact/Contact.page":"src/pages/contact/Contact.page.js","./pages/about/Abauot.page":"src/pages/about/Abauot.page.js","./pages/auth/singup/Singup.page":"src/pages/auth/singup/Singup.page.js","./pages/auth/login/Login.page":"src/pages/auth/login/Login.page.js","./pages/organize/Organize.page":"src/pages/organize/Organize.page.js","./lib/auth/withAuthentication":"src/lib/auth/withAuthentication.js","./pages/joinIn/Meetings.page":"src/pages/joinIn/Meetings.page.js","./pages/joinIn/MeetDetail.page":"src/pages/joinIn/MeetDetail.page.js","./pages/profile/Profile.page":"src/pages/profile/Profile.page.js"}],"src/index.js":[function(require,module,exports) {
@@ -72200,9 +72227,9 @@ function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj;
 document.addEventListener("DOMContentLoaded", function () {
   var root = document.getElementById("root");
 
-  _reactDom.default.render(_react.default.createElement(_App.App, null), root);
+  _reactDom.default.render( /*#__PURE__*/_react.default.createElement(_App.App, null), root);
 });
-},{"react":"node_modules/react/index.js","react-dom":"node_modules/react-dom/index.js","./App":"src/App.js"}],"../../../../../../../../usr/local/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","react-dom":"node_modules/react-dom/index.js","./App":"src/App.js"}],"node_modules/parcel/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -72230,7 +72257,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51901" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53341" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
@@ -72406,5 +72433,5 @@ function hmrAcceptRun(bundle, id) {
     return true;
   }
 }
-},{}]},{},["../../../../../../../../usr/local/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js","src/index.js"], null)
+},{}]},{},["node_modules/parcel/src/builtins/hmr-runtime.js","src/index.js"], null)
 //# sourceMappingURL=/src.a2b27638.js.map

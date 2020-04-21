@@ -39,7 +39,7 @@ export const ProfilePage = withProtected(() => {
 
   return (
     <div>
-      <h2>Perfil de {user.username}</h2>
+      <h2>Perfil de {user.username} y tal</h2>
       <form onSubmit={handleSubmit(onSubmit)}>
         <div style={{ padding: "10px 0" }}>
           {imgPath && (

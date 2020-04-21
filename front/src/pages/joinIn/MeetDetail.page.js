@@ -46,14 +46,15 @@ const JoininOne = (props) => {
     </button>
   ));
 
-  const addUserMeet = () => {
-    try {
-      getAddMeet(user && user.id).then(setUser(user));
-      console.log(user);
-    } catch (e) {
-      console.log(e);
-    }
-  };
+  // const addUserMeet = () => {
+  //   try {
+  //     getAddMeet(user && user.id).then(setUser(user));
+  //     console.log(user);
+  //   } catch (e) {
+  //     console.log(e);
+  //   }
+  // };
+
   const fetchMeet = () => {
     try {
       getMeet(props.meetId).then((meet) => setMeet(meet));
@@ -62,14 +63,8 @@ const JoininOne = (props) => {
     }
   };
   useEffect(() => {
-    let unmounted = false;
-    addUserMeet();
     fetchMeet();
-    return () => {
-      unmounted = true;
-    };
   }, []);
-
   return (
     <CardContainer className="cards-container">
       <h1>Detalle de Regogida</h1>
@@ -104,7 +99,7 @@ const JoininOne = (props) => {
                   to="#"
                   className="button-card"
                   idUser={user && user.id}
-                  onClick={addUserMeet()}
+                  // onClick={addUserMeet(setUser(user))}
                 >
                   Me Apunto!
                 </AddMeetToUser>

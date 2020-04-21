@@ -68,6 +68,18 @@ const crudGenerator = (
       }).then((data) => res.json(data));
     })
   );
+<<<<<<< HEAD
+=======
+  router.post(
+    "/edit",
+    asyncController(async (req, res, next) => {
+      const { id } = req.params;
+      Model.findOneAndUpdate({ _id: id }, req.body, {
+        new: true,
+      }).then((data) => res.json(data));
+    })
+  );
+>>>>>>> develop
 
   //Borrar
   router.delete(

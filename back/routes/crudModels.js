@@ -68,6 +68,8 @@ const crudGenerator = (
       }).then((data) => res.json(data));
     })
   );
+<<<<<<< HEAD
+=======
   router.post(
     "/edit",
     asyncController(async (req, res, next) => {
@@ -77,6 +79,7 @@ const crudGenerator = (
       }).then((data) => res.json(data));
     })
   );
+>>>>>>> develop
 
   //Borrar
   router.delete(

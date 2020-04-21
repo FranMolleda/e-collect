@@ -3,39 +3,42 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "../../../public/styles/App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import LataImg from "../../../public/styles/Images/lata";
 import {
   ButtonParticipa,
   ButtonOrganiza,
 } from "../../components/ui/buttons/ButtonsHome";
 import { Container } from "react-bootstrap";
-//Importamos UserContext
 import { useUser } from "../../lib/auth/auth.api";
+import { ImageHome, TextHome } from "./StyleHome";
+import CountUp from "react-countup";
 
 const Home = () => {
   const user = useUser();
   return (
     <>
-      {/* Al no existir inicialmente el usuario, le decimos que lo pinte cuando exista */}
-      {user && (
-        <div>
-          <p>{user.username}Holaaaaaaaa</p>
-          <img src={user.profilePic?.path} width="200" />
-        </div>
-      )}
       <div>
-        <h1>Holaaaaaaaa </h1>
+        <ImageHome />
         <Container fluid>
-          <LataImg>
-            {/* <ButtonParticipa as="div" variant="outline-secondary">
-              <Link to="meet">Participa</Link>
-            </ButtonParticipa> */}
-            <ButtonOrganiza as="div" variant="outline-secondary">
-              <Link to="organize">Organiza</Link>
-            </ButtonOrganiza>
-          </LataImg>
+          {" "}
+          <TextHome>
+            <h1>e-collect</h1>
+            <h3>Únidos por un planeta sin basura</h3>
+          </TextHome>
+          {/* <ButtonParticipa as="div" variant="outline-secondary">
+            <Link to="meet">Participa</Link>
+          </ButtonParticipa>
+          <ButtonOrganiza as="div" variant="outline-secondary">
+            <Link to="organize">Organiza</Link>
+          </ButtonOrganiza> */}
         </Container>
       </div>
+      <CountUp start={0} end={150} delay={0} duration={10}>
+        {({ countUpRef }) => (
+          <div>
+            <span ref={countUpRef} />
+          </div>
+        )}
+      </CountUp>
     </>
   );
 };

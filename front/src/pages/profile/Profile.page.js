@@ -6,7 +6,6 @@ import { useUser, useUserSetter } from "../../lib/auth/auth.api.js";
 import { Input, InputTextarea } from "../../forms/input/index";
 import { withRouter } from "react-router-dom";
 import { changeAvatar, editProfile } from "../../lib/auth/user.api";
-import { Button } from "@material-ui/core";
 import _ from "lodash";
 
 export const ProfilePage = withProtected(

@@ -34,7 +34,11 @@ const debug = require("debug")(
 
 const app = express();
 
-const whitelist = [process.env.BACKEND_URL, process.env.FRONTEND_URL];
+const whitelist = [
+  process.env.BACKEND_URL,
+  process.env.BACKEND_URL2,
+  process.env.FRONTEND_URL,
+];
 const corsOptions = {
   origin: function (origin, callback) {
     if (whitelist.indexOf(origin) !== -1 || !origin) {

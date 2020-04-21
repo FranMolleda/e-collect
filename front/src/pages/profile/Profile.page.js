@@ -48,6 +48,7 @@ export const ProfilePage = withProtected(
       }
     }
 
+
     return (
       <div>
         <h2>Perfil de {user.username}</h2>

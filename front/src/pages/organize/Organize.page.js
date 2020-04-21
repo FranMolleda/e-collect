@@ -50,7 +50,7 @@ const Organize = withRouter(({ history }) => {
         <Container>
           <form onSubmit={handleSubmit(onSubmit)}>
             <Input
-              name="title"
+              name="Username"
               label="Título"
               ref={register({
                 required: messageError,

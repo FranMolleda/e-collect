@@ -36,7 +36,7 @@ const app = express();
 
 const whitelist = [
   process.env.BACKEND_URL,
-  process.env.BACKEND_URL2,
+  //process.env.BACKEND_URL2,
   process.env.FRONTEND_URL,
 ];
 const corsOptions = {

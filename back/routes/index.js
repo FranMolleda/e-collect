@@ -61,6 +61,9 @@ router.post(
   }
 );
 
+const addMeet = require("./addMeet");
+router.post("/addMeet", addMeet);
+
 const apiGoogleRoute = require("./apiGoogleRoute");
 
 router.use("/api", apiGoogleRoute);

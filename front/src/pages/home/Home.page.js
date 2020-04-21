@@ -19,11 +19,12 @@ const Home = () => {
       {/* Al no existir inicialmente el usuario, le decimos que lo pinte cuando exista */}
       {user && (
         <div>
-          <p>{user.username}</p>
+          <p>{user.username}Holaaaaaaaa</p>
           <img src={user.profilePic?.path} width="200" />
         </div>
       )}
       <div>
+        <h1>Holaaaaaaaa </h1>
         <Container fluid>
           <LataImg>
             {/* <ButtonParticipa as="div" variant="outline-secondary">

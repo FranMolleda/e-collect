@@ -27,9 +27,9 @@ const Home = () => {
         <h1>Holaaaaaaaa </h1>
         <Container fluid>
           <LataImg>
-            <ButtonParticipa as="div" variant="outline-secondary">
+            {/* <ButtonParticipa as="div" variant="outline-secondary">
               <Link to="meet">Participa</Link>
-            </ButtonParticipa>
+            </ButtonParticipa> */}
             <ButtonOrganiza as="div" variant="outline-secondary">
               <Link to="organize">Organiza</Link>
             </ButtonOrganiza>

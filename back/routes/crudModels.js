@@ -69,31 +69,6 @@ const crudGenerator = (
     })
   );
 
-  // //Añadir Meet alusuario
-  // router.post("/addmeet", (req, res, next) => {
-  //   const meetings = req.body.meetings;
-  //   const newModel = new Model(meetings);
-  //   newModel.push(meetings);
-  //   newModel.save(function (err) {
-  //     if (err) throw err;
-  //     res.json(newModel.toJSON());
-  //   });
-  // });
-
-  //   app.post('/todos', authenticate, (req, res) => {
-  //     var content = req.body.content;
-  //     var todo = new Todo();
-
-  //     todo.content.push(content);
-
-  //     todo.save(function(err) {
-  //       if (err) throw err;
-  //       res.json(todo.toJSON())
-  //       //I am sending instead of sending the result for testing
-  //     });
-
-  // });
-
   //Borrar
   router.delete(
     "/delete/:id",

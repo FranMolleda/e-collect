@@ -24,11 +24,11 @@ export const App = withAuthentication(() => (
       <Route path="/auth/signup" component={Signup} />
       <Route path="/auth/login" component={Login} />
       <Route path="/auth/profile" component={ProfilePage} />
-      <Route path="/organize" component={PrivateOrganize} />
       <Route
         path="/meet/:id"
         component={(props) => <JoininOne meetId={props.match.params.id} />}
       />
+      <Route path="/organize" component={PrivateOrganize} />
       <Route path="/meet" component={Joinin} />
     </Switch>
     <Footer />

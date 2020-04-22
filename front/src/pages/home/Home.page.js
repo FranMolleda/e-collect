@@ -1,4 +1,3 @@
-//Metemos el hook UseContext
 import React from "react";
 import { Link } from "react-router-dom";
 import "../../../public/styles/App.css";
@@ -22,7 +21,7 @@ const Home = () => {
           {" "}
           <TextHome>
             <h1>e-collect</h1>
-            <h3>Únidos por un planeta sin basura</h3>
+            <h3>Unidos por un planeta sin basura</h3>
           </TextHome>
           {/* <ButtonParticipa as="div" variant="outline-secondary">
             <Link to="meet">Participa</Link>

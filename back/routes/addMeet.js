@@ -3,18 +3,22 @@ const User = require("../models/user");
 const Meetings = require("../models/meetings");
 const router = express.Router();
 
-router.post("/user/addmeet", (req, res, next) => {
-  const newMeeting = new Meetings(req.body);
-  newMeeting.save();
-  User.findByIdAndUpdate(
-    { id: req.params.userId },
-    { $push: { meetings: meetings.id } },
-    { new: true }
-  )
-    .then((user) => {
-      res.json(user);
-    })
-    .catch((err) => res.status(500).json(err));
+router.post("/:id/addmeet", async (req, res, next) => {
+  try {
+    console.log(req.user);
+    const meetId = req.params.id;
+    const userId = req.user.id;
+    console.log(`Adding meet ${meetId} to user ${userId}`);
+    const user = await User.findOneAndUpdate(
+      { _id: userId },
+      { $push: { meetings: meetId } },
+      {
+        new: true,
+      }
+    ).populate("meetings");
+    return res.json({ status: "Added Meet to user", user });
+  } catch (error) {
+    return res.status(401).json({ status: "Meet Not Found" });
+  }
 });
-
 module.exports = router;

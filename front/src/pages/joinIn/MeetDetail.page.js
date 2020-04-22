@@ -20,40 +20,19 @@ const DeleteMeet = ({ idMeet, deleteReady }) => (
     Eliminar
   </Link>
 );
-const api = axios.create({
-  baseURL: process.env.BACKEND_URL,
-  withCredentials: true,
-});
 
 const JoininOne = (props) => {
   const [meet, setMeet] = useState({});
   const user = useUser();
-  const setUser = useUserSetter({});
+  const setUser = useUserSetter();
+  const id = props.meetId;
 
-  const AddMeetToUser = withRouter(({ history }) => (
-    <button
-      className="button-card"
-      onClick={async () => {
-        try {
-          user && user.meetings.push(meet.id);
-          await history.push("/meet");
-        } catch (e) {
-          console.log(e.message);
-        }
-      }}
-    >
-      Me apunto
-    </button>
-  ));
-
-  // const addUserMeet = () => {
-  //   try {
-  //     getAddMeet(user && user.id).then(setUser(user));
-  //     console.log(user);
-  //   } catch (e) {
-  //     console.log(e);
-  //   }
-  // };
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    getAddMeet(id).then((data) => {
+      setUser(data.user);
+    });
+  };
 
   const fetchMeet = () => {
     try {
@@ -95,14 +74,14 @@ const JoininOne = (props) => {
                 </Link>
               </Button>{" "}
               <Button as="div" className="button-card">
-                <AddMeetToUser
-                  to="#"
+                <Link
+                  to="/"
                   className="button-card"
-                  idUser={user && user.id}
-                  // onClick={addUserMeet(setUser(user))}
+                  iduser={user && user.id}
+                  onClick={handleSubmit}
                 >
                   Me Apunto!
-                </AddMeetToUser>
+                </Link>
               </Button>{" "}
               <Button as="div" className="button-card">
                 <DeleteMeet

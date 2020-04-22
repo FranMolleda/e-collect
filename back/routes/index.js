@@ -62,7 +62,7 @@ router.post(
 );
 
 const addMeet = require("./addMeet");
-router.post("/addMeet", addMeet);
+router.use("/user", addMeet);
 
 const apiGoogleRoute = require("./apiGoogleRoute");
 

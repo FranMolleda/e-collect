@@ -6,8 +6,8 @@ import { useUser } from "../../lib/auth/auth.api";
 import { Link } from "react-router-dom";
 
 const Joinin = () => {
-  const [meetings, setMeeting] = useState([]);
   const [filterStart, setFilterStart] = useState("");
+  const [meetings, setMeeting] = useState([]);
   const user = useUser();
   const allMeetings = () =>
     getMeetings().then((meeting) => setMeeting(meeting));
@@ -18,9 +18,8 @@ const Joinin = () => {
   }, []);
 
   //Filtro para buscar por ciudad o titulo
-  const filtered_meets = meetings.filter(
-    (meet) =>
-      meet.city.includes(filterStart) || meet.title.includes(filterStart)
+  const filtered_meets = meetings.filter((meet) =>
+    meet.city.includes(filterStart)
   );
 
   return (

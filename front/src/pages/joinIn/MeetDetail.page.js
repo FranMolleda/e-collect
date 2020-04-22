@@ -29,8 +29,9 @@ const JoininOne = (props) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    getAddMeet(id).then((data) => {
-      setUser(data.user);
+    getAddMeet(id).then(async (data) => {
+      await setUser(data.user);
+      console.log(data.user);
     });
   };
 

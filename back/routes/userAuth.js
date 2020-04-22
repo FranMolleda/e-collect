@@ -1,5 +1,6 @@
 const express = require("express");
 const User = require("../models/user");
+const Meetings = require("../models/meetings");
 const passport = require("passport");
 const router = express.Router();
 const _ = require("lodash");
@@ -41,21 +42,27 @@ router.post("/signup", async (req, res, next) => {
 
 router.post("/login", (req, res, next) => {
   passport.authenticate("local", (err, user) => {
-    req.login(user, (err) => {
+    if (!user) {
+      return res.status(400).json({ message: "User not found" });
+    }
+    req.login(user, async (err) => {
       if (err) {
         return res.status(500).json({ message: "Server error" });
       }
 
-      if (!user) {
-        return res.json({ status: 401, message: "No User register" });
-      }
-
-      if (err) {
-        console.log(err);
-        return res.json({ status: 500, message: "authentication error" });
-      }
+      const userFound = await User.findById({ _id: req.user._id }).populate(
+        "meetings"
+      );
+      console.log(userFound);
       return res.json(
-        _.pick(req.user, ["username", "password", "email", "id", "profilePic"])
+        _.pick(userFound, [
+          "username",
+          "password",
+          "email",
+          "id",
+          "profilePic",
+          "meetings",
+        ])
       );
     });
   })(req, res, next);
@@ -73,7 +80,7 @@ router.get("/logout", isLoggedIn(), (req, res, next) => {
 });
 
 router.get("/profile", isLoggedIn(), (req, res, next) => {
-  if (req.user) return res.json(req.user);
+  if (req.user) return res.json({ status: "Added Meet to user", user });
   else return res.status(401).json({ status: "No user session present" });
 });
 

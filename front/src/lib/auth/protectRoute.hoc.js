@@ -15,7 +15,7 @@ export const withProtected = (
 
   if (user) {
     // Si hay usuario logueado pinta el componente
-    return <Component />;
+    return <Component {...props} />;
   } else {
     // Si el usuarion está cargando en el back renderiza el placeholder
     if (isUserLoading) return <ProtectedPagePlaceholder />;

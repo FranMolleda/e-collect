@@ -11,7 +11,7 @@ router.post("/:id/addmeet", async (req, res, next) => {
     console.log(`Adding meet ${meetId} to user ${userId}`);
     const user = await User.findOneAndUpdate(
       { _id: userId },
-      { $push: { meetings: meetId } },
+      { $addToSet: { meetings: meetId } },
       {
         new: true,
       }
@@ -20,5 +20,10 @@ router.post("/:id/addmeet", async (req, res, next) => {
   } catch (error) {
     return res.status(401).json({ status: "Meet Not Found" });
   }
+});
+
+router.get("/usermeet", async (req, res, id) => {
+  const listObj = await Model.find();
+  res.json(listObj);
 });
 module.exports = router;

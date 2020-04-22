@@ -35,7 +35,7 @@ const Organize = withRouter(({ history }) => {
 
   return (
     <>
-      <h1>Soy Organiza</h1>
+      <h1>Organiza una recogida</h1>
       {/* FormContext methods lo traemos de forms/input para no tener que poner los errores en cada input */}
 
       <input
@@ -85,29 +85,17 @@ const Organize = withRouter(({ history }) => {
               })}
             />
             <Input
-              name="type"
-              label="Tipo"
-              ref={register({
-                required: messageError,
-              })}
-            />
-            <Input
-              name="difficulty"
-              label="Dificultad"
-              ref={register({
-                required: messageError,
-              })}
-            />
-            <Input
               label="Fecha"
-              type="datetime"
               name="date"
+              placeholder="dd/mm/aaaa"
+              type="text"
               ref={register({
                 required: messageError,
                 pattern: /^([0-2][0-9]|3[0-1])(\/|-)(0[1-9]|1[0-2])\2(\d{4})$/,
               })}
             />
             <Input
+              label="Hora"
               type="time"
               placeholder="hour"
               name="hour"
@@ -116,7 +104,36 @@ const Organize = withRouter(({ history }) => {
                 pattern: /^([0-1]?[0-9]|2[0-3]):[0-5][0-9]$/i,
               })}
             />
-
+            <div>
+              <label>Tipo de recogida</label>
+              <select
+                name="type"
+                ref={register({
+                  required: messageError,
+                })}
+              >
+                <option value="Playa">Playa</option>
+                <option value="Rio">Rio</option>
+                <option value="Submarina">Submarina</option>
+                <option value="Monte">Monte</option>
+                <option value="Rural">Rural</option>
+                <option value="Montaña">Montaña</option>
+                <option value="Urbana">Urbana</option>
+              </select>
+            </div>
+            <div>
+              <label>Dificultad: </label>
+              <select
+                name="difficulty"
+                ref={register({
+                  required: messageError,
+                })}
+              >
+                <option value="Baja">Baja</option>
+                <option value="Media"> Media</option>
+                <option value="Alta"> Alta</option>
+              </select>
+            </div>
             <InputTextarea
               name="description"
               label="Descripción"

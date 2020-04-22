@@ -1,6 +1,9 @@
 const express = require("express");
+const router = express.Router();
 const _ = require("lodash");
 const { asyncController } = require("../bin/middleware/asyncController");
+const User = require("../models/user");
+const Meetings = require("../models/meetings");
 
 const crudGenerator = (
   Model,

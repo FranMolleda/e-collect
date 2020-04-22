@@ -12,7 +12,7 @@ const Joinin = () => {
   const allMeetings = () =>
     getMeetings().then((meeting) => setMeeting(meeting));
 
-  //Esta finción coge todas las meetings y setea la variable
+  //Esta función coge todas las meetings y setea la variable
   useEffect(() => {
     allMeetings();
   }, []);

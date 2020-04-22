@@ -24,8 +24,8 @@ export const getMeet = async (idMeet) => {
 
   return res.data;
 };
-export const getAddMeet = async (data) => {
-  const res = await api.post(`addMeet/:userId`, { data });
+export const getAddMeet = async (id) => {
+  const res = await api.post(`/user/${id}/addmeet`);
   return res.data;
 };
 

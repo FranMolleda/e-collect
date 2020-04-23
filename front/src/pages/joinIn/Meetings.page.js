@@ -2,13 +2,16 @@ import React, { useState, useEffect } from "react";
 import { getMeetings } from "../../lib/frontRoutes/meetings.api";
 import { Card, Button, Container } from "react-bootstrap";
 import { CardMeeting, CardContainer } from "./StyleMeetings";
-import { useUser } from "../../lib/auth/auth.api";
+import { useUser, useUserSetter } from "../../lib/auth/auth.api";
 import { Link } from "react-router-dom";
 
 const Joinin = () => {
   const [filterStart, setFilterStart] = useState("");
   const [meetings, setMeeting] = useState([]);
   const user = useUser();
+  const setUser = useUserSetter(user);
+
+  console.log(user);
   const allMeetings = () =>
     getMeetings().then((meeting) => setMeeting(meeting));
 
@@ -44,7 +47,7 @@ const Joinin = () => {
                     </Card.Header>
                   )}
                   <Card.Body>
-                    <Card.Title>{meeting.title}</Card.Title>
+                    {meeting.title && <Card.Title>{meeting.title}</Card.Title>}
                     <Card.Subtitle className="mb-2 text-muted">
                       {meeting.city}
                     </Card.Subtitle>

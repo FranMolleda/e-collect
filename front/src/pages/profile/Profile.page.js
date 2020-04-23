@@ -1,30 +1,22 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useForm, FormContext } from "react-hook-form";
-import { Container } from "react-bootstrap";
+import { Container, Card } from "react-bootstrap";
 import { withProtected } from "../../lib/auth/protectRoute.hoc.js";
-import { useUser, useUserSetter } from "../../lib/auth/auth.api.js";
-import { Input, InputTextarea } from "../../forms/input/index";
+import { useUser, useUserSetter, doLogin } from "../../lib/auth/auth.api.js";
 import { withRouter } from "react-router-dom";
 import { changeAvatar, editProfile } from "../../lib/auth/user.api";
-import { getUserMeet } from "../../lib/frontRoutes/meetings.api";
 import { Link } from "react-router-dom";
 
 import _ from "lodash";
 
 export const ProfilePage = withProtected(
-  withRouter((props, { history }) => {
-    const [error, setError] = useState();
-    const [meet, setMeet] = useState({});
-    const user = useUser();
+  withRouter(({ props, user, history }) => {
+    user = useUser();
     const setUser = useUserSetter({});
     const methods = useForm();
     const { handleSubmit, register, errors } = methods;
-    const messageError = "Campo vacío";
-    const id = user.id;
-    console.log(user);
     const onSubmit = (values) => {
       const myAvatar = values.avatar[0];
-      console.log(myAvatar);
       changeAvatar(myAvatar)
         .then((res) => {
           console.log("Changed File");
@@ -55,20 +47,21 @@ export const ProfilePage = withProtected(
             <Container>
               <form onSubmit={handleSubmit(onSubmit)}>
                 <div>
-                  <label>Nombre</label>
-                  <input
-                    name="username"
-                    defaultValue={user.username}
-                    ref={register()}
-                  />
+                  <p>Nombre: {user.username}</p>
                 </div>
                 <div>
-                  <label>Contraseña</label>
-                  <input
-                    name="password"
-                    defaultValue={user.password}
-                    ref={register()}
-                  />
+                  <p>Email: {user.email}</p>
+                </div>
+                <div>
+                  <p>
+                    Recogidas en las que he participado:{" "}
+                    {user.meetings.length - 2}
+                  </p>
+                </div>
+                <div>
+                  <p>
+                    Recogidas en las que estoy inscrito: {user.meetings.length}
+                  </p>
                 </div>
                 <div style={{ padding: "10px 0" }}>
                   {imgPath && (
@@ -85,16 +78,34 @@ export const ProfilePage = withProtected(
                 </div>
                 <button type="submit">Change Profile Pic</button>
               </form>
-              <Link as="button" to="/meet">
-                Mis recogidas
-              </Link>
             </Container>
           </FormContext>
         </div>
+        <p>{user.title}</p>
         <div>
-          <p>Estas son mis recogidas</p>
-
-          {user && user.meetings.map((e, i) => <div key={i}>{e.title}</div>)}
+          <ul>
+            {user &&
+              user.meetings.map((meeting, i) => (
+                <>
+                  <Card style={{ width: "18rem" }}>
+                    <Card.Body>
+                      <Card.Title> {meeting.title}</Card.Title>
+                      <Card.Subtitle className="mb-2 text-muted">
+                        Card Subtitle
+                      </Card.Subtitle>
+                      <Card.Text></Card.Text>
+                      <Card.Link href="#">Card Link</Card.Link>
+                      <Card.Link href="#">Another Link</Card.Link>
+                    </Card.Body>
+                  </Card>
+                  <Link to={`/meet/${meeting.id}`} key={i}>
+                    <li>
+                      {meeting.title}, {meeting.city}
+                    </li>
+                  </Link>
+                </>
+              ))}
+          </ul>
         </div>
       </>
     );

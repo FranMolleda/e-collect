@@ -9,18 +9,18 @@ const FooterContainer = styled.div`
 
   .footer-bs {
     width: 100vw;
-    background: linear-gradient(to right, #b1e2eb 0%, #1a5059 100%);
-    padding: 10px 30px;
+    background: linear-gradient(to right, #735f22 0%, #4c591e 100%);
+    padding: 2px 30px;
     color: #737980;
     position: fixed;
     bottom: 0;
     width: 100%;
-    height: 60px;
+    height: 40px;
     .arbol-azul {
       height: 37px;
       float: right;
       margin-right: 20px;
-      margin-top: -42px;
+      margin-top: -34px;
     }
   }
 

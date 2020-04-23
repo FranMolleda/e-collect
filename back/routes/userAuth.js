@@ -94,9 +94,14 @@ router.get(
   })
 );
 
-router.get("/whoami", (req, res, next) => {
-  if (req.user) return res.json(req.user);
-  else return res.status(401).json({ status: "No user session present" });
+router.get("/whoami", async (req, res, next) => {
+  try {
+    const userId = req.user._id;
+    const userFound = await User.findById(userId).populate("meetings");
+    return res.json(userFound);
+  } catch (error) {
+    return res.status(401).json({ status: "No user session present" });
+  }
 });
 
 //Loggin Social Google

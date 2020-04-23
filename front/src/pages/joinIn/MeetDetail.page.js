@@ -4,8 +4,6 @@ import { Card, Button, Container } from "react-bootstrap";
 import { CardMeeting, CardContainer } from "./StyleMeetings";
 import { useUser, useUserSetter } from "../../lib/auth/auth.api";
 import { Link } from "react-router-dom";
-import axios from "axios";
-import { withRouter } from "react-router-dom";
 import { getAddMeet } from "../../lib/frontRoutes/meetings.api";
 
 const DeleteMeet = ({ idMeet, deleteReady }) => (
@@ -30,8 +28,8 @@ const JoininOne = (props) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     getAddMeet(id).then(async (data) => {
-      await setUser(data.user);
       console.log(data.user);
+      return await setUser(data.user);
     });
   };
 

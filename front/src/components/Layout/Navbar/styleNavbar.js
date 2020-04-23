@@ -2,7 +2,8 @@ import styled from "styled-components";
 
 const NavbarContainer = styled.div`
   .container-navbar {
-    background: linear-gradient(to right, #b1e2eb 0%, #1a5059 100%);
+    background: linear-gradient(to right, #735f22 0%, #4c591e 100%);
+
     a {
       color: #737980;
     }
@@ -11,7 +12,6 @@ const NavbarContainer = styled.div`
     }
   }
   .mr-nav-left {
-    margin-left: 100px;
     color: #737980;
   }
 `;

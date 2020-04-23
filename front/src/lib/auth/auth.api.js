@@ -38,7 +38,6 @@ const api = axios.create({
 });
 
 export const doSignup = async (username, password, email, _id, profilePic) => {
-  console.log("Registrando Usuario...");
   console.log(username, password, email, _id, profilePic);
   const res = await api.post("/auth/signup", {
     username,
@@ -71,6 +70,5 @@ export const doLogout = async () => {
 };
 export const whoami = async () => {
   const res = await api.get("/auth/whoami");
-  console.log(res.data);
   return res.data;
 };

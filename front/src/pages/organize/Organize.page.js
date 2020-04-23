@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useForm, FormContext } from "react-hook-form";
-import { Container } from "react-bootstrap";
+import { Container, Form } from "react-bootstrap";
 import { Input, InputTextarea } from "../../forms/input";
 import axios from "axios";
 import { withRouter } from "react-router-dom";
@@ -50,7 +50,7 @@ const Organize = withRouter(({ history }) => {
         <Container>
           <form onSubmit={handleSubmit(onSubmit)}>
             <Input
-              name="Username"
+              name="title"
               label="Título"
               ref={register({
                 required: messageError,
@@ -104,36 +104,6 @@ const Organize = withRouter(({ history }) => {
                 pattern: /^([0-1]?[0-9]|2[0-3]):[0-5][0-9]$/i,
               })}
             />
-            <div>
-              <label>Tipo de recogida</label>
-              <select
-                name="type"
-                ref={register({
-                  required: messageError,
-                })}
-              >
-                <option value="Playa">Playa</option>
-                <option value="Rio">Rio</option>
-                <option value="Submarina">Submarina</option>
-                <option value="Monte">Monte</option>
-                <option value="Rural">Rural</option>
-                <option value="Montaña">Montaña</option>
-                <option value="Urbana">Urbana</option>
-              </select>
-            </div>
-            <div>
-              <label>Dificultad: </label>
-              <select
-                name="difficulty"
-                ref={register({
-                  required: messageError,
-                })}
-              >
-                <option value="Baja">Baja</option>
-                <option value="Media"> Media</option>
-                <option value="Alta"> Alta</option>
-              </select>
-            </div>
             <InputTextarea
               name="description"
               label="Descripción"
@@ -142,9 +112,11 @@ const Organize = withRouter(({ history }) => {
                 required: messageError,
               })}
             />
-            <div>
-              <button type="submit">Enviar</button>
-            </div>
+            <p className="center-align">
+              <button className="waves-effect waves-light btn" type="submit">
+                <i className="material-icons right">send</i>enviar
+              </button>
+            </p>{" "}
           </form>
         </Container>
       </FormContext>

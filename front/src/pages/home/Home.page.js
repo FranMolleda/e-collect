@@ -18,26 +18,29 @@ const Home = () => {
       <div>
         <ImageHome />
         <Container fluid>
-          {" "}
           <TextHome>
             <h1>e-collect</h1>
-            <h3>Unidos por un planeta sin basura</h3>
+            <h3>Unidos por un planeta SIN basura</h3>
           </TextHome>
           {/* <ButtonParticipa as="div" variant="outline-secondary">
-            <Link to="meet">Participa</Link>
+            <Link as="button" className="btn" to="meet">
+              Participa
+            </Link>
           </ButtonParticipa>
           <ButtonOrganiza as="div" variant="outline-secondary">
-            <Link to="organize">Organiza</Link>
+            <Link to="organize" className="btn">
+              Organiza
+            </Link>
           </ButtonOrganiza> */}
+          <CountUp start={0} end={150} delay={0} duration={10}>
+            {({ countUpRef }) => (
+              <div>
+                <span ref={countUpRef} />
+              </div>
+            )}
+          </CountUp>
         </Container>
       </div>
-      <CountUp start={0} end={150} delay={0} duration={10}>
-        {({ countUpRef }) => (
-          <div>
-            <span ref={countUpRef} />
-          </div>
-        )}
-      </CountUp>
     </>
   );
 };

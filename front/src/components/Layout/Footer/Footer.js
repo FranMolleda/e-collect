@@ -2,6 +2,7 @@ import React from "react";
 import FooterContainer from "./styleFooter";
 import logo from "../../../../public/images/logo500Verde.png";
 import arbol from "../../../../public/images/arbolfooterazul.png";
+import { Container } from "react-bootstrap";
 
 const Footer = () => (
   <>
@@ -17,12 +18,12 @@ const Footer = () => (
             />
           </div>
           <div className="col-md-3 footer-nav animated fadeInUp size-footer">
-            <p className="text-footer">
+            <p className="text-footer align">
               {" "}
               &copy; 2020 Webdev Part time - Francisco Molleda
             </p>
           </div>
-          <div className="col-md-3 footer-nav animated fadeInUp size-footer">
+          <div className="col-md-3 align footer-nav">
             ✉️ fmjerez@ecollect.com  📞666 666 666
           </div>
         </div>

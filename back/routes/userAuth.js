@@ -84,6 +84,17 @@ router.get("/profile", isLoggedIn(), (req, res, next) => {
   else return res.status(401).json({ status: "No user session present" });
 });
 
+router.delete("/profile/delete/:id", async (req, res, next) => {
+  const { userId } = req.body;
+  const { meetId } = req.body;
+  const user = await Meetings.findById(userId).populate("meetings");
+  console.log(user);
+  // if (meetings(meetId)) {
+  //   meetings.push(meetId);
+  // }
+  return res.json({ status: "Data deleted", user });
+});
+
 //Loggin Social Slack
 router.get("/slack", passport.authenticate("slack"));
 router.get(

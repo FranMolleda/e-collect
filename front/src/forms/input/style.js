@@ -13,7 +13,7 @@ export const InputTextareaStyle = styled.textarea`
   }
 `;
 export const ErrorMessage = styled.div`
-  background: #6b9ca5;
-  color: #e4eff1;
+  background: #d9d9d9;
+  color: #262626;
   margin: 5px;
 `;

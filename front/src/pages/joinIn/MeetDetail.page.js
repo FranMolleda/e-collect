@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from "react";
-import { getMeet, deleteMeet } from "../../lib/frontRoutes/meetings.api";
+import {
+  getMeet,
+  deleteMeet,
+  getAddMeet,
+} from "../../lib/frontRoutes/meetings.api";
 import { Card, Button, Container } from "react-bootstrap";
 import { CardMeeting, CardContainer } from "./StyleMeetings";
 import { useUser, useUserSetter } from "../../lib/auth/auth.api";
 import { Link } from "react-router-dom";
-import axios from "axios";
-import { withRouter } from "react-router-dom";
-import { getAddMeet } from "../../lib/frontRoutes/meetings.api";
 
 const DeleteMeet = ({ idMeet, deleteReady }) => (
   <Link
@@ -20,40 +21,21 @@ const DeleteMeet = ({ idMeet, deleteReady }) => (
     Eliminar
   </Link>
 );
-const api = axios.create({
-  baseURL: process.env.BACKEND_URL,
-  withCredentials: true,
-});
 
 const JoininOne = (props) => {
   const [meet, setMeet] = useState({});
   const user = useUser();
-  const setUser = useUserSetter({});
+  const setUser = useUserSetter();
+  const id = props.meetId;
 
-  const AddMeetToUser = withRouter(({ history }) => (
-    <button
-      className="button-card"
-      onClick={async () => {
-        try {
-          user && user.meetings.push(meet.id);
-          await history.push("/meet");
-        } catch (e) {
-          console.log(e.message);
-        }
-      }}
-    >
-      Me apunto
-    </button>
-  ));
-
-  const addUserMeet = () => {
-    try {
-      getAddMeet(user && user.id).then(setUser(user));
-      console.log(user);
-    } catch (e) {
-      console.log(e);
-    }
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    getAddMeet(id).then(async (data) => {
+      console.log(data.user);
+      return await setUser(data.user);
+    });
   };
+
   const fetchMeet = () => {
     try {
       getMeet(props.meetId).then((meet) => setMeet(meet));
@@ -62,12 +44,7 @@ const JoininOne = (props) => {
     }
   };
   useEffect(() => {
-    let unmounted = false;
-    addUserMeet();
     fetchMeet();
-    return () => {
-      unmounted = true;
-    };
   }, []);
 
   return (
@@ -82,7 +59,9 @@ const JoininOne = (props) => {
               </Card.Header>
             )}
             <Card.Body>
-              <Card.Title>Título: {meet.title}</Card.Title>
+              <Card.Subtitle as="h4" className="mb-3">
+                Título: {meet.title}
+              </Card.Subtitle>
               <Card.Subtitle className="mb-2 text-muted">
                 Ciudad: {meet.city}
               </Card.Subtitle>
@@ -100,14 +79,14 @@ const JoininOne = (props) => {
                 </Link>
               </Button>{" "}
               <Button as="div" className="button-card">
-                <AddMeetToUser
-                  to="#"
+                <Link
+                  to="/"
                   className="button-card"
-                  idUser={user && user.id}
-                  onClick={addUserMeet()}
+                  iduser={user && user.id}
+                  onClick={handleSubmit}
                 >
                   Me Apunto!
-                </AddMeetToUser>
+                </Link>
               </Button>{" "}
               <Button as="div" className="button-card">
                 <DeleteMeet

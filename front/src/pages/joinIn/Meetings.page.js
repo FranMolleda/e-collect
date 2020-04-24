@@ -2,25 +2,26 @@ import React, { useState, useEffect } from "react";
 import { getMeetings } from "../../lib/frontRoutes/meetings.api";
 import { Card, Button, Container } from "react-bootstrap";
 import { CardMeeting, CardContainer } from "./StyleMeetings";
-import { useUser } from "../../lib/auth/auth.api";
+import { useUser, useUserSetter } from "../../lib/auth/auth.api";
 import { Link } from "react-router-dom";
 
 const Joinin = () => {
-  const [meetings, setMeeting] = useState([]);
   const [filterStart, setFilterStart] = useState("");
+  const [meetings, setMeeting] = useState([]);
   const user = useUser();
+  const setUser = useUserSetter(user);
+
   const allMeetings = () =>
     getMeetings().then((meeting) => setMeeting(meeting));
 
-  //Esta finción coge todas las meetings y setea la variable
+  //Esta función coge todas las meetings y setea la variable
   useEffect(() => {
     allMeetings();
   }, []);
 
   //Filtro para buscar por ciudad o titulo
-  const filtered_meets = meetings.filter(
-    (meet) =>
-      meet.city.includes(filterStart) || meet.title.includes(filterStart)
+  const filtered_meets = meetings.filter((meet) =>
+    meet.city.includes(filterStart)
   );
 
   return (
@@ -45,7 +46,11 @@ const Joinin = () => {
                     </Card.Header>
                   )}
                   <Card.Body>
-                    <Card.Title>{meeting.title}</Card.Title>
+                    {meeting.title && (
+                      <Card.Subtitle as="h4" className="mb-3">
+                        {meeting.title}
+                      </Card.Subtitle>
+                    )}
                     <Card.Subtitle className="mb-2 text-muted">
                       {meeting.city}
                     </Card.Subtitle>

@@ -14,18 +14,33 @@ export const getMeetings = async () => {
   const res = await api.get("/meet");
   return res.data;
 };
+
+export const deleteUserMeet = async (idMeet) => {
+  const res = await api.delete(`/auth/profile/delete/${idMeet}`);
+  return res.data;
+};
+export const getDeleteUserMeet = async (idMeet) => {
+  const res = await api.delete(`/auth/profile/${idMeet}`);
+  return res.data;
+};
+
 export const deleteMeet = async (idMeet) => {
   const res = await api.delete(`/meet/delete/${idMeet}`);
   return res.data;
 };
+
 export const getMeet = async (idMeet) => {
   const res = await api.get(`/meet/${idMeet}`);
-  //Filtramos por un meeting especifico:
-
   return res.data;
 };
-export const getAddMeet = async (data) => {
-  const res = await api.post(`/user/addmeet`, { data });
+
+export const getAddMeet = async (id) => {
+  const res = await api.post(`/user/${id}/addmeet`);
+  return res.data;
+};
+
+export const getUserMeet = async (casa) => {
+  const res = await api.delete(`/user/profile/usermeet/${casa}`);
   return res.data;
 };
 

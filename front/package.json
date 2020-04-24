@@ -4,27 +4,29 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "parcel index.html",
+    "start": "serve dist",
     "build": "parcel build index.html"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@material-ui/core": "^4.9.9",
+    "@material-ui/core": "^4.9.11",
     "axios": "^0.19.2",
     "bootstrap": "^4.4.1",
     "build": "^0.1.4",
     "cloudinary": "^1.21.0",
     "cloudinary-core": "^2.8.2",
     "lodash": "^4.17.15",
+    "materialize-css": "^1.0.0-rc.2",
     "parcel": "^1.12.4",
     "react": "^16.13.1",
     "react-bootstrap": "^1.0.0",
     "react-datepicker": "^2.14.1",
     "react-dom": "^16.8.0",
     "react-hook-form": "^5.4.1",
+    "react-materialize": "^3.8.10",
     "react-router-dom": "^5.1.2",
+    "serve": "^11.3.0",
     "styled-components": "^5.0.1"
   },
   "devDependencies": {

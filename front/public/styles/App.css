@@ -37,3 +37,47 @@ body {
     transform: rotate(360deg);
   }
 }
+
+.button-no-green:active {
+  background-color: #f2f2f2;
+  text-decoration: none;
+  outline: none;
+  color: black
+}
+
+
+.home-left {
+  position: absolute;
+  top: 50%;
+  left: 40%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  border: #D9D9D9 1px solid;
+  color: #D9D9D9;
+  text-decoration: none;
+}
+
+p:hover {
+  color: black
+}
+
+.home-right {
+  position: absolute;
+  top: 50%;
+  left: 60%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  border: #D9D9D9 1px solid;
+  color: #D9D9D9;
+}
+
+.btn-home {
+  font-size: 1.5rem;
+  color: #D9D9D9
+}
+
+
+.form-container {
+  min-height: 100vh;
+  padding-top: 10rem;
+}

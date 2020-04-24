@@ -5,8 +5,8 @@ const api = axios.create({
   withCredentials: true,
 });
 
-export const changeAvatar = async (avatarFile) => {
+export const changeAvatar = async (avatarFile, username) => {
   const data = new FormData();
-  data.append("avatar", avatarFile);
+  data.append("avatar", avatarFile, "username", username);
   return api.post("/profilepic", data);
 };

@@ -7,9 +7,14 @@ const FooterContainer = styled.div`
     padding-left: 15px;
   }
 
+  .align {
+    text-align: end;
+    width: 100%;
+  }
+
   .footer-bs {
     width: 100vw;
-    background: linear-gradient(to right, #735f22 0%, #4c591e 100%);
+    background: linear-gradient(to right, #d9d9d9 0%, #a6a6a6 100%);
     padding: 2px 30px;
     color: #737980;
     position: fixed;
@@ -36,7 +41,7 @@ const FooterContainer = styled.div`
   .footer-bs .footer-nav,
   .footer-bs .footer-social,
   .footer-bs .footer-ns {
-    padding: 10px 25px;
+    padding: 10px 5px;
   }
 
   .footer-bs .footer-nav,

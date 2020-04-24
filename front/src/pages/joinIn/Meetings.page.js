@@ -11,7 +11,6 @@ const Joinin = () => {
   const user = useUser();
   const setUser = useUserSetter(user);
 
-  console.log(user);
   const allMeetings = () =>
     getMeetings().then((meeting) => setMeeting(meeting));
 
@@ -47,7 +46,11 @@ const Joinin = () => {
                     </Card.Header>
                   )}
                   <Card.Body>
-                    {meeting.title && <Card.Title>{meeting.title}</Card.Title>}
+                    {meeting.title && (
+                      <Card.Subtitle as="h4" className="mb-3">
+                        {meeting.title}
+                      </Card.Subtitle>
+                    )}
                     <Card.Subtitle className="mb-2 text-muted">
                       {meeting.city}
                     </Card.Subtitle>

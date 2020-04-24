@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from "react";
-import { getMeet, deleteMeet } from "../../lib/frontRoutes/meetings.api";
+import {
+  getMeet,
+  deleteMeet,
+  getAddMeet,
+} from "../../lib/frontRoutes/meetings.api";
 import { Card, Button, Container } from "react-bootstrap";
 import { CardMeeting, CardContainer } from "./StyleMeetings";
 import { useUser, useUserSetter } from "../../lib/auth/auth.api";
 import { Link } from "react-router-dom";
-import { getAddMeet } from "../../lib/frontRoutes/meetings.api";
 
 const DeleteMeet = ({ idMeet, deleteReady }) => (
   <Link
@@ -43,6 +46,7 @@ const JoininOne = (props) => {
   useEffect(() => {
     fetchMeet();
   }, []);
+
   return (
     <CardContainer className="cards-container">
       <h1>Detalle de Regogida</h1>
@@ -55,7 +59,9 @@ const JoininOne = (props) => {
               </Card.Header>
             )}
             <Card.Body>
-              <Card.Title>Título: {meet.title}</Card.Title>
+              <Card.Subtitle as="h4" className="mb-3">
+                Título: {meet.title}
+              </Card.Subtitle>
               <Card.Subtitle className="mb-2 text-muted">
                 Ciudad: {meet.city}
               </Card.Subtitle>

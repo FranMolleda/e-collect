@@ -6,8 +6,8 @@ export const ImageHome = styled.div`
   background-position: center;
   background-size: cover;
   width: 100wv;
-  min-height: 91vh;
-  filter: blur(6px);
+  min-height: 92vh;
+  filter: blur(3px);
   .container {
     display: grid;
     /* Space between items. */
@@ -44,11 +44,36 @@ export const ImageHome = styled.div`
 export const TextHome = styled.div`
   text-align: center;
   position: absolute;
-  top: 35%;
+  top: 25%;
   left: 30%;
   transform: translate(-50%, -50%);
-  color: white;
+  color: #d9d9d9;
   && h1 {
     font-size: 50px;
+  }
+  && h2 {
+    font-size: 40px;
+    margin-top: 2rem;
+  }
+
+  && h4 {
+    margin-top: 2rem;
+    font-size: 30px;
+    width: 65vh;
+  }
+`;
+export const TextHomeTwo = styled.div`
+  text-align: center;
+  position: absolute;
+  top: 70%;
+  left: 70%;
+  transform: translate(-50%, -50%);
+  color: #d9d9d9;
+  && h1 {
+    font-size: 50px;
+  }
+  && h3 {
+    font-size: 30px;
+    margin-top: 6rem;
   }
 `;

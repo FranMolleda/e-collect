@@ -6,6 +6,9 @@ import axios from "axios";
 import { withRouter } from "react-router-dom";
 import { useUser } from "../../lib/auth/auth.api";
 import { withProtected } from "../../lib/auth/protectRoute.hoc";
+import "materialize-css";
+import "../../../public/styles/App.css";
+import { Button, Icon } from "react-materialize";
 
 const Organize = withRouter(({ history }) => {
   const [error, setError] = useState();
@@ -13,7 +16,7 @@ const Organize = withRouter(({ history }) => {
   //Si quisiese que salga el aviso (error) de que hay que completar el campo ante de hacer submit sería useForm({mode: "onBlur"} )
   const methods = useForm();
   const { register, handleSubmit, errors } = methods;
-  const messageError = "Campo vacío";
+  const messageError = "Ups, te dejaste este campo sin rellenar";
 
   const api = axios.create({
     baseURL: process.env.BACKEND_URL,
@@ -36,8 +39,6 @@ const Organize = withRouter(({ history }) => {
   return (
     <>
       <h1>Organiza una recogida</h1>
-      {/* FormContext methods lo traemos de forms/input para no tener que poner los errores en cada input */}
-
       <input
         type="hidden"
         name="organizer"
@@ -47,7 +48,7 @@ const Organize = withRouter(({ history }) => {
         })}
       />
       <FormContext {...methods}>
-        <Container>
+        <Container className="form-container">
           <form onSubmit={handleSubmit(onSubmit)}>
             <Input
               name="title"
@@ -113,9 +114,15 @@ const Organize = withRouter(({ history }) => {
               })}
             />
             <p className="center-align">
-              <button className="waves-effect waves-light btn" type="submit">
-                <i className="material-icons right">send</i>enviar
-              </button>
+              <Button
+                className="button-no-green"
+                waves-effect="true"
+                waves-teal="true"
+                flat
+                type="submit"
+              >
+                enviar<Icon right>send</Icon>
+              </Button>
             </p>{" "}
           </form>
         </Container>

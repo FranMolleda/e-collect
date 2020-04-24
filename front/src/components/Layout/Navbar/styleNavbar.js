@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 const NavbarContainer = styled.div`
   .container-navbar {
-    background: linear-gradient(to right, #735f22 0%, #4c591e 100%);
+    background: linear-gradient(to right, #d9d9d9 0%, #a6a6a6 100%);
 
     a {
       color: #737980;

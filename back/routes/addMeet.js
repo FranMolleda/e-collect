@@ -1,6 +1,5 @@
 const express = require("express");
 const User = require("../models/user");
-const Meetings = require("../models/meetings");
 const router = express.Router();
 
 router.post("/:id/addmeet", async (req, res, next) => {

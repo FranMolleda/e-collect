@@ -4,6 +4,10 @@ body {
   font-family: sans-serif;
 }
 
+body .body-background {
+  background: #f2f2f2;
+}
+
 .App {
   text-align: center;
 }
@@ -38,44 +42,51 @@ body {
   }
 }
 
+.body-background {
+  background: #f2f2f2;
+}
+
 .button-no-green:active {
   background-color: #f2f2f2;
   text-decoration: none;
   outline: none;
-  color: black
+  color: black;
 }
-
 
 .home-left {
   position: absolute;
-  top: 50%;
-  left: 40%;
+  top: 60%;
+  left: 23%;
   transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
-  border: #D9D9D9 1px solid;
-  color: #D9D9D9;
+  border: #d9d9d9 1px solid;
+  color: #d9d9d9;
   text-decoration: none;
 }
 
 p:hover {
-  color: black
+  color: black;
+}
+a:hover {
+  color: black;
+  font-family: arial;
+  text-decoration: none;
 }
 
 .home-right {
   position: absolute;
-  top: 50%;
-  left: 60%;
+  top: 60%;
+  left: 38%;
   transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
-  border: #D9D9D9 1px solid;
-  color: #D9D9D9;
+  border: #d9d9d9 1px solid;
+  color: #d9d9d9;
 }
 
 .btn-home {
   font-size: 1.5rem;
-  color: #D9D9D9
+  color: #d9d9d9;
 }
-
 
 .form-container {
   min-height: 100vh;

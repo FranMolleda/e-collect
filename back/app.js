@@ -11,7 +11,7 @@ const MongoStore = require("connect-mongo")(session);
 const passport = require("passport");
 const cors = require("cors");
 
-const dbUrl = process.env.DBATLASURL;
+const dbUrl = process.env.DBURL;
 mongoose
   .connect(dbUrl, {
     useNewUrlParser: true,

@@ -31,7 +31,6 @@ const Home = () => {
               <Button
                 className="button-no-green home-left"
                 waves-effect="true"
-                waves-teal="true"
                 flat
                 type="submit"
               >
@@ -66,23 +65,6 @@ const Home = () => {
                 entornos naturales.
               </h3>
             </TextHomeTwo>
-            {/* <ButtonOrganiza as="div" variant="outline-secondary">
-            <Link to="organize" className="btn">
-              Organiza
-            </Link>
-          </ButtonOrganiza> */}
-            {/* <CountUp
-            start={0}
-            end={150}
-            delay={0}
-            duration={10}
-          >
-            {({ countUpRef }) => (
-              <div>
-                <span ref={countUpRef} />
-              </div>
-            )}
-          </CountUp> */}
           </Container>
         )}
         <img src="https://media.giphy.com/media/dYfbdQUuQjYDgdbvy3/giphy.gif" />

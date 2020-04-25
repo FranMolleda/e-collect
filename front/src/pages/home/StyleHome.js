@@ -66,14 +66,15 @@ export const TextHomeTwo = styled.div`
   text-align: center;
   position: absolute;
   top: 70%;
-  left: 70%;
+  left: 30%;
   transform: translate(-50%, -50%);
   color: #d9d9d9;
+  width: 36%;
   && h1 {
     font-size: 50px;
   }
   && h3 {
     font-size: 30px;
-    margin-top: 6rem;
+    margin-top: 1.5rem;
   }
 `;

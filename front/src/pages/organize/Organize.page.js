@@ -38,7 +38,6 @@ const Organize = withRouter(({ history }) => {
 
   return (
     <>
-      <h1>Organiza una recogida</h1>
       <input
         type="hidden"
         name="organizer"

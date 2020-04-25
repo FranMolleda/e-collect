@@ -1,5 +1,5 @@
 import React from "react";
-import { Navbar, NavDropdown, Nav } from "react-bootstrap";
+import { Navbar, NavDropdown, Nav, Container } from "react-bootstrap";
 import logo from "../../../../public/images/logo500Verde.png";
 import NavbarContainer from "./styleNavbar";
 import { Link } from "react-router-dom";
@@ -13,7 +13,7 @@ const LayoutNavbar = () => {
     <>
       <NavbarContainer>
         <Navbar
-          className="container-navbar"
+          className="container-navbar pad-nav"
           collapseOnSelect
           expand="lg"
           variant="dark"
@@ -30,47 +30,68 @@ const LayoutNavbar = () => {
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="mr-auto mr-nav-left">
-              <Nav.Link as="div">
+              <Nav.Link as="div" className="nav-font-size">
                 <Link to="/about">Conócenos</Link>
               </Nav.Link>
               <NavDropdown
-                className="mr-nav-left"
+                className="mr-nav-left nav-font-size"
                 title="Únete"
                 id="collasible-nav-dropdown"
               >
                 <NavDropdown.Item as="div">
-                  <Link to="/meet">Participa</Link>
+                  <Link to="/meet" className="nav-font-size">
+                    Participa
+                  </Link>
                 </NavDropdown.Item>
                 <NavDropdown.Item as="div">
-                  <Link to="/organize">Organiza</Link>
+                  <Link to="/organize" className="nav-font-size">
+                    Organiza
+                  </Link>
                 </NavDropdown.Item>
                 <NavDropdown.Item as="div">
-                  <Link to="/colaborate">Colabora</Link>
+                  <Link to="/colaborate" className="nav-font-size">
+                    Colabora
+                  </Link>
                 </NavDropdown.Item>
-                <NavDropdown.Divider />
               </NavDropdown>
             </Nav>
             <Nav>
-              <Nav.Link as="div">
-                <Link to="/contact">Contacta</Link>
-              </Nav.Link>
+              <Nav.Link as="div"></Nav.Link>
               {!user && (
-                <NavDropdown title="Inscríbete" id="collasible-nav-dropdown">
-                  <NavDropdown.Item as="div">
-                    <Link to="/auth/signup">Signup</Link>
+                <NavDropdown
+                  title="Inscríbete"
+                  id="collasible-nav-dropdown"
+                  className="nav-font-size"
+                >
+                  <NavDropdown.Item as="div" className="nav-font-size">
+                    <Link to="/auth/signup" className="nav-font-size">
+                      Signup
+                    </Link>
                   </NavDropdown.Item>
                   <NavDropdown.Item as="div">
-                    <Link to="/auth/login">Login</Link>
+                    <Link to="/auth/login" className="nav-font-size">
+                      Login
+                    </Link>
                   </NavDropdown.Item>
                 </NavDropdown>
               )}
               {user && (
-                <NavDropdown title={user.username} id="collasible-nav-dropdown">
+                <NavDropdown
+                  title={user.username}
+                  id="collasible-nav-dropdown"
+                  className="nav-font-size"
+                >
                   <NavDropdown.Item as="div">
-                    <Link to="/auth/profile">Profile</Link>
+                    <Link to="/auth/profile" className="nav-font-size">
+                      Profile
+                    </Link>
                   </NavDropdown.Item>
-                  <NavDropdown.Item as="div">
-                    <Link to="/" onClick={handleLogout}>
+                  <NavDropdown.Item as="div" className="nav-font-size">
+                    <Link
+                      className="nav-font-size"
+                      to="/"
+                      onClick={handleLogout}
+                    >
                       Logout
                     </Link>
                   </NavDropdown.Item>
@@ -78,6 +99,9 @@ const LayoutNavbar = () => {
               )}
             </Nav>
           </Navbar.Collapse>
+          <Link to="/contact" className="nav-font-size nav-font-size">
+            Contacta
+          </Link>
         </Navbar>
       </NavbarContainer>
     </>

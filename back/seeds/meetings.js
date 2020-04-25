@@ -51,7 +51,7 @@ withDbConnection(async () => {
       city: "Madrid",
       country: "España",
       postalCode: "28035",
-      title: "Monte Límpio",
+      title: "Monte Limpio",
       hour: "08:30",
       description: frasedeldia(),
     },

@@ -1,5 +1,7 @@
 import styled from "styled-components";
 
 export const AuthForm = styled.div`
-  background: grey;
+  & H2 {
+    margin-left: 50%;
+  }
 `;

@@ -31,9 +31,9 @@ export const Signup = withRouter(({ history }) => {
   };
 
   return (
-    <Container>
+    <Container className="form-container">
       <div>
-        <h2>SignUp</h2>
+        <h2 style={{ marginLeft: "50%", marginBottom: "3rem" }}>SignUp</h2>
         {error && (
           <div className="alert alert-danger" role="alert">
             {error}

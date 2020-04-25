@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { getMeetings } from "../../lib/frontRoutes/meetings.api";
-import { Card, Button, Container } from "react-bootstrap";
+import { Card, Button, Container, Form, Col, Row } from "react-bootstrap";
 import { CardMeeting, CardContainer } from "./StyleMeetings";
 import { useUser, useUserSetter } from "../../lib/auth/auth.api";
 import { Link } from "react-router-dom";
+import { Input, InputTextarea } from "../../forms/input";
+import { Icon } from "react-materialize";
 
 const Joinin = () => {
   const [filterStart, setFilterStart] = useState("");
@@ -28,23 +30,35 @@ const Joinin = () => {
     <>
       <Container>
         <CardContainer className="cards-container">
-          <h1>Listado de Regogidas organizadas</h1>
           <div>
-            <label>Filter Meetings: </label>
-            <input
-              value={filterStart}
-              onChange={(e) => setFilterStart(e.target.value)}
-            />
+            <Form>
+              <Form.Group as={Row} controlId="formPlaintextPassword">
+                <Form.Label
+                  column
+                  sm="1"
+                  style={{
+                    fontSize: "1.3rem",
+                    marginLeft: "60px",
+                  }}
+                >
+                  Buscar
+                </Form.Label>
+                <Col sm="10">
+                  <Form.Control
+                    style={{ width: "90%", marginLeft: "30px" }}
+                    value={filterStart}
+                    onChange={(e) => setFilterStart(e.target.value)}
+                    type="text"
+                    placeholder="Ciudad"
+                  />
+                </Col>
+              </Form.Group>
+            </Form>
           </div>
           {filtered_meets.map((meeting, i) => {
             return (
               <CardMeeting key={i}>
                 <Card className="text-center">
-                  {meeting.organizer && (
-                    <Card.Header className="backround-title">
-                      Organizado por: {meeting.organizer.username}{" "}
-                    </Card.Header>
-                  )}
                   <Card.Body>
                     {meeting.title && (
                       <Card.Subtitle as="h4" className="mb-3">

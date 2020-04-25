@@ -1,11 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { useForm, FormContext } from "react-hook-form";
-import { Container, Card, Button } from "react-bootstrap";
+import { Container, Card, Button, Form, Col } from "react-bootstrap";
 import { withProtected } from "../../lib/auth/protectRoute.hoc.js";
 import { useUser, useUserSetter, doLogin } from "../../lib/auth/auth.api.js";
-import { withRouter } from "react-router-dom";
 import { changeAvatar } from "../../lib/auth/user.api";
-import { Link } from "react-router-dom";
 import {
   getMeet,
   deleteUserMeet,
@@ -48,28 +46,54 @@ export const ProfilePage = withProtected((props, user) => {
   return (
     <>
       <div>
-        <h2>Perfil de {user.username}</h2>
-        <FormContext {...methods}>
-          <Container>
+        <Container className="form-container">
+          <Form.Group>
+            <Form.Row>
+              <Form.Label column="lg" lg={2}>
+                Nombre
+              </Form.Label>
+              <Col>
+                <Form.Control
+                  size="lg"
+                  type="text"
+                  placeholder={user.username}
+                />
+              </Col>
+            </Form.Row>
+            <br />
+            <Form.Row>
+              <Form.Label column lg={2}>
+                Email
+              </Form.Label>
+              <Col>
+                <Form.Control type="text" placeholder={user.email} />
+              </Col>
+            </Form.Row>
+            <br />
+            <Form.Row>
+              <Form.Label column lg={2}>
+                Ciudad
+              </Form.Label>
+              <Col>
+                <Form.Control type="text" placeholder={user.city} />
+              </Col>
+            </Form.Row>
+            <br />
+            <Form.Row>
+              <Form.Label column lg={2}>
+                Regogidas en las que he participado
+              </Form.Label>
+              <Col>
+                <Form.Control type="text" placeholder={8} />
+              </Col>
+            </Form.Row>
+          </Form.Group>
+          <FormContext {...methods}>
+            <h4 style={{ padding: "10px 0", marginLeft: "50%" }}>
+              Foto de perfil
+            </h4>
             <form onSubmit={handleSubmit(onSubmit)}>
-              <div>
-                <p>Nombre: {user.username}</p>
-              </div>
-              <div>
-                <p>Email: {user.email}</p>
-              </div>
-              <div>
-                <p>
-                  Recogidas en las que he participado:{" "}
-                  {user.meetings.length - 2}
-                </p>
-              </div>
-              <div>
-                <p>
-                  Recogidas en las que estoy inscrito: {user.meetings.length}
-                </p>
-              </div>
-              <div style={{ padding: "10px 0" }}>
+              <div style={{ padding: "10px 0", marginLeft: "50%" }}>
                 {imgPath && (
                   <div>
                     <img
@@ -82,33 +106,12 @@ export const ProfilePage = withProtected((props, user) => {
                 )}
                 <input name="avatar" type="file" ref={register()} />
               </div>
-              <button type="submit">Change Profile Pic</button>
+              <button type="submit" style={{ marginLeft: "50%" }}>
+                Cambia tu foto de perfil
+              </button>
             </form>
-          </Container>
-        </FormContext>
-        {user &&
-          user.meetings.map((meeting, i) => (
-            <main key={i}>
-              <Card style={{ width: "18rem" }}>
-                <Card.Body>
-                  <Card.Subtitle as="h4" className="mb-3">
-                    {" "}
-                    {meeting.title}
-                  </Card.Subtitle>
-                  <Card.Subtitle className="mb-2 text-muted">
-                    {meeting.city}
-                  </Card.Subtitle>
-                  <Card.Text>{meeting.description}</Card.Text>
-                  <StyledLink
-                    className="button-card-profile"
-                    to={`/meet/${meeting.id}`}
-                  >
-                    Consultar
-                  </StyledLink>
-                </Card.Body>
-              </Card>
-            </main>
-          ))}
+          </FormContext>
+        </Container>
       </div>
     </>
   );

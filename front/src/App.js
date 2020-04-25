@@ -5,7 +5,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Footer from "./components/Layout/Footer/Footer";
 import LayoutNavbar from "./components/Layout/Navbar/Navbar";
 import Home from "./pages/home/Home.page";
-import Contact from "./pages/contact/Contact.page";
+import { Contact } from "./pages/contact/Contact.page";
 import About from "./pages/about/Abauot.page";
 import { Signup } from "./pages/auth/singup/Singup.page";
 import { Login } from "./pages/auth/login/Login.page";

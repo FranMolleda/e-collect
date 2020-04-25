@@ -1,6 +1,8 @@
 import React, { useState } from "react";
-import { Form, Button, Container } from "react-bootstrap";
+import { Form, Container } from "react-bootstrap";
 import { AuthForm } from "./StyleForm";
+import { Button, Icon } from "react-materialize";
+
 export const LoginSignupForm = ({ handleSubmit }) => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -56,9 +58,15 @@ export const LoginSignupForm = ({ handleSubmit }) => {
                 />
               </Form.Group>
               <p className="center-align">
-                <button className="waves-effect waves-light btn" type="submit">
-                  <i className="material-icons right">send</i>enviar
-                </button>
+                <Button
+                  className="button-no-green"
+                  waves-effect="true"
+                  waves-teal="true"
+                  flat
+                  type="submit"
+                >
+                  enviar<Icon right>send</Icon>
+                </Button>
               </p>{" "}
             </Form>
           </div>
